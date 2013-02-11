@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  .container
+    .row
+      .span12
+        select#e1
+          option(value='ActionScript') ActionScript
+          option(value='Java') Java
+
+    .row
+      .span12
+        p CLI
+        code sudo echo "function gi() { curl http://localhost:3000/api/$@ ;}"  >> ~/.profile
