@@ -1,3 +1,9 @@
+### GitIgnore Subdir
+data/gitignore/LICENSE
+data/gitignore/README.md
+data/gitignore/Global/README.md
+*.pem
+
 ### Idea
 *.iml
 *.ipr
