@@ -1,6 +1,7 @@
 {
-  "name": "application-name",
+  "name": "gitignore.io",
   "version": "0.0.1",
+  "description": "API to generate gitignore files rapidly",
   "private": true,
   "scripts": {
     "start": "node app"
@@ -8,6 +9,7 @@
   "dependencies": {
     "express": "3.0.0beta6",
     "jade": "*",
-    "less-middleware": "*"
+    "less-middleware": "*",
+    "redis": "*"
   }
 }

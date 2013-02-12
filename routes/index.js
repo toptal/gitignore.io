@@ -1,4 +1,4 @@
-
+var client = require("../app");
 /*
  * GET home page.
  */
@@ -11,7 +11,18 @@ exports.index = function(req, res){
  * GET API page.
  */
 
-exports.api = function(req, res){
-
-  res.send(req.params.ignore);
+exports.apiIgnore = function(req, res){
+  console.log(req.params.ignore);
+//  var text = app.gitIgnore[req.params.ignore];
+//  res.send(text);
+};
+/*
+ * GET List of all ignore types
+ */
+exports.apiListTypes = function(req, res){
+  console.log("here");
+  client.redisClient.keys("*", function(err, replies){
+    console.log(replies);
+    res.send(replies.toString());
+  });
 };
