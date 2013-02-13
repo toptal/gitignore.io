@@ -11,7 +11,7 @@ block content
         .controls
           .span8
             input.input-block-level#ignoreSearch(type='hidden')
-          button.btn.btn-primary.span3(type='submit', onClick='window.location="http://gitignoreio.herokuapp.com/api/"+$("#ignoreSearch").select2("val");') Generate
+          button.btn.btn-primary.span3(type='submit', onClick='generateGitIgnore()') Generate
     .row
       .span12
         p CLI
