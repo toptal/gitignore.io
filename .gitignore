@@ -1,9 +1,8 @@
 ### GitIgnore Subdir
-data/gitignore/.git
-data/gitignore/LICENSE
-data/gitignore/README.md
-data/gitignore/Global/README.md
-data/certs/*.pem
+#data/gitignore/.git
+#data/gitignore/LICENSE
+#data/gitignore/README.md
+#data/gitignore/Global/README.md
 
 ### Idea
 *.iml
