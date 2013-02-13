@@ -42,10 +42,10 @@ http.createServer(app).listen(app.get('port'), function(){
 });
 
 // Set key and certificate for https
-var options = {
-  key: fs.readFileSync( __dirname + '/data/certs/server-key.pem'),
-  cert: fs.readFileSync( __dirname + '/data/certs/server-cert.pem')
-};
+//var options = {
+//  key: fs.readFileSync( __dirname + '/data/certs/server-key.pem'),
+//  cert: fs.readFileSync( __dirname + '/data/certs/server-cert.pem')
+//};
 
 //https.createServer(options, app).listen(443, function(){
 //  console.log("Express server listening on port 443");
