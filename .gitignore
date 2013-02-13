@@ -4,7 +4,6 @@ data/gitignore/LICENSE
 data/gitignore/README.md
 data/gitignore/Global/README.md
 data/certs/*.pem
-data/certs/credentials.js
 
 ### Idea
 *.iml
