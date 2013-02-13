@@ -7,18 +7,10 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , https = require('https')
-  , fs = require('fs')
-  , redis = require("redis")
-  , credentials = require('./data/certs/credentials');
+  , fs = require('fs');
 
 var app = express();
 var gitIgnores = {};
-
-client = redis.createClient(9201, "barreleye.redistogo.com", {detect_buffers: true});
-client.auth(credentials.r2gpw, function(err) {
-  if (err) {throw err;}
-});
-exports.redisClient = client;
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -41,7 +33,7 @@ app.configure('development', function(){
 app.get('/', routes.index);
 
 // API
-app.get('/api/list', routes.apiListTypes);
+//app.get('/api/list.json', routes.apiListTypes);
 app.get('/api/(:ignore)', routes.apiIgnore, gitIgnores);
 
 
@@ -76,10 +68,15 @@ var walk = function(dir, filter, done) {
         } else {
           if (file.indexOf(filter) > -1){
             // Strip off file name
-            var fileName = file.split("/").pop().toLowerCase();
+            var fileName = file.split("/").pop();
+            var name = fileName.split(".")[0];
 //            results.push(file.split("/").pop().toLowerCase());
             var contents = fs.readFileSync(file, 'utf8');
-            gitIgnores[fileName.split(".")[0]] = contents;
+            gitIgnores[name.toLowerCase()] = {
+              name: name,
+              fileName: fileName,
+              contents: contents
+            };
           }
           if (!--pending) done(null, results);
         }
@@ -90,14 +87,10 @@ var walk = function(dir, filter, done) {
 
 walk( __dirname + '/data/gitignore', ".gitignore", function(err, results) {
   if (err) throw err;
-  // Load Redis
-  client.on('ready', function () { // without this part, redis connection will fail
-    // do stuff with your redis
-    for (var key in gitIgnores){
-//      console.log(gitIgnores[key]);
-      client.set(key, gitIgnores[key]);
-    }
-  });
-//  console.log(results);
-//  console.log(gitIgnores);
+  var gitIgnoreJSON = []
+  for (var key in gitIgnores){
+    gitIgnoreJSON.push({id: key, text: gitIgnores[key].name});
+  }
+  exports.gitIgnoreJSONObject = gitIgnores;
+  exports.gitIgnoreJSONString = JSON.stringify(gitIgnoreJSON);
 });

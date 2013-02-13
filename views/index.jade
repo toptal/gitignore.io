@@ -2,12 +2,16 @@ extends layout
 
 block content
   .container
+    .row.center-text
+      .span12
+        h2 gitignore.io
+        h6 Create gitignore files
     .row
       .span12
-        select#e1
-          option(value='ActionScript') ActionScript
-          option(value='Java') Java
-
+        .controls
+          .span8
+            input.input-block-level#ignoreSearch(type='hidden')
+          button.btn.btn-primary.span3(type='submit', onClick='window.location="http://localhost:3000/api/"+$("#ignoreSearch").select2("val");') Generate
     .row
       .span12
         p CLI
