@@ -13,7 +13,6 @@ data/certs/*.pem
 
 ### Linux
 .*
-!.gitignore
 *~
 
 ### OSX
