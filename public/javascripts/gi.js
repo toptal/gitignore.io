@@ -16,6 +16,6 @@ $(document).ready(function () {
 
 });
 function generateGitIgnore(){
-  window.location="http://gitignoreio.herokuapp.com/api/"+$("#ignoreSearch").select2("val");
+  window.location="/api/"+$("#ignoreSearch").select2("val");
   $("#ignoreSearch").select2("val", "");
 }
