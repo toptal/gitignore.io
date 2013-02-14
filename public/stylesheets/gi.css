@@ -1,4 +1,12 @@
-body{font-family:"adelle",Georgia,"Times New Roman",serif;}
+html{background:#1d1f21 url(../images/bg2.png) no-repeat center center fixed;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;}
+body{color:#c5c8c6;background:transparent;font-family:"Lucida Grande",Helvetica,Arial,sans-serif;}
 a{color:#00B7FF;}
 .center-text{text-align:center;}
 h2{font-family:"adelle",serif;}
+p{font-size:18px;}
+.tbgl{background-color:rgba(45, 45, 45, 0.5);padding-top:30px;height:300px;width:100%;}
+.tbgb{border-bottom:1px solid #F44D27;background-color:rgba(45, 45, 45, 0.9);padding-top:30px;height:300px;width:100%;}
+.tbgf{background-color:rgba(45, 45, 45, 0.9);padding-top:30px;height:300px;width:100%;}
+row{padding:30px;}
+.twitter-blue{color:#00ACED;}
+.github-gray{color:#4F4F4F;}

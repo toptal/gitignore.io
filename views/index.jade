@@ -1,21 +1,36 @@
 extends layout
 
 block content
-  .container
-    .row.center-text
-      .span12
-        h2 gitignore.io
-        h6 Generate gitignore files
-    .row
-      .span12
-        .controls
-          .span8
-            input.input-block-level#ignoreSearch(type='hidden')
-          button.btn.btn-primary.span3(type='submit', onClick='generateGitIgnore()') Generate
-    .row
-      .span12
-        p CLI
-        h5 OSX
-        code # sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.profile && source ~/.profile
-        h5 Linux
-        code # sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bash_profile && source ~/.bash_profile
+  .tbgl
+    .container
+      .row.center-text
+        .span12
+          h1 gitignore.io
+          h6 Generate gitignore files
+      .row.well.space
+        .span12
+          .controls
+            .span8
+              input.input-block-level#ignoreSearch(type='hidden')
+            button.btn.btn-primary.span3(type='submit', onClick='generateGitIgnore()') Generate
+  .tbgb
+    .container
+      .row
+        .span12
+          p You can run gitignore from the command line.  You need to add a function that you can run from the command line.
+            | After the function is created, you can type <code># gi linux,java</code> and you'll get a Linux and Java gitignore
+            | file.
+          h5 OSX
+          code # sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.profile && source ~/.profile
+          h5 Linux
+          code # sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bash_profile && source ~/.bash_profile
+  .tbgf
+    .container
+      .row.footer
+        .span4
+          p first
+        .span4
+          p second
+        .span4
+          p <i class="icon-github icon-2x github-gray"></i> Github
+          p <i class="icon-twitter icon-2x twitter-blue"></i>
