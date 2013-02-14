@@ -4,6 +4,7 @@
   "description": "API to generate gitignore files rapidly",
   "private": true,
   "main": "app.js",
+  "subdomain": "gitignore",
   "engines": {
     "node": "0.8.14",
     "npm": ">=1.0.0"
