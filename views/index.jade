@@ -5,7 +5,7 @@ block content
     .row.center-text
       .span12
         h2 gitignore.io
-        h6 Create gitignore files
+        h6 Generate gitignore files
     .row
       .span12
         .controls
@@ -16,6 +16,6 @@ block content
       .span12
         p CLI
         h5 OSX
-        code sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.profile
+        code # sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.profile && source ~/.profile
         h5 Linux
-        code sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bash_profile
+        code # sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bash_profile && source ~/.bash_profile

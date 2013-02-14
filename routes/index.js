@@ -6,7 +6,7 @@ var app = require("../app");
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Gitignore.io' });
 };
 
 /*
