@@ -1,11 +1,16 @@
-@padding: 30px;
+@gitorange: #F44D27;
+@padding: 30px 0 30px 0;
+@headerpadding: 70px 0 70px 0;
 
 html {
-  background: #1d1f21 url(../images/bg2.png) no-repeat center center fixed;
+  background: #1d1f21 url(../images/bg.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+h1 {
+  color: @gitorange;
 }
 body {
   color: #c5c8c6;
@@ -19,32 +24,27 @@ a {
 .center-text {
   text-align: center;
 }
-h2 {
-  font-family: "adelle",serif;
-}
 p {
   font-size: 18px;
 }
 .tbgl {
 //  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   background-color: rgba(45, 45, 45, 0.5);
-  padding-top: @padding;
-  height: 300px;
+  padding: @headerpadding;
   width: 100%;
 }
 .tbgb {
 //  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid #F44D27;
+  border-bottom: 1px solid @gitorange;
   background-color: rgba(45, 45, 45, 0.9);
-  padding-top: @padding;
-  height: 300px;
+  padding: @padding;
   width: 100%;
 }
 .tbgf {
 //  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   background-color: rgba(45, 45, 45, 0.9);
-  padding-top: @padding;
-  height: 300px;
+
+  padding: @padding;
   width: 100%;
 }
 row {
@@ -55,4 +55,14 @@ row {
 }
 .github-gray {
   color: #4F4F4F;
+}
+.well {
+  background-color: @gitorange;
+  border: 1px solid #a0321a;
+}
+blockquote {
+  border-left: 5px solid @gitorange;
+}
+pre {
+  background-color: rgba(245, 245, 245, 0.7);
 }
