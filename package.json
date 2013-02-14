@@ -10,7 +10,7 @@
     "npm": ">=1.0.0"
   },
   "scripts": {
-    "start": "node app"
+    "start": "app.js"
   },
   "dependencies": {
     "express": "3.0.0beta6",
