@@ -33,8 +33,8 @@ app.configure('development', function(){
 app.get('/', routes.index);
 
 // API
-//app.get('/api/list.json', routes.apiListTypes);
-app.get('/api/(:ignore)', routes.apiIgnore, gitIgnores);
+app.get('/api/list', routes.apiListTypes);
+app.get('/api/(:ignore)', routes.apiIgnore);
 
 
 http.createServer(app).listen(app.get('port'), function(){
@@ -89,8 +89,8 @@ walk( __dirname + '/data/gitignore', ".gitignore", function(err, results) {
   if (err) throw err;
   var gitIgnoreJSON = []
   for (var key in gitIgnores){
-    gitIgnoreJSON.push({id: key, text: gitIgnores[key].name});
+    gitIgnoreJSON.push(gitIgnores[key].name.toLowerCase());
   }
   exports.gitIgnoreJSONObject = gitIgnores;
-  exports.gitIgnoreJSONString = JSON.stringify(gitIgnoreJSON);
+  exports.gitIgnoreJSONString = gitIgnoreJSON.join(',')+"\n";
 });
