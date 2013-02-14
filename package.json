@@ -1,6 +1,6 @@
 {
   "name": "gitignore.io",
-  "version": "0.0.1-1",
+  "version": "0.0.1-2",
   "description": "API to generate gitignore files rapidly",
   "private": true,
   "main": "app.js",
@@ -9,6 +9,10 @@
     "node": "0.8.x",
     "npm": ">=1.0.0"
   },
+  "domains": [
+    "gitignore.io",
+    "www.gitignore.io"
+  ],
   "scripts": {
     "start": "app.js"
   },
