@@ -1,6 +1,7 @@
 html{background:#1d1f21 url(../images/bg.png) no-repeat center center fixed;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover;}
 h1{color:#f44d27;}
-body{color:#c5c8c6;background:transparent;font-family:"Lucida Grande",Helvetica,Arial,sans-serif;}
+h6{font-family:"adelle",serif;font-style:normal;font-weight:300;}
+body{color:#c5c8c6;background:transparent;font-family:"adelle",Georgia,"Times New Roman",serif;}
 a{color:#00B7FF;}
 .center-text{text-align:center;}
 p{font-size:18px;}
