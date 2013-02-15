@@ -1,6 +1,6 @@
 html{background:#1d1f21;}
 h1{color:#f44d27;}
-h5,h6{font-family:"adelle",serif;font-style:normal;font-weight:300;}
+h4{font-family:"adelle",serif;font-style:normal;font-weight:100;}
 body{color:#c5c8c6;background:transparent;font-family:"adelle",Georgia,"Times New Roman",serif;}
 a:link{color:#f44d27;}
 a:visited{color:#f44d27;}
@@ -14,10 +14,12 @@ p{font-size:18px;}
 row{padding:30px 0 30px 0;}
 .twitter-blue{color:#00ACED;}
 .github-gray{color:#4F4F4F;}
-.well{background-color:#f44d27;border:1px solid #a0321a;padding:14px 4px 14px 4px;margin-top:40px;margin-bottom:40px;}
-blockquote{border-left:5px solid #f44d27;}
+.well{background-color:rgba(0, 0, 0, 0.2);border:0px solid #000000;padding:14px 4px 14px 4px;margin-top:40px;margin-bottom:40px;}
+.btn-gitignore{color:#ffffff;text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);background-color:#f44d27;*background-color:#f44d27;background-image:-moz-linear-gradient(top, #f44d27, #f44d27);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f44d27), to(#f44d27));background-image:-webkit-linear-gradient(top, #f44d27, #f44d27);background-image:-o-linear-gradient(top, #f44d27, #f44d27);background-image:linear-gradient(to bottom, #f44d27, #f44d27);background-repeat:repeat-x;border-color:#222222 #222222 #000000;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffF44D27', endColorstr='#ffF44D27', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);}
+.btn-gitignore:hover,.btn-gitignore:focus,.btn-gitignore:active,.btn-gitignore.active,.btn-gitignore.disabled,.btn-gitignore[disabled]{color:#ffffff;background-color:#f44d27;*background-color:#f44d27;}
+.btn-gitignore:active,.btn-gitignore.active{background-color:#f44d27;}
 .input-append{font-size:14px;margin-bottom:0px;}
-.span9{margin-left:10px;}
+.span8{margin-left:10px;}
 pre{background-color:rgba(245, 245, 245, 0.7);}
 .select2-container-multi .select2-choices{-webkit-border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px;}
 .select2-container-multi .select2-choices .select2-search-field input{height:16px;}

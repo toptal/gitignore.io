@@ -6,13 +6,13 @@ block content
       .row.center-text
         .span12
           h1 <i class="icon-github-sign"></i> Gitignore.io
-          h4 Generate useful .gitignore files for your project
+          h5 Generate useful .gitignore files for your project
       .row
         .span10.well.offset1
           .input-append
-            input.span9#ignoreSearch(type='hidden')
-            button.btn.btn-inverse.span1(type='button', onClick='generateGitIgnore()') Git It!
+            input.span8#ignoreSearch(type='hidden')
+            button.btn.btn-gitignore.span2(type='button', onClick='generateGitIgnore()') Generate
       .row.center-text
         .span12
-          h4
+          h5
             a(href='/cli') Learn how to run gitignore.io from the command line >>

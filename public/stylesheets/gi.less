@@ -3,16 +3,15 @@
 @headerpadding: 100px 0 100px 0;
 
 html {
-//  background: #1d1f21 url(../images/bg.png) repeat;
   background: #1d1f21;
 }
 h1 {
   color: @gitorange;
 }
-h5, h6 {
+h4 {
   font-family: "adelle",serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 100;
 }
 body {
   color: #c5c8c6;
@@ -57,20 +56,53 @@ row {
   color: #4F4F4F;
 }
 .well {
-  background-color: @gitorange;
-  border: 1px solid #a0321a;
+  background-color: rgba(0, 0, 0, 0.2);
+//  background-color: @gitorange;
+  border: 0px solid #000000;
   padding: 14px 4px 14px 4px;
   margin-top: 40px;
   margin-bottom: 40px;
 }
-blockquote {
-  border-left: 5px solid @gitorange;
+
+
+.btn-gitignore {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: @gitorange;
+  *background-color: @gitorange;
+  background-image: -moz-linear-gradient(top, @gitorange, @gitorange);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@gitorange), to(@gitorange));
+  background-image: -webkit-linear-gradient(top, @gitorange, @gitorange);
+  background-image: -o-linear-gradient(top, @gitorange, @gitorange);
+  background-image: linear-gradient(to bottom, @gitorange, @gitorange);
+  background-repeat: repeat-x;
+  border-color: #222222 #222222 #000000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffF44D27', endColorstr='#ffF44D27', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
+
+.btn-gitignore:hover,
+.btn-gitignore:focus,
+.btn-gitignore:active,
+.btn-gitignore.active,
+.btn-gitignore.disabled,
+.btn-gitignore[disabled] {
+  color: #ffffff;
+  background-color: @gitorange;
+  *background-color: @gitorange;
+}
+
+.btn-gitignore:active,
+.btn-gitignore.active {
+  background-color: @gitorange;
+}
+
 .input-append {
   font-size: 14px;
   margin-bottom: 0px;
 }
-.span9 {
+.span8 {
   margin-left: 10px;
 }
 pre {
