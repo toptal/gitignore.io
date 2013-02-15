@@ -13,6 +13,8 @@ $(document).ready(function () {
   });
 });
 function generateGitIgnore(){
-  window.location="/api/"+$("#ignoreSearch").select2("val");
-  $("#ignoreSearch").select2("val", "");
+  if ($("#ignoreSearch").select2("val").length > 0){
+    window.location="/api/"+$("#ignoreSearch").select2("val");
+    $("#ignoreSearch").select2("val", "");
+  }
 }
