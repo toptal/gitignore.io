@@ -48,16 +48,6 @@ http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
 
-// Set key and certificate for https
-//var options = {
-//  key: fs.readFileSync( __dirname + '/data/certs/server-key.pem'),
-//  cert: fs.readFileSync( __dirname + '/data/certs/server-cert.pem')
-//};
-
-//https.createServer(options, app).listen(443, function(){
-//  console.log("Express server listening on port 443");
-//});
-
 var walk = function(dir, filter, done) {
   var results = [];
   fs.readdir(dir, function(err, list) {
@@ -77,7 +67,6 @@ var walk = function(dir, filter, done) {
             // Strip off file name
             var fileName = file.split("/").pop();
             var name = fileName.split(".")[0];
-//            results.push(file.split("/").pop().toLowerCase());
             var contents = fs.readFileSync(file, 'utf8');
             gitIgnores[name.toLowerCase()] = {
               name: name,
