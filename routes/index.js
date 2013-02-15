@@ -1,6 +1,5 @@
 var app = require("../app");
 
-
 /*
  * GET home page.
  */
@@ -8,7 +7,13 @@ var app = require("../app");
 exports.index = function(req, res){
   res.render('index', { title: 'Gitignore.io' });
 };
+/*
+ * GET Command Line Instructions page.
+ */
 
+exports.cli = function(req, res){
+  res.render('cli', { title: 'Gitignore.io' });
+};
 /*
  * GET API page.
  */

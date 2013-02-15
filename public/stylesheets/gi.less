@@ -3,16 +3,13 @@
 @headerpadding: 100px 0 100px 0;
 
 html {
-  background: #1d1f21 url(../images/bg.png) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+//  background: #1d1f21 url(../images/bg.png) repeat;
+  background: #1d1f21;
 }
 h1 {
   color: @gitorange;
 }
-h6 {
+h5, h6 {
   font-family: "adelle",serif;
   font-style: normal;
   font-weight: 300;
@@ -22,9 +19,10 @@ body {
   background: transparent;
   font-family: "adelle",Georgia,"Times New Roman",serif;
 }
-a {
-  color: #00B7FF;
-}
+a:link    {color:@gitorange;}
+a:visited {color:@gitorange;}
+a:hover   {color:@gitorange;}
+a:active  {color:@gitorange;}
 .center-text {
   text-align: center;
 }
@@ -33,7 +31,7 @@ p {
 }
 .tbgl {
 //  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: rgba(45, 45, 45, 0.5);
+//  background-color: rgba(45, 45, 45, 0.5);
   padding: @headerpadding;
   width: 100%;
 }
@@ -61,10 +59,28 @@ row {
 .well {
   background-color: @gitorange;
   border: 1px solid #a0321a;
+  padding: 14px 4px 14px 4px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 blockquote {
   border-left: 5px solid @gitorange;
 }
+.input-append {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.span9 {
+  margin-left: 10px;
+}
 pre {
   background-color: rgba(245, 245, 245, 0.7);
+}
+.select2-container-multi .select2-choices {
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+.select2-container-multi .select2-choices .select2-search-field input {
+  height: 16px;
 }
