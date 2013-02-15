@@ -23,6 +23,7 @@ app.configure(function(){
   app.use(app.router);
   app.use(require('less-middleware')({ src: __dirname + '/public',compress: true }));
   app.use(express.static(__dirname + '/public'));
+  app.use(errorHandler);
 });
 
 app.configure('development', function(){
@@ -36,7 +37,12 @@ app.get('/', routes.index);
 app.get('/cli', routes.cli);
 app.get('/api/list', routes.apiListTypes);
 app.get('/api/(:ignore)', routes.apiIgnore);
+app.get('/api/*', routes.help);
 
+function errorHandler(err, req, res, next) {
+  res.status(500);
+  res.render('error', { error: err });
+}
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

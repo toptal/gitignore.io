@@ -14,6 +14,10 @@ exports.index = function(req, res){
 exports.cli = function(req, res){
   res.render('cli', { title: 'gitignore.io' });
 };
+
+exports.help =  function(req, res){
+  res.send('gitignore.io help:\n  list    - lists the operating systems, programming languages and IDE input types\n  :types: - generates .gitignore files for types of operating systems, programming languages or IDEs  ');
+};
 /*
  * GET API page.
  */
