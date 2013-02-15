@@ -5,14 +5,14 @@ var app = require("../app");
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Gitignore.io' });
+  res.render('index', { title: 'gitignore.io' });
 };
 /*
  * GET Command Line Instructions page.
  */
 
 exports.cli = function(req, res){
-  res.render('cli', { title: 'Gitignore.io' });
+  res.render('cli', { title: 'gitignore.io' });
 };
 /*
  * GET API page.

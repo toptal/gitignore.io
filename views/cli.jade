@@ -3,6 +3,10 @@ extends layout
 block content
   .tbgb
     .container
+      .row.center-text
+        .span12
+          h1 <a href="http://gitignore.io"><i class="icon-github-sign"></i> Gitignore.io</a>
+          h4 Generate useful .gitignore files for your project
       .row
         .span12
           h3 Command Line
@@ -12,7 +16,7 @@ block content
             pre $ sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bashrc && source ~/.bashrc
             h5 Redhat
             pre $ sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bash_profile && source ~/.bash_profile
-          p After the function is created, you can type <code>$ gi linux,java</code> and you'll get a Linux and Java gitignore file.
+          p After the function is created, the <strong>gi</strong> command will give you command line access to the gitingore.io API.
           blockquote
             h5 Show ouput on the command line
             pre $ gi linux,java
@@ -38,18 +42,13 @@ block content
   .tbgf
     .container
       .row.footer
-        .span4
+        .span6
           h3 About
           p Gitignore.io is a web service designed to help you create .gitignore files for your <a href="http://git-scm.com/">Git</a> repositories.  The site has a graphical and command line method of creating a .gitignore for your operating system, programming language, or IDE.
-        .span4
-          h3 Powered By
-        .span4
+        .span6
           h3 Links
           p <i class="icon-github"></i> <a href="https://github.com/joeblau/gitignore.io">Github</a> - Website Source Code
           p <i class="icon-github"></i> <a href="https://github.com/github/gitignore">Github</a> - Github gitignore repository
-          p <i class="icon-twitter twitter-blue"></i> Developer - Joe Blau
-          p <i class="icon-twitter twitter-blue"></i> Logo Design -
-          p <i class="icon-camera"></i> Photo - Samir Abdosh
       .row.center-text
         .span12
-          h6 2013 <a href="http://gitignore.io">Gitignore.io</a> Made in San Francisco
+          h6 2013 <a href="http://gitignore.io">gitignore.io</a> Made in San Francisco
