@@ -1,7 +1,7 @@
 html{background:#1d1f21;}
 h1{color:#f44d27;}
 h4,h5,h6{font-family:"adelle",serif;font-style:normal;font-weight:100;}
-h4.light{font-family:"adelle",serif;font-style:normal;font-weight:300;}
+h5.normal{font-family:"adelle",serif;font-style:normal;font-weight:400;}
 body{color:#c5c8c6;background:transparent;font-family:"adelle",Georgia,"Times New Roman",serif;}
 a:link{color:#f44d27;}
 a:visited{color:#f44d27;}
