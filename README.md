@@ -1,4 +1,4 @@
-![gitignore.io](https://raw.github.com/joeblau/gitignore.io/master/public/images/gitignore-logod.png)
+![gitignore.io](https://raw.github.com/joeblau/gitignore.io/master/public/images/gitignore-logo-dark.png)
 
 ## About
 
