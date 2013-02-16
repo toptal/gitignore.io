@@ -16,7 +16,7 @@ exports.cli = function(req, res){
 };
 
 exports.help =  function(req, res){
-  res.send('gitignore.io help:\n  list    - lists the operating systems, programming languages and IDE input types\n  :types: - generates .gitignore files for types of operating systems, programming languages or IDEs  ');
+  res.send('gitignore.io help:\n  list    - lists the operating systems, programming languages and IDE input types\n  :types: - generates .gitignore files for types of operating systems, programming languages or IDEs\n');
 };
 /*
  * GET API page.
