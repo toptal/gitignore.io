@@ -1,4 +1,23 @@
-# Gitignore.io
+![gitignore.io](https://raw.github.com/joeblau/gitignore.io/master/public/images/gitignore-logod.png)
+
+## About
+
+[gitignore.io](http://gitignore.io/)  is designed generate useful .gitignore files for your project.
+
+A gitignore file specifies intentionally untracked files that git should ignore.  When creating git repositores many project folders get filled with files that are not necessiarly related to the source code.  These files come from places such as the Operating System (OS), Programming Languages, and Integrated Development Environments (IDE).   
+
+## Build
+
+1. `git clone git@github.com:joeblau/gitignore.io.git`
+2. `cd gitignore`
+3. `npm install -d`
+4. `node app.js`
+
+## Resources
+
+* [gitignore.io] - [http://gitignore.io](http://gitignore.io/)
+* [Github gitignore templates] - [https://github.com/github/gitignore](https://github.com/github/gitignore)
+* [gitignore(5) Manual Page] - [gitignore(5) Manual Page](http://www.kernel.org/pub/software/scm/git/docs/gitignore.html)
 
 ## License
 
