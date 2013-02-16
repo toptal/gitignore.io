@@ -19,6 +19,13 @@ A gitignore file specifies intentionally untracked files that git should ignore.
 * [gitignore templates] - A list of .gitignore templates provided maintained by Github
 * [gitignore Manual Page] - Offical manual for using .gitignore files
 
+## Logos
+
+Logo design by: Jason Long - [http://blackantmedia.com/](http://blackantmedia.com/)
+
+![gitignore.io](https://raw.github.com/joeblau/gitignore.io/master/public/images/gitignore-logo-dark.png "gitignore.io dark logo")
+![gitignore.io](https://raw.github.com/joeblau/gitignore.io/master/public/images/gitignore-logo-light.png "gitignore.io light logo")
+
 ## License
 
 Copyright (C) 2013 Joe Blau
