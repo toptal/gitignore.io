@@ -4,7 +4,7 @@
 
 [gitignore.io](http://gitignore.io/)  is designed generate useful .gitignore files for your project.
 
-A gitignore file specifies intentionally untracked files that git should ignore.  When creating git repositores many project folders get filled with files that are not necessiarly related to the source code.  These files come from places such as the Operating System (OS), Programming Languages, and Integrated Development Environments (IDE).   
+A gitignore file specifies intentionally untracked files that git should ignore.  When creating git repositores many project folders get filled with files that are not necessiarly related to the source code.  These files come from places such as the Operating System (OS), Programming Languages, and Integrated Development Environments (IDE).
 
 ## Build
 
@@ -15,9 +15,9 @@ A gitignore file specifies intentionally untracked files that git should ignore.
 
 ## Resources
 
-* [gitignore.io] - [http://gitignore.io](http://gitignore.io/)
-* [Github gitignore templates] - [https://github.com/github/gitignore](https://github.com/github/gitignore)
-* [gitignore(5) Manual Page] - [gitignore(5) Manual Page](http://www.kernel.org/pub/software/scm/git/docs/gitignore.html)
+* [gitignore.io] - Generate useful .gitignore files for your project.
+* [gitignore templates] - A list of .gitignore templates provided maintained by Github
+* [gitignore Manual Page] - Offical manual for using .gitignore files
 
 ## License
 
@@ -28,3 +28,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+  [gitignore.io]: http://gitignore.io/
+  [gitignore templates]: https://github.com/github/gitignore
+  [gitignore Manual Page]: http://www.kernel.org/pub/software/scm/git/docs/gitignore.htm
