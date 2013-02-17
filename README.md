@@ -16,7 +16,7 @@ A gitignore file specifies intentionally untracked files that git should ignore.
 ## Resources
 
 * [gitignore.io] - Generate useful .gitignore files for your project.
-* [gitignore templates] - A list of .gitignore templates provided maintained by Github
+* [gitignore templates] - A list of .gitignore templates provided maintained by GitHub
 * [gitignore Manual Page] - Offical manual for using .gitignore files
 
 ## Logos
