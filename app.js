@@ -2,13 +2,15 @@
 /**
  * Module dependencies.
  */
-require('newrelic')
+require('newrelic');
 
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , https = require('https')
   , fs = require('fs');
+
+require('uglify-js-middleware');
 
 var app = express();
 var gitIgnores = {};
@@ -24,8 +26,10 @@ app.configure(function(){
   app.use(app.router);
   app.use(require('less-middleware')({ src: __dirname + '/public',compress: true }));
   app.use(express.static(__dirname + '/public'));
+  app.use(require('uglify-js-middleware')({ src: __dirname + '/public' }));
   app.use(errorHandler);
 });
+
 
 app.configure('development', function(){
   app.use(express.errorHandler());
