@@ -21,3 +21,9 @@ function generateGitIgnore(){
     $("#ignoreSearch").select2("val", "");
   }
 }
+
+function generateGitIgnoreFile(){
+  if ($("#ignoreSearch").select2("val").length > 0){
+    window.location="/api/f/"+$("#ignoreSearch").select2("val");
+  }
+}

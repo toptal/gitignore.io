@@ -8,7 +8,15 @@ block content
         .span10.well.offset1
           .input-append
             input.span8#ignoreSearch(type='hidden')
-            button.btn.btn-gitignore.span2(type='button', onClick='generateGitIgnore()') Generate
+            .btn-group
+              button.btn.btn-gitignore.span2(type='button', onClick='generateGitIgnore()') Generate
+              button.btn.btn-gitignore.dropdown-toggle(data-toggle='dropdown')
+                span.caret
+              ul.dropdown-menu
+                li
+                  a(onClick='generateGitIgnoreFile()')
+                    span.icon-download  Download File
+
       .row.center-text
         .span12
           h4

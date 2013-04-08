@@ -42,10 +42,12 @@ app.get('/dd.json', routes.dropdown);
 
 // API
 app.get('/cli', routes.cli);
+
 app.get('/api/list', routes.apiListTypes);
 app.get('/api/help', routes.help);
 app.get('/api/?', routes.help);
 app.get('/api/(:ignore)', routes.apiIgnore);
+app.get('/api/f/(:ignore)', routes.apiFile);
 app.get('/api/*', routes.help);
 
 function errorHandler(err, req, res, next) {

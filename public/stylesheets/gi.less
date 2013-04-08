@@ -49,7 +49,6 @@ p {
   padding: @headerpadding;
 }
 .tbgb {
-
   border-bottom: 1px solid @gitorange;
   padding: @padding;
 }
@@ -88,7 +87,6 @@ row {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffF44D27', endColorstr='#ffF44D27', GradientType=0);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
-
 .btn-gitignore:hover,
 .btn-gitignore:focus,
 .btn-gitignore:active,
@@ -99,7 +97,13 @@ row {
   background-color: @gitorange;
   *background-color: @gitorange;
 }
-
+.btn-gitignore .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+.btn-group.open .btn-gitignore.dropdown-toggle {
+  background-color: #ad381c;
+}
 .btn-gitignore:active,
 .btn-gitignore.active {
   background-color: @gitorange;
@@ -112,7 +116,8 @@ blockquote {
   margin-bottom: 0px;
 }
 .span8 {
-  margin-left: 10px;
+  width: 600px;
+  margin-left: 8px;
 }
 pre {
   background-color: rgba(245, 245, 245, 0.7);
@@ -124,4 +129,31 @@ pre {
 }
 .select2-container-multi .select2-choices .select2-search-field input {
   height: 16px;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: @gitorange;
+  background-image: -moz-linear-gradient(top, @gitorange, @gitorange);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@gitorange), to(@gitorange));
+  background-image: -webkit-linear-gradient(top, @gitorange, @gitorange);
+  background-image: -o-linear-gradient(top, @gitorange, @gitorange);
+  background-image: linear-gradient(to bottom, @gitorange, @gitorange);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ff0088cc', endColorstr = '#ff0077b3', GradientType = 0);
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 0;
+  background-color: @gitorange;
+  background-image: -moz-linear-gradient(top, @gitorange, @gitorange);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@gitorange), to(@gitorange));
+  background-image: -webkit-linear-gradient(top, @gitorange, @gitorange);
+  background-image: -o-linear-gradient(top, @gitorange, @gitorange);
+  background-image: linear-gradient(to bottom, @gitorange, @gitorange);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ff0088cc', endColorstr = '#ff0077b3', GradientType = 0);
 }
