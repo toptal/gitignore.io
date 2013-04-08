@@ -11,10 +11,11 @@
 *.dylib
 
 # Qt-es
-
+CMakeLists.txt.user
 *.pro.user
 *.pro.user.*
 moc_*.cpp
 qrc_*.cpp
+ui_*.h
 Makefile
 *-build-*
