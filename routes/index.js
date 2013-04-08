@@ -7,6 +7,10 @@ var app = require("../app");
 exports.index = function(req, res){
   res.render('index', { title: 'gitignore.io' });
 };
+
+exports.dropdown = function(req, res){
+  res.send(app.gitIgnoreDropdownList);
+}
 /*
  * GET Command Line Instructions page.
  */

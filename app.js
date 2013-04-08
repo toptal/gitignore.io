@@ -15,6 +15,7 @@ require('uglify-js-middleware');
 var app = express();
 var gitIgnores = {};
 
+
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
@@ -37,6 +38,7 @@ app.configure('development', function(){
 
 // Main Page
 app.get('/', routes.index);
+app.get('/dd.json', routes.dropdown);
 
 // API
 app.get('/cli', routes.cli);
@@ -80,6 +82,7 @@ var walk = function(dir, filter, done) {
               fileName: fileName,
               contents: contents
             };
+
           }
           if (!--pending) done(null, results);
         }
@@ -90,10 +93,16 @@ var walk = function(dir, filter, done) {
 
 walk( __dirname + '/data/gitignore', ".gitignore", function(err, results) {
   if (err) throw err;
-  var gitIgnoreJSON = []
+  var gitIgnoreJSON = [];
+  var dropdownList = [];
   for (var key in gitIgnores){
     gitIgnoreJSON.push(gitIgnores[key].name.toLowerCase());
+    dropdownList.push({
+      id: gitIgnores[key].name.toLowerCase(),
+      text: gitIgnores[key].name
+    })
   }
+  exports.gitIgnoreDropdownList = dropdownList;
   exports.gitIgnoreJSONObject = gitIgnores;
   exports.gitIgnoreJSONString = gitIgnoreJSON.join(',')+"\n";
 });
