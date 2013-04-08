@@ -31,7 +31,7 @@ exports.apiIgnore = function(req, res){
       output += "\n#!! ERROR: " + ignoreFileList[file] + " is undefined. Use list command to see defined gitignore types !!#\n"
     } else {
       output += "\n### " + app.gitIgnoreJSONObject[ignoreFileList[file]].name + " ###\n"
-      output += app.gitIgnoreJSONObject[ignoreFileList[file]].contents;
+      output += app.gitIgnoreJSONObject[ignoreFileList[file]].contents+"\n";
     }
   }
   res.setHeader('Content-Type', 'text/plain');
