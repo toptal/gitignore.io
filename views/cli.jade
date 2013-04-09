@@ -33,8 +33,11 @@ block content
             | *.war
             | *.ear
           blockquote
-            h5.normal Append output to .gitignore file
-          pre $ gi linux,java >> .gitignore
+            h5.normal Append Operating System and IDE settings to global .gitignore
+          pre $ gi linux,eclipse >> ~/.gitignore
+          blockquote
+            h5.normal Append programming languages to your project .gitignore file
+          pre $ gi java,python >> .gitignore
           blockquote
             h5.normal Show gitignore.io operating system, programming language, or IDE keyword types
           pre $ gi list
