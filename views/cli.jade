@@ -10,10 +10,10 @@ block content
           p <span class="orange">1 </span> To run gitignore.io from your command line you need an active internet connection an environment function.  You need to add a function to your environment that lets you access the gitignore.io API.
           blockquote
             h5.normal Linux
-          pre $ sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bashrc && source ~/.bashrc
+          pre $ echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bashrc && source ~/.bashrc
           blockquote
             h5.normal OSX
-          pre $ sudo echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bash_profile && source ~/.bash_profile
+          pre $ echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bash_profile && source ~/.bash_profile
           p <span class="orange">2 </span> After the function is created, the <strong>gi</strong> command will give you command line access to the gitingore.io API.
           blockquote
             h5.normal Show ouput on the command line
