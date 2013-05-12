@@ -13,7 +13,10 @@ block content
           pre $ echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bashrc && source ~/.bashrc
           blockquote
             h5.normal OSX
+          h4 bash
           pre $ echo "function gi() { curl http://gitignore.io/api/\$@ ;}"  >> ~/.bash_profile && source ~/.bash_profile
+          h4 zsh
+          pre $ echo "function gi() { curl http://gitignore.io/api/$@ ;}"  >> ~/.zshrc && . ~/.zshrc
           p <span class="orange">2 </span> After the function is created, the <strong>gi</strong> command will give you command line access to the gitingore.io API.
           blockquote
             h5.normal Show ouput on the command line
