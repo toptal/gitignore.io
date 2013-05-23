@@ -8,10 +8,12 @@ A gitignore file specifies intentionally untracked files that git should ignore.
 
 ## Build
 
-1. `git clone git@github.com:joeblau/gitignore.io.git`
-2. `cd gitignore`
-3. `npm install -d`
-4. `node app.js`
+```sh
+$ git clone git@github.com:joeblau/gitignore.io.git
+$ cd gitignore
+$ npm install -d
+$ node app.js
+```
 
 ## Resources
 
