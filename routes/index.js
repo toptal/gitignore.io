@@ -9,6 +9,8 @@ exports.index = function(req, res){
 };
 
 exports.dropdown = function(req, res){
+  res.setHeader('Cache-Control', 'public, max-age=' + (app.oneDayCache / 1000));
+  res.setHeader('Expires', new Date(Date.now()+app.oneDayCache).toUTCString());
   res.send(app.gitIgnoreDropdownList);
 }
 /*
@@ -16,10 +18,14 @@ exports.dropdown = function(req, res){
  */
 
 exports.cli = function(req, res){
+  res.setHeader('Cache-Control', 'public, max-age=0');
+  res.setHeader('Expires', new Date(Date.now()).toUTCString());
   res.render('cli', { title: 'gitignore.io' });
 };
 
 exports.help =  function(req, res){
+  res.setHeader('Cache-Control', 'public, max-age=0');
+  res.setHeader('Expires', new Date(Date.now()).toUTCString());
   res.send('gitignore.io help:\n  list    - lists the operating systems, programming languages and IDE input types\n  :types: - generates .gitignore files for types of operating systems, programming languages or IDEs\n');
 };
 /*
@@ -30,8 +36,9 @@ exports.apiIgnore = function(req, res){
 //  console.log(req.params.ignore);
   var ignoreFileList = req.params.ignore.split(",");
   var output = generateFile(ignoreFileList);
+  res.setHeader('Cache-Control', 'public, max-age=0');
   res.setHeader('Content-Type', 'text/plain');
-  res.setHeader('Expires', '0');
+  res.setHeader('Expires', new Date(Date.now()).toUTCString());
   res.send(output);
 };
 /*
@@ -40,9 +47,10 @@ exports.apiIgnore = function(req, res){
 exports.apiFile = function(req, res){
   var ignoreFileList = req.params.ignore.split(",");
   var output = generateFile(ignoreFileList);
+  res.setHeader('Cache-Control', 'public, max-age=0');
   res.setHeader('Content-Type', 'application/octet-stream');
   res.setHeader('Content-Disposition', 'attachment; filename=".gitignore"');
-  res.setHeader('Expires', '0');
+  res.setHeader('Expires', new Date(Date.now()).toUTCString());
   res.send(output);
 };
 
@@ -51,6 +59,7 @@ exports.apiFile = function(req, res){
  */
 exports.apiListTypes = function(req, res){
   res.setHeader('Content-Type', 'text/plain');
+  res.setHeader('Expires', new Date(Date.now()).toUTCString());
   res.send(app.gitIgnoreJSONString);
 };
 /*

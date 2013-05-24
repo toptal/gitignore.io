@@ -14,20 +14,21 @@ require('uglify-js-middleware');
 
 var app = express();
 var gitIgnores = {};
-
+var oneDay = 604800000;
+exports.oneDayCache = oneDay;
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
-  app.use(express.favicon(__dirname + '/public/images/favicon.ico'));
-  app.use(express.logger('dev'));
-  app.use(express.bodyParser());
+  app.use(express.compress());
   app.use(express.methodOverride());
+  app.use(express.bodyParser());
   app.use(app.router);
-  app.use(require('less-middleware')({ src: __dirname + '/public',compress: true }));
-  app.use(express.static(__dirname + '/public'));
+  app.use(express.static(__dirname + '/public', { maxAge: oneDay }));
+  app.use(express.favicon(__dirname + '/public/images/favicon.ico', { maxAge: oneDay }));
   app.use(require('uglify-js-middleware')({ src: __dirname + '/public' }));
+  app.use(require('less-middleware')({ src: __dirname + '/public',compress: true }));
   app.use(errorHandler);
 });
 
