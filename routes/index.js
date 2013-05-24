@@ -5,6 +5,8 @@ var app = require("../app");
  */
 
 exports.index = function(req, res){
+  res.setHeader('Cache-Control', 'public, max-age=' + (app.oneDayCache / 1000));
+  res.setHeader('Expires', new Date(Date.now()+app.oneDayCache).toUTCString());
   res.render('index', { title: 'gitignore.io - Generate useful .gitignore files for your project' });
 };
 
@@ -49,8 +51,8 @@ exports.apiFile = function(req, res){
   var output = generateFile(ignoreFileList);
   res.setHeader('Cache-Control', 'public, max-age=0');
   res.setHeader('Content-Type', 'application/octet-stream');
-  res.setHeader('Content-Disposition', 'attachment; filename=".gitignore"');
   res.setHeader('Expires', new Date(Date.now()).toUTCString());
+  res.setHeader('Content-Disposition', 'attachment; filename=".gitignore"');
   res.send(output);
 };
 
@@ -58,6 +60,7 @@ exports.apiFile = function(req, res){
  * GET List of all ignore types
  */
 exports.apiListTypes = function(req, res){
+  res.setHeader('Cache-Control', 'public, max-age=0');
   res.setHeader('Content-Type', 'text/plain');
   res.setHeader('Expires', new Date(Date.now()).toUTCString());
   res.send(app.gitIgnoreJSONString);
