@@ -5,7 +5,7 @@ var app = require("../app");
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'gitignore.io' });
+  res.render('index', { title: 'gitignore.io - Generate useful .gitignore files for your project' });
 };
 
 exports.dropdown = function(req, res){
