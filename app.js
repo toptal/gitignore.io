@@ -26,7 +26,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(app.router);
   app.use(express.static(__dirname + '/public', { maxAge: oneDay }));
-  app.use(express.favicon(__dirname + '/public/images/favicon.ico', { maxAge: oneDay }));
+  app.use(express.favicon(__dirname + '/public/gi/img/favicon.ico', { maxAge: oneDay }));
   app.use(require('uglify-js-middleware')({ src: __dirname + '/public' }));
   app.use(require('less-middleware')({ src: __dirname + '/public',compress: true }));
   app.use(errorHandler);

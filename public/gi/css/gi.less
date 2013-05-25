@@ -3,12 +3,24 @@
 @headerpadding: 100px 0 100px 0;
 
 @font-face {
-  font-family: adelle-bold;
-  src: url('../fonts/ab.ttf');
+  font-family: 'AdelleBold';
+  src: url('../fonts/adelle_bold-webfont.eot');
+  src: url('../fonts/adelle_bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/adelle_bold-webfont.woff') format('woff'),
+  url('../fonts/adelle_bold-webfont.ttf') format('truetype'),
+  url('../fonts/adelle_bold-webfont.svg#AdelleBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 @font-face {
-  font-family: adelle;
-  src: url('../fonts/ar.ttf');
+  font-family: 'AdelleRegular';
+  src: url('../fonts/adelle_regular-webfont.eot');
+  src: url('../fonts/adelle_regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/adelle_regular-webfont.woff') format('woff'),
+  url('../fonts/adelle_regular-webfont.ttf') format('truetype'),
+  url('../fonts/adelle_regular-webfont.svg#AdelleRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 html {
   background: #1d1f21;
@@ -20,19 +32,15 @@ h1 {
   color: @gitorange;
 }
 h4,h5,h6 {
-  font-family: "adelle",serif;
-  font-style: normal;
-  font-weight: 100;
+  font-family: "AdelleRegular",serif;
 }
 h5.normal {
-  font-family: "adelle",serif;
-  font-style: normal;
-  font-weight: 400;
+  font-family: "AdelleRegular",serif;
 }
 body {
   color: #c5c8c6;
   background: transparent;
-  font-family: "adelle",serif;
+  font-family: "AdelleRegular",serif;
 }
 a:link    {color:@gitorange;}
 a:visited {color:@gitorange;}
@@ -43,23 +51,19 @@ a:active  {color:@gitorange;}
 }
 span.orange {
   color: @gitorange;
-  font-family: "adelle-bold",serif;
-  font-style: normal;
-  font-weight: 700;
+  font-family: "AdelleBold",serif;
 }
 p {
   font-size: 16px;
-  font-family: "adelle",serif;
-  font-style: normal;
-  font-weight: 400;
+  font-family: "AdelleRegular",serif;
 }
 .tbgl {
   padding: @headerpadding;
 }
-.tbgb {
+article {
   padding: @padding;
 }
-.tbgf {
+footer {
   padding: @padding;
   background-color: #000000;
 }
@@ -138,7 +142,6 @@ pre {
 .select2-container-multi .select2-choices .select2-search-field input {
   height: 16px;
 }
-
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
   text-decoration: none;
   color: #ffffff;
@@ -151,7 +154,6 @@ pre {
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ff0088cc', endColorstr = '#ff0077b3', GradientType = 0);
 }
-
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
   color: #ffffff;
   text-decoration: none;

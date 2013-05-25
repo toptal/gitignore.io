@@ -1,19 +1,19 @@
-@font-face{font-family:adelle-bold;src:url('../fonts/ab.ttf');}@font-face{font-family:adelle;src:url('../fonts/ar.ttf');}html{background:#1d1f21;}
+@font-face{font-family:'AdelleBold';src:url('../fonts/adelle_bold-webfont.eot');src:url('../fonts/adelle_bold-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/adelle_bold-webfont.woff') format('woff'),url('../fonts/adelle_bold-webfont.ttf') format('truetype'),url('../fonts/adelle_bold-webfont.svg#AdelleBold') format('svg');font-weight:normal;font-style:normal;}@font-face{font-family:'AdelleRegular';src:url('../fonts/adelle_regular-webfont.eot');src:url('../fonts/adelle_regular-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/adelle_regular-webfont.woff') format('woff'),url('../fonts/adelle_regular-webfont.ttf') format('truetype'),url('../fonts/adelle_regular-webfont.svg#AdelleRegular') format('svg');font-weight:normal;font-style:normal;}html{background:#1d1f21;}
 img{border-style:none;}
 h1{color:#f44d27;}
-h4,h5,h6{font-family:"adelle",serif;font-style:normal;font-weight:100;}
-h5.normal{font-family:"adelle",serif;font-style:normal;font-weight:400;}
-body{color:#c5c8c6;background:transparent;font-family:"adelle",serif;}
+h4,h5,h6{font-family:"AdelleRegular",serif;}
+h5.normal{font-family:"AdelleRegular",serif;}
+body{color:#c5c8c6;background:transparent;font-family:"AdelleRegular",serif;}
 a:link{color:#f44d27;}
 a:visited{color:#f44d27;}
 a:hover{color:#f44d27;}
 a:active{color:#f44d27;}
 .center-text{text-align:center;}
-span.orange{color:#f44d27;font-family:"adelle-bold",serif;font-style:normal;font-weight:700;}
-p{font-size:16px;font-family:"adelle",serif;font-style:normal;font-weight:400;}
+span.orange{color:#f44d27;font-family:"AdelleBold",serif;}
+p{font-size:16px;font-family:"AdelleRegular",serif;}
 .tbgl{padding:100px 0 100px 0;}
-.tbgb{padding:30px 0 30px 0;}
-.tbgf{padding:30px 0 30px 0;background-color:#000000;}
+article{padding:30px 0 30px 0;}
+footer{padding:30px 0 30px 0;background-color:#000000;}
 row{padding:30px 0 30px 0;}
 .twitter-blue{color:#00ACED;}
 .github-gray{color:#4F4F4F;}
