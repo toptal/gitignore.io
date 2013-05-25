@@ -12,12 +12,12 @@ a:active{color:#f44d27;}
 span.orange{color:#f44d27;font-family:"adelle-bold",serif;font-style:normal;font-weight:700;}
 p{font-size:16px;font-family:"adelle",serif;font-style:normal;font-weight:400;}
 .tbgl{padding:100px 0 100px 0;}
-.tbgb{border-bottom:1px solid #f44d27;padding:30px 0 30px 0;}
-.tbgf{padding:30px 0 30px 0;}
+.tbgb{padding:30px 0 30px 0;}
+.tbgf{padding:30px 0 30px 0;background-color:#000000;}
 row{padding:30px 0 30px 0;}
 .twitter-blue{color:#00ACED;}
 .github-gray{color:#4F4F4F;}
-.well{background-color:rgba(0, 0, 0, 0.2);border:0px solid #000000;padding:14px 4px 14px 4px;margin-top:40px;margin-bottom:40px;}
+.well{background-color:#000000;border:0px solid #000000;padding:14px 4px 14px 4px;margin-top:40px;margin-bottom:40px;}
 .btn-gitignore{color:#ffffff;text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);background-color:#f44d27;*background-color:#f44d27;background-image:-moz-linear-gradient(top, #f44d27, #f44d27);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f44d27), to(#f44d27));background-image:-webkit-linear-gradient(top, #f44d27, #f44d27);background-image:-o-linear-gradient(top, #f44d27, #f44d27);background-image:linear-gradient(to bottom, #f44d27, #f44d27);background-repeat:repeat-x;border-color:#222222 #222222 #000000;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffF44D27', endColorstr='#ffF44D27', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);}
 .btn-gitignore:hover,.btn-gitignore:focus,.btn-gitignore:active,.btn-gitignore.active,.btn-gitignore.disabled,.btn-gitignore[disabled]{color:#ffffff;background-color:#f44d27;*background-color:#f44d27;}
 .btn-gitignore .caret{border-top-color:#ffffff;border-bottom-color:#ffffff;}

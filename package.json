@@ -1,6 +1,6 @@
 {
   "name": "gitignore.io",
-  "version": "0.0.1-63",
+  "version": "0.0.1-64",
   "description": "API to generate gitignore files rapidly",
   "homepage": "http://gitignore.io",
   "private": true,
