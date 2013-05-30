@@ -1,4 +1,4 @@
-![gitignore.io](https://raw.github.com/joeblau/gitignore.io/master/public/images/gitignore-logo-dark.png)
+![gitignore.io](https://raw.github.com/joeblau/gitignore.io/master/public/gi/img/gitignore-logo-dark.png)
 
 ## About
 
@@ -25,8 +25,8 @@ $ node app.js
 
 Logo design by: Jason Long - [http://blackantmedia.com/](http://blackantmedia.com/)
 
-![gitignore.io](https://raw.github.com/joeblau/gitignore.io/master/public/images/gitignore-logo-dark.png "gitignore.io dark logo")
-![gitignore.io](https://raw.github.com/joeblau/gitignore.io/master/public/images/gitignore-logo-light.png "gitignore.io light logo")
+![gitignore.io](https://raw.github.com/joeblau/gitignore.io/master/public/gi/img/gitignore-logo-dark.png "gitignore.io dark logo")
+![gitignore.io](https://raw.github.com/joeblau/gitignore.io/master/public/gi/img/gitignore-logo-light.png "gitignore.io light logo")
 
 ## License
 
