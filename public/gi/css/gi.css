@@ -14,6 +14,7 @@ p{font-size:16px;font-family:"AdelleRegular",serif;}
 .tbgl{padding:100px 0 100px 0;}
 article{padding:30px 0 30px 0;}
 footer{padding:30px 0 30px 0;background-color:#000000;}
+#ignoreSearch{font-family:sans-serif;font-size:100%;width:589px;height:20px;padding:5px;margin-left:9px;border-width:0px;outline:0;border:0;-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;box-shadow:none;}
 row{padding:30px 0 30px 0;}
 .twitter-blue{color:#00ACED;}
 .github-gray{color:#4F4F4F;}
