@@ -30,3 +30,5 @@ proguard_logs/
 *.ipr
 *.iws
 .idea/
+
+adt-bundle-windows-x86_64/
