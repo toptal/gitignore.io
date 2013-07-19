@@ -15,6 +15,9 @@ $ npm install -d
 $ node app.js
 ```
 
+## Video
+[![Usage Video](https://raw.github.com/joeblau/gitignore.io/master/public/gi/img/vimeo.png)](https://vimeo.com/70609819)
+
 ## Resources
 
 * [gitignore.io] - Generate useful .gitignore files for your project.
