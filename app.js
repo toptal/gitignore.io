@@ -8,7 +8,8 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , https = require('https')
-  , fs = require('fs');
+  , fs = require('fs')
+  , ga = require('node-ga');;
 
 require('uglify-js-middleware');
 
@@ -24,6 +25,12 @@ app.configure(function(){
   app.use(express.compress());
   app.use(express.methodOverride());
   app.use(express.bodyParser());
+  if (process.env.GA_TRACKING_ID){
+    app.use(express.cookieParser());
+    app.use(ga(process.env.GA_TRACKING_ID, {
+      safe: true
+    }));
+  }
   app.use(app.router);
   app.use(express.static(__dirname + '/public', { maxAge: oneDay }));
   app.use(express.favicon(__dirname + '/public/gi/img/favicon.ico', { maxAge: oneDay }));
