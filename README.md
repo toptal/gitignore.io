@@ -43,4 +43,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
   [gitignore.io]: http://gitignore.io/
   [gitignore templates]: https://github.com/github/gitignore
-  [gitignore Manual Page]: http://www.kernel.org/pub/software/scm/git/docs/gitignore.htm
+  [gitignore Manual Page]: http://www.kernel.org/pub/software/scm/git/docs/gitignore.html
