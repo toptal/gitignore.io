@@ -5,6 +5,14 @@
  * Time: 7:49 PM
  */
 $(document).ready(function () {
+  $('.fancybox-media').fancybox({
+    openEffect  : 'none',
+    closeEffect : 'none',
+    helpers : {
+      media : {}
+    }
+  });
+
   $.ajax('/dd.json').success(function(data) {
     $("#ignoreSearch").select2({
       placeholder: "Search Operating Systems, IDEs, or Programming Languages",

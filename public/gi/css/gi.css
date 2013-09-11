@@ -1,34 +1,26 @@
-@font-face{font-family:'AdelleBold';src:url('../fonts/adelle_bold-webfont.eot');src:url('../fonts/adelle_bold-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/adelle_bold-webfont.woff') format('woff'),url('../fonts/adelle_bold-webfont.ttf') format('truetype'),url('../fonts/adelle_bold-webfont.svg#AdelleBold') format('svg');font-weight:normal;font-style:normal;}@font-face{font-family:'AdelleRegular';src:url('../fonts/adelle_regular-webfont.eot');src:url('../fonts/adelle_regular-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/adelle_regular-webfont.woff') format('woff'),url('../fonts/adelle_regular-webfont.ttf') format('truetype'),url('../fonts/adelle_regular-webfont.svg#AdelleRegular') format('svg');font-weight:normal;font-style:normal;}html{background:#1d1f21;}
+@font-face{font-family:'AdelleBold';src:url('../fonts/adelle_bold-webfont.eot');src:url('../fonts/adelle_bold-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/adelle_bold-webfont.woff') format('woff'),url('../fonts/adelle_bold-webfont.ttf') format('truetype'),url('../fonts/adelle_bold-webfont.svg#AdelleBold') format('svg');font-weight:normal;font-style:normal;}@font-face{font-family:'AdelleRegular';src:url('../fonts/adelle_regular-webfont.eot');src:url('../fonts/adelle_regular-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/adelle_regular-webfont.woff') format('woff'),url('../fonts/adelle_regular-webfont.ttf') format('truetype'),url('../fonts/adelle_regular-webfont.svg#AdelleRegular') format('svg');font-weight:normal;font-style:normal;}.text-center{text-align:center;}
+.form-control{padding:0px !important;border:0px;}
+.select2-container-multi .select2-choices{border:0px;}
+html{background:#333333;}
 img{border-style:none;}
-h1{color:#f44d27;}
 h4,h5,h6{font-family:"AdelleRegular",serif;}
 h5.normal{font-family:"AdelleRegular",serif;}
 body{color:#c5c8c6;background:transparent;font-family:"AdelleRegular",serif;}
+a{transition:.2s;-moz-transition:.2s;-webkit-transition:.2s;-o-transition:.2s;}
 a:link{color:#f44d27;}
 a:visited{color:#f44d27;}
-a:hover{color:#f44d27;}
-a:active{color:#f44d27;}
-.center-text{text-align:center;}
-span.orange{color:#f44d27;font-family:"AdelleBold",serif;}
-p{font-size:16px;font-family:"AdelleRegular",serif;}
-.tbgl{padding:100px 0 100px 0;}
-article{padding:30px 0 30px 0;}
-footer{padding:30px 0 30px 0;background-color:#000000;}
-#ignoreSearch{font-family:sans-serif;font-size:100%;width:589px;height:20px;padding:5px;margin-left:9px;border-width:0px;outline:0;border:0;-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;box-shadow:none;}
-row{padding:30px 0 30px 0;}
-.twitter-blue{color:#00ACED;}
-.github-gray{color:#4F4F4F;}
-.well{background-color:#000000;border:0px solid #000000;padding:14px 4px 14px 4px;margin-top:40px;margin-bottom:40px;}
-.btn-gitignore{color:#ffffff;text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);background-color:#f44d27;*background-color:#f44d27;background-image:-moz-linear-gradient(top, #f44d27, #f44d27);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f44d27), to(#f44d27));background-image:-webkit-linear-gradient(top, #f44d27, #f44d27);background-image:-o-linear-gradient(top, #f44d27, #f44d27);background-image:linear-gradient(to bottom, #f44d27, #f44d27);background-repeat:repeat-x;border-color:#222222 #222222 #000000;border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffF44D27', endColorstr='#ffF44D27', GradientType=0);filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);}
-.btn-gitignore:hover,.btn-gitignore:focus,.btn-gitignore:active,.btn-gitignore.active,.btn-gitignore.disabled,.btn-gitignore[disabled]{color:#ffffff;background-color:#f44d27;*background-color:#f44d27;}
-.btn-gitignore .caret{border-top-color:#ffffff;border-bottom-color:#ffffff;}
-.btn-group.open .btn-gitignore.dropdown-toggle{background-color:#ad381c;}
-.btn-gitignore:active,.btn-gitignore.active{background-color:#f44d27;}
-blockquote{border-left:1px solid #f44d27;}
-.input-append{font-size:14px;margin-bottom:0px;}
-.span8{width:600px;margin-left:8px;}
-pre{background-color:rgba(245, 245, 245, 0.7);}
-.select2-container-multi .select2-choices{-webkit-border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px;}
-.select2-container-multi .select2-choices .select2-search-field input{height:16px;}
-.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#ffffff;background-color:#f44d27;background-image:-moz-linear-gradient(top, #f44d27, #f44d27);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f44d27), to(#f44d27));background-image:-webkit-linear-gradient(top, #f44d27, #f44d27);background-image:-o-linear-gradient(top, #f44d27, #f44d27);background-image:linear-gradient(to bottom, #f44d27, #f44d27);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);}
-.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#ffffff;text-decoration:none;outline:0;background-color:#f44d27;background-image:-moz-linear-gradient(top, #f44d27, #f44d27);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#f44d27), to(#f44d27));background-image:-webkit-linear-gradient(top, #f44d27, #f44d27);background-image:-o-linear-gradient(top, #f44d27, #f44d27);background-image:linear-gradient(to bottom, #f44d27, #f44d27);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);}
+a:hover{color:#f44d27;opacity:0.6;text-decoration:none;}
+a:active{color:#f44d27;text-decoration:none;}
+.padtop{padding:40px 0 20px 0;}
+.padtitle{padding:100px 0 10px 0;}
+.padfooter{padding:40px 0 0px 0;}
+.btn-gitignore{color:#eeeeee;background-color:#f44d27;border-color:#333333;}
+.btn-gitignore .caret{border-top-color:#eeeeee;border-bottom-color:#eeeeee;}
+.select2-container-multi .select2-choices .select2-search-choice{margin:6px 0 3px 5px;}
+.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#eeeeee;opacity:1;background-color:#f44d27;}
+.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#eeeeee;text-decoration:none;outline:0;opacity:1;background-color:#f44d27;}
+footer{padding:40px 0 20px 0;background-color:#000000;}
+.section-well{border-left:0px;border-right:0px;border-top:1px solid #000000;border-bottom:1px solid #000000;border-radius:0px;background-color:#000000;}
+.tux-logo{color:#FFCC00;}
+.windows-logo{color:#00CCFF;}
+.apple-logo{color:#000;}

@@ -1,6 +1,10 @@
 @gitorange: #F44D27;
-@padding: 30px 0 30px 0;
-@headerpadding: 100px 0 100px 0;
+@giprimary: #EEEEEE;
+@gidark: #333333;
+@gisection: #000000;
+@padding: 40px 0 20px 0;
+@titlepadding: 100px 0 10px 0;
+@footerpadding: 40px 0 0px 0;
 
 @font-face {
   font-family: 'AdelleBold';
@@ -22,15 +26,26 @@
   font-weight: normal;
   font-style: normal;
 }
-html {
-  background: #1d1f21;
+
+.text-center {
+  text-align: center;
 }
+.form-control {
+  padding: 0px !important;
+  border: 0px;
+//  border-radius: 0px;
+}
+.select2-container-multi .select2-choices {
+  border: 0px;
+}
+html {
+  background: @gidark;
+}
+
 img{
   border-style: none;
 }
-h1 {
-  color: @gitorange;
-}
+
 h4,h5,h6 {
   font-family: "AdelleRegular",serif;
 }
@@ -42,143 +57,74 @@ body {
   background: transparent;
   font-family: "AdelleRegular",serif;
 }
+a {
+  transition: .2s;
+  -moz-transition: .2s;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+}
 a:link    {color:@gitorange;}
 a:visited {color:@gitorange;}
-a:hover   {color:@gitorange;}
-a:active  {color:@gitorange;}
-.center-text {
-  text-align: center;
-}
-span.orange {
-  color: @gitorange;
-  font-family: "AdelleBold",serif;
-}
-p {
-  font-size: 16px;
-  font-family: "AdelleRegular",serif;
-}
-.tbgl {
-  padding: @headerpadding;
-}
-article {
+a:hover   {color:@gitorange;opacity: 0.6;text-decoration:none;}
+a:active  {color:@gitorange;text-decoration:none;}
+
+.padtop {
   padding: @padding;
 }
-footer {
-  padding: @padding;
-  background-color: #000000;
+.padtitle {
+  padding: @titlepadding;
 }
-#ignoreSearch{
-  font-family: sans-serif;
-  font-size: 100%;
-  width:589px;
-  height:20px;
-  padding:5px;
-  margin-left:9px;
-  border-width: 0px;
-  outline: 0;
-  border: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  -o-box-shadow: none;
-  box-shadow: none;
+.padfooter {
+  padding: @footerpadding;
 }
-row {
-  padding: @padding;
-}
-.twitter-blue {
-  color: #00ACED;
-}
-.github-gray {
-  color: #4F4F4F;
-}
-.well {
-  background-color: #000000;
-  border: 0px solid #000000;
-  padding: 14px 4px 14px 4px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
+
 .btn-gitignore {
-  color: #ffffff;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: @gitorange;
-  *background-color: @gitorange;
-  background-image: -moz-linear-gradient(top, @gitorange, @gitorange);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@gitorange), to(@gitorange));
-  background-image: -webkit-linear-gradient(top, @gitorange, @gitorange);
-  background-image: -o-linear-gradient(top, @gitorange, @gitorange);
-  background-image: linear-gradient(to bottom, @gitorange, @gitorange);
-  background-repeat: repeat-x;
-  border-color: #222222 #222222 #000000;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffF44D27', endColorstr='#ffF44D27', GradientType=0);
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-}
-.btn-gitignore:hover,
-.btn-gitignore:focus,
-.btn-gitignore:active,
-.btn-gitignore.active,
-.btn-gitignore.disabled,
-.btn-gitignore[disabled] {
-  color: #ffffff;
-  background-color: @gitorange;
-  *background-color: @gitorange;
+  color: @giprimary;
+  background-color: #f44d27;
+  border-color: @gidark;
 }
 .btn-gitignore .caret {
-  border-top-color: #ffffff;
-  border-bottom-color: #ffffff;
+  border-top-color: @giprimary;
+  border-bottom-color: @giprimary;
 }
-.btn-group.open .btn-gitignore.dropdown-toggle {
-  background-color: #ad381c;
+.select2-container-multi .select2-choices .select2-search-choice {
+  margin: 6px 0 3px 5px;
 }
-.btn-gitignore:active,
-.btn-gitignore.active {
-  background-color: @gitorange;
-}
-blockquote {
-  border-left: 1px solid @gitorange;
-}
-.input-append {
-  font-size: 14px;
-  margin-bottom: 0px;
-}
-.span8 {
-  width: 600px;
-  margin-left: 8px;
-}
-pre {
-  background-color: rgba(245, 245, 245, 0.7);
-}
-.select2-container-multi .select2-choices {
-  -webkit-border-radius: 4px 0 0 4px;
-  -moz-border-radius: 4px 0 0 4px;
-  border-radius: 4px 0 0 4px;
-}
-.select2-container-multi .select2-choices .select2-search-field input {
-  height: 16px;
-}
+
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus, .dropdown-submenu:hover>a, .dropdown-submenu:focus>a {
   text-decoration: none;
-  color: #ffffff;
+  color: @giprimary;
+  opacity: 1;
   background-color: @gitorange;
-  background-image: -moz-linear-gradient(top, @gitorange, @gitorange);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@gitorange), to(@gitorange));
-  background-image: -webkit-linear-gradient(top, @gitorange, @gitorange);
-  background-image: -o-linear-gradient(top, @gitorange, @gitorange);
-  background-image: linear-gradient(to bottom, @gitorange, @gitorange);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ff0088cc', endColorstr = '#ff0077b3', GradientType = 0);
 }
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
-  color: #ffffff;
+  color: @giprimary;
   text-decoration: none;
   outline: 0;
+  opacity: 1;
   background-color: @gitorange;
-  background-image: -moz-linear-gradient(top, @gitorange, @gitorange);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@gitorange), to(@gitorange));
-  background-image: -webkit-linear-gradient(top, @gitorange, @gitorange);
-  background-image: -o-linear-gradient(top, @gitorange, @gitorange);
-  background-image: linear-gradient(to bottom, @gitorange, @gitorange);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ff0088cc', endColorstr = '#ff0077b3', GradientType = 0);
+}
+
+footer {
+  padding: @padding;
+  background-color: @gisection;
+}
+
+.section-well {
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  border-radius: 0px;
+  background-color: #000000;
+}
+
+.tux-logo {
+  color: #FFCC00;
+}
+.windows-logo {
+  color: #00CCFF;
+}
+.apple-logo {
+  color: #000;
 }

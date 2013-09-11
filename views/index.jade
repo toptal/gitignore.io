@@ -1,24 +1,41 @@
 extends layout
 
 block content
-  .tbgl
+  section.padtitle
+    include title
+  section#search.padtop
     .container
-      include title
-      .row
-        .span10.well.offset1
-          .input-append
-            input.span8#ignoreSearch(placeholder='Search Operating Systems, IDEs, or Programming Languages')
-            .btn-group
-              button.btn.btn-gitignore.span2(type='button', onClick='generateGitIgnore()') Generate
-              button.btn.btn-gitignore.dropdown-toggle(data-toggle='dropdown')
-                span.caret
-              ul.dropdown-menu
-                li
-                  a(onClick='generateGitIgnoreFile()')
-                    span.icon-download  Download File
-
-      .row.center-text
-        .span12
-          h4
-            nav
-              a(href='/cli', title='Command Line') Learn how to run gitignore.io from the command line >>
+      .row.text-center
+        .col-lg-12
+          .col-lg-10.col-lg-offset-1
+            .input-group
+              input.form-control#ignoreSearch(type='text', placeholder='Search Operating Systems, IDEs, or Programming Languages', tabindex='1')
+              .input-group-btn
+                button.btn.btn-gitignore(type='button', tabindex='-1', onClick='generateGitIgnore()') Generate
+                button.btn.btn-gitignore.dropdown-toggle(type='button', data-toggle='dropdown', tabindex='-1')
+                  span.caret
+                ul.dropdown-menu.pull-right(role='menu')
+                  li
+                    a(onClick='generateGitIgnoreFile()')
+                      span.icon-download  Download File
+  section#links.padtop
+    .container
+      .row.text-center
+        .col-lg-4.col-lg-offset-2
+          a(href='/cli', tabindex='-1')
+            span.icon-stack.icon-4x
+              i.icon-sign-blank.icon-stack-base
+              i.icon-terminal.icon-light
+            article
+              header
+                h3 Command Line
+              p Learn how to run .gitignore.io from the command line
+        .col-lg-4
+          a.fancybox-media(href='https://vimeo.com/70609819', tabindex='-1')
+            span.icon-stack.icon-4x
+              i.icon-sign-blank.icon-stack-base
+              i.icon-play-circle.icon-light
+            article
+              header
+                h3 Watch Video
+              p Watch a video to learn how .gitignore.io works
