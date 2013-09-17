@@ -1,7 +1,7 @@
 @gitorange: #F44D27;
 @giprimary: #EEEEEE;
 @gidark: #333333;
-@gisection: #000000;
+@gisection: #222222;
 @padding: 40px 0 20px 0;
 @titlepadding: 100px 0 10px 0;
 @footerpadding: 40px 0 0px 0;
@@ -39,34 +39,47 @@
   border: 0px;
 }
 html {
+  overflow: auto;
   background: @gidark;
 }
-
+body {
+  padding: 0;
+  color: #c5c8c6;
+  overflow: hidden;
+  background: transparent;
+  font-family: "AdelleRegular",serif;
+}
 img{
   border-style: none;
 }
 
-h4,h5,h6 {
+h1, h2, h3, h4, h5 {
+  font-weight: 200;
+}
+h4.subtitle {
   font-family: "AdelleRegular",serif;
 }
-h5.normal {
-  font-family: "AdelleRegular",serif;
+h3.spacer {
+  margin-top: 32px;
+  margin-bottom: 8px;
 }
-body {
-  color: #c5c8c6;
-  background: transparent;
-  font-family: "AdelleRegular",serif;
-}
+
 a {
+
   transition: .2s;
   -moz-transition: .2s;
   -webkit-transition: .2s;
   -o-transition: .2s;
 }
-a:link    {color:@gitorange;}
-a:visited {color:@gitorange;}
-a:hover   {color:@gitorange;opacity: 0.6;text-decoration:none;}
-a:active  {color:@gitorange;text-decoration:none;}
+
+a, a:link, a:visited, a:hover, a:active {
+  color:@gitorange;
+  text-decoration:none;
+  border:0;
+  outline:none;
+}
+
+a:hover   {opacity: 0.6;}
 
 .padtop {
   padding: @padding;
@@ -113,10 +126,10 @@ footer {
 .section-well {
   border-left: 0px;
   border-right: 0px;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000;
+  border-top: 1px solid @gisection;
+  border-bottom: 1px solid @gisection;
   border-radius: 0px;
-  background-color: #000000;
+  background-color: @gisection;
 }
 
 .tux-logo {
@@ -126,5 +139,8 @@ footer {
   color: #00CCFF;
 }
 .apple-logo {
-  color: #000;
+  color: #fefefe;
+}
+pre {
+  border: 0px solid @gisection;
 }

@@ -1,16 +1,15 @@
 @font-face{font-family:'AdelleBold';src:url('../fonts/adelle_bold-webfont.eot');src:url('../fonts/adelle_bold-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/adelle_bold-webfont.woff') format('woff'),url('../fonts/adelle_bold-webfont.ttf') format('truetype'),url('../fonts/adelle_bold-webfont.svg#AdelleBold') format('svg');font-weight:normal;font-style:normal;}@font-face{font-family:'AdelleRegular';src:url('../fonts/adelle_regular-webfont.eot');src:url('../fonts/adelle_regular-webfont.eot?#iefix') format('embedded-opentype'),url('../fonts/adelle_regular-webfont.woff') format('woff'),url('../fonts/adelle_regular-webfont.ttf') format('truetype'),url('../fonts/adelle_regular-webfont.svg#AdelleRegular') format('svg');font-weight:normal;font-style:normal;}.text-center{text-align:center;}
 .form-control{padding:0px !important;border:0px;}
 .select2-container-multi .select2-choices{border:0px;}
-html{background:#333333;}
+html{overflow:auto;background:#333333;}
+body{padding:0;color:#c5c8c6;overflow:hidden;background:transparent;font-family:"AdelleRegular",serif;}
 img{border-style:none;}
-h4,h5,h6{font-family:"AdelleRegular",serif;}
-h5.normal{font-family:"AdelleRegular",serif;}
-body{color:#c5c8c6;background:transparent;font-family:"AdelleRegular",serif;}
+h1,h2,h3,h4,h5{font-weight:200;}
+h4.subtitle{font-family:"AdelleRegular",serif;}
+h3.spacer{margin-top:32px;margin-bottom:8px;}
 a{transition:.2s;-moz-transition:.2s;-webkit-transition:.2s;-o-transition:.2s;}
-a:link{color:#f44d27;}
-a:visited{color:#f44d27;}
-a:hover{color:#f44d27;opacity:0.6;text-decoration:none;}
-a:active{color:#f44d27;text-decoration:none;}
+a,a:link,a:visited,a:hover,a:active{color:#f44d27;text-decoration:none;border:0;outline:none;}
+a:hover{opacity:0.6;}
 .padtop{padding:40px 0 20px 0;}
 .padtitle{padding:100px 0 10px 0;}
 .padfooter{padding:40px 0 0px 0;}
@@ -19,8 +18,9 @@ a:active{color:#f44d27;text-decoration:none;}
 .select2-container-multi .select2-choices .select2-search-choice{margin:6px 0 3px 5px;}
 .dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,.dropdown-submenu:hover>a,.dropdown-submenu:focus>a{text-decoration:none;color:#eeeeee;opacity:1;background-color:#f44d27;}
 .dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,.dropdown-menu>.active>a:focus{color:#eeeeee;text-decoration:none;outline:0;opacity:1;background-color:#f44d27;}
-footer{padding:40px 0 20px 0;background-color:#000000;}
-.section-well{border-left:0px;border-right:0px;border-top:1px solid #000000;border-bottom:1px solid #000000;border-radius:0px;background-color:#000000;}
+footer{padding:40px 0 20px 0;background-color:#222222;}
+.section-well{border-left:0px;border-right:0px;border-top:1px solid #222222;border-bottom:1px solid #222222;border-radius:0px;background-color:#222222;}
 .tux-logo{color:#FFCC00;}
 .windows-logo{color:#00CCFF;}
-.apple-logo{color:#000;}
+.apple-logo{color:#fefefe;}
+pre{border:0px solid #222222;}
