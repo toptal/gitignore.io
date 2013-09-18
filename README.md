@@ -2,9 +2,9 @@
 
 ## About
 
-[gitignore.io](http://gitignore.io/)  is designed generate useful .gitignore files for your project.
+[gitignore.io](http://gitignore.io/)  is designed create useful .gitignore files for your project.
 
-A gitignore file specifies intentionally untracked files that git should ignore.  When creating git repositores many project folders get filled with files that are not necessiarly related to the source code.  These files come from places such as the Operating System (OS), Programming Languages, and Integrated Development Environments (IDE).
+A gitignore file specifies intentionally un-tracked files that git should ignore.  When creating git repositories many project folders get filled with files that are not necessarily related to the source code.  These files come from places such as the Operating System (OS), Programming Languages, and Integrated Development Environments (IDE).
 
 ## Build
 
@@ -20,9 +20,9 @@ $ node app.js
 
 ## Resources
 
-* [gitignore.io] - Generate useful .gitignore files for your project.
+* [gitignore.io] - Create useful .gitignore files for your project.
 * [gitignore templates] - A list of .gitignore templates provided maintained by GitHub
-* [gitignore Manual Page] - Offical manual for using .gitignore files
+* [gitignore Manual Page] - Official manual for using .gitignore files
 
 ## Logos
 
