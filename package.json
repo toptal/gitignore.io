@@ -1,6 +1,6 @@
 {
   "name": "gitignore.io",
-  "version": "0.0.1-91",
+  "version": "0.0.1-92",
   "description": "API to create useful gitignore files for your project",
   "homepage": "http://gitignore.io",
   "private": true,
@@ -22,7 +22,7 @@
     "jade": "*",
     "less-middleware": "*",
     "uglify-js-middleware": "*",
-    "newrelic": "0.9.20",
+    "newrelic": "1.2.0",
     "node-ga": "*"
   }
 }
