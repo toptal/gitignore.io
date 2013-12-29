@@ -24,7 +24,8 @@ app.configure(function(){
   app.set('view engine', 'jade');
   app.use(express.compress());
   app.use(express.methodOverride());
-  app.use(express.bodyParser());
+  app.use(express.json());
+  app.use(express.urlencoded());
   if (process.env.GA_TRACKING_ID){
     app.use(express.cookieParser());
     app.use(ga(process.env.GA_TRACKING_ID, {
