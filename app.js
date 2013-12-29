@@ -2,14 +2,15 @@
 /**
  * Module dependencies.
  */
-require('newrelic');
+//require('newrelic');
 
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , https = require('https')
+  , path = require('path')
   , fs = require('fs')
-  , ga = require('node-ga');;
+  , ga = require('node-ga');
 
 require('uglify-js-middleware');
 
@@ -18,32 +19,26 @@ var gitIgnores = {};
 var oneDay = 604800000;
 exports.oneDayCache = oneDay;
 
-app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'jade');
-  app.use(express.compress());
-  app.use(express.methodOverride());
-  app.use(express.json());
-  app.use(express.urlencoded());
-  if (process.env.GA_TRACKING_ID){
-    app.use(express.cookieParser());
-    app.use(ga(process.env.GA_TRACKING_ID, {
-      safe: true
-    }));
-  }
-  app.use(app.router);
-  app.use(express.static(__dirname + '/public', { maxAge: oneDay }));
-  app.use(express.favicon(__dirname + '/public/gi/img/favicon.ico', { maxAge: oneDay }));
-  app.use(require('uglify-js-middleware')({ src: __dirname + '/public' }));
-  app.use(require('less-middleware')({ src: __dirname + '/public',compress: true }));
-  app.use(errorHandler);
-});
+console.log(__dirname);
+// all environments
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+app.use(express.compress());
+app.use(express.favicon(path.join(__dirname, '../public/gi/img/favicon.ico'), { maxAge: oneDay }));
+app.use(express.logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.methodOverride());
+app.use(app.router);
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: oneDay }));
+app.use(require('uglify-js-middleware')({ src: path.join(__dirname,'../public') }));
+app.use(require('less-middleware')({ src: path.join(__dirname,'../public'),compress: true }));
 
-
-app.configure('development', function(){
+// development only
+if ('development' == app.get('env')) {
   app.use(express.errorHandler());
-});
+}
 
 // Main Page
 app.get('/', routes.index);
