@@ -1,13 +1,13 @@
 {
   "name": "gitignore.io",
-  "version": "0.0.1-92",
+  "version": "0.0.1-93",
   "description": "API to create useful gitignore files for your project",
   "homepage": "http://gitignore.io",
   "private": true,
   "main": "app.js",
   "subdomain": "gitignore",
   "engines": {
-    "node": "0.8.x",
+    "node": "0.10.x",
     "npm": ">=1.0.0"
   },
   "domains": [
@@ -18,7 +18,7 @@
     "start": "app.js"
   },
   "dependencies": {
-    "express": "3.1.0",
+    "express": "3.4.7",
     "jade": "*",
     "less-middleware": "*",
     "uglify-js-middleware": "*",
