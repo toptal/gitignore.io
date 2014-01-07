@@ -15,7 +15,6 @@
     "www.gitignore.io"
   ],
   "scripts": {
-    "preinstall": "git submodule update -i -r",
     "start": "app.js"
   },
   "dependencies": {
