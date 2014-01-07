@@ -97,7 +97,7 @@ var walk = function(dir, filter, done) {
   });
 };
 
-walk( __dirname + '/data/gitignore', ".gitignore", function(err, results) {
+walk( __dirname + '/data', ".gitignore", function(err, results) {
   if (err) throw err;
   var gitIgnoreJSON = [];
   var dropdownList = [];
