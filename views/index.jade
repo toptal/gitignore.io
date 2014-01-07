@@ -3,21 +3,26 @@ extends layout
 block content
   section.padtitle
     include title
+
   section#search.padtop
     .container
       .row.text-center
         .col-lg-12
           .col-lg-10.col-lg-offset-1
             .input-group
-              input.form-control#ignoreSearch(type='text', placeholder='Search Operating Systems, IDEs, or Programming Languages', tabindex='1')
+              input.input-lg.form-control#ignoreSearch(type='text', placeholder='Search Operating Systems, IDEs, or Programming Languages', tabindex='1')
               .input-group-btn
-                button.btn.btn-gitignore(type='button', tabindex='-1', onClick='generateGitIgnore()') Generate
-                button.btn.btn-gitignore.dropdown-toggle(type='button', data-toggle='dropdown', tabindex='-1')
+                button.btn.btn-gitignore.btn-lg(type='button', tabindex='-1', onClick='generateGitIgnore()') Generate
+                button.btn.btn-gitignore.btn-lg.dropdown-toggle(type='button', data-toggle='dropdown', tabindex='-1')
                   span.caret
                 ul.dropdown-menu.pull-right(role='menu')
                   li
                     a(onClick='generateGitIgnoreFile()')
                       span.icon-download  Download File
+  section
+   .row.text-center
+      .col-lg-12
+        h4 Hosting #{fileCount} gitignore files
   section#links.padtop
     .container
       .row.text-center

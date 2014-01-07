@@ -25,15 +25,15 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(express.compress());
-app.use(express.favicon(path.join(__dirname, '../public/gi/img/favicon.ico'), { maxAge: oneDay }));
+app.use(express.favicon(path.join(__dirname, 'public/gi/img/favicon.ico'), { maxAge: oneDay }));
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: oneDay }));
-app.use(require('uglify-js-middleware')({ src: path.join(__dirname,'../public') }));
-app.use(require('less-middleware')({ src: path.join(__dirname,'../public'),compress: true }));
+app.use(require('uglify-js-middleware')({ src: path.join(__dirname,'public') }));
+app.use(require('less-middleware')({ src: path.join(__dirname,'public'),compress: true }));
 
 // development only
 if ('development' == app.get('env')) {

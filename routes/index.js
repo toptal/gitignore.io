@@ -7,7 +7,7 @@ var app = require("../app");
 exports.index = function(req, res){
   res.setHeader('Cache-Control', 'public, max-age=' + (app.oneDayCache / 1000));
   res.setHeader('Expires', new Date(Date.now()+app.oneDayCache).toUTCString());
-  res.render('index', { title: 'gitignore.io - Create useful .gitignore files for your project' });
+  res.render('index', { title: 'gitignore.io - Create useful .gitignore files for your project', fileCount: app.gitIgnoreDropdownList.length });
 };
 
 exports.dropdown = function(req, res){
