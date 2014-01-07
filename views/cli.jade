@@ -14,12 +14,15 @@ block content
     .container
       .row
         .col-lg-12
+          .alert.alert-warning On January 6th, 2014 gitignore.io  moved to Heroku which doesn't allow naked domains.  If your <code>gi</code> command is not functioning, update your script to point to <code>www.gitignore.io</code> instead of <code>gitignore.io</code>
+      .row
+        .col-lg-12
           h3.tux-logo Linux
           p #!/bin/bash
           pre.highlight
             span.nv $&nbsp;
             span.nb echo&nbsp;
-            span.s2 "function gi() { curl http://gitignore.io/api/\$@ ;}"&nbsp;
+            span.s2 "function gi() { curl http://www.gitignore.io/api/\$@ ;}"&nbsp;
             | >> ~/.bashrc&nbsp;
             span.o &&&nbsp;
             span.nb source&nbsp;
@@ -29,7 +32,7 @@ block content
           pre.highlight
             span.nv $&nbsp;
             span.nb echo&nbsp;
-            span.s2 "function gi() { curl http://gitignore.io/api/\$@ ;}"&nbsp;
+            span.s2 "function gi() { curl http://www.gitignore.io/api/\$@ ;}"&nbsp;
             | >> ~/.bash_profile&nbsp;
             span.o &&&nbsp;
             span.nb source&nbsp;
@@ -38,7 +41,7 @@ block content
           pre.highlight
             span.nv $&nbsp;
             span.nb echo&nbsp;
-            span.s2 "function gi() { curl http://gitignore.io/api/\$@ ;}"&nbsp;
+            span.s2 "function gi() { curl http://www.gitignore.io/api/\$@ ;}"&nbsp;
             | >> ~/.zshrc&nbsp;
             span.o &&&nbsp;
             span.nb source&nbsp;
@@ -76,7 +79,7 @@ block content
             br
             span.nb &nbsp;&nbsp;invoke-WebRequest&nbsp;
             span.n -Uri&nbsp;
-            span.s2 "http://gitignore.io/api/$params"&nbsp;
+            span.s2 "http://www.gitignore.io/api/$params"&nbsp;
             span.p |&nbsp;
             span.n select&nbsp;
             span.n -expandproperty&nbsp;
@@ -152,7 +155,7 @@ block content
             span.p .
             span.n DownloadFile
             span.p (
-            span.s2 "http://gitignore.io/api/$params"
+            span.s2 "http://www.gitignore.io/api/$params"
             span.p ,&nbsp;
             span.s2 "$PWD\.gitignore"
             span.p )
@@ -175,7 +178,7 @@ block content
             span.nv $&nbsp;
             | gi linux,java
             br
-            span.c # Created by http://gitignore.io
+            span.c # Created by http://www.gitignore.io
             br
             br
             span.c ### Linux ###
@@ -216,17 +219,17 @@ block content
       .container
         .row.text-center
           .col-lg-12
-            iframe(src="http://ghbtns.com/github-btn.html?user=joeblau&repo=gitignore.io&type=watch&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="100", height="30")
-            iframe(src="http://ghbtns.com/github-btn.html?user=joeblau&repo=gitignore.io&type=fork&count=true", allowtransparency="true", frameborder="0", scrolling="0", width="100", height="30")
-            iframe(src="http://ghbtns.com/github-btn.html?user=joeblau&type=follow", allowtransparency="true", frameborder="0", scrolling="0", width="120", height="30")
+            iframe(src="http://www.gitignore.io/github-btn.html?user=joeblau&repo=gitignore.io&type=watch&count=true&size=large", allowtransparency="true", frameborder="0", scrolling="0", width="140", height="30")
+            iframe(src="http://www.gitignore.io/github-btn.html?user=joeblau&repo=gitignore.io&type=fork&count=true&size=large", allowtransparency="true", frameborder="0", scrolling="0", width="140", height="30")
+            iframe(src="http://www.gitignore.io/github-btn.html?user=joeblau&type=follow&size=large", allowtransparency="true", frameborder="0", scrolling="0", width="170", height="30")
         .row.footer
           .col-lg-8
             h4 About
-            p gitignore.io is a web service designed to help you create .gitignore files for your <a href="http://git-scm.com/" title="Git">Git</a> repositories.  The site has a graphical and command line method of creating a .gitignore for your operating system, programming language, or IDE.
+            p www.gitignore.io is a web service designed to help you create .gitignore files for your <a href="http://git-scm.com/" title="Git">Git</a> repositories.  The site has a graphical and command line method of creating a .gitignore for your operating system, programming language, or IDE.
           .col-lg-4
             h4 Links
-            p <i class="icon-github-alt"></i> <a href="https://github.com/joeblau/gitignore.io" title="gitignore.io source code">gitignore.io source code</a>
+            p <i class="icon-github-alt"></i> <a href="https://github.com/joeblau/gitignore.io" title="www.gitignore.io source code">www.gitignore.io source code</a>
             p <i class="icon-github-alt"></i> <a href="https://github.com/github/gitignore" title="GitHub gitignore repository">GitHub gitignore repository</a>
         .row.text-center
           .col-lg-12
-            h5 2013 <a href="http://gitignore.io">gitignore.io</a> Made in San Francisco
+            h5 2013-2014 <a href="http://www.gitignore.io">www.gitignore.io</a>

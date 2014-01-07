@@ -69,7 +69,7 @@ exports.apiListTypes = function(req, res){
  * Helper for generating concatenated gitignore templates
  */
 function generateFile(list){
-  var output = "# Created by http://gitignore.io\n";
+  var output = "# Created by http://www.gitignore.io\n";
   for (var file in list){
     if (app.gitIgnoreJSONObject[list[file]] == undefined){
       output += "\n#!! ERROR: " + list[file] + " is undefined. Use list command to see defined gitignore types !!#\n"
