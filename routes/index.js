@@ -35,7 +35,6 @@ exports.help =  function(req, res){
  */
 
 exports.apiIgnore = function(req, res){
-//  console.log(req.params.ignore);
   var ignoreFileList = req.params.ignore.split(",");
   var output = generateFile(ignoreFileList);
   res.setHeader('Cache-Control', 'public, max-age=0');

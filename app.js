@@ -10,8 +10,7 @@ var express = require('express')
   , https = require('https')
   , path = require('path')
   , fs = require('fs')
-  , ga = require('node-ga');
-
+  , NA = require("nodealytics");
 require('uglify-js-middleware');
 
 var app = express();
@@ -19,7 +18,9 @@ var gitIgnores = {};
 var oneDay = 604800000;
 exports.oneDayCache = oneDay;
 
-console.log(__dirname);
+
+NA.initialize(process.env.GA_TRACKING_ID, "www.gitignore.io", function () {});
+
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
@@ -31,6 +32,10 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
+app.use(function(req, res, next) {
+  NA.trackPage(req.url, req.url, function (err, resp) {});
+  next();
+});
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: oneDay }));
 app.use(require('uglify-js-middleware')({ src: path.join(__dirname,'public') }));
 app.use(require('less-middleware')({ src: path.join(__dirname,'public'),compress: true }));
