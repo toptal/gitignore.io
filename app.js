@@ -2,7 +2,7 @@
 /**
  * Module dependencies.
  */
-require('newrelic');
+
 
 var express = require('express')
   , routes = require('./routes')
@@ -10,16 +10,15 @@ var express = require('express')
   , https = require('https')
   , path = require('path')
   , fs = require('fs')
-  , NA = require("nodealytics");
+  , ua = require("universal-analytics");
+
+require('newrelic');
 require('uglify-js-middleware');
 
 var app = express();
 var gitIgnores = {};
 var oneDay = 604800000;
 exports.oneDayCache = oneDay;
-
-
-NA.initialize(process.env.GA_TRACKING_ID, "www.gitignore.io", function () {});
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -32,10 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(function(req, res, next) {
-  NA.trackPage(req.url, req.url, function (err, resp) {});
-  next();
-});
+app.use(ua.middleware(process.env.GA_TRACKING_ID, {cookieName: '_ga'}));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: oneDay }));
 app.use(require('uglify-js-middleware')({ src: path.join(__dirname,'public') }));
 app.use(require('less-middleware')({ src: path.join(__dirname,'public'),compress: true }));

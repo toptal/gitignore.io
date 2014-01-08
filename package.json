@@ -23,6 +23,6 @@
     "less-middleware": "*",
     "uglify-js-middleware": "*",
     "newrelic": "1.2.0",
-    "nodealytics": "0.0.5"
+    "universal-analytics": "0.3.1"
   }
 }
