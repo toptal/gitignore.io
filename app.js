@@ -7,7 +7,6 @@
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
-  , https = require('https')
   , path = require('path')
   , fs = require('fs')
   , ua = require("universal-analytics");
@@ -111,5 +110,5 @@ walk( __dirname + '/data', ".gitignore", function(err, results) {
   }
   exports.gitIgnoreDropdownList = dropdownList;
   exports.gitIgnoreJSONObject = gitIgnores;
-  exports.gitIgnoreJSONString = gitIgnoreJSON.join(',')+"\n";
+  exports.gitIgnoreJSONString = gitIgnoreJSON.sort().join(',')+"\n";
 });
