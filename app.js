@@ -111,4 +111,5 @@ walk( __dirname + '/data', ".gitignore", function(err, results) {
   exports.gitIgnoreDropdownList = dropdownList;
   exports.gitIgnoreJSONObject = gitIgnores;
   exports.gitIgnoreJSONString = gitIgnoreJSON.sort().join(',')+"\n";
+  exports.gitIgnoreFileCount = gitIgnoreJSON.length;
 });
