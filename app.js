@@ -54,6 +54,16 @@ app.get('/api/(:ignore)', routes.apiIgnore);
 app.get('/api/f/(:ignore)', routes.apiFile);
 app.get('/api/*', routes.help);
 
+// Support both www and non-www
+app.all(/.*/, function(req, res, next) {
+  var host = req.header("host");
+  if (host.match(/^www\..*/i)) {
+    next();
+  } else {
+    res.redirect(301, "http://www." + host);
+  }
+});
+
 function errorHandler(err, req, res, next) {
   res.status(500);
   res.render('error', { error: err });
