@@ -17,6 +17,11 @@ block content
           .alert.alert-warning On January 6th, 2014 gitignore.io  moved to Heroku which doesn't allow naked domains.  If your <code>gi</code> command is not functioning, update your script to point to <code>www.gitignore.io</code> instead of <code>gitignore.io</code>
       .row
         .col-lg-12
+          h3.git-logo Git
+          p #!/bin/bash
+          pre.highlight
+            span.nv $&nbsp;
+            span.nb git config --global alias.test '!gi() { curl http://www.gitignore.io/api/$@ ;}; gi'
           h3.tux-logo Linux
           p #!/bin/bash
           pre.highlight
