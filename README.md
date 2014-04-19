@@ -10,7 +10,7 @@ A gitignore file specifies intentionally un-tracked files that git should ignore
 
 ```sh
 $ git clone git@github.com:joeblau/gitignore.io.git
-$ cd gitignore
+$ cd gitignore.io
 $ git submodule init
 $ git submodule update
 $ npm install
