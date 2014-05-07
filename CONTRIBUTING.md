@@ -29,7 +29,7 @@ Creating new directories to help contributors as the list gets larger.  The curr
 ├ data
 └── gitignore
     ├── opsys
-    ├── porglang
+    ├── proglang
     ├── ide
     └── // New template category
 ```
