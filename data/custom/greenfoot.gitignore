@@ -1,0 +1,8 @@
+# Greenfoot: A BlueJ-based game IDE for programming beginners. http://bluej.org
+
+# Editor preferences for a class etc, see http://lists.bluej.org/pipermail/bluej-discuss/2003-May/002351.html
+*.ctxt
+
+# Project file. Continously checking it in destroys the project ocasionally (while merging etc.) because it changes completely at every compile. Instead, make a copy of the file after the first runtime and name it e.g. `project.example.greenfoot`. See http://bugs.bluej.org/greenfoot/ticket/409
+
+project.greenfoot
