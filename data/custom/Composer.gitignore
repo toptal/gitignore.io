@@ -1,4 +1,3 @@
 # Composer - http://getcomposer.org
 /vendor
 composer.phar
-composer.lock
