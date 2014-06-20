@@ -33,7 +33,7 @@ app.use(app.router);
 app.use(ua.middleware(process.env.GA_TRACKING_ID, {cookieName: '_ga'}));
 app.use(express.static(path.join(__dirname, 'public'), { maxAge: oneDay }));
 app.use(require('uglify-js-middleware')({ src: path.join(__dirname,'public') }));
-app.use(require('less-middleware')({ src: path.join(__dirname,'public'),compress: true }));
+app.use(require('less-middleware')(path.join(__dirname,'public'), [], [], [{compress: true}]));
 
 // development only
 if ('development' == app.get('env')) {
