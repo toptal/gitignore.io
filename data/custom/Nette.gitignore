@@ -1,3 +1,6 @@
 # Nette - http://nette.org
-/temp
-/log
+# Ignore /log and /temp directories content but commit .htaccess settings
+/log/*
+!/log/.htaccess
+/temp/*
+!/temp/.htaccess
