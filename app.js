@@ -5,6 +5,7 @@
 
 
 var express = require('express')
+  , subdomain = require('subdomain')
   , routes = require('./routes')
   , http = require('http')
   , path = require('path')
@@ -23,6 +24,7 @@ exports.oneDayCache = oneDay;
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use(subdomain({ base: 'gitignore.io' }))
 app.use(express.compress());
 app.use(express.favicon(path.join(__dirname, 'public/gi/img/favicon.ico'), { maxAge: oneDay }));
 app.use(express.logger('dev'));
@@ -51,6 +53,9 @@ app.get('/api/list', routes.apiListTypes);
 app.get('/api/help', routes.help);
 app.get('/api/?', routes.help);
 app.get('/api/(:ignore)', routes.apiIgnore);
+app.get('/subdomain/(:ignore)', function(req, res) {
+  res.redirect('/api/'+req.params.ignore);
+});
 app.get('/api/f/(:ignore)', routes.apiFile);
 app.get('/api/*', routes.help);
 
