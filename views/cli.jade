@@ -32,6 +32,15 @@ block content
             span.o &&&nbsp;
             span.nb source&nbsp;
             | ~/.bashrc
+          p #!/bin/zsh
+          pre.highlight
+            span.nv $&nbsp;
+            span.nb echo&nbsp;
+            span.s2 "function gi() { curl http://www.gitignore.io/api/\$@ ;}"&nbsp;
+            | >> ~/.zshrc&nbsp;
+            span.o &&&nbsp;
+            span.nb source&nbsp;
+            | ~/.zshrc
           h3.spacer.apple-logo OSX
           p #!/bin/bash
           pre.highlight
