@@ -9,17 +9,19 @@ var express = require('express')
   , methodOverride = require('method-override')
   , errorHandler = require('errorhandler')
   , routes = require('./routes')
-  , walk = require('./walk')
+  , datastore = require('./datastore')
   , path = require('path')
   , ua = require("universal-analytics");
 
 require('newrelic');
 require('uglify-js-middleware');
-require('./walk');  // Build gitignore data
 
 var app = express();
 var oneDay = 604800000;
 exports.oneDayCache = oneDay;
+
+// Generate gitIgnore data
+datastore.init();
 
 // all environments
 app.set('port', process.env.PORT || 3000);

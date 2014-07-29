@@ -5,6 +5,36 @@ var fs = require('fs');
 
 var gitIgnores = {};
 
+var Datastore = function() {};
+
+// Build gitIgnore data set
+Datastore.prototype.init = function() {
+  var self = this;
+  walk( __dirname + '/data', '.gitignore', function(err, results) {
+    if (err) throw err;
+    var gitIgnoreJSON = [];
+    var dropdownList = [];
+
+    for (var key in gitIgnores) {
+      gitIgnoreJSON.push(gitIgnores[key].name.toLowerCase());
+      dropdownList.push({
+        id: gitIgnores[key].name.toLowerCase(),
+        text: gitIgnores[key].name
+      });
+    }
+
+    self.dropdownList = dropdownList;
+    self.JSONObject = gitIgnores;
+    self.JSONString = gitIgnoreJSON.sort().join(',') + '\n';
+    self.fileCount = gitIgnoreJSON.length;
+  });
+};
+
+module.exports = new Datastore();
+
+/*
+ * Helper function to walk through the gitIgnore filesystem
+ */
 var walk = function(dir, filter, done) {
   var results = [];
   fs.readdir(dir, function(err, list) {
@@ -40,23 +70,3 @@ var walk = function(dir, filter, done) {
     });
   });
 };
-
-// Build gitIgnore data
-walk( __dirname + '/data', '.gitignore', function(err, results) {
-  if (err) throw err;
-  var gitIgnoreJSON = [];
-  var dropdownList = [];
-
-  for (var key in gitIgnores) {
-    gitIgnoreJSON.push(gitIgnores[key].name.toLowerCase());
-    dropdownList.push({
-      id: gitIgnores[key].name.toLowerCase(),
-      text: gitIgnores[key].name
-    });
-  }
-
-  exports.gitIgnoreDropdownList = dropdownList;
-  exports.gitIgnoreJSONObject = gitIgnores;
-  exports.gitIgnoreJSONString = gitIgnoreJSON.sort().join(',') + '\n';
-  exports.gitIgnoreFileCount = gitIgnoreJSON.length;
-});

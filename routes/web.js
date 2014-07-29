@@ -2,7 +2,7 @@
  * Application Web Endpoints
  */
 var app = require('../app')
-  , walk = require('../walk');
+  , datastore = require('../datastore');
 
 /*
  * GET home page.
@@ -19,7 +19,7 @@ exports.index = function(req, res){
 exports.dropdown = function(req, res){
   res.setHeader('Cache-Control', 'public, max-age=' + (app.oneDayCache / 1000));
   res.setHeader('Expires', new Date(Date.now() + app.oneDayCache).toUTCString());
-  res.send(walk.gitIgnoreDropdownList);
+  res.send(datastore.dropdownList);
 };
 
 /*

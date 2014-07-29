@@ -1,7 +1,7 @@
 /*
  * Application API Endpoints
  */
-var walk = require('../walk');
+var datastore = require('../datastore');
 
 /*
  * GET CLI Help.
@@ -44,7 +44,7 @@ exports.listTypes = function(req, res){
   res.setHeader('Cache-Control', 'public, max-age=0');
   res.setHeader('Content-Type', 'text/plain');
   res.setHeader('Expires', new Date(Date.now()).toUTCString());
-  res.send(walk.gitIgnoreJSONString);
+  res.send(datastore.JSONString);
 };
 
 /*
@@ -53,11 +53,11 @@ exports.listTypes = function(req, res){
 function generateFile(list){
   var output = "# Created by http://www.gitignore.io\n";
   for (var file in list) {
-    if (walk.gitIgnoreJSONObject[list[file]] === undefined){
+    if (datastore.JSONObject[list[file]] === undefined){
       output += "\n#!! ERROR: " + list[file] + " is undefined. Use list command to see defined gitignore types !!#\n";
     } else {
-      output += "\n### " + walk.gitIgnoreJSONObject[list[file]].name + " ###\n";
-      output += walk.gitIgnoreJSONObject[list[file]].contents + "\n";
+      output += "\n### " + datastore.JSONObject[list[file]].name + " ###\n";
+      output += datastore.JSONObject[list[file]].contents + "\n";
     }
   }
   return output;
