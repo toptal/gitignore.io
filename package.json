@@ -15,7 +15,7 @@
     "www.gitignore.io"
   ],
   "scripts": {
-    "start": "app.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "express": "3.4.7",
