@@ -1,17 +1,16 @@
 /*
  * Route endpoints
  */
-var root = require('./root')
+var web = require('./web')
   , api = require('./api');
 
 module.exports = function(app) {
-  // Main Page
-  app.get('/', root.index);
-  app.get('/dd.json', root.dropdown);
+  // Web Endpoints
+  app.get('/', web.index);
+  app.get('/dd.json', web.dropdown);
+  app.get('/cli', web.cli);
 
-  // API
-  app.get('/cli', api.cli);
-
+  // API Endpoints
   app.get('/api/list', api.listTypes);
   app.get('/api/help', api.help);
   app.get('/api/?', api.help);

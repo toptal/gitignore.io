@@ -1,3 +1,6 @@
+/*
+ * Application Web Endpoints
+ */
 var app = require('../app')
   , walk = require('../walk');
 
@@ -17,4 +20,13 @@ exports.dropdown = function(req, res){
   res.setHeader('Cache-Control', 'public, max-age=' + (app.oneDayCache / 1000));
   res.setHeader('Expires', new Date(Date.now() + app.oneDayCache).toUTCString());
   res.send(walk.gitIgnoreDropdownList);
+};
+
+/*
+ * GET Command Line Instructions page.
+ */
+exports.cli = function(req, res){
+  res.setHeader('Cache-Control', 'public, max-age=0');
+  res.setHeader('Expires', new Date(Date.now()).toUTCString());
+  res.render('cli', { title: 'gitignore.io' });
 };

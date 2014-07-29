@@ -1,13 +1,7 @@
-var walk = require('../walk');
-
 /*
- * GET Command Line Instructions page.
+ * Application API Endpoints
  */
-exports.cli = function(req, res){
-  res.setHeader('Cache-Control', 'public, max-age=0');
-  res.setHeader('Expires', new Date(Date.now()).toUTCString());
-  res.render('cli', { title: 'gitignore.io' });
-};
+var walk = require('../walk');
 
 /*
  * GET CLI Help.
