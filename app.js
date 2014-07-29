@@ -5,6 +5,12 @@
 
 
 var express = require('express')
+  , compression = require('compression')
+  , favicon = require('serve-favicon')
+  , logger = require('morgan')
+  , bodyParser = require('body-parser')
+  , methodOverride = require('method-override')
+  , errorHandler = require('errorhandler')
   , routes = require('./routes')
   , http = require('http')
   , path = require('path')
@@ -23,21 +29,16 @@ exports.oneDayCache = oneDay;
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(express.compress());
-app.use(express.favicon(path.join(__dirname, 'public/gi/img/favicon.ico'), { maxAge: oneDay }));
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(app.router);
-app.use(ua.middleware(process.env.GA_TRACKING_ID, {cookieName: '_ga'}));
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: oneDay }));
-app.use(require('uglify-js-middleware')({ src: path.join(__dirname,'public') }));
-app.use(require('less-middleware')(path.join(__dirname,'public'), [], [], [{compress: true}]));
+app.use(compression());
+app.use(favicon(path.join(__dirname, 'public/gi/img/favicon.ico'), { maxAge: oneDay }));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride());
 
 // development only
 if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
+  app.use(errorHandler());
 }
 
 // Main Page
@@ -54,10 +55,10 @@ app.get('/api/(:ignore)', routes.apiIgnore);
 app.get('/api/f/(:ignore)', routes.apiFile);
 app.get('/api/*', routes.help);
 
-function errorHandler(err, req, res, next) {
-  res.status(500);
-  res.render('error', { error: err });
-}
+app.use(ua.middleware(process.env.GA_TRACKING_ID, {cookieName: '_ga'}));
+app.use(express.static(path.join(__dirname, 'public'), { maxAge: oneDay }));
+app.use(require('uglify-js-middleware')({ src: path.join(__dirname,'public') }));
+app.use(require('less-middleware')(path.join(__dirname,'public'), [], [], [{compress: true}]));
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

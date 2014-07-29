@@ -18,11 +18,17 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.4.7",
+    "body-parser": "^1.5.2",
+    "compression": "^1.0.9",
+    "errorhandler": "^1.1.1",
+    "express": "^4.7.2",
     "jade": "*",
     "less-middleware": "*",
-    "uglify-js-middleware": "*",
+    "method-override": "^2.1.2",
+    "morgan": "^1.2.2",
     "newrelic": "1.2.0",
+    "serve-favicon": "^2.0.1",
+    "uglify-js-middleware": "*",
     "universal-analytics": "0.3.1"
   }
 }
