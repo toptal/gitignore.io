@@ -58,12 +58,12 @@ exports.listTypes = function(req, res){
  */
 function generateFile(list){
   var output = "# Created by http://www.gitignore.io\n";
-  for (var file in list){
-    if (walk.gitIgnoreJSONObject[list[file]] == undefined){
-      output += "\n#!! ERROR: " + list[file] + " is undefined. Use list command to see defined gitignore types !!#\n"
+  for (var file in list) {
+    if (walk.gitIgnoreJSONObject[list[file]] === undefined){
+      output += "\n#!! ERROR: " + list[file] + " is undefined. Use list command to see defined gitignore types !!#\n";
     } else {
-      output += "\n### " + walk.gitIgnoreJSONObject[list[file]].name + " ###\n"
-      output += walk.gitIgnoreJSONObject[list[file]].contents+"\n";
+      output += "\n### " + walk.gitIgnoreJSONObject[list[file]].name + " ###\n";
+      output += walk.gitIgnoreJSONObject[list[file]].contents + "\n";
     }
   }
   return output;

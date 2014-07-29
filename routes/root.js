@@ -17,4 +17,4 @@ exports.dropdown = function(req, res){
   res.setHeader('Cache-Control', 'public, max-age=' + (app.oneDayCache / 1000));
   res.setHeader('Expires', new Date(Date.now() + app.oneDayCache).toUTCString());
   res.send(walk.gitIgnoreDropdownList);
-}
+};
