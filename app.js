@@ -23,6 +23,7 @@ exports.oneDayCache = oneDay;
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+app.use(addWWW);
 app.use(express.compress());
 app.use(express.favicon(path.join(__dirname, 'public/gi/img/favicon.ico'), { maxAge: oneDay }));
 app.use(express.logger('dev'));
@@ -53,6 +54,15 @@ app.get('/api/?', routes.help);
 app.get('/api/(:ignore)', routes.apiIgnore);
 app.get('/api/f/(:ignore)', routes.apiFile);
 app.get('/api/*', routes.help);
+
+// Forcing WWW.
+function addWWW(req, res, next) {
+  if (req.host.indexOf("www.") !== 0) {
+    res.redirect(301, req.protocol + "://www." + req.host + ":" + app.get('port') + req.originalUrl);
+  } else {
+    next();
+  }
+};
 
 function errorHandler(err, req, res, next) {
   res.status(500);
