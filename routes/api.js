@@ -16,7 +16,7 @@ exports.help =  function(req, res){
  * GET API page.
  */
 exports.ignore = function(req, res){
-  var ignoreFileList = req.params.ignore.split(",");
+  var ignoreFileList = req.params.ignore.toLowerCase().split(",");
   var output = generateFile(ignoreFileList);
   res.setHeader('Cache-Control', 'public, max-age=0');
   res.setHeader('Content-Type', 'text/plain');
