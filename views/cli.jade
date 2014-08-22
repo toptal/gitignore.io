@@ -76,7 +76,7 @@ block content
             span.k Parameter
             span.p (
             span.k Mandatory
-            span.p \=
+            span.p =
             span.nv $true
             span.p )]
             br
@@ -86,23 +86,23 @@ block content
             span.p &nbsp;&nbsp;)
             br
             span.nv &nbsp;&nbsp;$params&nbsp;
-            span.p \=&nbsp;
+            span.p =&nbsp;
             span.nv $list&nbsp;
             span.n -join&nbsp;
             span.s2 ","
             br
-            span.nb &nbsp;&nbsp;invoke-WebRequest&nbsp;
+            span.nb &nbsp;&nbsp;Invoke-WebRequest&nbsp;
             span.n -Uri&nbsp;
             span.s2 "http://www.gitignore.io/api/$params"&nbsp;
             span.p |&nbsp;
             span.n select&nbsp;
-            span.n -expandproperty&nbsp;
+            span.n -ExpandProperty&nbsp;
             span.n content&nbsp;
             span.p |&nbsp;
-            span.nb out-file&nbsp;
+            span.nb Out-File&nbsp;
             span.n -FilePath&nbsp;
             span.p $(
-            span.nb join-path&nbsp;
+            span.nb Join-Path&nbsp;
             span.n -path&nbsp;
             span.nv $pwd&nbsp;
             span.n -ChildPath&nbsp;
@@ -122,11 +122,12 @@ block content
             br
             span.k &nbsp;&nbsp;param
             span.p (
+            br
             span.p &nbsp;&nbsp;&nbsp;&nbsp;[
             span.k Parameter
             span.p (
             span.k Mandatory
-            span.p \=
+            span.p =
             span.nv $true
             span.p )]
             br
@@ -134,14 +135,15 @@ block content
             span.nv $list
             br
             span.p &nbsp;&nbsp;)
+            br
             span.nv &nbsp;&nbsp;$params&nbsp;
-            span.p \=&nbsp;
+            span.p =&nbsp;
             span.nv $list&nbsp;
             span.n -join&nbsp;
             span.s2 ","
             br
             span.nv &nbsp;&nbsp;$wc&nbsp;
-            span.p \=&nbsp;
+            span.p =&nbsp;
             span.nb New-Object&nbsp;
             span.n System
             span.p .
@@ -155,7 +157,7 @@ block content
             span.p [
             span.s2 "User-Agent"
             span.p ]&nbsp;
-            span.p \=&nbsp;
+            span.p =&nbsp;
             span.s2 "PowerShell/"&nbsp;
             span.p +&nbsp;
             span.nv $PSVersionTable
