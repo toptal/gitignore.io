@@ -21,13 +21,13 @@ block content
           p #!/bin/bash
           pre.highlight
             span.nv $&nbsp;
-            span.nb git config --global alias.test '!gi() { curl http://www.gitignore.io/api/$@ ;}; gi'
+            span.nb git config --global alias.test '!gi() { curl -s http://www.gitignore.io/api/$@ ;}; gi'
           h3.tux-logo Linux
           p #!/bin/bash
           pre.highlight
             span.nv $&nbsp;
             span.nb echo&nbsp;
-            span.s2 "function gi() { curl http://www.gitignore.io/api/\$@ ;}"&nbsp;
+            span.s2 "function gi() { curl -s http://www.gitignore.io/api/\$@ ;}"&nbsp;
             | >> ~/.bashrc&nbsp;
             span.o &&&nbsp;
             span.nb source&nbsp;
@@ -36,7 +36,7 @@ block content
           pre.highlight
             span.nv $&nbsp;
             span.nb echo&nbsp;
-            span.s2 "function gi() { curl http://www.gitignore.io/api/\$@ ;}"&nbsp;
+            span.s2 "function gi() { curl -s http://www.gitignore.io/api/\$@ ;}"&nbsp;
             | >> ~/.zshrc&nbsp;
             span.o &&&nbsp;
             span.nb source&nbsp;
@@ -46,7 +46,7 @@ block content
           pre.highlight
             span.nv $&nbsp;
             span.nb echo&nbsp;
-            span.s2 "function gi() { curl http://www.gitignore.io/api/\$@ ;}"&nbsp;
+            span.s2 "function gi() { curl -s http://www.gitignore.io/api/\$@ ;}"&nbsp;
             | >> ~/.bash_profile&nbsp;
             span.o &&&nbsp;
             span.nb source&nbsp;
@@ -55,7 +55,7 @@ block content
           pre.highlight
             span.nv $&nbsp;
             span.nb echo&nbsp;
-            span.s2 "function gi() { curl http://www.gitignore.io/api/\$@ ;}"&nbsp;
+            span.s2 "function gi() { curl -s http://www.gitignore.io/api/${(j:,:)@} ;}"&nbsp;
             | >> ~/.zshrc&nbsp;
             span.o &&&nbsp;
             span.nb source&nbsp;
