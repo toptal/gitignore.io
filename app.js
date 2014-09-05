@@ -50,9 +50,16 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: oneDay }));
 app.use(require('uglify-js-middleware')({ src: path.join(__dirname,'public') }));
 app.use(require('less-middleware')(path.join(__dirname,'public'), [], [], [{compress: true}]));
 
-// Start server
-app.listen(app.get('port'), function() {
-  console.log("Express server listening on port " + app.get('port'));
-});
+
+if (process.env.PRIVATE_KEY != undefined && process.env.CERTIFICATE != undefined) {
+  var privateKey = process.env.PRIVATE_KEY.replace(/\*/g,'\n');
+  var certificate = process.env.CERTIFICATE.replace(/\*/g,'\n');
+  var options = {key: privateKey, cert: certificate};
+  https.createServer(options, app).listen(app.get('port'));
+  console.log("SECURE :: Express server listening on port " + app.get('port'));
+} else {
+  http.createServer(app).listen(app.get('port'));
+  console.log("INSECURE :: Express server listening on port " + app.get('port'));
+}
 
 
