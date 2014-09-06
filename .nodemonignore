@@ -1,0 +1,5 @@
+/.build/*   # Build folder
+/public/*	# ignore all public resources
+/.*			# any hidden (dot) files
+*.md	    # Markdown files
+*.css	    # CSS files
