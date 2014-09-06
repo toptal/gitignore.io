@@ -1,34 +1,45 @@
 {
   "name": "gitignore.io",
-  "version": "0.0.1-100",
-  "description": "API to create useful gitignore files for your project",
-  "homepage": "http://gitignore.io",
-  "private": true,
-  "main": "app.js",
-  "subdomain": "gitignore",
-  "engines": {
-    "node": "0.10.x",
-    "npm": ">=1.0.0"
-  },
-  "domains": [
-    "gitignore.io",
-    "www.gitignore.io"
-  ],
+  "version": "0.1.0",
+  "description": "Create useful .gitignore files for your project",
+  "author": "Joe Blau",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js"
+    "test": "grunt test",
+    "start": "node index.js"
   },
   "dependencies": {
-    "body-parser": "^1.5.2",
-    "compression": "^1.0.9",
-    "errorhandler": "^1.1.1",
-    "express": "^4.7.2",
-    "jade": "*",
-    "less-middleware": "*",
-    "method-override": "^2.1.2",
-    "morgan": "^1.2.2",
-    "newrelic": "1.2.0",
-    "serve-favicon": "^2.0.1",
-    "uglify-js-middleware": "*",
-    "universal-analytics": "0.3.1"
+    "kraken-js": "^1.0.1",
+    "kraken-devtools": "^1.0.0",
+    "engine-munger": "^0.2.0",
+    "express": "^4.3.0",
+    "dustjs-linkedin": "~2.4.1",
+    "adaro": "~0.1.5",
+    "dustjs-helpers": "~1.2.0",
+    "localizr": "~0.1.0",
+    "less": "~1.7.5",
+    "newrelic": "~1.11.0",
+    "universal-analytics": "~0.3.4"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.0",
+    "supertest": "^0.9.0",
+    "grunt-dustjs": "~1.2.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-localizr": "~0.1.0",
+    "grunt-config-dir": "~0.3.2",
+    "grunt-copy-to": "0.0.10",
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-mocha-cli": "~1.10.0",
+    "grunt-contrib-less": "~0.9.0",
+    "grunt-browserify": "~2.1.4"
+  },
+  "generator-kraken": {
+    "version": "1.1.0",
+    "template": "dustjs",
+    "css": "less",
+    "js": "browserify",
+    "task": "grunt"
   }
 }

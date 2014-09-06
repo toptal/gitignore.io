@@ -1,0 +1,57 @@
+{
+    
+    "express": {
+        "view cache": false,
+        "view engine": "dust",
+        "views": "path:./public/templates"
+    },
+
+    "view engines": {
+        "dust": {
+            "module": "engine-munger",
+            "renderer": {
+                "method": "dust",
+                "arguments": [
+                    { "cache": false },
+                    {
+                        "views": "config:express.views",
+                        "view engine": "config:express.view engine",
+                        "specialization": "config:specialization",
+                        "i18n": "config:i18n"
+                    }
+                ]
+            }
+        }
+    },
+
+    "middleware": {
+
+        "devtools": {
+            "enabled": true,
+            "priority": 35,
+            "module": {
+                "name": "kraken-devtools",
+                "arguments": [
+                    "path:./public",
+                    "path:./.build",
+                    {   
+                        "template": {
+                            "module": "kraken-devtools/plugins/dustjs",
+                            "files": "/templates/**/*.js",
+                            "base": "templates",
+                            "i18n": "config:i18n"
+                        },
+                        "css": {
+                            "module": "kraken-devtools/plugins/less",
+                            "files": "/css/**/*.css"
+                        },
+                        "copier": {
+                            "module": "kraken-devtools/plugins/copier",
+                            "files": "**/*"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
