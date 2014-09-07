@@ -1,20 +1,49 @@
 {>"layouts/master" /}
+{<title}
+  {@pre type="content" key="title"/}
+{/title}
 
 {<body}
-  <img src="img/logo.png">
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="inner cover">
+              <img src="/img/logo.png">
+              <p class="lead">{@pre type="content" key="description"/}</p>
   <div class="input-group">
-      <input id="ignoreSearch" type="text" placeholder="Search Operating Systems, IDEs, or Programming Languages" tabindex="1" class="input-lg form-control">
+      <input id="ignoreSearch" type="text" placeholder="{@pre type="content" key="searchPlaceholder"/}" tabindex="1" class="input form-control">
       <div class="input-group-btn">
-        <button type="button" tabindex="-1" onClick="generateGitIgnore()" class="btn btn-gitignore btn-lg">Generate</button>
-        <button type="button" data-toggle="dropdown" tabindex="-1" class="btn btn-gitignore btn-lg dropdown-toggle"><span class="caret"></span></button>
+        <button type="button" tabindex="-1" onClick="generateGitIgnore()" class="btn btn-gitignore">Generate</button>
+        <button type="button" data-toggle="dropdown" tabindex="-1" class="btn btn-gitignore dropdown-toggle"><span class="caret"></span></button>
         <ul role="menu" class="dropdown-menu pull-right">
           <li><a onClick="generateGitIgnoreFile()"><span class="icon-download"> Download File</span></a></li>
         </ul>
       </div>
     </div>
+      <p class="lead">{@pre type="content" key="subtitle"/}</p>
 
-    <h1>{@pre type="content" key="greeting"/}</h1>
+              <ul class="nav masthead-nav">
+                <li><a href="/docs" alt="{@pre type="content" key="commandLineDescription"/}">{@pre type="content" key="commandLineTitle"/}</a></li>
+                <li><p class="lead">|</p></li>
+                <li><a href="#" alt="{@pre type="content" key="videoDescription"/}">{@pre type="content" key="videoTitle"/}</a></li>
+              </ul>
 
-    <a href="/cli">Terminal</a>
-    <a href="#">Video</a>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <iframe src="http://ghbtns.com/github-btn.html?user=joeblau&repo=gitignore.io&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
+              <iframe src="http://ghbtns.com/github-btn.html?user=joeblau&repo=gitignore.io&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+              <iframe src="http://ghbtns.com/github-btn.html?user=joeblau&repo=gitignore.io&type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
 {/body}

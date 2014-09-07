@@ -1,0 +1,6 @@
+# Build and Release Folders
+archive/
+build/
+
+# sass cache folder
+resources/sass/.sass-cache/

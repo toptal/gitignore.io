@@ -8,7 +8,7 @@ var kraken = require('kraken-js'),
     request = require('supertest');
 
 
-describe('/', function () {
+describe('/datastore', function () {
 
     var app, mock;
 
@@ -30,15 +30,15 @@ describe('/', function () {
     });
 
 
-    it('should say "Create useful .gitignore files for your project"', function (done) {
-        request(mock)
-            .get('/')
-            .expect(200)
-            .expect('Content-Type', /html/)
-            .expect(/Create useful .gitignore files for your project/)
-            .end(function (err, res) {
-                done(err);
-            });
-    });
+    // it('should say "hello"', function (done) {
+    //     request(mock)
+    //         .get('/datastore')
+    //         .expect(200)
+    //         .expect('Content-Type', /html/)
+    //         .expect(/Hello, /)
+    //         .end(function (err, res) {
+    //             done(err);
+    //         });
+    // });
 
 });

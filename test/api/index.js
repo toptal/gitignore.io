@@ -8,7 +8,7 @@ var kraken = require('kraken-js'),
     request = require('supertest');
 
 
-describe('/cli', function () {
+describe('/api', function () {
 
     var app, mock;
 
@@ -32,7 +32,7 @@ describe('/cli', function () {
 
     it('should say "hello"', function (done) {
         request(mock)
-            .get('/cli')
+            .get('/api')
             .expect(200)
             .expect('Content-Type', /html/)
             .expect(/Hello, /)

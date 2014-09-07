@@ -8,7 +8,7 @@ var kraken = require('kraken-js'),
     request = require('supertest');
 
 
-describe('/', function () {
+describe('/docs', function () {
 
     var app, mock;
 
@@ -30,12 +30,12 @@ describe('/', function () {
     });
 
 
-    it('should say "Create useful .gitignore files for your project"', function (done) {
+    it('should say "View on GitHub"', function (done) {
         request(mock)
-            .get('/')
+            .get('/docs')
             .expect(200)
             .expect('Content-Type', /html/)
-            .expect(/Create useful .gitignore files for your project/)
+            .expect(/View on GitHub/)
             .end(function (err, res) {
                 done(err);
             });

@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <title>{+title /}</title>
+
+  <!-- Flatdoc -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src='http://rstacruz.github.io/flatdoc/v/0.8.6/legacy.js'></script>
+  <script src='http://rstacruz.github.io/flatdoc/v/0.8.6/flatdoc.js'></script>
+
+  <!-- Flatdoc theme -->
+  <link  href='css/theme-gitignore-style.css' rel='stylesheet'>
+  <script src='js/theme-gitignore-script.js'></script>
+
+  <!-- Meta -->
+  <meta content="Your Project" property="og:title">
+  <meta content="Your Project description goes here." name="description">
+
+  <!-- Initializer -->
+  <script>
+    Flatdoc.run({
+      fetcher: Flatdoc.file('/README.md')
+    });
+  </script>
+</head>
+<body role='flatdoc'>
+  {+body /}
+</body>
+</html>
