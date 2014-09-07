@@ -7,19 +7,17 @@ module.exports = function less(grunt) {
 
 	// Options
 	return {
-	    build: {
-            options: {
-                cleancss: false
-            },
-            build: {
-                files: [{
-                    expand: true,
-                    cwd: 'public/css',
-                    src: ['**/*.less'],
-                    dest: '.build/css/',
-                    ext: '.css'
-                }]
-            }
-	    }
+        options: {
+            cleancss: false
+        },
+        build: {
+            files: [{
+                expand: true,
+                cwd: 'public/css',
+                src: ['**/*.less'],
+                dest: '.build/css/',
+                ext: '.css'
+            }]
+        }
 	};
 };

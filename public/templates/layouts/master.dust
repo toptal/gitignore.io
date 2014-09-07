@@ -1,8 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope="itemscope" itemtype="https://schema.org/WebApplication" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="utf-8" />
     <title>{+title /}</title>
+    <meta name="author" content="Joe Blau">
+    <meta name="description" content="Create useful .gitignore files for your project">
+    <meta name="keywords" content="gitignore,git,create,make,generate,build,automatic,programmatic,command line,cli">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="gitignore.io">
+    <meta property="og:description" content="Create useful .gitignore files for your project">
+    <meta property="og:image" content="https://gitignore.io/gitignore.png">
+    <meta property="og:url" content="https://gitignore.io">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@joe_blau">
+    <meta name="twitter:title" content="gitignore.io">
+    <meta name="twitter:description" content="Create useful .gitignore files for your project">
+    <meta name="twitter:creator" content="@joe_blau">
+    <meta name="twitter:image:src" content="https://gitignore.io/gitignore.png">
+    <meta name="twitter:domain" content="https://gitignore.io">
+    
+    <meta itemprop="name" content="gitignore.io">
+    <meta itemprop="description" content="Create useful .gitignore files for your project">
+    <meta itemprop="image" content="https://gitignore.io/gitignore.png">
+
+    <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
 <div id="wrapper">

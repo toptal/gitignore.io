@@ -1,5 +1,20 @@
 {>"layouts/master" /}
 
 {<body}
+  <img src="img/logo.png">
+  <div class="input-group">
+      <input id="ignoreSearch" type="text" placeholder="Search Operating Systems, IDEs, or Programming Languages" tabindex="1" class="input-lg form-control">
+      <div class="input-group-btn">
+        <button type="button" tabindex="-1" onClick="generateGitIgnore()" class="btn btn-gitignore btn-lg">Generate</button>
+        <button type="button" data-toggle="dropdown" tabindex="-1" class="btn btn-gitignore btn-lg dropdown-toggle"><span class="caret"></span></button>
+        <ul role="menu" class="dropdown-menu pull-right">
+          <li><a onClick="generateGitIgnoreFile()"><span class="icon-download"> Download File</span></a></li>
+        </ul>
+      </div>
+    </div>
+
     <h1>{@pre type="content" key="greeting"/}</h1>
+
+    <a href="/cli">Terminal</a>
+    <a href="#">Video</a>
 {/body}
