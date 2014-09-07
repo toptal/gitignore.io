@@ -32,10 +32,10 @@ describe('/dropdown', function () {
 
     it('should say "hello"', function (done) {
         request(mock)
-            .get('/dropdown')
+            .get('/dropdown/templates.json')
             .expect(200)
-            .expect('Content-Type', /html/)
-            .expect(/Hello, /)
+            .expect('Content-Type', /json/)
+            .expect(/actionscript/)
             .end(function (err, res) {
                 done(err);
             });
