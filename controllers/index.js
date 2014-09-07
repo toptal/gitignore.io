@@ -2,17 +2,12 @@
 
 
 var IndexModel = require('../models/index');
-
+var DatastoreModel = require('../models/datastore');
 
 module.exports = function (router) {
-
-    var model = new IndexModel();
-
-
     router.get('/', function (req, res) {
-        
-        res.render('index', model);
-        
+      var model = new IndexModel();
+      model.templateCount = DatastoreModel.fileCount;
+      res.render('index', model);
     });
-
 };

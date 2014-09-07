@@ -69,6 +69,5 @@ var DatastoreModel = function() {
     self.fileCount = gitIgnoreJSON.length;
   });
 };
-// console.log("hellO");
+
 module.exports = new DatastoreModel();
-// var test = new DatastoreModel();
