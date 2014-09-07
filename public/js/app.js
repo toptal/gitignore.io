@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(function () {
-  $.ajax('/dropdown.json').success(function(data) {
+  $.ajax('/dropdown/templates.json').success(function(data) {
     $("#ignoreSearch").select2({
       placeholder: "Search Operating Systems, IDEs, or Programming Languages",
       tags: true,

@@ -26,7 +26,9 @@
     <meta itemprop="image" content="https://gitignore.io/gitignore.png">
 
     <link rel="stylesheet" type="text/css" href="/components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="/components/select2/select2.css">
+    <link rel="stylesheet" type="text/css" href="/components/select2/select2-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
 <body>
   {+body /}
