@@ -13,34 +13,34 @@ To run gitignore.io from your command line you need an active internet connectio
 
 ## Git
 `#!/bin/bash`
-```Shell
+```sh
 $ git config --global alias.test '!gi() { curl -s https://www.gitignore.io/api/$@ ;}; gi'
 ```
 
 ## Linux
 `#!/bin/bash`
-```Shell
+```sh
 $ echo "function gi() { curl -s https://www.gitignore.io/api/\$@ ;}" >> ~/.bashrc && source ~/.bashrc
 ```
 
 `#!/bin/zsh`
-```Shell
+```sh
 $ echo "function gi() { curl -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zshrc && source ~/.zshrc
 ```
 
 ## OSX
 `#!/bin/bash`
-```Shell
+```sh
 $ echo "function gi() { curl -s https://www.gitignore.io/api/\$@ ;}" >> ~/.bash_profile && source ~/.bash_profile
 ```
 `#!/bin/zsh`
-```Shell
-$ echo "function gi() { curl -s https://www.gitignore.io/api/${(j:,:)@} ;}" >> ~/.zshrc && source ~/.zshrc
+```sh
+$ echo "function gi() { curl -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zshrc && source ~/.zshrc
 ```
 
 ## Windows
 Create a PowerShell v3 Script
-```PowerShell
+```posh
 #For PowerShell v3
 Function gi {
   param(
@@ -52,7 +52,7 @@ Function gi {
 }
 ```
 Create a PowerShell v2 Script
-```PowerShell
+```posh
 #For PowerShell v2
 Function gi {
   param(
@@ -71,8 +71,8 @@ Function gi {
 After the function is created, the `gi` command will give you command line access to the gitingore.io API.
 
 ## View
-Show ouput on the command line
-```Shell
+Show output on the command line
+```sh
 $ gi linux,java
 # Created by https://www.gitignore.io
 
@@ -91,19 +91,19 @@ $ gi linux,java
 
 ## Global
 Append Operating System and IDE settings to global .gitignore
-```
+```sh
 $ gi linux,eclipse >> ~/.gitignore
 ```
 
 ## Project
-```
+```sh
 $ gi java,python >> .gitignore
 ```
 
 ## List
 
 List displays a list of all of the currently support gitignore.io templates
-```
+```sh
 $ gi list
 actionscript,ada,agda,android,appceleratortitanium,appcode,archives,
 archlinuxpackages,autotools,bancha,basercms,bower,bricxcc,c,c++,cakephp,
