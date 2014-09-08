@@ -51,7 +51,7 @@ Function gi {
   Invoke-WebRequest -Uri "https://www.gitignore.io/api/$params" | select -ExpandProperty content | Out-File -FilePath $(Join-Path -path $pwd -ChildPath ".gitignore") -Encoding ascii
 }
 ```
-
+Create a PowerShell v2 Script
 ```PowerShell
 #For PowerShell v2
 Function gi {

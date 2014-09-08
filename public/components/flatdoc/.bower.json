@@ -1,0 +1,15 @@
+{
+  "name": "flatdoc",
+  "homepage": "https://github.com/rstacruz/flatdoc",
+  "version": "0.8.6",
+  "_release": "0.8.6",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.8.6",
+    "commit": "471ba7efc21f4ff1a2393ea3a7eb02ae799a72b0"
+  },
+  "_source": "git://github.com/rstacruz/flatdoc.git",
+  "_target": "~0.8.6",
+  "_originalSource": "flatdoc",
+  "_direct": true
+}
