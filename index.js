@@ -1,11 +1,11 @@
 'use strict';
 
-
 var kraken = require('kraken-js'),
     app = require('express')(),
     lusca = require('lusca'),
     session = require('express-session'),
     cookieParser = require('cookie-parser'),
+    ua = require('universal-analytics'),
     options = {
         onconfig: function (config, next) {
             //any config setup/overrides here
@@ -14,6 +14,7 @@ var kraken = require('kraken-js'),
     },
     port = process.env.PORT || 8000;
 
+app.use(ua.middleware(process.env.GA_TRACKING_ID, {cookieName: '_ga'}));
 app.use(cookieParser());
 app.use(session({secret:'FVCYGYWDWU2B0389FK09', key: 'sid', cookie: {secure: true}}));
 app.use(kraken(options));
