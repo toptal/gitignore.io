@@ -28,7 +28,7 @@
               <ul class="nav masthead-nav">
                 <li><a href="/docs" alt="{@pre type="content" key="commandLineDescription"/}">{@pre type="content" key="commandLineTitle"/}</a></li>
                 <li><p class="lead">|</p></li>
-                <li><a href="#" alt="{@pre type="content" key="videoDescription"/}">{@pre type="content" key="videoTitle"/}</a></li>
+                <li><a href="https://vimeo.com/70609819" alt="{@pre type="content" key="videoDescription"/}">{@pre type="content" key="videoTitle"/}</a></li>
               </ul>
 
           </div>

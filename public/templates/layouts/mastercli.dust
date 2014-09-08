@@ -28,5 +28,6 @@
 </head>
 <body role='flatdoc'>
   {+body /}
+<script src="/components/retinajs/dist/retina.min.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@ Create useful .gitignore files for your project
 [![Dependencies Status](https://david-dm.org/joeblau/gitignore.io.png)](https://david-dm.org/joeblau/gitignore.io)
 [![DevDependencies Status](https://david-dm.org/joeblau/gitignore.io/dev-status.png)](https://david-dm.org/joeblau/gitignore.io#info=devDependencies)
 
-# Command Line Installation
+# Install Command Line
 
 To run gitignore.io from your command line you need an active internet connection an environment function. You need to add a function to your environment that lets you access the gitignore.io API.
 
@@ -66,7 +66,7 @@ Function gi {
 }
 ```
 
-# Command Line Usage
+# Use Command Line
 
 After the function is created, the `gi` command will give you command line access to the gitingore.io API.
 

@@ -44,7 +44,7 @@ module.exports = function (router) {
  * Helper for generating concatenated gitignore templates
  */
 function generateFile(list){
-  var output = '# Created by http://www.gitignore.io\n';
+  var output = '# Created by https://www.gitignore.io\n';
   for (var file in list) {
     if (DatastoreModel.JSONObject[list[file]] === undefined){
       output += '\n#!! ERROR: ' + list[file] + ' is undefined. Use list command to see defined gitignore types !!#\n';

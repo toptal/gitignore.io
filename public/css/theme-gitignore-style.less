@@ -1,9 +1,5 @@
 @import "variables.less";
 /* ----------------------------------------------------------------------------
- * Fonts
- */
-@import url("//fonts.googleapis.com/css?family=Montserrat:700|Open+Sans:300");
-/* ----------------------------------------------------------------------------
  * Base
  */
 html,
@@ -75,8 +71,8 @@ td {
 }
 body {
   line-height: 1;
-  color: #000;
-  background: #fff;
+  color: @text;
+  background: @background;
 }
 ol,
 ul {
@@ -206,12 +202,12 @@ a:hover {
   font-family: Menlo, monospace;
   background: @background;
   padding: 1px 3px;
-  font-size: 0.95em;
+  font-size: 1em;
 }
 .content pre > code {
   display: block;
   background: transparent;
-  font-size: 0.85em;
+  font-size: 1em;
   letter-spacing: -1px;
 }
 .content blockquote :first-child {
@@ -289,7 +285,7 @@ a:hover {
 .content h3 {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: montserrat;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   padding-bottom: 0;
 }
 .content h1 + p,
@@ -365,7 +361,7 @@ body:not(.big-h3) .content h3 {
   padding-bottom: 10px;
 }
 body:not(.big-h3) .content h3 {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 .content h1:first-child {
   padding-top: 0;
@@ -461,7 +457,7 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
 .button {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: montserrat, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   letter-spacing: -1px;
   font-weight: bold;
   display: inline-block;
@@ -623,7 +619,7 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   font-weight: bold;
-  font-family: montserrat, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 13px;
 }
 .header h1,
@@ -635,7 +631,7 @@ body.no-literate .content pre > code:hover::-webkit-scrollbar-thumb {
   color: #505050;
 }
 .header li a {
-  font-size: 0.88em;
+  font-size: 1em;
   color: #9090aa;
   display: block;
 }
@@ -705,7 +701,7 @@ a.big.button {
   border: solid 3px @link;
   -webkit-border-radius: 30px;
   border-radius: 30px;
-  font-family: montserrat, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 a.big.button,
 a.big.button:visited {
@@ -766,7 +762,7 @@ a.big.button:hover:visited {
   }
 }
 .menubar {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 .menu ul.level-1 > li + li {
   margin-top: 20px;
@@ -789,9 +785,9 @@ a.big.button:hover:visited {
   color: @link-hover;
 }
 .menu a.level-1 {
-  font-family: montserrat, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   text-transform: uppercase;
-  font-size: 0.9em;
+  font-size: 1em;
   font-weight: bold;
 }
 .menu a.level-1,
@@ -806,7 +802,7 @@ a.big.button:hover:visited {
 }
 .menu a.level-3 {
   font-weight: normal;
-  font-size: 0.9em;
+  font-size: 1em;
   padding-left: 10px;
 }
 .menu a.active {
