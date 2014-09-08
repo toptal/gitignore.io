@@ -14,8 +14,6 @@ var kraken = require('kraken-js'),
     },
     port = process.env.PORT || 8000;
 
-// require('newrelic');
-
 app.use(cookieParser());
 app.use(session({secret:'FVCYGYWDWU2B0389FK09', key: 'sid', cookie: {secure: true}}));
 app.use(kraken(options));
