@@ -41,18 +41,19 @@
     "bluebird": "~2.3.2"
   },
   "devDependencies": {
-    "mocha": "^1.18.0",
-    "supertest": "^0.9.0",
-    "grunt-dustjs": "~1.2.1",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-config-dir": "~0.3.2",
-    "grunt-localizr": "~0.1.0",
-    "grunt-copy-to": "0.0.10",
-    "grunt-mocha-cli": "~1.10.0",
+    "coffee-script": "^1.8.0",
     "grunt": "~0.4.5",
+    "grunt-browserify": "~3.0.1",
+    "grunt-config-dir": "~0.3.2",
+    "grunt-contrib-clean": "~0.6.0",
     "grunt-contrib-jshint": "~0.10.0",
-    "grunt-contrib-less": "~0.9.0",
-    "grunt-browserify": "~2.1.4"
+    "grunt-contrib-less": "~0.11.4",
+    "grunt-copy-to": "0.0.10",
+    "grunt-dustjs": "~1.2.1",
+    "grunt-localizr": "~0.1.0",
+    "grunt-mocha-cli": "~1.10.0",
+    "mocha": "^1.18.0",
+    "supertest": "~0.13.0"
   },
   "generator-kraken": {
     "version": "1.1.0",

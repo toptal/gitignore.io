@@ -23,7 +23,7 @@
         </ul>
       </div>
     </div>
-      <p class="lead">{@pre type="content" key="subtitle"/}</p>
+
 
               <ul class="nav masthead-nav">
                 <li><a href="/docs" alt="{@pre type="content" key="commandLineDescription"/}">{@pre type="content" key="commandLineTitle"/}</a></li>
@@ -35,9 +35,7 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <iframe src="/github-btn.html?user=joeblau&repo=gitignore.io&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
-              <iframe src="/github-btn.html?user=joeblau&repo=gitignore.io&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
-              <iframe src="/github-btn.html?user=joeblau&repo=gitignore.io&type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+              <p class="lead">{@pre type="content" key="subtitle"/}</p>
             </div>
           </div>
 
