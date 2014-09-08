@@ -4,14 +4,18 @@
 var DatastoreModel = require('../../models/datastore');
 
 module.exports = function (router) {
-
+/*
+ * GET List of all ignore types
+ */
     router.get('/list', function (req, res) {
       res.setHeader('Cache-Control', 'public, max-age=0');
       res.setHeader('Content-Type', 'text/plain');
       res.setHeader('Expires', new Date(Date.now()).toUTCString());
       res.send(DatastoreModel.JSONString);
     });
-
+/*
+ * GET API page.
+ */
     router.get('/(:ignore)', function (req, res) {
       var ignoreFileList = req.params.ignore.toLowerCase().split(',');
       var output = generateFile(ignoreFileList);
@@ -20,7 +24,9 @@ module.exports = function (router) {
       res.setHeader('Expires', new Date(Date.now()).toUTCString());
       res.send(output);
     });
-
+/*
+ * POST API File
+ */
     router.get('/f/(:ignore)', function (req, res) {
       var ignoreFileList = req.params.ignore.split(',');
       var output = generateFile(ignoreFileList);
@@ -31,14 +37,16 @@ module.exports = function (router) {
       res.send(output);
     });
 
+/*
+ * GET CLI Help.
+ */
     router.get('/*', function (req, res) {
       res.setHeader('Cache-Control', 'public, max-age=0');
-      res.setHeader('Content-Type', 'text/plain');
       res.setHeader('Expires', new Date(Date.now()).toUTCString());
-      res.send(DatastoreModel.JSONString);
+      res.send('gitignore.io help:\n  list    - lists the operating systems, programming languages and IDE input types\n  :types: - creates .gitignore files for types of operating systems, programming languages or IDEs\n');
+
     });
 };
-
 
 /*
  * Helper for generating concatenated gitignore templates

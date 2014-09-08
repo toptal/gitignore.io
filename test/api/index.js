@@ -30,12 +30,12 @@ describe('/api', function () {
     });
 
 
-    it('should say "actionscript"', function (done) {
+    it('should say "gitignore.io help"', function (done) {
         request(mock)
             .get('/api')
             .expect(200)
-            .expect('Content-Type', /plain/)
-            .expect(/actionscript/)
+            .expect('Content-Type', /html/)
+            .expect(/gitignore.io help/)
             .end(function (err, res) {
                 done(err);
             });
