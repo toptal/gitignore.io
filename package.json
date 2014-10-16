@@ -21,13 +21,13 @@
   },
   "dependencies": {
     "adaro": "~0.1.5",
-    "bluebird": "~2.3.2",
+    "bluebird": "^2.3.5",
     "cookie-parser": "~1.3.3",
     "dustjs-helpers": "^1.3.0",
-    "dustjs-linkedin": "~2.4.1",
-    "engine-munger": "^0.2.1",
-    "express": "^4.8.1",
-    "express-session": "~1.8.0",
+    "dustjs-linkedin": "^2.4.2",
+    "engine-munger": "^0.2.2",
+    "express": "^4.9.7",
+    "express-session": "^1.8.2",
     "grunt-browserify": "^3.0.1",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-less": "^0.11.4",
@@ -50,8 +50,8 @@
     "grunt-dustjs": "~1.2.1",
     "grunt-localizr": "~0.1.0",
     "grunt-mocha-cli": "~1.10.0",
-    "mocha": "^1.18.0",
-    "supertest": "~0.13.0"
+    "mocha": "^1.21.5",
+    "supertest": "^0.13.0"
   },
   "generator-kraken": {
     "version": "1.1.0",
