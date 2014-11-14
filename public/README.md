@@ -14,7 +14,7 @@ To run gitignore.io from your command line you need an active internet connectio
 ## Git
 `#!/bin/bash`
 ```sh
-$ git config --global alias.test '!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi'
+$ git config --global alias.ignore '!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi'
 ```
 
 ## Linux
