@@ -10,6 +10,7 @@
       <ul>
         <li><a href='https://github.com/joeblau/gitignore.io'>View on GitHub</a></li>
         <li><a href='https://github.com/joeblau/gitignore.io/issues'>Issues</a></li>
+        <li><div class="cb-tip-button" data-content-location="https://www.gitignore.io" data-href="//www.coinbase.com/tip_buttons/show_tip" data-to-user-id="5328afb9b6d94cee9b0001b4"></div></li>
       </ul>
     </div>
     <div class='right'>
@@ -23,11 +24,10 @@
     <div class='menubar'>
       <div class='menu section' role='flatdoc-menu'></div>
       <div class='bottom section'>
-        <div class="cb-tip-button" data-content-location="https://www.gitignore.io" data-href="//www.coinbase.com/tip_buttons/show_tip" data-to-user-id="5328afb9b6d94cee9b0001b4"></div>
-        <script>!function(d,s,id) {var js,cjs=d.getElementsByTagName(s)[0],e=d.getElementById(id);if(e){return;}js=d.createElement(s);js.id=id;js.src="https://www.coinbase.com/assets/tips.js";cjs.parentNode.insertBefore(js,cjs);}(document, 'script', 'coinbase-tips');</script>
         <a href='https://github.com/joeblau/gitignore.io'>View on GitHub</a><br>
       </div>
     </div>
     <div role='flatdoc-content' class='content'></div>
   </div>
+  <script>!function(d,s,id) {var js,cjs=d.getElementsByTagName(s)[0],e=d.getElementById(id);if(e){return;}js=d.createElement(s);js.id=id;js.src="https://www.coinbase.com/assets/tips.js";cjs.parentNode.insertBefore(js,cjs);}(document, 'script', 'coinbase-tips');</script>
 {/body}
