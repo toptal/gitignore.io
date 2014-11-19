@@ -66,6 +66,29 @@ Function gi {
 }
 ```
 
+Or, if you have curl installed(Generally, [Curl](http://curl.haxx.se/) is bundled with [msysgit](http://msysgit.github.io)), create `curl.cmd` with [this content](https://gist.github.com/912993)
+```bat
+@rem Do not use "echo off" to not affect any child calls.
+@setlocal
+ 
+@rem Get the abolute path to the parent directory, which is assumed to be the
+@rem Git installation root.
+@for /F "delims=" %%I in ("%~dp0..") do @set git_install_root=%%~fI
+@set PATH=%git_install_root%\bin;%git_install_root%\mingw\bin;%PATH%
+ 
+@if not exist "%HOME%" @set HOME=%HOMEDRIVE%%HOMEPATH%
+@if not exist "%HOME%" @set HOME=%USERPROFILE%
+ 
+@curl.exe %*
+```
+And copy it to `C:\Program Files\Git\cmd\curl.cmd`, assuming `msysgit` was installed to `c:\Program Files\Git`.
+Then, create `gi.cmd` with this content
+```bat
+@curl -L -s https://www.gitignore.io/api/%1
+```
+Copy this `gi.cmd` file to `C:\Program Files\Git\cmd\gi.cmd`, still assuming `msysgit` was installed to `c:\Program Files\Git`.
+Make sure that `C:\Program Files\Git\cmd` is added to the environment variable `path`.
+
 # Use Command Line
 
 After the function is created, the `gi` command will give you command line access to the gitingore.io API.
