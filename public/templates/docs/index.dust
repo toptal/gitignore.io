@@ -13,7 +13,6 @@
       </ul>
     </div>
     <div class='right'>
-
       <iframe src="/github-btn.html?user=joeblau&repo=gitignore.io&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe>
       <iframe src="/github-btn.html?user=joeblau&repo=gitignore.io&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
       <iframe src="/github-btn.html?user=joeblau&repo=gitignore.io&type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
@@ -24,7 +23,8 @@
     <div class='menubar'>
       <div class='menu section' role='flatdoc-menu'></div>
       <div class='bottom section'>
-        <a class="coinbase-button" data-code="c201cc5d2c6c3e93923e19227e42543b" data-button-style="custom_small" href="https://coinbase.com/checkouts/c201cc5d2c6c3e93923e19227e42543b">Donate Bitcoins</a><script src="https://coinbase.com/assets/button.js" type="text/javascript"></script>
+        <div class="cb-tip-button" data-content-location="https://www.gitignore.io" data-href="//www.coinbase.com/tip_buttons/show_tip" data-to-user-id="5328afb9b6d94cee9b0001b4"></div>
+        <script>!function(d,s,id) {var js,cjs=d.getElementsByTagName(s)[0],e=d.getElementById(id);if(e){return;}js=d.createElement(s);js.id=id;js.src="https://www.coinbase.com/assets/tips.js";cjs.parentNode.insertBefore(js,cjs);}(document, 'script', 'coinbase-tips');</script>
         <a href='https://github.com/joeblau/gitignore.io'>View on GitHub</a><br>
       </div>
     </div>
