@@ -1,0 +1,186 @@
+/*
+ * Globals
+ */
+/* line 6, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.lead {
+  color: #9090aa;
+  padding: 20px 0 0 0;
+  font-size: 16px;
+}
+/* Links */
+/* line 13, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+a,
+a:focus,
+a:hover {
+  color: #f44d27;
+}
+/* Custom default button */
+/* line 20, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.btn-default,
+.btn-default:hover,
+.btn-default:focus {
+  color: #f44d27;
+  text-shadow: none;
+  /* Prevent inheritence from `body` */
+  background-color: #fafafa;
+  border: 1px solid #eeeeee;
+}
+/*
+ * Base structure
+ */
+/* line 34, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+html,
+body {
+  height: 100%;
+  background-color: #fafafa;
+}
+/* line 39, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+body {
+  color: #222222;
+  text-align: center;
+}
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+/* line 45, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  /* For at least Firefox */
+  min-height: 100%;
+}
+/* line 51, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+/* line 55, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+/* Padding for spacing */
+/* line 61, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.inner {
+  padding: 30px;
+}
+/*
+ * Header
+ */
+/* line 69, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* line 74, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.masthead-nav > li {
+  display: inline-block;
+}
+/* line 77, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+/* line 80, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #f44d27;
+  /* IE8 proofing */
+  border-bottom: 2px solid transparent;
+}
+/* line 88, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.masthead-nav > li > a:hover,
+.masthead-nav > li > a:focus {
+  background-color: transparent;
+  border-bottom-color: #c03c1f;
+}
+/* line 93, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:hover,
+.masthead-nav > .active > a:focus {
+  color: #c03c1f;
+  border-bottom-color: #c03c1f;
+}
+/*
+ * Cover
+ */
+/* line 104, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.cover {
+  padding: 0 20px 100px 20px;
+}
+/* line 107, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+/*
+ * Footer
+ */
+/* line 117, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.mastfoot {
+  color: #222222;
+  /* IE8 proofing */
+}
+/*
+ * Affix and center
+ */
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  /* line 128, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  /* line 132, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  /* line 137, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  /* line 141, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%;
+    /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+@media (min-width: 992px) {
+  /* line 149, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
+/* line 156, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.btn-gitignore {
+  color: #fff;
+  background-image: -webkit-linear-gradient(top, #ff4f27 0, #f44d27 100%);
+  background-image: linear-gradient(to bottom, #ff4f27 0, #f44d27 100%);
+  background-repeat: repeat-x;
+  border: 1px solid #d23e1e;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fffaa937', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+/* line 166, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.btn-gitignore:active {
+  color: #fff;
+  background-image: -webkit-linear-gradient(top, #d84824 0, #ce4121 100%);
+  background-image: linear-gradient(to bottom, #d84521 0, #ce4121 100%);
+  background-repeat: repeat-x;
+  border: 1px solid #d23e1e;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fffaa937', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+/* line 176, /Users/josephblau/Documents/workspaces/github/gitignore.io/css/app */
+.select2-results .select2-highlighted {
+  background: #f44d27;
+  color: #fff;
+}

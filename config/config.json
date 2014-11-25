@@ -30,9 +30,8 @@
         "fallback": "en-US"
     },
 
-
-
     "middleware": {
+
         "compress" : {
           "enabled": true,
           "module": {
@@ -51,6 +50,7 @@
                 "arguments": [{ "directory": "path:./controllers" }]
             }
         },
+
         "cookieParser": {
           "module": {
             "name": "cookie-parser",

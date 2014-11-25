@@ -1,5 +1,5 @@
 {
-    
+
     "express": {
         "view cache": false,
         "view engine": "dust",
@@ -34,7 +34,7 @@
                 "arguments": [
                     "path:./public",
                     "path:./.build",
-                    {   
+                    {
                         "template": {
                             "module": "kraken-devtools/plugins/dustjs",
                             "files": "/templates/**/*.js",
@@ -43,7 +43,8 @@
                         },
                         "css": {
                             "module": "kraken-devtools/plugins/less",
-                            "files": "/css/**/*.css"
+                            "files": "/css/**/*.css",
+                            "ext": "less"
                         },
                         "copier": {
                             "module": "kraken-devtools/plugins/copier",
