@@ -6,7 +6,6 @@
   "private": true,
   "author": "Joe Blau",
   "main": "index.js",
-  "subdomain": "gitignore",
   "engines": {
     "node": "0.10.x",
     "npm": ">=1.0.0"
@@ -54,7 +53,7 @@
     "supertest": "^0.15.0"
   },
   "generator-kraken": {
-    "version": "1.1.0",
+    "version": "1.1.1",
     "template": "dustjs",
     "css": "less",
     "js": "browserify",

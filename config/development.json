@@ -43,8 +43,7 @@
                         },
                         "css": {
                             "module": "kraken-devtools/plugins/less",
-                            "files": "/css/**/*.css",
-                            "ext": "less"
+                            "files": "/css/**/*.css"
                         },
                         "copier": {
                             "module": "kraken-devtools/plugins/copier",
