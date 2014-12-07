@@ -4,7 +4,6 @@
 module.exports = function IndexModel() {
     return {
         name: 'index',
-        title: 'gitignore.io',
         templateCount: 0
     };
 };
