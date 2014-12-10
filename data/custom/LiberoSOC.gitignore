@@ -1,0 +1,34 @@
+#Microsemi Libero SOC v11.3
+
+#ignore miscellaneous files in the following directories
+simulation/*
+package/*
+component/*
+tooldata/*
+viewdraw/*
+
+#auto-generated constraint files
+constraint/*
+!constraint/**.sdc
+!constraint/**.pdc
+
+#synthesis log files
+synthesis/*
+!synthesis/*.edn
+
+#smartgen log files
+smartgen/*/*
+smartgen/*.ixf
+smartgen/smartgen.ixf
+smartgen/smartgen.aws
+!smartgen/*/*.gen
+
+#designer log files
+#ignore designer files except the .adb file
+designer/*/*
+!designer/*/*.adb
+designer/*/*_r*_*
+
+#never ignore the following
+!**.vhd
+!**.v
