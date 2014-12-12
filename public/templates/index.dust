@@ -3,6 +3,10 @@
   {@pre type="content" key="title"/}
 {/title}
 
+{<description}
+  {@pre type="content" key="description"/}
+{/description}
+
 {<body}
     <div class="site-wrapper">
 
@@ -12,7 +16,7 @@
 
           <div class="inner cover">
               <img src="/img/logo.png">
-              <p class="lead">{@pre type="content" key="description"/}</p>
+              <p class="lead">{@pre type="content" key="subtitle"/}</p>
   <div class="input-group">
       <input id="ignoreSearch" type="text" placeholder="{@pre type="content" key="searchPlaceholder"/}" tabindex="1" class="input form-control">
       <div class="input-group-btn">
@@ -35,7 +39,7 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <p class="lead">{@pre type="content" key="subtitle"/}</p>
+              <p class="lead">{@pre type="content" key="footer"/}</p>
             </div>
           </div>
 

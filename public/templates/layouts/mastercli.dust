@@ -16,7 +16,7 @@
   <script src='/js/theme-gitignore-script.js'></script>
 
   <!-- Meta -->
-  <meta name="description" content="Create useful .gitignore files for your project">
+  <meta name="description" content="{+description /}">
   <meta name="keywords" content="gitignore,git,create,make,generate,build,automatic,programmatic,command line,cli">
 
   <meta property="og:type" content="website">

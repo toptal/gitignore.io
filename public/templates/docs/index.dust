@@ -3,6 +3,10 @@
   {@pre type="content" key="title"/}
 {/title}
 
+{<description}
+  {@pre type="content" key="description"/}
+{/description}
+
 {<body}
   <div class='header'>
     <div class='left'>
