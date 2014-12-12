@@ -17,7 +17,7 @@
 
   <!-- Meta -->
   <meta name="description" content="{+description /}">
-  <meta name="keywords" content="gitignore,git,create,make,generate,build,automatic,programmatic,command line,cli">
+  <meta name="keywords" content="gitignore,.gitignore,git,ignore,file,create,make,generate,build,automatic,programmatic,command line,cli">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="gitignore.io">
