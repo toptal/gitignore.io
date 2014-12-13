@@ -1,0 +1,21 @@
+{
+  "name": "gitignore.io",
+  "main": "index.js",
+  "version": "2.0.0",
+  "homepage": "https://github.com/joeblau/gitignore.io",
+  "authors": [
+    "Joe Blau <josephblau@gmail.com>"
+  ],
+  "description": "Create useful .gitignore files for your project",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "~3.2.0",
+    "dustjs-linkedin-helpers": "^1.1.1",
+    "dustjs-linkedin": "^2.0.3",
+    "flatdoc": "~0.8.6",
+    "jquery-ui": "~1.11.2",
+    "retinajs": "~1.3.0",
+    "select2": "~3.5.2"
+  }
+}
