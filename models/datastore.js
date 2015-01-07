@@ -74,9 +74,8 @@ var DatastoreModel = function() {
   // Add .patch templates
   walk(__dirname + '/../data', gitPatches, '.patch', function(err, results) {
     for (var key in gitPatches) {
-      var name = gitPatches[key].name.toLowerCase()
-      self.JSONObject[name].contents += "\n### " + gitIgnores[key].name +
-      " Patch ###\n" + gitPatches[key].contents
+      var name = gitPatches[key].name.toLowerCase();
+      self.JSONObject[name].contents += '\n### ' + gitIgnores[key].name + ' Patch ###\n' + gitPatches[key].contents;
     }
   });
 };
