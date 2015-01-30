@@ -28,7 +28,3 @@ smartgen/smartgen.aws
 designer/*/*
 !designer/*/*.adb
 designer/*/*_r*_*
-
-#never ignore the following
-!**.vhd
-!**.v
