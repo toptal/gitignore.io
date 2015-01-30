@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <title>{+title /}</title>
     <meta name="author" content="Joe Blau">
-    <meta name="description" content="Create useful .gitignore files for your project">
-    <meta name="keywords" content="gitignore,git,create,make,generate,build,automatic,programmatic,command line,cli">
+    <meta name="description" content="{+description /}">
+    <meta name="keywords" content="gitignore,.gitignore,git,ignore,file,create,make,generate,build,automatic,programmatic,command line,cli">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="gitignore.io">
@@ -33,6 +33,7 @@
 <body>
   {+body /}
 <script src="/components/jquery/dist/jquery.min.js"></script>
+<script src="/components/jquery-ui/jquery-ui.min.js"></script>
 <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/components/select2/select2.min.js"></script>
 <script src="/components/retinajs/dist/retina.min.js"></script>

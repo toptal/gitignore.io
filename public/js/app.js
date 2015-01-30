@@ -8,6 +8,11 @@ $(document).ready(function () {
       minimumInputLength: 1,
       data: data
     });
+    $("#ignoreSearch").select2("container").find("ul.select2-choices").sortable({
+      containment: 'parent',
+      start: function() { $("#ignoreSearch").select2("onSortStart"); },
+      update: function() { $("#ignoreSearch").select2("onSortEnd"); }
+    });
   });
 });
 

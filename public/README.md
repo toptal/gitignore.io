@@ -42,7 +42,7 @@ $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zs
 Create a PowerShell v3 Script
 ```posh
 #For PowerShell v3
-Function gi {
+Function gig {
   param(
     [Parameter(Mandatory=$true)]
     [string[]]$list
@@ -54,7 +54,7 @@ Function gi {
 Create a PowerShell v2 Script
 ```posh
 #For PowerShell v2
-Function gi {
+Function gig {
   param(
     [Parameter(Mandatory=$true)]
     [string[]]$list
@@ -70,15 +70,15 @@ Or, if you have curl installed(Generally, [Curl](http://curl.haxx.se/) is bundle
 ```bat
 @rem Do not use "echo off" to not affect any child calls.
 @setlocal
- 
+
 @rem Get the abolute path to the parent directory, which is assumed to be the
 @rem Git installation root.
 @for /F "delims=" %%I in ("%~dp0..") do @set git_install_root=%%~fI
 @set PATH=%git_install_root%\bin;%git_install_root%\mingw\bin;%PATH%
- 
+
 @if not exist "%HOME%" @set HOME=%HOMEDRIVE%%HOMEPATH%
 @if not exist "%HOME%" @set HOME=%USERPROFILE%
- 
+
 @curl.exe %*
 ```
 And copy it to `C:\Program Files\Git\cmd\curl.cmd`, assuming `msysgit` was installed to `c:\Program Files\Git`.
@@ -91,10 +91,10 @@ Make sure that `C:\Program Files\Git\cmd` is added to the environment variable `
 
 # Use Command Line
 
-After the function is created, the `gi` command will give you command line access to the gitingore.io API.
+After the function is created, the `gi` command will give you command line access to the gitingore.io API. . **Note:** Use `gig` if you are on Windows
 
 ## View
-Show output on the command line
+Show output on the command line. **Note:** Use `gig` if you are on Windows
 ```sh
 $ gi linux,java
 # Created by https://www.gitignore.io
@@ -113,19 +113,19 @@ $ gi linux,java
 ```
 
 ## Global
-Append Operating System and IDE settings to global .gitignore
+Append Operating System and IDE settings to global .gitignore. **Note:** Use `gig` if you are on Windows
 ```sh
-$ gi linux,eclipse >> ~/.gitignore
+$ gi linux,eclipse >> ~/.gitignore_global
 ```
 
 ## Project
+Appending Programming Langauge settings to your projects .gitignore. **Note:** Use `gig` if you are on Windows
 ```sh
 $ gi java,python >> .gitignore
 ```
 
 ## List
-
-List displays a list of all of the currently support gitignore.io templates
+List displays a list of all of the currently support gitignore.io templates. **Note:** Use `gig` if you are on Windows
 ```sh
 $ gi list
 actionscript,ada,agda,android,appceleratortitanium,appcode,archives,
@@ -155,7 +155,7 @@ creating a .gitignore for your operating system, programming language, or IDE.
 
 ## License
 
-Copyright (C) 2013-2014 Joe Blau
+Copyright (C) 2013-2015 Joe Blau
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
