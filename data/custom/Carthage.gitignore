@@ -1,0 +1,3 @@
+# Carthage - A simple, decentralized dependency manager for Cocoa
+Carthage.checkout
+Carthage.build
