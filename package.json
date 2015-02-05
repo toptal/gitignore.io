@@ -33,7 +33,7 @@
     "grunt-contrib-less": "^1.0.0",
     "kraken-devtools": "^1.2.1",
     "kraken-js": "^1.0.3",
-    "less": "^2.3.1",
+    "less": "^1.7.5",
     "localizr": "~1.0.2",
     "lusca": "^1.0.2",
     "supertest": "^0.15.0"
