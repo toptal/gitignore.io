@@ -1,19 +1,21 @@
-/*! dustjs-helpers - v1.2.0
+/*! dustjs-helpers - v1.5.0
 * https://github.com/linkedin/dustjs-helpers
 * Copyright (c) 2014 Aleksander Williams; Released under the MIT License */
 (function(dust){
 
-// Note: all error conditions are logged to console and failed silently
+// Use dust's built-in logging when available
+var _log = dust.log ? function(msg, level) {
+  level = level || "INFO";
+  dust.log(msg, level);
+} : function() {};
 
-/* make a safe version of console if it is not available
- * currently supporting:
- *   _console.log
- * */
-var _console = (typeof console !== 'undefined')? console: {
-  log: function(){
-     /* a noop*/
-   }
-};
+var _deprecatedCache = {};
+function _deprecated(target) {
+  if(_deprecatedCache[target]) { return; }
+  _log("Deprecation warning: " + target + " is deprecated and will be removed in a future version of dustjs-helpers", "WARN");
+  _log("For help and a deprecation timeline, see https://github.com/linkedin/dustjs-helpers/wiki/Deprecated-Features#" + target.replace(/\W+/g, ""), "WARN");
+  _deprecatedCache[target] = true;
+}
 
 function isSelect(context) {
   var value = context.current();
@@ -45,19 +47,18 @@ function filter(chunk, context, bodies, params, filterOp) {
       actualKey,
       expectedValue,
       filterOpType = params.filterOpType || '';
+
   // when @eq, @lt etc are used as standalone helpers, key is required and hence check for defined
-  if ( typeof params.key !== "undefined") {
+  if (params.hasOwnProperty("key")) {
     actualKey = dust.helpers.tap(params.key, chunk, context);
-  }
-  else if (isSelect(context)) {
+  } else if (isSelect(context)) {
     actualKey = context.current().selectKey;
     //  supports only one of the blocks in the select to be selected
     if (context.current().isResolved) {
       filterOp = function() { return false; };
     }
-  }
-  else {
-    _console.log ("No key specified for filter in:" + filterOpType + " helper ");
+  } else {
+    _log("No key specified for filter in:" + filterOpType + " helper ");
     return chunk;
   }
   expectedValue = dust.helpers.tap(params.value, chunk, context);
@@ -69,27 +70,24 @@ function filter(chunk, context, bodies, params, filterOp) {
     // we want helpers without bodies to fail gracefully so check it first
     if(body) {
      return chunk.render(body, context);
-    }
-    else {
-      _console.log( "Missing body block in the " + filterOpType + " helper ");
+    } else {
+      _log("No body specified for " + filterOpType + " helper ");
       return chunk;
     }
-   }
-   else if (bodies['else']) {
+  } else if (bodies['else']) {
     return chunk.render(bodies['else'], context);
   }
   return chunk;
 }
 
-function coerce (value, type, context) {
-  if (value) {
-    switch (type || typeof(value)) {
+function coerce(value, type, context) {
+  if (typeof value !== "undefined") {
+    switch (type || typeof value) {
       case 'number': return +value;
       case 'string': return String(value);
-      case 'boolean': {
+      case 'boolean':
         value = (value === 'false' ? false : value);
         return Boolean(value);
-      }
       case 'date': return new Date(value);
       case 'context': return context.get(value);
     }
@@ -106,16 +104,16 @@ var helpers = {
    Reference resolution rules:
    if value exists in JSON:
     "" or '' will evaluate to false, boolean false, null, or undefined will evaluate to false,
-    numeric 0 evaluates to true, so does, string "0", string "null", string "undefined" and string "false". 
+    numeric 0 evaluates to true, so does, string "0", string "null", string "undefined" and string "false".
     Also note that empty array -> [] is evaluated to false and empty object -> {} and non-empty object are evaluated to true
-    The type of the return value is string ( since we concatenate to support interpolated references 
+    The type of the return value is string ( since we concatenate to support interpolated references
 
    if value does not exist in JSON and the input is a single reference: {x}
-     dust render emits empty string, and we then return false   
-     
+     dust render emits empty string, and we then return false
+
    if values does not exist in JSON and the input is interpolated references : {x} < {y}
-     dust render emits <  and we return the partial output 
-     
+     dust render emits <  and we return the partial output
+
   */
   "tap": function(input, chunk, context) {
     // return given input if there is no dust reference to resolve
@@ -152,22 +150,23 @@ var helpers = {
     if (context.stack.index === context.stack.of - 1) {
       return chunk;
     }
-    if(body) {
-     return bodies.block(chunk, context);
-    }
-    else {
-     return chunk;
+    if (body) {
+      return body(chunk, context);
+    } else {
+      return chunk;
     }
   },
 
   "idx": function(chunk, context, bodies) {
     var body = bodies.block;
-     if(body) {
-       return bodies.block(chunk, context.push(context.stack.index));
-     }
-     else {
-       return chunk;
-     }
+    // Will be removed in 1.6
+    _deprecated("{@idx}");
+    if(body) {
+      return body(chunk, context.push(context.stack.index));
+    }
+    else {
+      return chunk;
+    }
   },
 
   /**
@@ -191,10 +190,13 @@ var helpers = {
       dump = JSON.stringify(context.stack.head, jsonFilter, 2);
     }
     if (to === 'console') {
-      _console.log(dump);
+      _log(dump);
       return chunk;
     }
     else {
+      // encode opening brackets when outputting to html
+      dump = dump.replace(/</g, '\\u003c');
+
       return chunk.write(dump);
     }
   },
@@ -214,19 +216,23 @@ var helpers = {
     cond argument should evaluate to a valid javascript expression
    **/
 
-  "if": function( chunk, context, bodies, params ){
+  "if": function( chunk, context, bodies, params ) {
     var body = bodies.block,
-        skip = bodies['else'];
-    if( params && params.cond){
-      var cond = params.cond;
-      cond = dust.helpers.tap(cond, chunk, context);
+        skip = bodies['else'],
+        cond;
+
+    if(params && params.cond) {
+      // Will be removed in 1.6
+      _deprecated("{@if}");
+
+      cond = dust.helpers.tap(params.cond, chunk, context);
       // eval expressions with given dust references
       if(eval(cond)){
        if(body) {
         return chunk.render( bodies.block, context );
        }
        else {
-         _console.log( "Missing body block in the if helper!" );
+         _log("Missing body block in the if helper!");
          return chunk;
        }
       }
@@ -236,7 +242,7 @@ var helpers = {
     }
     // no condition
     else {
-      _console.log( "No condition given in the if helper!" );
+      _log("No condition given in the if helper!");
     }
     return chunk;
   },
@@ -257,14 +263,17 @@ var helpers = {
           operand = params.operand,
           round = params.round,
           mathOut = null,
-          operError = function(){_console.log("operand is required for this math method"); return null;};
+          operError = function(){
+              _log("operand is required for this math method");
+              return null;
+          };
       key  = dust.helpers.tap(key, chunk, context);
       operand = dust.helpers.tap(operand, chunk, context);
       //  TODO: handle  and tests for negatives and floats in all math operations
       switch(method) {
         case "mod":
           if(operand === 0 || operand === -0) {
-            _console.log("operand for divide operation is 0/-0: expect Nan!");
+            _log("operand for divide operation is 0/-0: expect Nan!");
           }
           mathOut = parseFloat(key) %  parseFloat(operand);
           break;
@@ -279,7 +288,7 @@ var helpers = {
           break;
         case "divide":
          if(operand === 0 || operand === -0) {
-           _console.log("operand for divide operation is 0/-0: expect Nan/Infinity!");
+           _log("operand for divide operation is 0/-0: expect Nan/Infinity!");
          }
           mathOut = parseFloat(key) / parseFloat(operand);
           break;
@@ -296,7 +305,7 @@ var helpers = {
           mathOut = Math.abs(parseFloat(key));
           break;
         default:
-          _console.log( "method passed is not supported" );
+          _log("method passed is not supported");
      }
 
       if (mathOut !== null){
@@ -317,7 +326,7 @@ var helpers = {
     }
     // no key parameter and no method
     else {
-      _console.log( "Key is a required parameter for math helper along with method/operand!" );
+      _log("Key is a required parameter for math helper along with method/operand!");
     }
     return chunk;
   },
@@ -340,13 +349,13 @@ var helpers = {
        return chunk.render(bodies.block, context.push({ isSelect: true, isResolved: false, selectKey: key }));
       }
       else {
-       _console.log( "Missing body block in the select helper ");
+       _log("Missing body block in the select helper ");
        return chunk;
       }
     }
     // no key
     else {
-      _console.log( "No key given in the select helper!" );
+      _log("No key given in the select helper!");
     }
     return chunk;
   },
@@ -365,8 +374,9 @@ var helpers = {
   "eq": function(chunk, context, bodies, params) {
     if(params) {
       params.filterOpType = "eq";
+      return filter(chunk, context, bodies, params, function(expected, actual) { return actual === expected; });
     }
-    return filter(chunk, context, bodies, params, function(expected, actual) { return actual === expected; });
+    return chunk;
   },
 
   /**
@@ -385,7 +395,7 @@ var helpers = {
       params.filterOpType = "ne";
       return filter(chunk, context, bodies, params, function(expected, actual) { return actual !== expected; });
     }
-   return chunk;
+    return chunk;
   },
 
   /**
@@ -400,10 +410,11 @@ var helpers = {
    Note : use type="number" when comparing numeric
    **/
   "lt": function(chunk, context, bodies, params) {
-     if(params) {
-       params.filterOpType = "lt";
-       return filter(chunk, context, bodies, params, function(expected, actual) { return actual < expected; });
-     }
+    if(params) {
+      params.filterOpType = "lt";
+      return filter(chunk, context, bodies, params, function(expected, actual) { return actual < expected; });
+    }
+    return chunk;
   },
 
   /**
@@ -418,10 +429,10 @@ var helpers = {
    Note : use type="number" when comparing numeric
   **/
   "lte": function(chunk, context, bodies, params) {
-     if(params) {
-       params.filterOpType = "lte";
-       return filter(chunk, context, bodies, params, function(expected, actual) { return actual <= expected; });
-     }
+    if(params) {
+      params.filterOpType = "lte";
+      return filter(chunk, context, bodies, params, function(expected, actual) { return actual <= expected; });
+    }
     return chunk;
   },
 
@@ -462,7 +473,7 @@ var helpers = {
       params.filterOpType = "gte";
       return filter(chunk, context, bodies, params, function(expected, actual) { return actual >= expected; });
      }
-    return chunk; 
+    return chunk;
   },
 
   // to be used in conjunction with the select helper
@@ -508,10 +519,16 @@ var helpers = {
     }
     return chunk.write(value);
   }
-  
-  
+
+
 };
 
-dust.helpers = helpers;
+  for (var key in helpers) {
+    dust.helpers[key] = helpers[key];
+  }
 
-})(typeof exports !== 'undefined' ? module.exports = require('dustjs-linkedin') : dust);
+  if(typeof exports !== 'undefined') {
+    module.exports = dust;
+  }
+
+})(typeof exports !== 'undefined' ? require('dustjs-linkedin') : dust);

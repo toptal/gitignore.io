@@ -1,52 +1,44 @@
-var jasmine = require('jasmine-node'),
-  sys = require('util'),
-  path = require('path');
+var jasmine = require('jasmine-node');
 
-//This should be declared global in order to access them in the spec
-dust = require('dustjs-linkedin');
-dust.helpers = require("../../../lib/dust-helpers").helpers;
-
-//Add the tapper helper to test the Tap helper.
-testUtils = require("../../../test/testUtils");
-for(key in testUtils) {
-  dust.helpers[key] = testUtils[key];
-}
-
-//Get unit test specs
-helpersTests = require('../spec/helpersTests');
-
+//set up describe, it, expect, etc as globals so they can be used in renderTestSpec.js
 for(key in jasmine) {
   global[key] = jasmine[key];
 }
 
-isVerbose = true;
-showColors = true;
-coffee = false;
+//require dust, test helpers and helpers
+//test to make sure dustjs-linkedin is properly extended
+//and require('dustjs-helpers') returns correct object
+describe ("Test dustjs-helpers package for node", function() {
+  var myDust = require('dustjs-linkedin');
+  it("Core dust should not have eq helper by default", function() {
+    expect(typeof myDust.helpers.eq).toBe("undefined");
+  });
+  it ("Helpers should be added to Dust object and should not override existing helpers", function() {
+    //add helpers
+    var myDustWithTestHelpers = require("../../../test/testUtils"),  //Add the tapper helper to test the Tap helper.
+      myDustWithHelpers = require("../../../lib/dust-helpers");
 
-process.argv.forEach(function(arg) {
-  var coffee, isVerbose, showColors;
-  switch (arg) {
-    case '--color':
-      return showColors = true;
-    case '--noColor':
-      return showColors = false;
-    case '--verbose':
-      return isVerbose = true;
-    case '--coffee':
-      return coffee = true;
-  }
+    //myDust variable should have been extended to include helpers
+    expect(typeof myDust.helpers.eq).toEqual("function");
+    //expect that helpers added before dustjs-helpers require are not overwritten
+    expect(typeof myDust.helpers.tapper).toEqual("function");
+
+    //require dustjs-helpers should return full dust object
+    expect(myDust).toEqual(myDustWithHelpers);
+    expect(myDustWithTestHelpers).toEqual(myDustWithHelpers);
+  });
 });
 
-var options = [];
-options['specFolders'] = [path.dirname(__dirname) + '/spec'] ;
-options['isVerbose'] = isVerbose;
-options['showColors'] = showColors;
-options['onComplete'] = function(runner, log) {
-  if (runner.results().failedCount === 0) {
-    return process.exit(0);
-  } else {
-    return process.exit(1);
+//run unit tests defined in test/jasmine-test/spec folder
+jasmine.executeSpecsInFolder({
+  specFolders : [require('path').dirname(__dirname) + '/spec'],
+  isVerbose : true,
+  showColors : true,
+  onComplete : function(runner, log) {
+    if (runner.results().failedCount === 0) {
+      return process.exit(0);
+    } else {
+      return process.exit(1);
+    }
   }
-};
-
-jasmine.executeSpecsInFolder(options);
+});

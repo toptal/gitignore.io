@@ -11,7 +11,7 @@
   var compiler = {},
       isArray = dust.isArray;
 
-  
+
   compiler.compile = function(source, name) {
     // the name parameter is optional.
     // this can happen for templates that are rendered immediately (renderSource which calls compileFn) or
@@ -21,7 +21,7 @@
     if (!name && name !== null) {
       throw new Error('Template name parameter cannot be undefined when calling dust.compile');
     }
- 
+
     try {
       var ast = filterAST(parse(source));
       return compile(ast, name);
@@ -48,7 +48,7 @@
     body:      compactBuffers,
     buffer:    noop,
     special:   convertSpecial,
-    format:    nullify,        // TODO: convert format
+    format:    format,
     reference: visit,
     '#':       visit,
     '?':       visit,
@@ -105,9 +105,10 @@
     for (i=1, len=node.length; i<len; i++) {
       res = compiler.filterNode(context, node[i]);
       if (res) {
-        if (res[0] === 'buffer') {
+        if (res[0] === 'buffer' || res[0] === 'format') {
           if (memo) {
-            memo[1] += res[1];
+            memo[0] = (res[0] === 'buffer') ? 'buffer' : memo[0];
+            memo[1] += res.slice(1, -2).join('');
           } else {
             memo = res;
             out.push(res);
@@ -130,7 +131,7 @@
   };
 
   function convertSpecial(context, node) {
-    return ['buffer', specialChars[node[1]]];
+    return ['buffer', specialChars[node[1]], node[2], node[3]];
   }
 
   function noop(context, node) {
@@ -138,6 +139,10 @@
   }
 
   function nullify(){}
+
+  function format(context, node) {
+    return dust.config.whitespace ? node : null;
+  }
 
   function compile(ast, name) {
     var context = {
@@ -181,7 +186,7 @@
 
     for (i=0, len=bodies.length; i<len; i++) {
       out[i] = 'function body_' + i + '(chk,ctx){' +
-          blx + 'return chk' + bodies[i] + ';}';
+          blx + 'return chk' + bodies[i] + ';}body_' + i + '.__dustBody=!0;';
     }
     return out.join('');
   }
@@ -208,15 +213,15 @@
     },
 
     buffer: function(context, node) {
-      return '.write(' + escape(node[1]) + ')';
+      return '.w(' + escape(node[1]) + ')';
     },
 
     format: function(context, node) {
-      return '.write(' + escape(node[1] + node[2]) + ')';
+      return '.w(' + escape(node[1] + node[2]) + ')';
     },
 
     reference: function(context, node) {
-      return '.reference(' + compiler.compileNode(context, node[1]) +
+      return '.f(' + compiler.compileNode(context, node[1]) +
         ',ctx,' + compiler.compileNode(context, node[2]) + ')';
     },
 
@@ -263,7 +268,7 @@
     },
 
     '@': function(context, node) {
-      return '.helper(' +
+      return '.h(' +
         escape(node[1].text) +
         ',' + compiler.compileNode(context, node[2]) + ',' +
         compiler.compileNode(context, node[4]) + ',' +
@@ -303,7 +308,7 @@
     },
 
     partial: function(context, node) {
-      return '.partial(' +
+      return '.p(' +
           compiler.compileNode(context, node[1]) +
           ',' + compiler.compileNode(context, node[2]) +
           ',' + compiler.compileNode(context, node[3]) + ')';
@@ -372,12 +377,12 @@
       return escape(node[1]);
     },
     raw: function(context, node) {
-      return ".write(" + escape(node[1]) + ")";
+      return ".w(" + escape(node[1]) + ")";
     }
   };
 
   function compileSection(context, node, cmd) {
-    return '.' + cmd + '(' +
+    return '.' + (dust._aliases[cmd] || cmd) + '(' +
       compiler.compileNode(context, node[1]) +
       ',' + compiler.compileNode(context, node[2]) + ',' +
       compiler.compileNode(context, node[4]) + ',' +
@@ -411,8 +416,7 @@
   dust.pragmas = compiler.pragmas;
   dust.compileNode = compiler.compileNode;
   dust.nodes = compiler.nodes;
-  
+
   return compiler;
 
 }));
-

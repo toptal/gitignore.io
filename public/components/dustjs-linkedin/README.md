@@ -31,7 +31,7 @@ cd dustjs
 npm install -g grunt-cli
 ```
 
-### Fetch all the node dependencies
+### Fetch all node dependencies
 ```
 npm install
 ```
@@ -52,13 +52,11 @@ grunt test
 
 * Use `grunt dev` while developing\debugging.
 This task will start a server and serve Jasmine spec runner on http://localhost:3000/_SpecRunner.html.
-This tasks uses unminified dust-full.js so it allows you to easily step through the code in a browser.
+This task uses unminified dust-full.js so it allows you to easily step through the code in a browser.
 
 * Use `grunt testClient` to test production version of code (dust-full.min.js) in a browser.
  Similarly to `grunt dev` it serves Jasmine spec runner on `http://localhost:3000/_SpecRunner.html`.
 
-* Add unit tests
-Unit tests can be found in the `test/jasmine-tests/spec` directory. Help us keep up good test coverage! To view coverage report run `grunt coverage` and open `tmp/coverage/index.html` in a browser.
+* Add unit tests. Unit tests can be found in the `test/jasmine-tests/spec` directory. Help us keep up good test coverage! To view coverage report run `grunt coverage` and open `tmp/coverage/index.html` in a browser.
 
-* Add an issue and send a pull request
-Pull requests are easier to track if you also include an issue. Sending a pull request from a branch makes it easier for you to resolve conflicts in master
+* Add an issue and send a pull request. Pull requests are easier to track if you also include an issue. Sending a pull request from a branch makes it easier for you to resolve conflicts in master

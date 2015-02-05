@@ -1,20 +1,39 @@
 ## Change Log
 
+### v2.5.1 (2014/11/20 00:58 +00:00)
+- [#522](https://github.com/linkedin/dustjs/pull/522) Fix the use of a multi-level object key (e.g. foo.bar) as the key for an index lookup inside non-self-closing tags. (@sethkinast)
+
+### v2.5.0 (2014/11/04 00:15 +00:00)
+- [#515](https://github.com/linkedin/dustjs/pull/515) Remove the warning log when you attach a new Stream event (@sethkinast)
+- [#513](https://github.com/linkedin/dustjs/pull/513) Treat compiled body functions as blocks to render instead of functions to evaluate.   Dust body functions are now flagged with .___dustBody to differentiate them from functions set in the context. (@sethkinast)
+- [#511](https://github.com/linkedin/dustjs/pull/511) Treat formats and buffers as interchangeable when they are mixed together in order to prevent stack overflows with large templates and add a whitespace flag to dust.config (@sethkinast)
+- [#504](https://github.com/linkedin/dustjs/pull/504) Update README formatting (@NickStefan)
+- [#503](https://github.com/linkedin/dustjs/pull/503) Update contributors list (@sethkinast)
+- [#502](https://github.com/linkedin/dustjs/pull/502) Don't use the regexp constructor since we are using a regexp literal anyway (@jimmyhchan)
+
+### v2.4.2 (2014/09/09 23:11 +00:00)
+- [#497](https://github.com/linkedin/dustjs/pull/497) Upgrade to pegJS 0.8 - This change corresponds to a 90% reduction in template compile time. (@sethkinast)
+- [#495](https://github.com/linkedin/dustjs/pull/495) Catch syntax errors in context and fail gracefully (@sethkinast)
+
+### v2.4.1 (2014/09/02 20:33 +00:00)
+- [#494](https://github.com/linkedin/dustjs/pull/494) Revert "Merge pull request #472 from jimmyhchan/OPP"  This will allow dust references to look up the object's prototype chain again. (@sethkinast)
+- [#493](https://github.com/linkedin/dustjs/pull/493) Update changelog to 2.4.0 (@prashn64)
+
 ### v2.4.0 (2014/06/11 01:32 +00:00)
 - [#470](https://github.com/linkedin/dustjs/pull/470) Ensure client bundlers load only client-side code (@patrick-steele-idem)
 - [#474](https://github.com/linkedin/dustjs/pull/474) travis build fix for minimatch grunt module (@prashn64)
 - [#475](https://github.com/linkedin/dustjs/pull/475) remove config set on before install for travis build (@prashn64)
-- [#471](https://github.com/linkedin/dustjs/pull/471) Errors thrown from render will now call populate the error in the callback. Previously, thrown errors will immediately fail and not call the callback.  Issue #381, 
- 
+- [#471](https://github.com/linkedin/dustjs/pull/471) Errors thrown from render will now call populate the error in the callback. Previously, thrown errors will immediately fail and not call the callback.  Issue #381,
+
  Address #468: Errors thrown from stream now will invoke the `error` listener with the error object. Previously, these errors could not be caught and the process will hang.
- 
- Deprecated/remove: `dust.onError`, `dust.silenceErrors`. To see runtime errors, look at the error in the callback. 
+
+ Deprecated/remove: `dust.onError`, `dust.silenceErrors`. To see runtime errors, look at the error in the callback.
  breaking change: `dust.log` with an error no longer throws that error (@prashn64)
 - [#424](https://github.com/linkedin/dustjs/pull/424) Set up dev flow with grunt and fix coverage report (@kate2753)
 - [#447](https://github.com/linkedin/dustjs/pull/447) deprecate the internal property context.isFunction. this is no longer needed. (@prashn64)
 - [#441](https://github.com/linkedin/dustjs/pull/441) Make default params type to an object instead of github.com (@prashn64)
-- [#472](https://github.com/linkedin/dustjs/pull/472) #469 Prevent references from looking in the prototype.  
- 
+- [#472](https://github.com/linkedin/dustjs/pull/472) #469 Prevent references from looking in the prototype.
+
  Previously, {arr.sort} was possible even if sort was not a function in the arr object, since it was looking in the Array prototype. (@jimmyhchan)
 
 ### v2.3.5 (2014/05/08 21:31 +00:00)

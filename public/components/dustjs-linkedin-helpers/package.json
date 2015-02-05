@@ -1,6 +1,6 @@
 {
   "name": "dustjs-helpers",
-  "version": "1.2.0",
+  "version": "1.5.0",
   "author": {
     "name": "Aleksander Williams",
     "url": "http://akdubya.github.com/dustjs"
@@ -52,17 +52,24 @@
   "keywords": [
     "templates",
     "views",
-    "helpers"
+    "helpers",
+    "dust",
+    "dustjs",
+    "dust.js",
+    "linkedin"
   ],
-  "dependencies": {
-    "dustjs-linkedin": "~2.3.0"
+  "peerDependencies": {
+    "dustjs-linkedin": "2.5 - 2.6"
   },
   "devDependencies": {
+    "dustjs-linkedin": "2.5 - 2.6",
     "jasmine-node": "~1.13.0",
     "grunt": "~0.4.2",
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-jasmine": "~0.5.2",
     "grunt-template-jasmine-istanbul": "~0.2.5",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-uglify": "~0.3.0",
     "grunt-contrib-copy": "~0.5.0",
     "grunt-contrib-clean": "~0.5.0",

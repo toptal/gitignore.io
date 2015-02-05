@@ -17,7 +17,8 @@ module.exports = function (grunt) {
       helpersMin:       '<%=paths.build%>/dust-helpers.min.js',
       test:             '<%=paths.project%>/test',
       testSpecs:        '<%=paths.test%>/jasmine-test/spec',
-      dust:             '<%=paths.project%>/node_modules/dustjs-linkedin/dist/dust-full.min.js',
+      dust:             '<%=paths.project%>/node_modules/dustjs-linkedin/dist/dust-full.js',
+      dustMin:          '<%=paths.project%>/node_modules/dustjs-linkedin/dist/dust-full.min.js',
       dist:             '<%=paths.project%>/dist',
       archive:          '<%=paths.project%>/archive'
     },
@@ -79,24 +80,54 @@ module.exports = function (grunt) {
       }
     },
     jasmine : {
-      allTests : {
+      /*tests production (minified) code*/
+      testProd : {
         src : '<%=paths.helpersMin%>',
         options: {
           keepRunner: false,
           specs:   ['<%=paths.test%>/testUtils.js', '<%=paths.testSpecs%>/renderTestSpec.js'],
           helpers: ['<%=paths.testSpecs%>/helpersTests.js'],
-          vendor:  ['<%=paths.dust%>'],
+          vendor:  ['<%=paths.dustMin%>']
+        }
+      },
+      /*tests unminified code, mostly used for debugging by `grunt dev` task*/
+      testDev : {
+        src: '<%=paths.helpers%>',
+        options : {
+          keepRunner: false,
+          specs :   '<%=jasmine.testProd.options.specs%>',
+          helpers : '<%=jasmine.testProd.options.helpers%>',
+          vendor :  ['<%=paths.dust%>']
+        }
+      },
+      /* Used for coverage report only based on unminified code.
+         Not suited for debugging because istanbul decorates and jumbles code*/
+      coverage : {
+        src: '<%=paths.helpers%>',
+        options : {
+          keepRunner: false,
+          specs :   '<%=jasmine.testProd.options.specs%>',
+          helpers : '<%=jasmine.testProd.options.helpers%>',
+          vendor :  '<%=jasmine.testProd.options.vendor%>',
           template: require('grunt-template-jasmine-istanbul'),
           templateOptions: {
             coverage: '<%=paths.build%>/coverage/coverage.json',
             report: '<%=paths.build%>/coverage',
             thresholds: {
-              lines: 75,
-              statements: 75,
-              branches: 75,
-              functions: 90
+              lines: 90,
+              statements: 90,
+              branches: 80,
+              functions: 80
             }
           }
+        }
+      }
+    },
+    connect: {
+      testServer: {
+        options: {
+          port: 3000,
+          keepalive: false
         }
       }
     },
@@ -175,7 +206,36 @@ module.exports = function (grunt) {
         commitFiles: ['-a'],
         createTag: true
       }
+    },
+    log : {
+      testClient: {
+        message: 'Navigate to http://localhost:<%= connect.testServer.options.port %>/_SpecRunner.html\nCtrl-C to kill the server.'
+      },
+      coverage: {
+        message: 'Open <%=jasmine.coverage.options.templateOptions.report%>/index.html in the browser to view the coverage.'
+      }
+    },
+    watch: {
+      lib: {
+        files: ['<%=paths.lib%>/**/*.js'],
+        tasks: ['clean:build', 'buildLib']
+      },
+      gruntfile: {
+        files: '<%= jshint.gruntfile.src %>',
+        tasks: ['jshint:gruntfile']
+      },
+      lib_test: {
+        files: ['<%=paths.lib%>/**/*.js', '<%=paths.testSpecs%>/**/*.js'],
+        tasks: ['testPhantom']
+      }
     }
+  });
+
+  //--------------------------------------------------
+  //------------Custom tasks -------------------------
+  //--------------------------------------------------
+  grunt.registerMultiTask('log', 'Print messages defined via config', function() {
+    grunt.log.ok(this.data.message);
   });
 
   //--------------------------------------------------
@@ -186,6 +246,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-bump');
   grunt.loadNpmTasks('grunt-shell');
@@ -193,19 +255,29 @@ module.exports = function (grunt) {
   //--------------------------------------------------
   //------------Grunt task aliases -------------------
   //--------------------------------------------------
-  grunt.registerTask('build',   ['jshint', 'clean:build', 'copy:build', 'uglify:build']);
+  grunt.registerTask('buildLib',     ['jshint:libs', 'copy:build']);
+  grunt.registerTask('build',        ['clean:build', 'jshint:testSpecs', 'buildLib', 'uglify:build']);
 
   //test tasks
-  grunt.registerTask('testNode',    ['build', 'shell:testNode']);
-  grunt.registerTask('testRhino',   ['build', 'shell:testRhino']);
-  grunt.registerTask('testPhantom', ['build', 'jasmine']);
-  grunt.registerTask('test',        ['build', 'jasmine', 'shell:testNode', 'shell:testRhino']);
+  grunt.registerTask('testNode',     ['build', 'shell:testNode']);
+  grunt.registerTask('testRhino',    ['build', 'shell:testRhino']);
+  grunt.registerTask('testPhantom',  ['build', 'jasmine:testProd']);
+  grunt.registerTask('test',         ['build', 'jasmine:testProd', 'shell:testNode', 'shell:testRhino', 'jasmine:coverage']);
+
+  //task for debugging in browser
+  grunt.registerTask('dev',          ['build', 'jasmine:testDev:build', 'connect:testServer','log:testClient', 'watch:lib']);
+
+  //task to run unit tests on client against prod version of code
+  grunt.registerTask('testClient',   ['build', 'jasmine:testProd:build', 'connect:testServer', 'log:testClient', 'watch:lib_test']);
+
+  //coverage report
+  grunt.registerTask('coverage',     ['jasmine:coverage', 'log:coverage']);
 
   //release tasks
-  grunt.registerTask('buildRelease',    ['test', 'copy:release', 'compress']);
+  grunt.registerTask('buildRelease', ['test', 'copy:release', 'compress']);
   grunt.registerTask('releasePatch', ['bump-only:patch', 'buildRelease', 'shell:gitAddArchive', 'bump-commit']);
   grunt.registerTask('releaseMinor', ['bump-only:minor', 'buildRelease', 'shell:gitAddArchive', 'bump-commit']);
 
   //default task - full test
-  grunt.registerTask('default', ['test']);
+  grunt.registerTask('default',      ['test']);
 };

@@ -14,6 +14,25 @@
 
   dust.debugLevel = NONE;
 
+  dust.config = {
+    whitespace: false,
+  };
+
+  // Directive aliases to minify code
+  dust._aliases = {
+    "write": "w",
+    "end": "e",
+    "map": "m",
+    "render": "r",
+    "reference": "f",
+    "section": "s",
+    "exists": "x",
+    "notexists": "nx",
+    "block": "b",
+    "partial": "p",
+    "helper": "h"
+  };
+
   // Try to find the console in global scope
   if (root && root.console && root.console.log) {
     loggerContext = root.console;
@@ -295,7 +314,7 @@
   Context.prototype._get = function(cur, down) {
     var ctx = this.stack,
         i = 1,
-        value, first, len, ctxThis;
+        value, first, len, ctxThis, fn;
     first = down[0];
     len = down.length;
 
@@ -340,13 +359,16 @@
 
     // Return the ctx or a function wrapping the application of the context.
     if (typeof ctx === 'function') {
-      return function() {
+      fn = function() {
         try {
           return ctx.apply(ctxThis, arguments);
         } catch (err) {
-          return dust.log(err, ERROR);
+          dust.log(err, ERROR);
+          throw err;
         }
       };
+      fn.__dustBody = !!ctx.__dustBody;
+      return fn;
     } else {
       if (ctx === undefined) {
         dust.log('Cannot find the value for reference [{' + down.join('.') + '}] in template [' + this.getTemplateName() + ']');
@@ -496,7 +518,6 @@
       this.events = {};
     }
     if (!this.events[type]) {
-      dust.log('Event type [' + type + '] does not exist. Using just the specified callback.', WARN);
       if(callback) {
         this.events[type] = callback;
       } else {
@@ -562,7 +583,12 @@
 
     this.next = branch;
     this.flushable = true;
-    callback(branch);
+    try {
+      callback(branch);
+    } catch(e) {
+      dust.log(e, ERROR);
+      branch.setError(e);
+    }
     return cursor;
   };
 
@@ -604,8 +630,13 @@
 
   Chunk.prototype.section = function(elem, context, bodies, params) {
     // anonymous functions
-    if (typeof elem === 'function') {
-      elem = elem.apply(context.current(), [this, context, bodies, params]);
+    if (typeof elem === 'function' && !elem.__dustBody) {
+      try {
+        elem = elem.apply(context.current(), [this, context, bodies, params]);
+      } catch(e) {
+        dust.log(e, ERROR);
+        return this.setError(e);
+      }
       // functions that return chunks are assumed to have handled the body and/or have modified the chunk
       // use that return value as the current chunk and go to the next method in the chain
       if (elem instanceof Chunk) {
@@ -752,15 +783,15 @@
   Chunk.prototype.helper = function(name, context, bodies, params) {
     var chunk = this;
     // handle invalid helpers, similar to invalid filters
-    try {
-      if(dust.helpers[name]) {
+    if(dust.helpers[name]) {
+      try {
         return dust.helpers[name](chunk, context, bodies, params);
-      } else {
-        dust.log('Invalid helper [' + name + ']', WARN);
-        return chunk;
+      } catch(e) {
+        dust.log('Error in ' + name + ' helper: ' + e, ERROR);
+        return chunk.setError(e);
       }
-    } catch (err) {
-      chunk.setError(err);
+    } else {
+      dust.log('Invalid helper [' + name + ']', WARN);
       return chunk;
     }
   };
@@ -784,6 +815,13 @@
     return this;
   };
 
+  // Chunk aliases
+  for(var f in Chunk.prototype) {
+    if(dust._aliases[f]) {
+      Chunk.prototype[dust._aliases[f]] = Chunk.prototype[f];
+    }
+  }
+
   function Tap(head, tail) {
     this.head = head;
     this.tail = tail;
@@ -803,7 +841,7 @@
     return value;
   };
 
-  var HCHARS = new RegExp(/[&<>\"\']/),
+  var HCHARS = /[&<>"']/,
       AMP    = /&/g,
       LT     = /</g,
       GT     = />/g,

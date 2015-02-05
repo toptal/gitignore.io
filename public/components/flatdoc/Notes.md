@@ -3,11 +3,14 @@ Developer notes
 
 ### Distributions
 
-There are 3 official ways to point to flatdoc releases. That is:
+There are 4 official ways to point to flatdoc releases. That is:
+
+    # via cdnjs:
+    https://cdn.rawgit.com/rstacruz/flatdoc/v0.8.6/flatdoc.js
 
     # Specific versions
     # (built using `make v/0.8.1`)
-    http://rstacruz.github.io/flatdoc/v/0.8.1/*
+    http://rstacruz.github.io/flatdoc/v/0.8.6/*
 
     # Latest from the 0.8 series.
     # Updated every time there's a 0.8 release.
@@ -33,7 +36,6 @@ This project uses GNU make (`Makefile`) to manage the builds.
  * `flatdoc.js` is the main script.
  * Distributions are stored in `/v/{version}/*`.
  * CSS files are compiled from Stylus sources.
- * Theme js files are concatenated from other sources.
 
 ### Updating files
 
@@ -45,7 +47,7 @@ This project uses GNU make (`Makefile`) to manage the builds.
     npm test
 
     # update prescribed versions
-    perl -p -i -e "s/v\/\d+\.\d+\.\d+/v\/0.8.3/g" templates/*.html Readme.md
+    perl -p -i -e "s/v\d+\.\d+\.\d+/v0.9.0/g" templates/*.html Readme.md
     bump package.json
     git diff
 

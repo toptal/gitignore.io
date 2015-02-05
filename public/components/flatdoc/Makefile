@@ -21,7 +21,7 @@ legacy.js: \
 %.css: %.styl
 	(echo "/*\n\nPlease don't edit this file directly.\nInstead, edit the stylus (.styl) files and compile it to CSS on your machine.\n\n*/" ; $(STYLUS) < $<) > $@
 
-Reference.md: src/flatdoc.js
+Reference.md: flatdoc.js
 	$(DOX) -r < $< | node support/dox2md.js --default-level 3 > $@
 
 # $ make v/0.1.0

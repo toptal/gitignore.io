@@ -13,10 +13,12 @@ matrix:
       env: TEST="all"
 notifications:
   email:
-    - jdemorais@linkedin.com
-    - vbasavaraj@linkedin.com
     - jleppert@linkedin.com
+    - jchan@linkedin.com
+    - skinast@linkedin.com
 before_install:
+  - npm install -g npm@1.4
+  - npm --version
   - npm install -g grunt-cli
 script:
   - "[ $TEST = 'all' ] && grunt test || grunt testNode"
