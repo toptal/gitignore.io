@@ -2,15 +2,15 @@
 
 
 module.exports = function less(grunt) {
-	// Load task
-	grunt.loadNpmTasks('grunt-contrib-less');
+    // Load task
+    grunt.loadNpmTasks('grunt-contrib-less');
 
-	// Options
-	return {
-        options: {
-            cleancss: false
-        },
+    // Options
+    return {
         build: {
+            options: {
+                cleancss: false
+            },
             files: [{
                 expand: true,
                 cwd: 'public/css',
@@ -19,5 +19,5 @@ module.exports = function less(grunt) {
                 ext: '.css'
             }]
         }
-	};
+    };
 };

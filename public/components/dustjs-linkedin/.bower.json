@@ -1,6 +1,6 @@
 {
   "name": "dustjs-linkedin",
-  "version": "2.5.1",
+  "version": "2.3.6",
   "main": "dist/dust-full.min.js",
   "devDependencies": {
     "pegjs": "0.8.0"
@@ -22,13 +22,14 @@
     "bower.json"
   ],
   "homepage": "https://github.com/linkedin/dustjs",
-  "_release": "2.5.1",
+  "_release": "2.3.6",
   "_resolution": {
     "type": "version",
-    "tag": "v2.5.1",
-    "commit": "73b1763e0b80b45685c9f689c4dc6df2a5627e80"
+    "tag": "v2.3.6",
+    "commit": "39b60daf33a2078a4819691bd4a559cc9b3051c7"
   },
   "_source": "git://github.com/linkedin/dustjs.git",
-  "_target": "^2.0.3",
-  "_originalSource": "dustjs-linkedin"
+  "_target": "~2.3.0",
+  "_originalSource": "dustjs-linkedin",
+  "_direct": true
 }

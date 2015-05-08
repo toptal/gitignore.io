@@ -107,7 +107,7 @@
         peg$c42 = { type: "literal", value: "~", description: "\"~\"" },
         peg$c43 = function(k) { return ["special", k].concat([['line', line()], ['col', column()]]) },
         peg$c44 = { type: "other", description: "identifier" },
-        peg$c45 = function(p) { var arr = ["path"].concat(p); arr.text = p[1].join('.').replace(/,line,\d+,col,\d+/g,''); return arr; },
+        peg$c45 = function(p) { var arr = ["path"].concat(p); arr.text = p[1].join('.'); return arr; },
         peg$c46 = function(k) { var arr = ["key", k]; arr.text = k; return arr; },
         peg$c47 = { type: "other", description: "number" },
         peg$c48 = function(n) { return ['literal', n]; },

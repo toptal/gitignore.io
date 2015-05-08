@@ -12,7 +12,7 @@ way to make open source documentation from *Readme* files.
  * Gorgeous default theme (and it's responsive)
  * Just create an HTML file and deploy!
 
-*Current version: [v0.9.0][dist]*
+*Current version: [v/0.8.6][dist]*
 
 [![Build Status](https://travis-ci.org/rstacruz/flatdoc.svg?branch=gh-pages)](https://travis-ci.org/rstacruz/flatdoc)
 
@@ -28,9 +28,33 @@ you're all good to go.
 
 The main JS and CSS files are also available in [npm] and [bower].
 
-[Default theme template >][template]
+[Download template >][template]
 
-[Blank template >][blank]
+``` html
+<html>
+  <head>
+    <!-- Flatdoc -->
+    <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/legacy.js'></script>
+    <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/flatdoc.js'></script>
+
+    <!-- Flatdoc theme (optional) -->
+    <link  href='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/style.css' rel='stylesheet'>
+    <script src='https://cdn.rawgit.com/rstacruz/flatdoc/v0.9.0/theme-white/script.js'></script>
+
+    <!-- Initializer -->
+    <script>
+      Flatdoc.run({
+        fetcher: Flatdoc.github('USER/REPO')
+      });
+    </script>
+  </head>
+
+  <body role='flatdoc'>
+    <div role='flatdoc-menu'></div>
+    <div role='flatdoc-content' class='content'></div>
+  </body>
+</html>
+```
 
 [bower]: http://bower.io/search/?q=flatdoc
 [npm]: https://www.npmjs.org/package/flatdoc
@@ -209,6 +233,25 @@ the blank template and customize as you see fit.
 
 [Get blank template >][template]
 
+``` html
+<html>
+  <head>
+    <script src='jquery.js'></script>
+    <script src='http://rstacruz.github.io/flatdoc/v/0.8.6/flatdoc.js'></script>
+    <!-- Initializer -->
+    <script>
+      Flatdoc.run({
+        fetcher: Flatdoc.github('USER/REPO')
+      });
+    </script>
+  </head>
+
+  <body role='flatdoc'>
+    <div role='flatdoc-menu'></div>
+    <div role='flatdoc-content'></div>
+  </body>
+</html>
+```
 Misc
 ====
 
@@ -263,4 +306,4 @@ License](http://www.opensource.org/licenses/mit-license.php).
 [project]: https://github.com/rstacruz/flatdoc
 [template]: https://github.com/rstacruz/flatdoc/raw/gh-pages/templates/template.html
 [blank]: https://github.com/rstacruz/flatdoc/raw/gh-pages/templates/blank.html
-[dist]: https://github.com/rstacruz/flatdoc/tree/gh-pages/v/0.9.0
+[dist]: https://github.com/rstacruz/flatdoc/tree/gh-pages/v/0.8.6

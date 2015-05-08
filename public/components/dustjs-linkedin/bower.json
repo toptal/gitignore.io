@@ -1,6 +1,6 @@
 {
   "name": "dustjs-linkedin",
-  "version": "2.5.1",
+  "version": "2.3.6",
   "main": "dist/dust-full.min.js",
   "devDependencies": {
     "pegjs": "0.8.0"

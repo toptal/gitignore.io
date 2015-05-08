@@ -3,39 +3,26 @@
 var path = require('path'),
     fs = require('fs'),
     sys = require('util'),
-    dust = require('../lib/server');
-
-var ARG_REGEX = /^--?([a-z][0-9a-z-]*)(?:=([^\s]+))?$/i,
+    dust = require('../lib/server'),
     args = process.argv.slice(1),
     name = null;
 
-args = args.filter(function(arg) {
-    var match = arg.match(ARG_REGEX),
-        val;
+args = args.filter(function (arg) {
+    var match;
 
-    if (!match) {
-        return true;
-    }
-
-    arg = match[1];
-    val = match[2];
+    if (match = arg.match(/^--?([a-z][0-9a-z-]*)(?:=([^\s]+))?$/i)) { arg = match[1] }
+    else { return arg }
 
     switch (arg) {
         case 'h':
         case 'help':
-            sys.puts("usage: dustc [{-n|--name}=<template_name>] [--whitespace=true|false] {source|-} [destination]");
+            sys.puts("usage: dustc [{-n|--name}=<template_name>] {sourcefilename|-} [destination]");
             process.exit(0);
-            break;
         case 'n':
         case 'name':
-            name = val;
-            break;
-        case 'whitespace':
-            dust.config.whitespace = (val === 'true');
+            name = match[2];
             break;
     }
-
-    return false;
 });
 
 var input = args[1];

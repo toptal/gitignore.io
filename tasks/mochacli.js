@@ -2,11 +2,11 @@
 
 
 module.exports = function mochacli(grunt) {
-	// Load task
-	grunt.loadNpmTasks('grunt-mocha-cli');
+    // Load task
+    grunt.loadNpmTasks('grunt-mocha-cli');
 
-	// Options
-	return {
+    // Options
+    return {
         src: ['test/**/*.js'],
         options: {
             timeout: 6000,
@@ -14,5 +14,5 @@ module.exports = function mochacli(grunt) {
             ui: 'bdd',
             reporter: 'spec'
         }
-	};
+    };
 };

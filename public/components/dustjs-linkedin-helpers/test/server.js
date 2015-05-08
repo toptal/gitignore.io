@@ -1,11 +1,14 @@
 var uutest    = require('./uutest'),
   helpersTests     = require('./jasmine-test/spec/helpersTests'),
-  coreSetup = require('./core').coreSetup,
-  dust = require('dustjs-linkedin');
+  coreSetup = require('./core').coreSetup;
+
+dust  = require('../lib/dust-helpers');
 
 //Add the tapper helper to test the Tap helper.
-require("./testUtils");
-require('../lib/dust-helpers');
+testUtils = require("./testUtils");
+for(key in testUtils) {
+  dust.helpers[key] = testUtils[key];
+}
 
 function dumpError(err) {
   var out = err.testName + " -> ";

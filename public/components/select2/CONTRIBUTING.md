@@ -45,7 +45,7 @@ to are:
 - What version of jQuery are you using? And what version of Select2?
 - Are you using Select2 with other plugins?
 
-All of these questions will help people fix and identify any potential bugs.
+All of these questions will help others fix and identify any potential bugs.
 
 Requesting features in Select2
 ------------------------------
@@ -56,13 +56,6 @@ Before starting work on a major feature for Select2, **contact the
 [community][community] first** or you may risk spending a considerable amount of
 time on something which the project developers are not interested in bringing
 into the project.
-
-### Select2 4.0
-
-Many feature requests will be closed off until 4.0, where Select2 plans to adopt
-a more flexible API.  If you are interested in helping with the development of
-the next major Select2 release, please send a message to the
-[mailing list][mailing-list] or [irc channel][irc-channel] for more information.
 
 Triaging issues and pull requests
 ---------------------------------
@@ -91,17 +84,27 @@ the community before being accepted.  If you are not sure about a piece of
 submitted code, or know of a better way to do something, do not hesitate to make
 a comment on the pull request.
 
-It should also be made clear that **all code contributed to Select** must be
-licensable under the [Apache 2 or GPL 2 licenses][licensing].  Code that cannot
-be released under either of these licenses **cannot be accepted** into the
-project.
+### Reviving old tickets
 
-[community]: https://github.com/ivaynberg/select2#community
+If you come across tickets which have not been updated for a while, you are
+encouraged to revive them. While this can be as simple as saying `:+1:`, it is
+best if you can include more information on the issue. Common bugs and feature
+requests are more likely to be fixed, whether it is by the community or the
+developers, so keeping tickets up to date is encouraged.
+
+Licensing
+---------
+
+It should also be made clear that **all code contributed to Select** must be
+licensable under the [MIT license][licensing].  Code that cannot be released
+under this license **cannot be accepted** into the project.
+
+[community]: https://select2.github.io/community.html
 [reporting-bugs]: #reporting-bugs-with-select2
 [requesting-features]: #requesting-features-in-select2
-[issue-tracker]: https://github.com/ivaynberg/select2/issues
-[mailing-list]: https://github.com/ivaynberg/select2#mailing-list
-[irc-channel]: https://github.com/ivaynberg/select2#irc-channel
-[issue-search]: https://github.com/ivaynberg/select2/search?q=&type=Issues
+[issue-tracker]: https://github.com/select2/select2/issues
+[mailing-list]: https://github.com/select2/select2#mailing-list
+[irc-channel]: https://github.com/select2/select2#irc-channel
+[issue-search]: https://github.com/select2/select2/search?q=&type=Issues
 [isolated-case]: http://css-tricks.com/6263-reduced-test-cases/
-[licensing]: https://github.com/ivaynberg/select2#copyright-and-license
+[licensing]: https://github.com/select2/select2/blob/master/LICENSE.md

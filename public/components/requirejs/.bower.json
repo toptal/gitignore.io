@@ -1,0 +1,24 @@
+{
+  "name": "requirejs",
+  "version": "2.1.17",
+  "homepage": "http://requirejs.org",
+  "authors": [
+    "jrburke.com"
+  ],
+  "description": "A file and module loader for JavaScript",
+  "main": "require.js",
+  "keywords": [
+    "AMD"
+  ],
+  "license": "new BSD, and MIT",
+  "_release": "2.1.17",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.1.17",
+    "commit": "72b4505d30d9fa342f6dc88ee25da2b2da6a1e58"
+  },
+  "_source": "git://github.com/jrburke/requirejs-bower.git",
+  "_target": "^2.1.11",
+  "_originalSource": "requirejs",
+  "_direct": true
+}
