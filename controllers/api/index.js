@@ -17,8 +17,9 @@ module.exports = function (router) {
  * GET API page.
  */
     router.get('/(:ignore)', function (req, res) {
-      var ignoreFileList = req.params.ignore.toLowerCase().split(',');
-      var output = generateFile(ignoreFileList);
+      var ignoreString = req.params.ignore.toLowerCase()
+      var ignoreFileList = ignoreString.split(',');
+      var output = generateFile(ignoreString, ignoreFileList);
       res.setHeader('Cache-Control', 'public, max-age=0');
       res.setHeader('Content-Type', 'text/plain');
       res.setHeader('Expires', new Date(Date.now()).toUTCString());
@@ -28,8 +29,9 @@ module.exports = function (router) {
  * POST API File
  */
     router.get('/f/(:ignore)', function (req, res) {
-      var ignoreFileList = req.params.ignore.split(',');
-      var output = generateFile(ignoreFileList);
+      var ignoreString = req.params.ignore.toLowerCase();
+      var ignoreFileList = ignoreString.split(',');
+      var output = generateFile(ignoreString, ignoreFileList);
       res.setHeader('Cache-Control', 'public, max-age=0');
       res.setHeader('Content-Type', 'application/octet-stream');
       res.setHeader('Expires', new Date(Date.now()).toUTCString());
@@ -51,8 +53,8 @@ module.exports = function (router) {
 /*
  * Helper for generating concatenated gitignore templates
  */
-function generateFile(list){
-  var output = '# Created by https://www.gitignore.io\n';
+function generateFile(ignoreString, list){
+  var output = '# Created by https://www.gitignore.io/api/'+ignoreString+"\n";
   for (var file in list) {
     if (DatastoreModel.JSONObject[list[file]] === undefined){
       output += '\n#!! ERROR: ' + list[file] + ' is undefined. Use list command to see defined gitignore types !!#\n';
