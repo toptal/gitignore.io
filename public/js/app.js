@@ -17,14 +17,20 @@ $(document).ready(function () {
 });
 
 function generateGitIgnore(){
-  if ($("#ignoreSearch").select2("val").length > 0){
-    window.location="/api/"+$("#ignoreSearch").select2("val");
-    $("#ignoreSearch").select2("val", "");
+  var searchString = $("#ignoreSearch").val();
+  var searchLength = searchString.length;
+  if (searchLength > 0){
+    var files = searchString.slice(1,searchLength);
+    window.location="/api/"+files;
+    $("#ignoreSearch").val("");
   }
 }
 
 function generateGitIgnoreFile(){
-  if ($("#ignoreSearch").select2("val").length > 0){
-    window.location="/api/f/"+$("#ignoreSearch").select2("val");
+  var searchString = $("#ignoreSearch").val();
+  var searchLength = searchString.length;
+  if (searchLength > 0){
+    var files = searchString.slice(1,searchLength);
+    window.location="/api/f/"+files;
   }
 }
