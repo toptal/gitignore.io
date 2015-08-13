@@ -6,6 +6,7 @@
         "views": "path:./public/templates"
     },
 
+    
     "view engines": {
         "dust": {
             "module": "engine-munger",
@@ -23,6 +24,8 @@
             }
         }
     },
+    
+    
 
     "middleware": {
 
@@ -30,23 +33,29 @@
             "enabled": true,
             "priority": 35,
             "module": {
-                "name": "kraken-devtools",
+                "name": "construx",
                 "arguments": [
                     "path:./public",
                     "path:./.build",
-                    {   
+                    {
+                        
                         "template": {
-                            "module": "kraken-devtools/plugins/dustjs",
+                            "module": "construx-dustjs-i18n",
                             "files": "/templates/**/*.js",
-                            "base": "templates",
-                            "i18n": "config:i18n"
+                            "base": "templates"
+                            
+                            ,"i18n": "config:i18n"
+                            
                         },
+                        
+                        
                         "css": {
-                            "module": "kraken-devtools/plugins/less",
+                            "module": "construx-less",
                             "files": "/css/**/*.css"
                         },
+                        
                         "copier": {
-                            "module": "kraken-devtools/plugins/copier",
+                            "module": "construx-copier",
                             "files": "**/*"
                         }
                     }

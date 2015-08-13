@@ -5,39 +5,37 @@
   "author": "Joe Blau",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "build": "grunt build",
+    "all": "npm run build && npm run test"
   },
   "dependencies": {
-    "adaro": "^0.1.10",
-    "dustjs-helpers": "^1.2.0",
-    "dustjs-linkedin": "^2.3.6",
-    "engine-munger": "^0.2.0",
-    "express": "^4.3.0",
-    "kraken-devtools": "^1.0.0",
-    "kraken-js": "^1.0.1",
-    "less": "^1.7.5",
-    "localizr": "^0.1.6",
-    "requirejs": "^2.1.17"
+    "adaro": "^1.0.0",
+    "construx": "^1.0.0",
+    "construx-copier": "^1.0.0",
+    "construx-dustjs-i18n": "^1.0.1",
+    "construx-less": "^1.0.0",
+    "dustjs-helpers": "^1.7.3",
+    "dustjs-linkedin": "^2.7.2",
+    "engine-munger": "^1.1.1",
+    "express": "^4.13.3",
+    "kraken-js": "^1.0.6",
+    "localizr": "^1.1.0",
+    "requirejs": "^2.1.20"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
     "grunt-config-dir": "^0.3.2",
-    "grunt-contrib-clean": "^0.5.0",
-    "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-less": "^0.9.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-less": "^1.0.1",
     "grunt-contrib-requirejs": "^0.4.4",
-    "grunt-copy-to": "0.0.10",
+    "grunt-copy-to": "0.0.12",
     "grunt-dustjs": "^1.2.1",
-    "grunt-localizr": "^0.1.4",
-    "grunt-mocha-cli": "^1.13.0",
-    "mocha": "^1.18.0",
-    "supertest": "^0.9.0"
-  },
-  "generator-kraken": {
-    "version": "1.1.2",
-    "template": "dustjs",
-    "css": "less",
-    "js": "requirejs",
-    "task": "grunt"
+    "grunt-localizr": "^0.2.3",
+    "grunt-mocha-cli": "^1.14.0",
+    "mocha": "^2.2.5",
+    "supertest": "^1.0.1"
   }
 }
