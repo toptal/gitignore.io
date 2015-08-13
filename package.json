@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Create useful .gitignore files for your project",
   "author": "Joe Blau",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "grunt test",
     "build": "grunt build",
