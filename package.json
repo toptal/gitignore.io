@@ -10,17 +10,17 @@
     "all": "npm run build && npm run test"
   },
   "dependencies": {
-    "adaro": "^1.0.0",
+    "adaro": "^0.1.10",
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",
     "construx-dustjs-i18n": "^1.0.1",
     "construx-less": "^1.0.0",
-    "dustjs-helpers": "^1.7.3",
-    "dustjs-linkedin": "^2.7.2",
-    "engine-munger": "^1.1.1",
-    "express": "^4.13.3",
-    "kraken-js": "^1.0.6",
-    "localizr": "^1.1.0",
+    "dustjs-helpers": "~1.6.3",
+    "dustjs-linkedin": "~2.6.2",
+    "engine-munger": "^0.2.8",
+    "express": "^4.12.2",
+    "kraken-js": "^1.0.3",
+    "localizr": "^0.1.6",
     "requirejs": "^2.1.20"
   },
   "devDependencies": {
@@ -28,14 +28,14 @@
     "grunt-cli": "^0.1.13",
     "grunt-config-dir": "^0.3.2",
     "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-less": "^1.0.1",
     "grunt-contrib-requirejs": "^0.4.4",
-    "grunt-copy-to": "0.0.12",
+    "grunt-copy-to": "0.0.10",
     "grunt-dustjs": "^1.2.1",
     "grunt-localizr": "^0.2.3",
     "grunt-mocha-cli": "^1.14.0",
-    "mocha": "^2.2.5",
-    "supertest": "^1.0.1"
+    "mocha": "^1.18.0",
+    "supertest": "^0.9.0"
   }
 }
