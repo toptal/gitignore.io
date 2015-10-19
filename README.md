@@ -84,7 +84,7 @@ Or, if you have curl installed(Generally, [Curl](http://curl.haxx.se/) is bundle
 And copy it to `C:\Program Files\Git\cmd\curl.cmd`, assuming `msysgit` was installed to `c:\Program Files\Git`.
 Then, create `gi.cmd` with this content
 ```bat
-@curl -L -s https://www.gitignore.io/api/%1
+@curl -L -s https://www.gitignore.io/api/%*
 ```
 Copy this `gi.cmd` file to `C:\Program Files\Git\cmd\gi.cmd`, still assuming `msysgit` was installed to `c:\Program Files\Git`.
 Make sure that `C:\Program Files\Git\cmd` is added to the environment variable `path`.
@@ -94,7 +94,7 @@ Make sure that `C:\Program Files\Git\cmd` is added to the environment variable `
 After the function is created, the `gi` command will give you command line access to the gitingore.io API. . **Note:** Use `gig` if you are on Windows
 
 ## View
-Show output on the command line. **Note:** Use `gig` if you are on Windows
+Show output on the command line. **Note:** Use `gig` if you are on Windows and use PowerShell
 ```sh
 $ gi linux,java
 # Created by https://www.gitignore.io
@@ -113,19 +113,19 @@ $ gi linux,java
 ```
 
 ## Global
-Append Operating System and IDE settings to global .gitignore. **Note:** Use `gig` if you are on Windows
+Append Operating System and IDE settings to global .gitignore. **Note:** Use `gig` if you are on Windows and use PowerShell
 ```sh
 $ gi linux,eclipse >> ~/.gitignore_global
 ```
 
 ## Project
-Appending Programming Langauge settings to your projects .gitignore. **Note:** Use `gig` if you are on Windows
+Appending Programming Langauge settings to your projects .gitignore. **Note:** Use `gig` if you are on Windows and use PowerShell
 ```sh
 $ gi java,python >> .gitignore
 ```
 
 ## List
-List displays a list of all of the currently support gitignore.io templates. **Note:** Use `gig` if you are on Windows
+List displays a list of all of the currently support gitignore.io templates. **Note:** Use `gig` if you are on Windows and use PowerShell
 ```sh
 $ gi list
 actionscript,ada,agda,android,appceleratortitanium,appcode,archives,
