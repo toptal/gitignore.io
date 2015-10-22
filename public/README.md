@@ -66,7 +66,8 @@ Function gig {
 }
 ```
 
-Or, if you have curl installed(Generally, [Curl](http://curl.haxx.se/) is bundled with [msysgit](http://msysgit.github.io)), create `curl.cmd` with [this content](https://gist.github.com/912993)
+Create a Command Line Prompt Script
+If you have installed [msysgit](http://msysgit.github.io)), create `gi.cmd` with content below. And copy it to `C:\Program Files\Git\cmd\gi.cmd`, assuming `msysgit` was installed to `c:\Program Files\Git`. Make sure that `C:\Program Files\Git\cmd` is added to the environment variable `path`.
 ```bat
 @rem Do not use "echo off" to not affect any child calls.
 @setlocal
@@ -79,15 +80,8 @@ Or, if you have curl installed(Generally, [Curl](http://curl.haxx.se/) is bundle
 @if not exist "%HOME%" @set HOME=%HOMEDRIVE%%HOMEPATH%
 @if not exist "%HOME%" @set HOME=%USERPROFILE%
 
-@curl.exe %*
+@curl.exe -L -s https://www.gitignore.io/api/%*
 ```
-And copy it to `C:\Program Files\Git\cmd\curl.cmd`, assuming `msysgit` was installed to `c:\Program Files\Git`.
-Then, create `gi.cmd` with this content
-```bat
-@curl -L -s https://www.gitignore.io/api/%1
-```
-Copy this `gi.cmd` file to `C:\Program Files\Git\cmd\gi.cmd`, still assuming `msysgit` was installed to `c:\Program Files\Git`.
-Make sure that `C:\Program Files\Git\cmd` is added to the environment variable `path`.
 
 # Use Command Line
 
