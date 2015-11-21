@@ -8,9 +8,18 @@ module.exports = function (router) {
  * GET List of all ignore types
  */
     router.get('/list', function (req, res) {
+      var format = req.query.format;
       res.setHeader('Cache-Control', 'public, max-age=0');
-      res.setHeader('Content-Type', 'text/plain');
       res.setHeader('Expires', new Date(Date.now()).toUTCString());
+      if (format === 'json') {
+          res.json(DatastoreModel.JSONObject);
+          return;
+      }
+      res.setHeader('Content-Type', 'text/plain');
+      if (format === 'lines') {
+          res.send(DatastoreModel.JSONStringLines);
+          return;
+      }
       res.send(DatastoreModel.JSONString);
     });
 /*
