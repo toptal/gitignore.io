@@ -1,11 +1,13 @@
 {
   "name": "gitignoreio",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Create useful .gitignore files for your project",
   "author": "Joe Blau",
-  "main": "server.js",
+  "main": "index.js",
+  "engines": {
+    "node": "4.1.2"
+  },
   "scripts": {
-    "start": "node server.js",
     "test": "grunt test",
     "build": "grunt build",
     "all": "npm run build && npm run test"
