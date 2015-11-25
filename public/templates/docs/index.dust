@@ -29,6 +29,8 @@
       <div class='menu section' role='flatdoc-menu'></div>
       <div class='bottom section'>
         <a href='https://github.com/joeblau/gitignore.io'>View on GitHub</a><br>
+        <br>
+        <a class="coinbase-button" data-code="2589c6b8c552c1905a7cbd7e27f1618e" data-button-style="custom_small" href="https://www.coinbase.com/checkouts/2589c6b8c552c1905a7cbd7e27f1618e">Donate Bitcoins</a><script src="https://www.coinbase.com/assets/button.js" type="text/javascript"></script>
       </div>
     </div>
     <div role='flatdoc-content' class='content'></div>
