@@ -22,7 +22,7 @@
     "express": "^4.12.2",
     "kraken-js": "^1.0.3",
     "localizr": "^0.1.6",
-    "requirejs": "^2.1.20"
+    "requirejs": "^2.1.22"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -30,7 +30,7 @@
     "grunt-config-dir": "^0.3.2",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-jshint": "^0.10.0",
-    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-less": "^1.1.0",
     "grunt-contrib-requirejs": "^0.4.4",
     "grunt-copy-to": "0.0.10",
     "grunt-dustjs": "^1.2.1",
