@@ -8,8 +8,10 @@ module.exports = function (grunt) {
         configDir: require('path').resolve('tasks')
     });
 
-    // Register group tasks
-    grunt.registerTask('build', ['jshint', 'i18n', 'less', 'requirejs', 'copyto']);
-    grunt.registerTask('test', [ 'jshint', 'mochacli' ]);
+    grunt.loadNpmTasks('grunt-makara-amdify');
+
+  // Register group tasks
+  grunt.registerTask('build', ['jshint', 'dustjs', 'makara-amdify', 'less', 'requirejs', 'copyto']);
+  grunt.registerTask('test', [ 'jshint', 'mochacli' ]);
 
 };

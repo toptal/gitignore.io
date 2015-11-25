@@ -3,42 +3,36 @@
   "version": "1.0.0",
   "description": "Create useful .gitignore files for your project",
   "author": "Joe Blau",
-  "main": "index.js",
-  "engines": {
-    "node": "4.1.2"
-  },
   "scripts": {
+    "start": "server.js",
     "test": "grunt test",
     "build": "grunt build",
     "all": "npm run build && npm run test"
   },
   "dependencies": {
-    "adaro": "^0.1.10",
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",
-    "construx-dustjs-i18n": "^1.0.1",
+    "construx-dustjs": "^1.1.0",
     "construx-less": "^1.0.0",
-    "dustjs-helpers": "~1.6.3",
-    "dustjs-linkedin": "~2.6.2",
-    "engine-munger": "^0.2.8",
+    "dust-makara-helpers": "^4.1.2",
     "express": "^4.12.2",
-    "kraken-js": "^1.0.3",
-    "localizr": "^0.1.6",
+    "kraken-js": "^2.0.0",
+    "makara": "^2.0.3",
     "requirejs": "^2.1.22"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-config-dir": "^0.3.2",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-clean": "^0.7.0",
+    "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-less": "^1.1.0",
     "grunt-contrib-requirejs": "^0.4.4",
-    "grunt-copy-to": "0.0.10",
+    "grunt-copy-to": "0.0.12",
     "grunt-dustjs": "^1.2.1",
-    "grunt-localizr": "^0.2.3",
-    "grunt-mocha-cli": "^1.14.0",
-    "mocha": "^1.18.0",
-    "supertest": "^0.9.0"
+    "grunt-makara-amdify": "^1.0.1",
+    "grunt-mocha-cli": "^2.0.0",
+    "mocha": "^2.3.4",
+    "supertest": "^1.1.0"
   }
 }
