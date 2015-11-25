@@ -20,8 +20,8 @@
   <div class="input-group">
       <input id="ignoreSearch" type="text" tabindex="1" class="input form-control">
       <div class="input-group-btn">
-        <button type="button" tabindex="-1" onClick="generateGitIgnore()" class="btn btn-gitignore">Generate</button>
-        <button type="button" data-toggle="dropdown" tabindex="-1" class="btn btn-gitignore dropdown-toggle"><span class="caret"></span></button>
+        <button type="button" onClick="generateGitIgnore()" class="btn btn-gitignore">Generate</button>
+        <button type="button" data-toggle="dropdown" class="btn btn-gitignore dropdown-toggle"><span class="caret"></span></button>
         <ul role="menu" class="dropdown-menu pull-right">
           <li><a onClick="generateGitIgnoreFile()"><span class="icon-download"> Download File</span></a></li>
         </ul>
