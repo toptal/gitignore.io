@@ -41,4 +41,36 @@ describe('/api', function () {
             });
     });
 
+    it('should give comma-separated list', function (done) {
+        request(mock)
+            .get('/api/list')
+            .expect(200)
+            .expect('Content-Type', /text\/plain/)
+            .expect(/^([^,]+,)+[^,]+\n?$/)
+            .end(function (err, res) {
+                done(err);
+            });
+    });
+
+    it('should give newline-separated list', function (done) {
+        request(mock)
+            .get('/api/list?format=lines')
+            .expect(200)
+            .expect('Content-Type', /text\/plain/)
+            .expect(/^([^\n]+\n)+[^\n]+\n?$/)
+            .end(function (err, res) {
+                done(err);
+            });
+    });
+
+    it('should give json list', function (done) {
+        request(mock)
+            .get('/api/list?format=json')
+            .expect(200)
+            .expect('Content-Type', /application\/json/)
+            .end(function (err, res) {
+                done(err);
+            });
+    });
+
 });
