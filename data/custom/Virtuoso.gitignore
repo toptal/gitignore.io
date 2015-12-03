@@ -1,0 +1,14 @@
+# Log files
+*.log
+panic*.log.*
+
+# OpenAccess database lock files
+*.cdslck*
+
+# Run directories for layout vs. schematic and design rule check
+lvsRunDir/*
+drcRunDir/*
+
+# Abstract generation tool
+abstract.log*
+abstract.record*
