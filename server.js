@@ -1,5 +1,5 @@
 'use strict';
-
+require('newrelic');
 var app = require('./index');
 var http = require('http');
 
