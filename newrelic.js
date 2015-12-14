@@ -13,6 +13,15 @@ exports.config = {
    * Your New Relic license key.
    */
   license_key: 'license key here',
+  /**
+   * Whether to capture parameters in the request URL in slow transaction
+   * traces and error traces. Because this can pass sensitive data, it's
+   * disabled by default. If there are specific parameters you want ignored,
+   * use ignored_params.
+   *
+   * @env NEW_RELIC_CAPTURE_PARAMS
+   */
+  capture_params: true,
   logging: {
     /**
      * Level at which to log. 'trace' is most useful to New Relic when diagnosing
