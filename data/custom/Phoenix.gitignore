@@ -7,3 +7,4 @@ node_modules/
 erl_crash.dump
 /priv/static/
 /config/prod.secret.exs
+/rel
