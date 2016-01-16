@@ -141,6 +141,24 @@ textpattern,turbogears2,typo3,unity,vagrant,vim,virtualenv,visualstudio,vvvv,
 waf,wakanda,webmethods,webstorm,windows,wordpress,xamarinstudio,xcode,xilinxise,
 yeoman,yii,zendframework
 ```
+
+# Install Locally
+
+## Instructions
+
+In order to install gitignore.io locally, you'll need to have **node.js** and
+**git** installed on your machine.
+
+```sh
+$ git clone git@github.com:joeblau/gitignore.io.git
+$ cd gitignore.io/
+$ git submodule init
+$ git submodule update
+$ npm install
+$ node server.js
+```
+
+
 # About
 
 .gitignore.io is a web service designed to help you create .gitignore files for
