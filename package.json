@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Create useful .gitignore files for your project",
   "author": "Joe Blau",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com:joeblau/gitignore.io.git"
+  },
   "scripts": {
     "start": "server.js",
     "test": "grunt test",
