@@ -30,7 +30,7 @@
     "grunt-cli": "^0.1.13",
     "grunt-config-dir": "^0.3.2",
     "grunt-contrib-clean": "^0.7.0",
-    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-jshint": "^0.12.0",
     "grunt-contrib-less": "^1.1.0",
     "grunt-contrib-requirejs": "^0.4.4",
     "grunt-copy-to": "0.0.12",
