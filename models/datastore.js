@@ -70,7 +70,13 @@ var DatastoreModel = function() {
     var gitIgnoresSorted = gitIgnoreJSON.sort();
     self.JSONObjectSorted = gitIgnoresSorted;
     self.JSONStringLines = gitIgnoresSorted.join('\n') + '\n';
-    self.JSONString = gitIgnoresSorted.join(',') + '\n';
+
+    self.JSONString = "";
+    var arrays = [], size = 5;
+    while (gitIgnoresSorted.length > 0) {
+      self.JSONString += gitIgnoresSorted.splice(0, size).join(',') + '\n';
+    }
+
     self.fileCount = gitIgnoreJSON.length;
   });
 
