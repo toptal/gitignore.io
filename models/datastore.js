@@ -71,13 +71,13 @@ var DatastoreModel = function() {
     self.JSONObjectSorted = gitIgnoresSorted;
     self.JSONStringLines = gitIgnoresSorted.join('\n') + '\n';
 
+    self.fileCount = gitIgnoresSorted.length;
+
     self.JSONString = "";
     var arrays = [], size = 5;
     while (gitIgnoresSorted.length > 0) {
       self.JSONString += gitIgnoresSorted.splice(0, size).join(',') + '\n';
     }
-
-    self.fileCount = gitIgnoreJSON.length;
   });
 
   // Add .patch templates
