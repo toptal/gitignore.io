@@ -73,7 +73,7 @@ var DatastoreModel = function() {
 
     self.fileCount = gitIgnoresSorted.length;
 
-    self.JSONString = "";
+    self.JSONString = '';
     var arrays = [], size = 5;
     while (gitIgnoresSorted.length > 0) {
       self.JSONString += gitIgnoresSorted.splice(0, size).join(',') + '\n';
