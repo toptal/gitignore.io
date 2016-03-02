@@ -1,3 +1,6 @@
-/ebin
+/_build
+/cover
 /deps
-/erl_crash.dump
+/doc
+erl_crash.dump
+*.ez
