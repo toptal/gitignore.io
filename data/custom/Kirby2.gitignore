@@ -1,7 +1,8 @@
 ## Kirby 2 | http://getkirby.com
 
 # Exclude account information
-site/accounts/*.php
+site/accounts/*
+!site/accounts/index.html
 assets/avatars/*
 !assets/avatars/.gitkeep
 
