@@ -39,6 +39,7 @@
 
           <div class="mastfoot">
             <div class="inner">
+                    <a class="coinbase-button" data-code="2589c6b8c552c1905a7cbd7e27f1618e" data-button-style="custom_small" href="https://www.coinbase.com/checkouts/2589c6b8c552c1905a7cbd7e27f1618e">Donate Bitcoins</a><script src="https://www.coinbase.com/assets/button.js" type="text/javascript"></script>
               <p class="lead">{@pre type="content" key="footer"/}</p>
             </div>
           </div>
