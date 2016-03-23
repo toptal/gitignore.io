@@ -40,4 +40,4 @@ Creating new directories to help contributors as the list gets larger.  The curr
 
 ## Explore
 
-Looking for new .gitignore template categories.  Other disciplines that may start using git could be designers, architects, and writers.  Creating template categories to ignore metadata created by their tools is what this section is desgined for.
+Looking for new .gitignore template categories.  Other disciplines that may start using git could be designers, architects, and writers.  Creating template categories to ignore metadata created by their tools is what this section is designed for.
