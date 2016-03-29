@@ -17,10 +17,10 @@ synthesis/*
 
 #smartgen log files
 smartgen/*/*
-smartgen/*.ixf
-smartgen/smartgen.ixf
 smartgen/smartgen.aws
 !smartgen/*/*.gen
+!smartgen/*/*.vhd
+!smartgen/*/*.v
 
 #designer files
 designer/*/*
