@@ -26,7 +26,7 @@
     "requirejs": "^2.1.22"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
+    "grunt": "^1.0.0",
     "grunt-cli": "^1.0.0",
     "grunt-config-dir": "^0.3.2",
     "grunt-contrib-clean": "^1.0.0",
