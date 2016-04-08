@@ -23,11 +23,11 @@
     "express": "^4.13.4",
     "kraken-js": "^2.1.0",
     "makara": "^2.0.3",
-    "requirejs": "^2.1.22"
+    "requirejs": "^2.2.0"
   },
   "devDependencies": {
-    "grunt": "^1.0.0",
-    "grunt-cli": "^1.0.0",
+    "grunt": "^1.0.1",
+    "grunt-cli": "^1.2.0",
     "grunt-config-dir": "^0.3.2",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-jshint": "^1.0.0",
