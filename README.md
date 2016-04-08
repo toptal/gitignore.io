@@ -142,6 +142,10 @@ waf,wakanda,webmethods,webstorm,windows,wordpress,xamarinstudio,xcode,xilinxise,
 yeoman,yii,zendframework
 ```
 
+# Advanced Command Line Improvements
+
+Advanced command line suggestions are tracked on the [gitignore.io wiki](https://github.com/joeblau/gitignore.io/wiki/Advanced-Command-Line-Improvements).
+
 # Install Locally
 
 ## Instructions
