@@ -64,7 +64,7 @@ var DatastoreModel = function() {
     gitIgnoresSorted.sort();
 
     for (var index in gitIgnoresSorted) {
-      let key = gitIgnoresSorted[index];
+      var key = gitIgnoresSorted[index];
       gitIgnoreJSON.push(gitIgnores[key].name.toLowerCase());
       dropdownList.push({
         id: gitIgnores[key].name.toLowerCase(),
