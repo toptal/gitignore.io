@@ -1,10 +1,11 @@
 language: node_js
 
 node_js:
-  - '0.10'
+  - '5'
 
 before_script:
   - npm install -g bower
+  - npm install -g grunt
   - npm install -g grunt-cli
 
 env:
