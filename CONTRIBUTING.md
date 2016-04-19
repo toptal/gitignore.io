@@ -15,7 +15,7 @@ The vision for gitignore.io is to become the authoritative source for .gitignore
 * If you want to contribute a new .gitignore template, please add the file to custom template directory.
 
   ```sh
-  cd ./data/gitignore/Custom
+  cd ./data/Custom
   ```
 
 * If you are editing an existing template, make changes in the template and submit a pull request.
