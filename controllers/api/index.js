@@ -64,6 +64,7 @@ module.exports = function (router) {
  */
 function generateFile(ignoreString, list){
   var output = '\n# Created by https://www.gitignore.io/api/'+ignoreString+'\n';
+  list = orderFiles(list);
   for (var file in list) {
     if (DatastoreModel.JSONObject[list[file]] === undefined){
       output += '\n#!! ERROR: ' + list[file] + ' is undefined. Use list command to see defined gitignore types !!#\n';
@@ -73,4 +74,10 @@ function generateFile(ignoreString, list){
     }
   }
   return output;
+}
+
+function orderFiles(list){
+  var order = DatastoreModel.order;
+  list = list.sort(function(l, r) { return (order[l] || 0) - (order[r] || 0); });
+  return list;
 }
