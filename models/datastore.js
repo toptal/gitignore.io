@@ -93,6 +93,18 @@ var DatastoreModel = function() {
       self.JSONObject[name].contents += '\n### ' + gitIgnores[key].name + ' Patch ###\n' + gitPatches[key].contents;
     }
   });
+
+  // Load order
+  var orderList = fs.readFileSync(__dirname + '/../data/order', 'utf8')
+      .split('\n')
+      .map(function(s) { return s.trim(); })
+      .filter(function(s) { return s.length > 0 && !s.startsWith('#'); });
+  // order is a mapping filename -> desired position in the output
+  var order = {};
+  for (var i = 0; i < orderList.length; ++i) {
+      order[orderList[i]] = i + 1;
+  }
+  self.order = order;
 };
 
 module.exports = new DatastoreModel();
