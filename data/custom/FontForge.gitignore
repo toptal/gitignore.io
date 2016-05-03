@@ -1,0 +1,13 @@
+*.sfd-* 
+*.sfd~
+
+# No Binaries
+
+*.ttf
+*.ttc
+*.otf
+*.woff
+*.pfb
+*.pfa
+*.pt3
+*.suit
