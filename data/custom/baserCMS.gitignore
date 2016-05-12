@@ -1,11 +1,11 @@
 ## Configuration and Temporary files
-app/config/database.php
-app/config/install.php
+app/Config/database.php
+app/Config/install.php
 app/tmp/*
 !app/tmp/empty
 app/db/*
 !app/db/empty
-!app/plugins/empty
+!app/Plugin/empty
 app/webroot/files/*
 !app/webroot/files/empty
 files/*
@@ -19,17 +19,22 @@ nbproject
 .idea
 .DS_Store
 _notes
+.svn
 
 ## Allow 'empty' files
 !empty
 
-## Themed
-!app/webroot/themed/empty
-themed/demo/*
-!themed/demo/empty
+## Theme
+!app/webroot/theme/empty
+theme/demo/*
+!theme/demo/empty
 
 ## Project
-themed/PROJECT/pages/*
-!themed/PROJECT/pages/empty
-app/webroot/themed/PROJECT/pages/*
-app/webroot/themed/PROJECT/pages/empty
+# The PROJECT of character,
+# please rewrite on a project
+# that you are participating.
+
+theme/PROJECT/Pages/*
+!theme/PROJECT/Pages/empty
+app/webroot/theme/PROJECT/Pages/*
+app/webroot/theme/PROJECT/Pages/empty
