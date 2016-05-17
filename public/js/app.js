@@ -2,7 +2,7 @@
 
 $(document).ready(function() {
     $.ajax('/dropdown/templates.json').success(function(data) {
-        $("#ignoreSearch").select2({
+        $(".ignoreSearch").select2({
             sorter: function(results) {
                 var query = $('.select2-search__field').val().toLowerCase();
                 return results.sort(function(a, b) {
@@ -15,31 +15,31 @@ $(document).ready(function() {
             minimumInputLength: 1,
             data: data
         });
-        $("#ignoreSearch").select2("container").find("ul.select2-choices").sortable({
+        $(".ignoreSearch").select2("container").find("ul.select2-choices").sortable({
             containment: 'parent',
             start: function() {
-                $("#ignoreSearch").select2("onSortStart");
+                $(".ignoreSearch").select2("onSortStart");
             },
             update: function() {
-                $("#ignoreSearch").select2("onSortEnd");
+                $(".ignoreSearch").select2("onSortEnd");
             }
         });
     });
 });
 
 function generateGitIgnore() {
-    var searchString = $("#ignoreSearch").val();
+    var searchString = $(".ignoreSearch").val();
     var searchLength = searchString.length;
     if (searchLength > 0) {
         var files = searchString.replace(/^,/, '');
         var uriEncodedFiles = encodeURIComponent(files);
         window.location = "/api/" + uriEncodedFiles;
-        $("#ignoreSearch").val("");
+        $(".ignoreSearch").val("");
     }
 }
 
 function generateGitIgnoreFile() {
-    var searchString = $("#ignoreSearch").val();
+    var searchString = $(".ignoreSearch").val();
     var searchLength = searchString.length;
     if (searchLength > 0) {
         var files = searchString.replace(/^,/, '');

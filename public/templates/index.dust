@@ -18,7 +18,7 @@
         <img src="/img/logo.png">
         <p class="lead">{@pre type="content" key="subtitle"/}</p>
         <div class="input-group">
-          <input id="ignoreSearch" type="text" tabindex="1" class="input form-control">
+          <input class="ignoreSearch input form-control" type="text" tabindex="1" >
           <div class="input-group-btn">
             <button type="button" onClick="generateGitIgnore()" class="btn btn-gitignore">Generate</button>
             <button type="button" data-toggle="dropdown" class="btn btn-gitignore dropdown-toggle"><span class="caret"></span></button>
