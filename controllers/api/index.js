@@ -70,7 +70,7 @@ function generateFile(ignoreString, list) {
             output += '\n#!! ERROR: ' + list[file] + ' is undefined. Use list command to see defined gitignore types !!#\n';
         } else {
             output += '\n### ' + DatastoreModel.JSONObject[list[file]].name + ' ###\n';
-            output += DatastoreModel.JSONObject[list[file]].contents + '\n';
+            output += DatastoreModel.JSONObject[list[file]].contents + (file < list.length - 1 ? '\n' : '');
         }
     }
     return output;
