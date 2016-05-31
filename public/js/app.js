@@ -25,6 +25,9 @@ $(document).ready(function() {
             }
         });
     });
+    setTimeout(function () {
+      $(".select2-search__field").focus();
+    }, 10);
 });
 
 function generateGitIgnore() {
