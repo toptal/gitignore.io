@@ -8,6 +8,11 @@
     "type": "git",
     "url": "git://github.com:joeblau/gitignore.io.git"
   },
+  "engineStrict": true,
+  "engines" : {
+    "node" : ">=5.0.0",
+    "npm" : ">=3.3.6"
+  },
   "scripts": {
     "start": "server.js",
     "test": "grunt test",

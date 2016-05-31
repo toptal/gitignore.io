@@ -150,8 +150,9 @@ Advanced command line suggestions are tracked on the [gitignore.io wiki](https:/
 
 ## Instructions
 
-In order to install gitignore.io locally, you'll need to have **node.js** and
-**git** installed on your machine.
+In order to install gitignore.io locally, you'll need to have
+[a current](https://github.com/nodejs/LTS) version of **node.js** and **npm**
+installed.  You also need **git** installed on your machine.
 
 ```sh
 $ git clone --recursive git@github.com:joeblau/gitignore.io.git
