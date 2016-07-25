@@ -82,6 +82,9 @@ If you have installed [msysgit](http://msysgit.github.io)), create `gi.cmd` with
 
 @curl.exe -L -s https://www.gitignore.io/api/%*
 ```
+## Other clients
+
+ - [gogi](https://github.com/Gnouc/gogi): a gitignore client written in Go, see installation [here](https://github.com/Gnouc/gogi#installation).
 
 # Use Command Line
 
