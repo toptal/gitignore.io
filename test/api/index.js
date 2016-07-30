@@ -3,7 +3,8 @@
 'use strict';
 
 
-var kraken = require('kraken-js'),
+var fs = require('fs'),
+    kraken = require('kraken-js'),
     express = require('express'),
     request = require('supertest');
 
@@ -68,6 +69,32 @@ describe('/api', function () {
             .get('/api/list?format=json')
             .expect(200)
             .expect('Content-Type', /application\/json/)
+            .end(function (err, res) {
+                done(err);
+            });
+    });
+
+    it('should return one gitignore', function (done) {
+        request(mock)
+            .get('/api/node')
+            .expect(200)
+            .expect('Content-Type', /text\/plain; charset=utf-8/)
+            .expect(
+                '\n# Created by https://www.gitignore.io/api/node\n\n### Node ###\n'
+                + fs.readFileSync('data/gitignore/Node.gitignore', {encoding: 'utf8'}))
+            .end(function (err, res) {
+                done(err);
+            });
+    });
+
+    it('should return multiple gitignores', function (done) {
+        request(mock)
+            .get('/api/node')
+            .expect(200)
+            .expect('Content-Type', /text\/plain; charset=utf-8/)
+            .expect(
+                '\n# Created by https://www.gitignore.io/api/node\n\n### Node ###\n'
+                + fs.readFileSync('data/gitignore/Node.gitignore', {encoding: 'utf8'}))
             .end(function (err, res) {
                 done(err);
             });

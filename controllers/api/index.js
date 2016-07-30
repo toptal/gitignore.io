@@ -73,6 +73,8 @@ function generateFile(ignoreString, list) {
             output += DatastoreModel.JSONObject[list[file]].contents + (file < list.length - 1 ? '\n' : '');
         }
     }
+    // eliminate duplicate lines
+    // TODO: Implement this feature
     return output;
 }
 
