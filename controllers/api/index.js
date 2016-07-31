@@ -87,7 +87,6 @@ function orderFiles(list) {
 function removeDuplicates(gitignore) {
     // split string into lines
     var lines = gitignore.split(/\n/);
-    console.log(lines);
     // eliminate duplicate lines, except blank strings or comment strings
     var seen = {};
     lines = lines.filter(
