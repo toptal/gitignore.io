@@ -86,10 +86,10 @@ If you have installed [msysgit](http://msysgit.github.io)), create `gi.cmd` with
 
 Clients maintained by third-party developers
 
-| Client | Language | Instructions |
-|---|---|---|
-| [gogi](https://github.com/Gnouc/gogi) | Go | [Install](https://github.com/Gnouc/gogi#installation) |
-| [ignr](https://github.com/Antrikshy/ignr.py) | Python | [Usage](https://github.com/Antrikshy/ignr.py#usage) |
+| Source Code | Language | Instructions | Maintainer |
+|---|---|---|---|
+| [gogi](https://github.com/Gnouc/gogi) | Go | [Install](https://github.com/Gnouc/gogi#installation) | [Cuong Manh Le](https://github.com/Gnouc) |
+| [ignr](https://github.com/Antrikshy/ignr.py) | Python | [Usage](https://github.com/Antrikshy/ignr.py#usage) | [Antriksh Yadav](https://github.com/Antrikshy) |
 
 # Use Command Line
 
