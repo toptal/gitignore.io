@@ -82,7 +82,7 @@ If you have installed [msysgit](http://msysgit.github.io)), create `gi.cmd` with
 
 @curl.exe -L -s https://www.gitignore.io/api/%*
 ```
-## Other clients
+## Other Clients
 
 Clients maintained by third-party developers
 
