@@ -84,7 +84,12 @@ If you have installed [msysgit](http://msysgit.github.io)), create `gi.cmd` with
 ```
 ## Other clients
 
- - [gogi](https://github.com/Gnouc/gogi): a gitignore client written in Go, see installation [here](https://github.com/Gnouc/gogi#installation).
+Clients maintained by third-party developers
+
+| Client | Language | Instructions |
+|---|---|---|
+| [gogi](https://github.com/Gnouc/gogi) | Go | [Install](https://github.com/Gnouc/gogi#installation) |
+| [ignr](https://github.com/Antrikshy/ignr.py) | Python | [Usage](https://github.com/Antrikshy/ignr.py#usage) |
 
 # Use Command Line
 
