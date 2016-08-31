@@ -6,3 +6,4 @@ Debug
 obj
 bin
 *.exe
+!.paket/paket.bootstrapper.exe
