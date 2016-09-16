@@ -1,0 +1,10 @@
+
+### From https://en.wikipedia.org/wiki/List_of_archive_formats
+
+## Data recovery
+# File format used by dvdisaster to be used for data recovery when discs become damaged or partially unreadable.
+*.ecc 
+# File format used in conjunction with any archive format to provide redundancy and data recovery, most often in newsgroup distribution of binary files.
+*.par
+*.par2
+

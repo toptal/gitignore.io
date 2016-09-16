@@ -1,0 +1,136 @@
+
+### Mostly from https://en.wikipedia.org/wiki/List_of_archive_formats
+
+## Archiving and compression
+# Open source file format. Used by 7-Zip.
+*.7z
+# Mac OS X, restoration on different platforms is possible although not immediate 	Yes 	Based on 7z. Preserves Spotlight metadata, resource forks, owner/group information, dates and other data which would be otherwise lost with compression.
+*.s7z
+# Old archive versions only 	Proprietary format
+*.ace
+# A format that compresses and doubly encrypt the data (AES256 and CAS256) avoiding brute force attacks, also hide files in an AFA file. It has two ways to safeguard data integrity and subsequent repair of the file if has an error (repair with AstroA2P (online) or Astrotite (offline)).
+*.afa
+# A mainly Korean format designed for very large archives.
+*.alz
+# Android application package (variant of JAR file format).
+*.apk
+# ??
+*.arc
+# Originally DOS, now multiple
+*.arj
+# Open archive format, used by B1 Free Archiver (http://dev.b1.org/standard/archive-format.html)
+*.b1
+# Binary Archive with external header
+*.ba 
+# Proprietary format from the ZipTV Compression Components
+*.bh 
+# The Microsoft Windows native archive format, which is also used by many commercial installers such as InstallShield and WISE.
+*.cab
+# Originally DOS, now DOS and Windows 	Created by Yaakov Gringeler; released last in 2003 (Compressia 1.0.0.1 beta), now apparently defunct. Free trial of 30 days lets user create and extract archives; after that it is possible to extract, but not to create.
+*.car 
+# Open source file format.
+*.cfs
+# Compact Pro archive, a common archiver used on Mac platforms until about Mac OS 7.5.x. Competed with StuffIt; now obsolete.
+*.cpt 
+# Windows, Unix-like, Mac OS X Open source file format. Files are compressed individually with either gzip, bzip2 or lzo.
+*.dar
+# DiskDoubler 	Mac OS 			obsolete
+*.dd
+# ??
+*.dgc
+# Apple Disk Image upports "Internet-enabled" disk images, which, once downloaded, are automatically decompressed, mounted, have the contents extracted, and thrown away. Currently, Safari is the only browser that supports this form of extraction; however, the images can be manually extracted as well. This format can also be password-protected or encrypted with 128-bit or 256-bit AES encryption.
+*.dmg
+# Enterprise Java Archive archive
+*.ear
+# ETSoft compressed archive
+*.egg
+# The predecessor of DGCA.
+*.gca
+# Originally DOS 	Yes, but may be covered by patents 	DOS era format; uses arithmetic/Markov coding
+*.ha 
+# MS Windows 	HKI
+*.hki 
+# Produced by ICEOWS program. Excels at text file compression.
+*.ice 
+# Java archive, compatible with ZIP files
+*.jar 
+# Open sourced archiver with compression using the PAQ family of algorithms and optional encryption.
+*.kgb 
+# Originally DOS, now multiple 	Multiple 	Yes 	The standard format on Amiga.
+*.lzh
+*.lha
+# Archiver originally used on The Amiga. Now copied by Microsoft to use in their .cab and .chm files.
+*.lzx
+# file format from NoGate Consultings, a rival from ARC-Compressor.
+*.pak 
+# A disk image archive format that supports several compression methods as well as splitting the archive into smaller pieces.
+*.partimg 
+# An experimental open source packager (http://mattmahoney.net/dc)
+*.paq*
+# Open source archiver supporting authenticated encryption, volume spanning, customizable object level and volume level integrity checks (form CRCs to SHA-512 and Whirlpool hashes), fast deflate based compression
+*.pea 
+# The format from the PIM - a freeware compression tool by Ilia Muraviev. It uses an LZP-based compression algorithm with set of filters for executable, image and audio files.
+*.pim 
+# PackIt 	Mac OS 			obsolete
+*.pit 		
+# Used for data in games written using the Quadruple D library for Delphi. Uses byte pair compression.
+*.qda 
+# A proprietary archive format, second in popularity to .zip files.
+*.rar
+# The format from a commercial archiving package. Odd among commercial packages in that they focus on incorporating experimental algorithms with the highest possible compression (at the expense of speed and memory), such as PAQ, PPMD and PPMZ (PPMD with unlimited-length strings), as well as a proprietary algorithms.
+*.rk 
+# Self Dissolving ARChive 	Commodore 64, Commodore 128 	Commodore 64, Commodore 128 	Yes 	SDAs refer to Self Dissolving ARC files, and are based on the Commodore 64 and Commodore 128 versions of ARC, originally written by Chris Smeets. While the files share the same extension, they are not compatible between platforms. That is, an SDA created on a Commodore 64 but run on a Commodore 128 in Commodore 128 mode will crash the machine, and vice versa. The intended successor to SDA is SFX.
+*.sda 		
+# A pre-Mac OS X Self-Extracting Archive format. StuffIt, Compact Pro, Disk Doubler and others could create .sea files, though the StuffIt versions were the most common.
+*.sea 
+# Scifer Archive with internal header
+*.sen 
+# Commodore 64, Commodore 128 	SFX is a Self Extracting Archive which uses the LHArc compression algorithm. It was originally developed by Chris Smeets on the Commodore platform, and runs primarily using the CS-DOS extension for the Commodore 128. Unlike its predecessor SDA, SFX files will run on both the Commodore 64 and Commodore 128 regardless of which machine they were created on.
+*.sfx 
+# An archive format designed for the Apple II series of computers. The canonical implementation is ShrinkIt, which can operate on disk images as well as files. Preferred compression algorithm is a combination of RLE and 12-bit LZW. Archives can be manipulated with the command-line NuLib tool, or the Windows-based CiderPress.
+*.shk 
+# A compression format common on Apple Macintosh computers. The free StuffIt Expander is available for Windows and OS X.
+*.sit
+# The replacement for the .sit format that supports more compression methods, UNIX file permissions, long file names, very large files, more encryption options, data specific compressors (JPEG, Zip, PDF, 24-bit image, MP3). The free StuffIt Expander is available for Windows and OS X.
+*.sitx
+# A royalty-free compressing format
+*.sqx 
+# The "tarball" format combines tar archives with a file-based compression scheme (usually gzip). Commonly used for source and binary distribution on Unix-like platforms, widely available elsewhere.
+*.tar.gz
+*.tgz
+*.tar.Z
+*.tar.bz2
+*.tbz2
+*.tar.lzma
+*.tlz
+# UltraCompressor 2.3 was developed to act as an alternative to the then popular PKZIP application. The main feature of the application is its ability to create large archives. This means that compressed archives with the UC2 file extension can hold almost 1 million files.
+*.uc
+*.uc0
+*.uc2
+*.ucn
+*.ur2
+*.ue2 	
+# Based on PAQ, RZM, CSC, CCM, and 7zip. The format consists of a PAQ, RZM, CSC, or CCM compressed file and a manifest with compression settings stored in a 7z archive.
+*.uca 
+# A high compression rate archive format originally for DOS.
+*.uha 
+# Web Application archive (Java-based web app)
+*.war 
+# File-based disk image format developed to deploy Microsoft Windows.
+*.wim 
+# XAR
+*.xar 		
+# Native format of the Open Source KiriKiri Visual Novel engine. Uses combination of block splitting and zlib compression. The filenames and pathes are stored in UTF-16 format. For integrity check, the Adler-32 hashsum is used. For many commercial games, the files are encrypted (and decoded on runtime) via so-called "cxdec" module, which implements xor-based encryption.
+*.xp3 
+# Yamazaki zipper archive. Compression format used in DeepFreezer archiver utility created by Yamazaki Satoshi. Read and write support exists in TUGZip, IZArc and ZipZag
+*.yz1 
+# The most widely used compression format on Microsoft Windows. Commonly used on Macintosh and Unix systems as well.
+*.zip
+*.zipx
+# application/x-zoo 	zoo 	Multiple 	Multiple 	Yes 	
+*.zoo
+# Journaling (append-only) archive format with rollback capability. Supports deduplication and incremental update based on last-modified dates. Multi-threaded. Compresses in LZ77, BWT, and context mixing formats. Open source.
+*.zpaq 
+# Archiver with a compression algorithm based on the Burrows-Wheeler transform method.
+*.zz 
+
