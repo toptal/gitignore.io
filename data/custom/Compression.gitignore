@@ -1,0 +1,37 @@
+
+### From https://en.wikipedia.org/wiki/List_of_archive_formats
+
+## Compression only
+# An open source, patent- and royalty-free compression format. The compression algorithm is a Burrows-Wheeler transform followed by a move-to-front transform and finally Huffman coding
+*.bz2
+# Old compressor for QNX4 OS. The compression algorithm is a modified LZSS, with an adaptive Huffman coding.
+*.F 
+# GNU Zip, the primary compression format used by Unix-like systems. The compression algorithm is DEFLATE.
+*.gz
+# An alternate LZMA algorithm implementation, with support for checksums and ident bytes.
+*.lz
+# The LZMA compression algorithm as used by 7-Zip
+*.lzma
+# An implementation of the LZO data compression algorithm
+*.lzo
+# A compression program designed to do particularly well on very large files containing long distance redundancy.
+*.rz 
+# Windows compress/decompress- Linux and Mac OS X decompress only 	A compression program designed to do high compression on SF2 files (SoundFont)
+*.sfark 
+# A compression format invented by Google and open-sourced in 2011. Snappy aims for very high speeds, reasonable compression, and maximum stability rather than maximum compression or compatibility with any other compression library.
+*.sz
+# Squeeze: A program which compressed files. A file which was "squeezed" had the middle initial of the name changed to "Q", so that a squeezed text file would end with .TQT, a squeezed executable would end with .CQM or .EQE. Typically used with .LBR archives, either by storing the squeezed files in the archive, or by storing the files decompressed and then compressing the archive, which would have a name ending in ".LQR".
+*.?Q?
+# A compression program written by Steven Greenberg implementing the LZW algorithm. For several years in the CP/M world when no implementation was available of ARC, CRUNCHed files stored in .LBR archives were very popular. CRUNCH's implementation of LZW had a somewhat unique feature of modifying and occasionally clearing the code table in memory when it became full, resulting in a few percent better compression on many files.
+*.?Z?
+# A compression format using LZMA2 to yield very high compression ratios.
+*.xz
+# The traditional Huffman coding compression format.
+*.z
+# The traditional LZW compression format.
+*.Z
+# Joke compression program, actually increasing file size
+*.infl 
+# Compression format(s) used by some DOS and Windows install programs. MS-DOS includes expand.exe to decompress its install files. The compressed files are created with a matching compress.exe command. The compression algorithm is LZSS.
+*.??_
+
