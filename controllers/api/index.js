@@ -73,7 +73,7 @@ function generateFile(ignoreString, list) {
             output += DatastoreModel.JSONObject[list[file]].contents + (file < list.length - 1 ? '\n' : '');
         }
     }
-    return output;
+    return removeDuplicates(output);
 }
 
 function orderFiles(list) {
@@ -82,4 +82,21 @@ function orderFiles(list) {
         return (order[l] || 0) - (order[r] || 0);
     });
     return list;
+}
+
+function removeDuplicates(gitignore) {
+    // split string into lines
+    var lines = gitignore.split(/\n/);
+    // eliminate duplicate lines, except blank strings or comment strings
+    var seen = {};
+    lines = lines.filter(
+        function(line) {
+            if (line !== '' && line[0] !== '#') {
+                return seen.hasOwnProperty(line) ? false : (seen[line] = true);
+            } else {
+                return true;
+            }
+        }
+    );
+    return lines.join('\n');
 }
