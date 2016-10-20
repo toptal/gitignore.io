@@ -3,10 +3,9 @@
         <img src="https://raw.githubusercontent.com/joeblau/gitignore.io/master/public/img/logo%402x.png"
         height="100px">
     </a>
-</p>
-<p align="center">
+    <br>
     <strong>Create useful .gitignore files for your project</strong>
-<p>
+</p>
 <p align="center">
     <a href="https://travis-ci.org/joeblau/gitignore.io">
         <img src="https://img.shields.io/travis/joeblau/gitignore.io.svg"
