@@ -1,12 +1,44 @@
-# gitignore.io
-
-Create useful .gitignore files for your project
-
-[![Build Status](https://travis-ci.org/joeblau/gitignore.io.png?branch=dev-v2)](https://travis-ci.org/joeblau/gitignore.io)
-[![GitHub version](https://badge.fury.io/gh/joeblau%2Fgitignore.io.png)](http://badge.fury.io/gh/joeblau%2Fgitignore.io)
-[![Dependencies Status](https://david-dm.org/joeblau/gitignore.io.png)](https://david-dm.org/joeblau/gitignore.io)
-[![DevDependencies Status](https://david-dm.org/joeblau/gitignore.io/dev-status.png)](https://david-dm.org/joeblau/gitignore.io#info=devDependencies)
-[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md)
+<p align="center">
+    <a href="https://www.gitignore.io">
+        <img src="https://raw.githubusercontent.com/joeblau/gitignore.io/master/public/img/logo%402x.png"
+        height="100px">
+    </a>
+</p>
+<p align="center">
+    <strong>Create useful .gitignore files for your project</strong>
+<p>
+<p align="center">
+    <img src="https://img.shields.io/badge/Platforms-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg"
+          alt="Platforms">
+    <a href="https://travis-ci.org/joeblau/gitignore.io">
+        <img src="https://img.shields.io/travis/joeblau/gitignore.io.svg"
+             alt="Travis">
+    </a>
+    <a href="https://nodejs.org">
+        <img src="https://img.shields.io/badge/node-%3E%3D5.0.0-orange.svg"
+             alt="node">
+    </a>
+    <a href="https://www.npmjs.com">
+        <img src="https://img.shields.io/badge/npm-%3E%3D3.3.6-orange.svg"
+             alt="npm">
+    </a>
+    <a href="https://bower.io">
+        <img src="https://img.shields.io/bower/v/bootstrap.svg"
+             alt="Bower">
+    </a>
+    <a href="https://david-dm.org/joeblau/gitignore.io">
+        <img src="https://img.shields.io/david/joeblau/gitignore.io.svg"
+             alt="David">
+    </a>
+    <a href="https://david-dm.org/joeblau/gitignore.io#info=devDependencies">
+        <img src="https://img.shields.io/david/dev/joeblau/gitignore.io.svg"
+             alt="David">
+    </a>
+    <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md">
+        <img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg"
+             alt="license">
+    </a>
+</p>
 
 # Install Command Line
 
