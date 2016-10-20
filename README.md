@@ -8,8 +8,6 @@
     <strong>Create useful .gitignore files for your project</strong>
 <p>
 <p align="center">
-    <img src="https://img.shields.io/badge/Platforms-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg"
-          alt="Platforms">
     <a href="https://travis-ci.org/joeblau/gitignore.io">
         <img src="https://img.shields.io/travis/joeblau/gitignore.io.svg"
              alt="Travis">
@@ -34,6 +32,8 @@
         <img src="https://img.shields.io/david/dev/joeblau/gitignore.io.svg"
              alt="David">
     </a>
+    <img src="https://img.shields.io/badge/Platforms-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg"
+          alt="Platforms">
     <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md">
         <img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg"
              alt="license">
@@ -61,7 +61,7 @@ $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.ba
 $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zshrc && source ~/.zshrc
 ```
 
-## OSX
+## macOS
 `#!/bin/bash`
 ```sh
 $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.bash_profile && source ~/.bash_profile
