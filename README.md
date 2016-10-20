@@ -6,6 +6,7 @@ Create useful .gitignore files for your project
 [![GitHub version](https://badge.fury.io/gh/joeblau%2Fgitignore.io.png)](http://badge.fury.io/gh/joeblau%2Fgitignore.io)
 [![Dependencies Status](https://david-dm.org/joeblau/gitignore.io.png)](https://david-dm.org/joeblau/gitignore.io)
 [![DevDependencies Status](https://david-dm.org/joeblau/gitignore.io/dev-status.png)](https://david-dm.org/joeblau/gitignore.io#info=devDependencies)
+[![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md)
 
 # Install Command Line
 
@@ -91,7 +92,7 @@ Clients maintained by third-party developers
 | [gogi](https://github.com/Gnouc/gogi) | Go | [Install](https://github.com/Gnouc/gogi#installation) | [Cuong Manh Le](https://github.com/Gnouc) |
 | [ignr](https://github.com/Antrikshy/ignr.py) | Python | [Usage](https://github.com/Antrikshy/ignr.py#usage) | [Antriksh Yadav](https://github.com/Antrikshy) |
 
-Tools or extensions maintained by third-party developers on other platforms 
+Tools or extensions maintained by third-party developers on other platforms
 
 | Source Code | Platform | Intructions | Maintainer
 |---|---|---|---|
@@ -182,24 +183,3 @@ $ node server.js
 .gitignore.io is a web service designed to help you create .gitignore files for
 your Git repositories. The site has a graphical and command line method of
 creating a .gitignore for your operating system, programming language, or IDE.
-
-## License
-
-Copyright (C) 2013-2016
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the "Software"), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
