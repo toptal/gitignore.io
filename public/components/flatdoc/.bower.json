@@ -33,8 +33,7 @@
     "tag": "v0.9.0",
     "commit": "94b08a0987aa7cd0bd9e0b61a3a11fd0594c88e3"
   },
-  "_source": "git://github.com/rstacruz/flatdoc.git",
+  "_source": "https://github.com/rstacruz/flatdoc.git",
   "_target": "~0.9.0",
-  "_originalSource": "flatdoc",
-  "_direct": true
+  "_originalSource": "flatdoc"
 }

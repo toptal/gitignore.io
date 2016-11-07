@@ -28,8 +28,7 @@
     "tag": "v2.3.6",
     "commit": "39b60daf33a2078a4819691bd4a559cc9b3051c7"
   },
-  "_source": "git://github.com/linkedin/dustjs.git",
+  "_source": "https://github.com/linkedin/dustjs.git",
   "_target": "~2.3.0",
-  "_originalSource": "dustjs-linkedin",
-  "_direct": true
+  "_originalSource": "dustjs-linkedin"
 }

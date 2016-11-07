@@ -1,0 +1,71 @@
+#extend("base")
+
+#export("title") {
+    <title>#(titleString)</title>
+}
+
+#export("description") {
+    <meta name="description" content="#(descriptionString)">
+}
+
+#export("headerScripts") {
+  <!-- Flatdoc theme -->
+  <link rel="stylesheet" type="text/css" href="/css/theme-gitignore-style.css">
+
+  <!-- Flatdoc -->
+  <script src="/components/jquery/dist/jquery.min.js"></script>
+  <script src='/components/flatdoc/legacy.js'></script>
+  <script src='/components/flatdoc/flatdoc.js'></script>
+
+  <!-- Flatdoc theme -->
+  <link  href='/css/theme-gitignore-style.css' rel='stylesheet'>
+  <script src='/js/theme-gitignore-script.js'></script>
+
+  <!-- Initializer -->
+  <script>
+  Flatdoc.run({
+    fetcher: Flatdoc.file("/README.md")
+  });
+  </script>
+}
+
+#export("body") {
+<div class='header'>
+    <div class='left'>
+        <h1><a href="/"><img src="/img/logo-small.png" height="20"></a></h1>
+        <ul>
+        <li><a href='https://github.com/joeblau/gitignore.io'>View on GitHub</a></li>
+        <li><a href='https://github.com/joeblau/gitignore.io/issues'>Issues</a></li>
+        <li><div class="cb-tip-button" data-content-location="https://www.gitignore.io" data-href="//www.coinbase.com/tip_buttons/show_tip" data-to-user-id="5328afb9b6d94cee9b0001b4"></div></li>
+        </ul>
+    </div>
+    <div class='right'>
+        <a href="https://github.com/joeblau/followers"><img src="https://img.shields.io/github/followers/joeblau.svg?style=social&label=Follow%20@joeblau"/></a>
+        <a href="https://github.com/joeblau/gitignore.io/network"><img src="https://img.shields.io/github/forks/joeblau/gitignore.io.svg?style=social&label=Fork"/></a>
+        <a href="https://github.com/joeblau/gitignore.io/stargazers"><img src="https://img.shields.io/github/stars/joeblau/gitignore.io.svg?style=social&label=Star"/></a>
+    </div>
+</div>
+
+<div class='content-root'>
+    <div class='menubar'>
+        <div class='menu section' role='flatdoc-menu'></div>
+        <div class='bottom section'>
+            <a href='https://github.com/joeblau/gitignore.io'>View on GitHub</a><br>
+            <br>
+            <a class="coinbase-button" data-code="2589c6b8c552c1905a7cbd7e27f1618e" data-button-style="custom_small" href="https://www.coinbase.com/checkouts/2589c6b8c552c1905a7cbd7e27f1618e">Donate Bitcoins</a><script src="https://www.coinbase.com/assets/button.js" type="text/javascript"></script>
+        </div>
+    </div>
+    <div role='flatdoc-content' class='content'></div>
+</div>
+
+}
+
+#export("scripts") {
+
+    <script src="/components/retinajs/dist/retina.min.js"></script>
+
+
+    <script>
+    !function(d,s,id) {var js,cjs=d.getElementsByTagName(s)[0],e=d.getElementById(id);if(e){return;}js=d.createElement(s);js.id=id;js.src="https://www.coinbase.com/assets/tips.js";cjs.parentNode.insertBefore(js,cjs);}(document, 'script', 'coinbase-tips');
+    </script>
+}
