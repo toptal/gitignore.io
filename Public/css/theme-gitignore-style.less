@@ -1,0 +1,160 @@
+/*
+ * Globals
+ */
+.lead {
+  color: #9090AA;
+  padding: 20px 0 0;
+  font-size: 16px;
+}
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: #F44D27;
+}
+/* Custom default button */
+.btn-default,
+.btn-default:focus,
+.btn-default:hover {
+  color: #F44D27;
+  text-shadow: none;
+  /* Prevent inheritence from `body` */
+  background-color: #FAFAFA;
+  border: 1px solid #EEEEEE;
+}
+/*
+ * Base structure
+ */
+body,
+html {
+  height: 100%;
+  background-color: #FAFAFA;
+}
+body {
+  color: #222222;
+  text-align: center;
+}
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+  /* For at least Firefox */
+  min-height: 100%;
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+/* Padding for spacing */
+.inner {
+  padding: 30px;
+}
+/*
+ * Header
+ */
+.masthead-brand {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.masthead-nav > li {
+  display: inline-block;
+}
+.masthead-nav > li + li {
+  margin-left: 20px;
+}
+.masthead-nav > li > a {
+  padding-right: 0;
+  padding-left: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #F44D27;
+  /* IE8 proofing */
+  border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:focus,
+.masthead-nav > li > a:hover {
+  background-color: transparent;
+  border-bottom-color: #C03C1F;
+}
+.masthead-nav > .active > a,
+.masthead-nav > .active > a:focus,
+.masthead-nav > .active > a:hover {
+  color: #C03C1F;
+  border-bottom-color: #C03C1F;
+}
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 20px 100px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+/*
+ * Footer
+ */
+.mastfoot {
+  color: #222222;
+  /* IE8 proofing */
+}
+/*
+ * Affix and center
+ */
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  .masthead {
+    position: fixed;
+    top: 0;
+  }
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .cover-container,
+  .mastfoot,
+  .masthead {
+    width: 100%;
+    /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+@media (min-width: 992px) {
+  .cover-container,
+  .mastfoot,
+  .masthead {
+    width: 700px;
+  }
+}
+.btn-gitignore {
+  color: #fff;
+  background-image: -webkit-linear-gradient(top, #ff4f27 0, #f44d27 100%);
+  background-image: linear-gradient(to bottom, #ff4f27 0, #f44d27 100%);
+  background-repeat: repeat-x;
+  border: 1px solid #d23e1e;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fffaa937', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-gitignore:active {
+  color: #fff;
+  background-image: -webkit-linear-gradient(top, #d84824 0, #ce4121 100%);
+  background-image: linear-gradient(to bottom, #d84521 0, #ce4121 100%);
+  background-repeat: repeat-x;
+  border: 1px solid #d23e1e;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffbb450', endColorstr='#fffaa937', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.select2-results .select2-highlighted {
+  background: #F44D27;
+  color: #fff;
+}

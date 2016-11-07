@@ -1,0 +1,2 @@
+tools/*
+!tools/packages.config
