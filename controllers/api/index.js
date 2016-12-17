@@ -73,7 +73,9 @@ function generateFile(ignoreString, list) {
             output += DatastoreModel.JSONObject[list[file]].contents + (file < list.length - 1 ? '\n' : '');
         }
     }
-    return removeDuplicates(output);
+    var dedupOutput = removeDuplicates(output);
+    dedupOutput += '\n# End of https://www.gitignore.io/api/' + ignoreString + '\n';
+    return dedupOutput;
 }
 
 function orderFiles(list) {
