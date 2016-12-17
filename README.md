@@ -31,7 +31,7 @@
         <img src="https://img.shields.io/david/dev/joeblau/gitignore.io.svg"
              alt="David">
     </a>
-    <img src="https://img.shields.io/badge/Platforms-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey.svg"
+    <img src="https://img.shields.io/badge/Platforms-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey.svg"
           alt="Platforms">
     <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md">
         <img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg"
