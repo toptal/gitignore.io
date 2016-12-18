@@ -11,7 +11,7 @@ import Vapor
 
 struct TemplateAPI {
     
-    init(drop: Droplet) {
+    init(drop: Droplet, templateManager: TemplateManager) {
         createIgnoreEndpoint(drop: drop)
         createTemplateDownloadEndpoint(drop: drop)
         createListEndpoint(drop: drop)

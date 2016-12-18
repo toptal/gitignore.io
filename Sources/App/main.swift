@@ -3,9 +3,9 @@ import Vapor
 
 let drop = Droplet()
 
-TemplateGenerationController().parseTemplateDirectory()
+let templateManager = TemplateManager(drop: drop)
 
 _ = Site(drop: drop)
-_ = TemplateAPI(drop: drop)
+_ = TemplateAPI(drop: drop, templateManager: templateManager)
 
 drop.run()
