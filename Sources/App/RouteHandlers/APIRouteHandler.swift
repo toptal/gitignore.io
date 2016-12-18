@@ -39,20 +39,13 @@ struct APIHandlers {
     func createListEndpoint(drop: Droplet) {
         drop.get("/api/list") { request in
             let templateKeys =  [String](self.templates.keys).sorted()
-            
             return stride(from: 0, to: templateKeys.count, by: self.splitSize)
-                    .map {
-                        Array(templateKeys[$0..<min($0 + self.splitSize, templateKeys.count)]).joined(separator: ",")
-                    }
-                    .reduce("", { (templateList, splitTemplates) -> String in
-                        return templateList.appending("\(splitTemplates)\n")
-                    })
-                
-//                .startIndex
-//                .stride(to: templateKeys.count, by: splitSize).map {
-//                    templateKeys[$0 ..< $0.advancedBy(splitSize, limit: templateKeys.endIndex)]
-//                }
-//            return "You want to see a list"
+                .map {
+                    Array(templateKeys[$0..<min($0 + self.splitSize, templateKeys.count)]).joined(separator: ",")
+                }
+                .reduce("", { (templateList, splitTemplates) -> String in
+                    return templateList.appending("\(splitTemplates)\n")
+                })
         }
     }
     
