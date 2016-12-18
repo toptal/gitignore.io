@@ -1,15 +1,14 @@
 define(function () {
-  // rules from
-  // http://www.unicode.org/cldr/charts/latest/supplemental/language_plural_rules.html#lt
-  function ending(count, one, few, other) {
-    if (count % 10 === 1 && (count % 100 < 11 || count % 100 > 19)) {
-      return one;
-    } else if (
-      (count % 10 >= 2 && count % 10 <= 9) &&
-      (count % 100 < 11 || count % 100 > 19)) {
-      return few;
+  // Italian
+  function ending (count, first, second, third) {
+    if ((count % 100 > 9 && count % 100 < 21) || count % 10 === 0) {
+      if (count % 10 > 1) {
+        return second;
+      } else {
+        return third;
+      }
     } else {
-      return other;
+      return first;
     }
   }
 
@@ -19,7 +18,7 @@ define(function () {
 
       var message = 'Pašalinkite ' + overChars + ' simbol';
 
-      message += ending(overChars, 'į', 'ius', 'ių');
+      message += ending(overChars, 'ių', 'ius', 'į');
 
       return message;
     },
@@ -28,7 +27,7 @@ define(function () {
 
       var message = 'Įrašykite dar ' + remainingChars + ' simbol';
 
-      message += ending(remainingChars, 'į', 'ius', 'ių');
+      message += ending(remainingChars, 'ių', 'ius', 'į');
 
       return message;
     },
@@ -38,7 +37,7 @@ define(function () {
     maximumSelected: function (args) {
       var message = 'Jūs galite pasirinkti tik ' + args.maximum + ' element';
 
-      message += ending(args.maximum, 'ą', 'us', 'ų');
+      message += ending(args.maximum, 'ų', 'us', 'ą');
 
       return message;
     },

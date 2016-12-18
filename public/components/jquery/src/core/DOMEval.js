@@ -1,8 +1,6 @@
 define( [
 	"../var/document"
 ], function( document ) {
-	"use strict";
-
 	function DOMEval( code, doc ) {
 		doc = doc || document;
 

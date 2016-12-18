@@ -8,7 +8,8 @@
     "tag": "v1.2.0",
     "commit": "76594269b09573efde741df2747c524b8f272e36"
   },
-  "_source": "https://github.com/linkedin/dustjs-helpers.git",
+  "_source": "git://github.com/linkedin/dustjs-helpers.git",
   "_target": "~1.2.0",
-  "_originalSource": "dustjs-linkedin-helpers"
+  "_originalSource": "dustjs-linkedin-helpers",
+  "_direct": true
 }

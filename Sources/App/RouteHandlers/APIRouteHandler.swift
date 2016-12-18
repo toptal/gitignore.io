@@ -49,6 +49,8 @@ struct APIHandlers {
         }
     }
     
+    // MARK: - Private
+    
     private func craeteTemplate(ignoreString: String) -> String {
         return ignoreString
             .lowercased()

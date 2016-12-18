@@ -12,7 +12,7 @@ var CustomDropdown = Utils.Decorate(Dropdown, StopPropagation);
 var options = new Options();
 
 test('click event does not propagate', function (assert) {
-  assert.expect(1);
+  expect(1);
 
   var $container = $('#qunit-fixture .event-container');
   var container = new MockContainer();

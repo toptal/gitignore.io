@@ -1,9 +1,6 @@
 define(function () {
   // French
   return {
-    errorLoading: function () {
-      return 'Les résultats ne peuvent pas être chargés.';
-    },
     inputTooLong: function (args) {
       var overChars = args.input.length - args.maximum;
 

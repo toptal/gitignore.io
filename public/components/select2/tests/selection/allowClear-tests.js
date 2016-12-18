@@ -109,7 +109,7 @@ test('clicking clear will set the placeholder value', function (assert) {
 });
 
 test('clicking clear will trigger the unselect event', function (assert) {
-  assert.expect(3);
+  expect(3);
 
   var $element = $('#qunit-fixture .single-with-placeholder');
 

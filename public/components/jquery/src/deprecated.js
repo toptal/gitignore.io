@@ -2,8 +2,6 @@ define( [
 	"./core"
 ], function( jQuery ) {
 
-"use strict";
-
 jQuery.fn.extend( {
 
 	bind: function( types, data, fn ) {
@@ -22,9 +20,13 @@ jQuery.fn.extend( {
 		return arguments.length === 1 ?
 			this.off( selector, "**" ) :
 			this.off( types, selector || "**", fn );
+	},
+	size: function() {
+		return this.length;
 	}
 } );
 
-jQuery.parseJSON = JSON.parse;
+jQuery.fn.andSelf = jQuery.fn.addBack;
 
 } );
+
