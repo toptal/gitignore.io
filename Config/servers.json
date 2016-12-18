@@ -1,6 +1,6 @@
 {
 	"default": {
-		"port": "$PORT:8080",
+		"port": "$PORT:8000",
 		"host": "0.0.0.0",
 		"securityLayer": "none"
 	}
