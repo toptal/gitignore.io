@@ -3,7 +3,7 @@ import Vapor
 
 let drop = Droplet()
 
-let templateController = TemplateController(drop: drop)
+let templateController = TemplateController()
 
 _ = SiteHandlers(drop: drop, templateController: templateController)
 _ = APIHandlers(drop: drop, templateController: templateController)

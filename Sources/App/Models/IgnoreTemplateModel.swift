@@ -7,13 +7,21 @@
 //
 
 import Foundation
+import JSON
 
 struct IgnoreTemplateModel: CustomStringConvertible {
     var key: String
+    var name: String
     var fileName: String
     var contents: String
     
     var description: String {
-        return "KEY: \(key)\nFILE NAME: \(fileName)\nCONTENTS: \(contents)\n"
+        return "KEY: \(key)\nNAME: \(name)FILE NAME: \(fileName)\nCONTENTS: \(contents)\n"
+    }
+    
+    var toJson: Node {
+        return Node.object(["name": Node.string(name),
+                            "fileName": Node.string(fileName),
+                            "contents": Node.string(contents)])
     }
 }

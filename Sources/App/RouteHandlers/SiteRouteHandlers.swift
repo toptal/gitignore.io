@@ -9,11 +9,17 @@
 import Foundation
 import Vapor
 
-struct SiteHandlers {
 
+struct SiteHandlers {
     private let count: String!
     private var templateDict: Node!
     
+    /// Initialze the Site Handlers extension
+    ///
+    /// - parameter drop:               Vapor server side Swift droplet
+    /// - parameter templateController: All of the gitignore template objects
+    ///
+    /// - returns: Site Handlers struct
     init(drop: Droplet, templateController: TemplateController) {
         count = String(templateController.count)
         templateDict = createSortedDropdownTemplates(templates: templateController.templates)
@@ -23,6 +29,9 @@ struct SiteHandlers {
         createDropdownTemplates(drop: drop)
     }
     
+    /// Create Index Page
+    ///
+    /// - parameter drop: Vapor server side Swift droplet
     func createIndexPage(drop: Droplet) {
         drop.get("/") { request in
             return try drop.view.make("index", [
@@ -45,6 +54,9 @@ struct SiteHandlers {
         }
     }
     
+    /// Crate Documentation Page
+    ///
+    /// - parameter drop: Vapor server side Swift droplet
     func createDocumentsPage(drop: Droplet) {
         drop.get("/docs") { request in
             return try drop.view.make("docs", [
@@ -55,20 +67,29 @@ struct SiteHandlers {
         }
     }
     
+    /// Create dropdown template json list
+    ///
+    /// - parameter drop: Vapor server side Swift droplet
     func createDropdownTemplates(drop: Droplet) {
         drop.get("/dropdown/templates.json") { request in
             return try JSON(node: self.templateDict)
         }
     }
     
+    // MARK: - Private
+    
+    /// Create dropdown list template
+    ///
+    /// - parameter templates: Template controller template dictionary
+    ///
+    /// - returns: JSON array containing all templates
     private func createSortedDropdownTemplates(templates: [String: IgnoreTemplateModel]) -> Node {
-        let templateNodes = templates
+        return Node.array(templates
             .values
             .sorted(by: { $0.key < $1.key })
             .map { (templateModel) -> Node in
                 Node.object(["id" : Node.string(templateModel.key),
-                             "text": Node.string(templateModel.fileName)])
-            }
-        return Node.array(templateNodes)
+                             "text": Node.string(templateModel.name)])
+            })
     }
 }

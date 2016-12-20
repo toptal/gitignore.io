@@ -1,5 +1,5 @@
 //
-//  TemplateManager.swift
+//  TemplateController.swift
 //  GitignoreIO
 //
 //  Created by Joe Blau on 12/17/16.
@@ -10,28 +10,37 @@ import Foundation
 import Vapor
 
 protocol ReadOnlyTemplateManager {
-    var order: [String]! { get }
+    var order: [String: Int]! { get }
     var count: Int! { get }
     var templates: [String: IgnoreTemplateModel]! { get }
 }
 
 struct TemplateController: ReadOnlyTemplateManager {
-    var order: [String]!
+    var order: [String: Int]!
     var count: Int!
     var templates: [String: IgnoreTemplateModel]!
     
     private let fileManager = FileManager()
     private let dataDirectory = drop.workDir.appending("/").appending("data")
     
-    init(drop: Droplet) {
+    
+    /// Create Template Controller
+    ///
+    /// - returns: Template Controller
+    init() {
         order = parseOrderFile()
         templates = parseTemplateDirectory()
         count = templates.count        
     }
     
-    private func parseOrderFile() -> [String] {
-        let orderFile = dataDirectory.appending("/").appending("order")
+    // MARK: - Private
+    
+    /// Parse file which defines template order precedence
+    ///
+    /// - returns: List of templates in order precedence
+    private func parseOrderFile() -> [String: Int] {
         do {
+            let orderFile = dataDirectory.appending("/").appending("order")
             let fileContents = try String(contentsOfFile: orderFile)
             return fileContents
                 .components(separatedBy: "\n")
@@ -41,12 +50,23 @@ struct TemplateController: ReadOnlyTemplateManager {
                 .filter({ (line) -> Bool in
                     !line.hasPrefix("#") || !line.hasPrefix("")
                 })
+                .enumerated()
+                .reduce([String: Int](), { (orderedDict, line : (offset: Int, text: String)) -> [String: Int] in
+                    var mutableOrderedDict = orderedDict
+                    mutableOrderedDict[line.text] = line.offset
+                    return  mutableOrderedDict
+                })
+                
         } catch {
             print(error)
         }
-        return []
+        return [:]
     }
     
+    
+    /// Parse template directory
+    ///
+    /// - returns: Ignore template model dictionary
     private func parseTemplateDirectory() -> [String: IgnoreTemplateModel] {
         guard let enumerator = fileManager.enumerator(atPath: dataDirectory),
             let relativesPathsInDataDirecotry = enumerator.allObjects as? [String] else {
@@ -56,10 +76,21 @@ struct TemplateController: ReadOnlyTemplateManager {
         return patch(parsedTemplates: parsedTemplates, relativePaths: relativesPathsInDataDirecotry)
     }
     
+    /// Parse .gitginore template files
+    ///
+    /// - parameter relativePaths: File paths with in data directory
+    ///
+    /// - returns: Ignore template model dictionary of .gitignore templates
     private func parseTemplateFiles(relativePaths: [String]) -> [String: IgnoreTemplateModel] {
         return templateModels(suffix: .template, relativePaths: relativePaths)
     }
     
+    /// Parse .patch template files
+    ///
+    /// - parameter parsedTemplates: Ignore template model dictionary of .gitignore templates
+    /// - parameter relativePaths:   File paths with in data directory
+    ///
+    /// - returns: Ignore template model dictionary of .gitignore templates with .patch's applied
     private func patch(parsedTemplates: [String: IgnoreTemplateModel], relativePaths: [String]) -> [String: IgnoreTemplateModel]  {
         var mutableParsedTemplates = parsedTemplates
 
@@ -73,6 +104,12 @@ struct TemplateController: ReadOnlyTemplateManager {
         return mutableParsedTemplates
     }
     
+    /// Create template model dictionary based on suffix
+    ///
+    /// - parameter suffix:        Suffix represnseting templates `.gitignore` or patches `.patch`
+    /// - parameter relativePaths: File paths with in data directory
+    ///
+    /// - returns: Ignore template model dictionary based on suffix
     private func templateModels(suffix: TemplateSuffix, relativePaths: [String]) -> [String: IgnoreTemplateModel] {
         return relativePaths.filter { (relativeFilePath) -> Bool in
             relativeFilePath.hasSuffix(suffix.extension)
@@ -81,9 +118,10 @@ struct TemplateController: ReadOnlyTemplateManager {
             }.map { (absoluateTemplateFilePath) -> (key: String, model: IgnoreTemplateModel)? in
                 do {
                     let fileContents = try String(contentsOfFile: absoluateTemplateFilePath)
-                    let templateHeader = suffix.header(fileName: absoluateTemplateFilePath.fileName)
-                    return (key: absoluateTemplateFilePath.fileName.lowercased(),
-                            model: IgnoreTemplateModel(key: absoluateTemplateFilePath.fileName.lowercased(),
+                    let templateHeader = suffix.header(name: absoluateTemplateFilePath.name)
+                    return (key: absoluateTemplateFilePath.name.lowercased(),
+                            model: IgnoreTemplateModel(key: absoluateTemplateFilePath.name.lowercased(),
+                                                       name: absoluateTemplateFilePath.name,
                                                        fileName: absoluateTemplateFilePath.fileName,
                                                        contents: templateHeader.appending(fileContents)))
                 } catch {
@@ -111,10 +149,10 @@ fileprivate enum TemplateSuffix {
         }
     }
     
-    func header(fileName: String) -> String {
+    func header(name: String) -> String {
         switch self {
-        case .template: return "\n### \(fileName) ###\n"
-        case .patch: return "\n### \(fileName) Patch ###\n"
+        case .template: return "\n### \(name) ###\n"
+        case .patch: return "\n### \(name) Patch ###\n"
         }
     }
 }
