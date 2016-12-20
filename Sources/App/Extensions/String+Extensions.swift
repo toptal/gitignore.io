@@ -17,14 +17,14 @@ extension String {
         return NSURL(fileURLWithPath: self).lastPathComponent ?? ""
     }
 
-    var fileExtensionss: String {
+    var fileExtensions: String {
         return NSURL(fileURLWithPath: self).pathExtension ?? ""
     }
 
     /// Remove duplicate lines, except blank strings or comment strings
     ///
     /// - returns: String with duplicate lines removed
-    func removeDuplcatesLines() -> String {
+    func removeDuplicateLines() -> String {
         var seen = Set<String>()
         return self.components(separatedBy: "\n")
             .filter { (line) -> Bool in

@@ -69,11 +69,11 @@ struct TemplateController: ReadOnlyTemplateManager {
     /// - returns: Ignore template model dictionary
     private func parseTemplateDirectory() -> [String: IgnoreTemplateModel] {
         guard let enumerator = fileManager.enumerator(atPath: dataDirectory),
-            let relativesPathsInDataDirecotry = enumerator.allObjects as? [String] else {
+            let relativePathsInDataDirectory = enumerator.allObjects as? [String] else {
                 return [String: IgnoreTemplateModel]()
         }
-        let parsedTemplates = parseTemplateFiles(relativePaths: relativesPathsInDataDirecotry)
-        return patch(parsedTemplates: parsedTemplates, relativePaths: relativesPathsInDataDirecotry)
+        let parsedTemplates = parseTemplateFiles(relativePaths: relativePathsInDataDirectory)
+        return patch(parsedTemplates: parsedTemplates, relativePaths: relativePathsInDataDirectory)
     }
 
     /// Parse .gitginore template files
@@ -106,7 +106,7 @@ struct TemplateController: ReadOnlyTemplateManager {
 
     /// Create template model dictionary based on suffix
     ///
-    /// - parameter suffix:        Suffix represnseting templates `.gitignore` or patches `.patch`
+    /// - parameter suffix:        Suffix representing templates `.gitignore` or patches `.patch`
     /// - parameter relativePaths: File paths with in data directory
     ///
     /// - returns: Ignore template model dictionary based on suffix
@@ -115,14 +115,14 @@ struct TemplateController: ReadOnlyTemplateManager {
             relativeFilePath.hasSuffix(suffix.extension)
             }.map { (relativeTemplateFilePath) -> String in
                 dataDirectory.appending("/").appending(relativeTemplateFilePath)
-            }.map { (absoluateTemplateFilePath) -> (key: String, model: IgnoreTemplateModel)? in
+            }.map { (absoluteTemplateFilePath) -> (key: String, model: IgnoreTemplateModel)? in
                 do {
-                    let fileContents = try String(contentsOfFile: absoluateTemplateFilePath)
-                    let templateHeader = suffix.header(name: absoluateTemplateFilePath.name)
-                    return (key: absoluateTemplateFilePath.name.lowercased(),
-                            model: IgnoreTemplateModel(key: absoluateTemplateFilePath.name.lowercased(),
-                                                       name: absoluateTemplateFilePath.name,
-                                                       fileName: absoluateTemplateFilePath.fileName,
+                    let fileContents = try String(contentsOfFile: absoluteTemplateFilePath)
+                    let templateHeader = suffix.header(name: absoluteTemplateFilePath.name)
+                    return (key: absoluteTemplateFilePath.name.lowercased(),
+                            model: IgnoreTemplateModel(key: absoluteTemplateFilePath.name.lowercased(),
+                                                       name: absoluteTemplateFilePath.name,
+                                                       fileName: absoluteTemplateFilePath.fileName,
                                                        contents: templateHeader.appending(fileContents)))
                 } catch {
                     print(error)

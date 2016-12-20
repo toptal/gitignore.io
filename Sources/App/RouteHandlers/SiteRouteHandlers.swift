@@ -67,7 +67,7 @@ struct SiteHandlers {
         }
     }
 
-    /// Create dropdown template json list
+    /// Create dropdown template JSON list
     ///
     /// - parameter drop: Vapor server side Swift droplet
     func createDropdownTemplates(drop: Droplet) {

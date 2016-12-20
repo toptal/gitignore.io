@@ -25,11 +25,12 @@ struct APIHandlers {
     init(drop: Droplet, templateController: TemplateController) {
         templates = templateController.templates
         order = templateController.order
-        templateListDict = craeteTemplateListDict()
+        templateListDict = createTemplateListDict()
 
         createIgnoreEndpoint(drop: drop)
         createTemplateDownloadEndpoint(drop: drop)
         createListEndpoint(drop: drop)
+        createHelp(drop: drop)
     }
 
     /// Create the API endpoint for serving ignore templates
@@ -37,11 +38,11 @@ struct APIHandlers {
     /// - parameter drop: Vapor server side Swift droplet
     func createIgnoreEndpoint(drop: Droplet) {
         drop.get("/api", String.self) { request, ignoreString in
-            self.craeteTemplate(ignoreString: ignoreString)
+            self.createTemplate(ignoreString: ignoreString)
         }
     }
 
-    /// Create the API endpoint for downloding ignore templates
+    /// Create the API endpoint for downloading ignore templates
     ///
     /// - parameter drop: Vapor server side Swift droplet
     func createTemplateDownloadEndpoint(drop: Droplet) {
@@ -49,7 +50,7 @@ struct APIHandlers {
             Response(version: Version.init(major: 1, minor: 0, patch: 0),
                      status: .ok,
                      headers: [.contentType : "application/octet-stream"],
-                     body: self.craeteTemplate(ignoreString: ignoreString))
+                     body: self.createTemplate(ignoreString: ignoreString))
         }
     }
 
@@ -82,16 +83,24 @@ struct APIHandlers {
             }
         }
     }
+    
+    func createHelp(drop: Droplet) {
+        drop.get("/api/") { request in
+            "gitignore.io help:\n"
+                .appending("  list    - lists the operating systems, programming languages and IDE input types\n")
+                .appending("  :types: - creates .gitignore files for types of operating systems, programming languages or IDEs\n")
+        }
+    }
 
     // MARK: - Private
 
     /// Create final output template sorted based on `data/order` file with headers
-    /// and footers applied to temmplates
+    /// and footers applied to templates
     ///
     /// - parameter ignoreString: Comma separated string of templates to generate
     ///
     /// - returns: Final formatted template with headers and footers
-    private func craeteTemplate(ignoreString: String) -> String {
+    private func createTemplate(ignoreString: String) -> String {
         return ignoreString
             .lowercased()
             .components(separatedBy: ",")
@@ -105,13 +114,13 @@ struct APIHandlers {
                 return currentTemplate.appending(contents)
             }
             .appending("\n# End of https://www.gitignore.io/api/\(ignoreString)")
-            .removeDuplcatesLines()
+            .removeDuplicateLines()
     }
 
     /// Create JSON template list dictionary
     ///
     /// - returns: JSON template list dictionary
-    private func craeteTemplateListDict() -> Node {
+    private func createTemplateListDict() -> Node {
         return [String](self.templates.keys)
             .sorted()
             .map({ (templateKey) -> IgnoreTemplateModel? in
@@ -122,10 +131,10 @@ struct APIHandlers {
             }
             .reduce(Node.null) { (templateListDict, ignoreTemplateModel) -> Node in
                 if templateListDict.isNull {
-                    return Node.init(dictionaryLiteral: (ignoreTemplateModel.key, ignoreTemplateModel.toJson))
+                    return Node.init(dictionaryLiteral: (ignoreTemplateModel.key, ignoreTemplateModel.JSON))
                 }
                 var mutableTemplateListDict = templateListDict
-                mutableTemplateListDict[ignoreTemplateModel.key] = ignoreTemplateModel.toJson
+                mutableTemplateListDict[ignoreTemplateModel.key] = ignoreTemplateModel.JSON
                 return mutableTemplateListDict
             }
     }

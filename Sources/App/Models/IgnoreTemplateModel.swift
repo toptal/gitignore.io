@@ -19,7 +19,7 @@ struct IgnoreTemplateModel: CustomStringConvertible {
         return "KEY: \(key)\nNAME: \(name)FILE NAME: \(fileName)\nCONTENTS: \(contents)\n"
     }
 
-    var toJson: Node {
+    var JSON: Node {
         return Node.object(["name": Node.string(name),
                             "fileName": Node.string(fileName),
                             "contents": Node.string(contents)])
