@@ -13,7 +13,7 @@ import Vapor
 struct SiteHandlers {
     private let count: String!
     private var templateDict: Node!
-    
+
     /// Initialze the Site Handlers extension
     ///
     /// - parameter drop:               Vapor server side Swift droplet
@@ -28,7 +28,7 @@ struct SiteHandlers {
         createDocumentsPage(drop: drop)
         createDropdownTemplates(drop: drop)
     }
-    
+
     /// Create Index Page
     ///
     /// - parameter drop: Vapor server side Swift droplet
@@ -53,7 +53,7 @@ struct SiteHandlers {
                 ])
         }
     }
-    
+
     /// Crate Documentation Page
     ///
     /// - parameter drop: Vapor server side Swift droplet
@@ -66,7 +66,7 @@ struct SiteHandlers {
                 ])
         }
     }
-    
+
     /// Create dropdown template json list
     ///
     /// - parameter drop: Vapor server side Swift droplet
@@ -75,9 +75,9 @@ struct SiteHandlers {
             return try JSON(node: self.templateDict)
         }
     }
-    
+
     // MARK: - Private
-    
+
     /// Create dropdown list template
     ///
     /// - parameter templates: Template controller template dictionary

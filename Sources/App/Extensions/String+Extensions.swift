@@ -7,32 +7,18 @@
 //
 
 import Foundation
-import HTTP
 
 extension String {
     var name: String {
         return NSURL(fileURLWithPath: self).deletingPathExtension?.lastPathComponent ?? ""
     }
-    
+
     var fileName: String {
         return NSURL(fileURLWithPath: self).lastPathComponent ?? ""
     }
-    
+
     var fileExtensionss: String {
         return NSURL(fileURLWithPath: self).pathExtension ?? ""
-    }
-    
-    /// Create HTTP resposne with headers
-    ///
-    /// - parameter headers: HTTP headers to be added to response
-    ///
-    /// - returns: Response with HTTP headers
-    func response(headers: [HeaderKey: String]) -> Response {
-        let response = Response(status: .ok, body: self)
-        for header in headers {
-            response.headers[header.key] = header.value
-        }
-        return response
     }
 
     /// Remove duplicate lines, except blank strings or comment strings

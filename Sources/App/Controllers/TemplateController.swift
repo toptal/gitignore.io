@@ -19,22 +19,22 @@ struct TemplateController: ReadOnlyTemplateManager {
     var order: [String: Int]!
     var count: Int!
     var templates: [String: IgnoreTemplateModel]!
-    
+
     private let fileManager = FileManager()
     private let dataDirectory = drop.workDir.appending("/").appending("data")
-    
-    
+
+
     /// Create Template Controller
     ///
     /// - returns: Template Controller
     init() {
         order = parseOrderFile()
         templates = parseTemplateDirectory()
-        count = templates.count        
+        count = templates.count
     }
-    
+
     // MARK: - Private
-    
+
     /// Parse file which defines template order precedence
     ///
     /// - returns: List of templates in order precedence
@@ -56,14 +56,14 @@ struct TemplateController: ReadOnlyTemplateManager {
                     mutableOrderedDict[line.text] = line.offset
                     return  mutableOrderedDict
                 })
-                
+
         } catch {
             print(error)
         }
         return [:]
     }
-    
-    
+
+
     /// Parse template directory
     ///
     /// - returns: Ignore template model dictionary
@@ -75,7 +75,7 @@ struct TemplateController: ReadOnlyTemplateManager {
         let parsedTemplates = parseTemplateFiles(relativePaths: relativesPathsInDataDirecotry)
         return patch(parsedTemplates: parsedTemplates, relativePaths: relativesPathsInDataDirecotry)
     }
-    
+
     /// Parse .gitginore template files
     ///
     /// - parameter relativePaths: File paths with in data directory
@@ -84,14 +84,14 @@ struct TemplateController: ReadOnlyTemplateManager {
     private func parseTemplateFiles(relativePaths: [String]) -> [String: IgnoreTemplateModel] {
         return templateModels(suffix: .template, relativePaths: relativePaths)
     }
-    
+
     /// Parse .patch template files
     ///
     /// - parameter parsedTemplates: Ignore template model dictionary of .gitignore templates
     /// - parameter relativePaths:   File paths with in data directory
     ///
     /// - returns: Ignore template model dictionary of .gitignore templates with .patch's applied
-    private func patch(parsedTemplates: [String: IgnoreTemplateModel], relativePaths: [String]) -> [String: IgnoreTemplateModel]  {
+    private func patch(parsedTemplates: [String: IgnoreTemplateModel], relativePaths: [String]) -> [String: IgnoreTemplateModel] {
         var mutableParsedTemplates = parsedTemplates
 
         let patchedTemplates = templateModels(suffix: .patch, relativePaths: relativePaths)
@@ -103,7 +103,7 @@ struct TemplateController: ReadOnlyTemplateManager {
         }
         return mutableParsedTemplates
     }
-    
+
     /// Create template model dictionary based on suffix
     ///
     /// - parameter suffix:        Suffix represnseting templates `.gitignore` or patches `.patch`
@@ -141,14 +141,14 @@ struct TemplateController: ReadOnlyTemplateManager {
 
 fileprivate enum TemplateSuffix {
     case template, patch
-    
+
     var `extension`: String {
         switch self {
         case .template: return ".gitignore"
         case .patch: return ".patch"
         }
     }
-    
+
     func header(name: String) -> String {
         switch self {
         case .template: return "\n### \(name) ###\n"

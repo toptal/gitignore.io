@@ -8,13 +8,14 @@
 
 import Foundation
 import Vapor
+import HTTP
 
 struct APIHandlers {
     private let splitSize = 5
     private var order: [String: Int]!
     private var templates: [String: IgnoreTemplateModel]!
     private var templateListDict: Node!
-    
+
     /// Initialze the API Handlers extension
     ///
     /// - parameter drop:               Vapor server side Swift droplet
@@ -25,37 +26,33 @@ struct APIHandlers {
         templates = templateController.templates
         order = templateController.order
         templateListDict = craeteTemplateListDict()
-        
+
         createIgnoreEndpoint(drop: drop)
         createTemplateDownloadEndpoint(drop: drop)
         createListEndpoint(drop: drop)
     }
-    
+
     /// Create the API endpoint for serving ignore templates
     ///
     /// - parameter drop: Vapor server side Swift droplet
     func createIgnoreEndpoint(drop: Droplet) {
         drop.get("/api", String.self) { request, ignoreString in
             self.craeteTemplate(ignoreString: ignoreString)
-                .response(headers:[.expires: Date().utcString,
-                                   .contentType: "text/plain",
-                                   .cacheControl: "public, max-age=0"])
         }
     }
-    
+
     /// Create the API endpoint for downloding ignore templates
     ///
     /// - parameter drop: Vapor server side Swift droplet
     func createTemplateDownloadEndpoint(drop: Droplet) {
         drop.get("/api/f", String.self) { request, ignoreString in
-            self.craeteTemplate(ignoreString: ignoreString)
-                .response(headers: [.expires: Date().utcString,
-                                    .contentType: "application/octet-stream",
-                                    .cacheControl: "public, max-age=0",
-                                    .contentDisposition: "attachment; filename=.gitignore"])
+            Response(version: Version.init(major: 1, minor: 0, patch: 0),
+                     status: .ok,
+                     headers: [.contentType : "application/octet-stream"],
+                     body: self.craeteTemplate(ignoreString: ignoreString))
         }
     }
-    
+
     /// Create the API endpoint for showing the list of templates
     ///
     /// - parameter drop: Vapor server side Swift droplet
@@ -70,33 +67,24 @@ struct APIHandlers {
                     .reduce("", { (templateKeyList, splitTemplateKeys) -> String in
                         return templateKeyList.appending("\(splitTemplateKeys)\n")
                     })
-                    .response(headers:[.expires: Date().utcString,
-                                       .contentType: "text/plain",
-                                       .cacheControl: "public, max-age=0"])
             }
-            
+
             switch format {
             case "lines":
                 return templateKeys
                     .reduce("") { (templateList, templateKey) -> String in
                         return templateList.appending("\(templateKey)\n")
                     }
-                    .response(headers:[.expires: Date().utcString,
-                                       .contentType: "text/plain",
-                                       .cacheControl: "public, max-age=0"])
             case "json":
                 return try JSON(node: self.templateListDict)
             default:
                 return "Unknown Format: `lines` or `json` are acceptable formats"
-                    .response(headers:[.expires: Date().utcString,
-                                       .contentType: "text/plain",
-                                       .cacheControl: "public, max-age=0"])
             }
         }
     }
-    
+
     // MARK: - Private
-    
+
     /// Create final output template sorted based on `data/order` file with headers
     /// and footers applied to temmplates
     ///
@@ -119,7 +107,7 @@ struct APIHandlers {
             .appending("\n# End of https://www.gitignore.io/api/\(ignoreString)")
             .removeDuplcatesLines()
     }
-    
+
     /// Create JSON template list dictionary
     ///
     /// - returns: JSON template list dictionary

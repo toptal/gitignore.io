@@ -14,11 +14,11 @@ struct IgnoreTemplateModel: CustomStringConvertible {
     var name: String
     var fileName: String
     var contents: String
-    
+
     var description: String {
         return "KEY: \(key)\nNAME: \(name)FILE NAME: \(fileName)\nCONTENTS: \(contents)\n"
     }
-    
+
     var toJson: Node {
         return Node.object(["name": Node.string(name),
                             "fileName": Node.string(fileName),
