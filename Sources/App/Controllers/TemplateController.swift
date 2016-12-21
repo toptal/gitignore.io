@@ -41,7 +41,7 @@ struct TemplateController: ReadOnlyTemplateManager {
     private func parseOrderFile() -> [String: Int] {
         do {
             let orderFile = dataDirectory.appending("/").appending("order")
-            let fileContents = try String(contentsOfFile: orderFile)
+            let fileContents = try String(contentsOfFile: orderFile, encoding: String.Encoding.utf8)
             return fileContents
                 .components(separatedBy: "\n")
                 .map({ (line) -> String in
@@ -117,7 +117,7 @@ struct TemplateController: ReadOnlyTemplateManager {
                 dataDirectory.appending("/").appending(relativeTemplateFilePath)
             }.map { (absoluteTemplateFilePath) -> (key: String, model: IgnoreTemplateModel)? in
                 do {
-                    let fileContents = try String(contentsOfFile: absoluteTemplateFilePath)
+                    let fileContents = try String(contentsOfFile: absoluteTemplateFilePath, encoding: String.Encoding.utf8)
                     let templateHeader = suffix.header(name: absoluteTemplateFilePath.name)
                     return (key: absoluteTemplateFilePath.name.lowercased(),
                             model: IgnoreTemplateModel(key: absoluteTemplateFilePath.name.lowercased(),
