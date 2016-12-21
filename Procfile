@@ -1,1 +1,1 @@
-web: .build/release/App --env=production --workdir="./"
+web: App --env=production --workdir="./"
