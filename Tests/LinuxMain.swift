@@ -1,7 +1,7 @@
 #if os(Linux)
 
 import XCTest
-@testable import GitignoreIOTests
+@testable import GitignoreIOServerTests
 
 XCTMain([
     testCase(IgnoreTemplateModelTests.allTests),

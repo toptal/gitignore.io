@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Vapor
 
 protocol ReadOnlyTemplateManager {
     var order: [String: Int]! { get }
@@ -21,13 +20,14 @@ struct TemplateController: ReadOnlyTemplateManager {
     var templates: [String: IgnoreTemplateModel]!
 
     private let fileManager = FileManager()
-    private let dataDirectory = drop.workDir.appending("/").appending("data")
+    private let dataDirectory: String!
 
 
     /// Create Template Controller
     ///
     /// - returns: Template Controller
-    init() {
+    init(dataDirectory: String) {
+        self.dataDirectory = dataDirectory
         order = parseOrderFile()
         templates = parseTemplateDirectory()
         count = templates.count
