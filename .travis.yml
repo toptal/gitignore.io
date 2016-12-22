@@ -4,12 +4,7 @@ language: generic
 sudo: required
 dist: trusty
 osx_image: xcode8.1
-before_install:
- - chmod +x install_swiftlint.sh
 install:
-  - ./install_swiftlint.sh
   - eval "$(curl -sL https://swift.vapor.sh/ci)"
-script:
-  - swiftlint
 after_success:
   - bash <(curl -s https://codecov.io/bash)
