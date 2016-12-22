@@ -30,7 +30,9 @@ struct TemplateController: ReadOnlyTemplateManager {
     init(dataDirectory: String, orderFile: String) {
         self.dataDirectory = dataDirectory
         order = parseFile(order: orderFile)
+        print("**parsed** order file")
         templates = parseTemplateDirectory()
+        print("**parsed** template directory")
         count = templates.count
     }
 
