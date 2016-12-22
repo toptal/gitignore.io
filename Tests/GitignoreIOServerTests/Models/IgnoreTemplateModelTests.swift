@@ -7,6 +7,7 @@
 //
 
 import XCTest
+
 @testable import GitignoreIOServer
 
 class IgnoreTemplateModelTests: XCTestCase {

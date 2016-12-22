@@ -7,49 +7,26 @@
     <strong>Create useful .gitignore files for your project</strong>
 </p>
 <p align="center">
-    <a href="https://travis-ci.org/joeblau/gitignore.io">
-        <img src="https://img.shields.io/travis/joeblau/gitignore.io.svg"
-             alt="Travis">
-    </a>
-    <a href="https://nodejs.org">
-        <img src="https://img.shields.io/badge/node-%3E%3D5.0.0-orange.svg"
-             alt="node">
-    </a>
-    <a href="https://www.npmjs.com">
-        <img src="https://img.shields.io/badge/npm-%3E%3D3.3.6-orange.svg"
-             alt="npm">
-    </a>
-    <a href="https://bower.io">
-        <img src="https://img.shields.io/bower/v/bootstrap.svg"
-             alt="Bower">
-    </a>
-    <a href="https://david-dm.org/joeblau/gitignore.io">
-        <img src="https://img.shields.io/david/joeblau/gitignore.io.svg"
-             alt="David">
-    </a>
-    <a href="https://david-dm.org/joeblau/gitignore.io#info=devDependencies">
-        <img src="https://img.shields.io/david/dev/joeblau/gitignore.io.svg"
-             alt="David">
-    </a>
-    <img src="https://img.shields.io/badge/Platforms-Linux%20%7C%20macOS%20%7C%20Windows-lightgrey.svg"
-          alt="Platforms">
-    <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md">
-        <img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg"
-             alt="license">
-    </a>
+    <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.0-orange.svg"/></a>
+    <a href="https://travis-ci.org/joeblau/gitignore.io"><img src="https://img.shields.io/travis/joeblau/gitignore.io.svg" alt="Travis"></a>
+    <a href="https://codecov.io/gh/joeblau/gitignore.io"><img src="https://img.shields.io/codecov/c/github/joeblau/gitignore.io/vapor-swift-migration.svg" alt="Codecov"></a>
+    <a href="https://codebeat.co/projects/github-com-joeblau-gitignore-io"><img src="https://codebeat.co/badges/466223cd-3a95-40a9-80e4-09690915ae93" alt="codebeat badge"></a>
+    <a href="https://bower.io"><img src="https://img.shields.io/bower/v/bootstrap.svg" alt="Bower"></a>
+    <img src="https://img.shields.io/badge/Platforms-Linux%20%7C%20macOS%20%7C%20Windows-blue.svg"alt="Platforms">
+    <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg" alt="license"></a>
 </p>
 
-# Install Command Line
+<h2 align="center">Install Command Line</h2>
 
-To run gitignore.io from your command line you need an active internet connection an environment function. You need to add a function to your environment that lets you access the gitignore.io API.
+To run gitignore.io from your command line you need an active internet connection and environment function. Adding the function to your environment that lets you access the gitignore.io API.
 
-## Git
+### Git
 `#!/bin/bash`
 ```sh
 $ git config --global alias.ignore '!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi'
 ```
 
-## Linux
+### Linux
 `#!/bin/bash`
 ```sh
 $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.bashrc && source ~/.bashrc
@@ -60,7 +37,7 @@ $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.ba
 $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zshrc && source ~/.zshrc
 ```
 
-## macOS
+### macOS
 `#!/bin/bash`
 ```sh
 $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.bash_profile && source ~/.bash_profile
@@ -70,7 +47,7 @@ $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.ba
 $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zshrc && source ~/.zshrc
 ```
 
-## Windows
+### Windows
 Create a PowerShell v3 Script
 ```posh
 #For PowerShell v3
@@ -114,7 +91,7 @@ If you have installed [msysgit](http://msysgit.github.io)), create `gi.cmd` with
 
 @curl.exe -L -s https://www.gitignore.io/api/%*
 ```
-## Other Clients
+### Other Clients
 
 Clients maintained by third-party developers
 
@@ -130,11 +107,11 @@ Tools or extensions maintained by third-party developers on other platforms
 | [gi](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi) | Visual Studio Code | [Install](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi#install) | [Hasit Mistry](https://github.com/hasit/)
 
 
-# Use Command Line
+<h2 align="center">Use Command Line</h2>
 
 After the function is created, the `gi` command will give you command line access to the gitingore.io API. . **Note:** Use `gig` if you are on Windows
 
-## View
+### Preview
 Show output on the command line. **Note:** Use `gig` if you are on Windows
 ```sh
 $ gi linux,java
@@ -153,19 +130,19 @@ $ gi linux,java
 *.ear
 ```
 
-## Global
+### Global
 Append Operating System and IDE settings to global .gitignore. **Note:** Use `gig` if you are on Windows
 ```sh
 $ gi linux,eclipse >> ~/.gitignore_global
 ```
 
-## Project
+### Project
 Appending Programming Langauge settings to your projects .gitignore. **Note:** Use `gig` if you are on Windows
 ```sh
 $ gi java,python >> .gitignore
 ```
 
-## List
+### List
 List displays a list of all of the currently support gitignore.io templates. **Note:** Use `gig` if you are on Windows
 ```sh
 $ gi list
@@ -189,27 +166,26 @@ waf,wakanda,webmethods,webstorm,windows,wordpress,xamarinstudio,xcode,xilinxise,
 yeoman,yii,zendframework
 ```
 
-# Advanced Command Line Improvements
+<h2 align="center">Advanced Command Line Improvements</h2>
 
 Advanced command line suggestions are tracked on the [gitignore.io wiki](https://github.com/joeblau/gitignore.io/wiki/Advanced-Command-Line-Improvements).
 
-# Install Locally
+<h2 align="center">Install Locally</h2>
+
+### Requirements
+
+- **Vapor** - [macOS](https://vapor.github.io/documentation/getting-started/install-swift-3-macos.html) / [Linux](https://vapor.github.io/documentation/getting-started/install-swift-3-ubuntu.html)
 
 ## Instructions
-
-In order to install gitignore.io locally, you'll need to have
-[a current](https://github.com/nodejs/LTS) version of **node.js** and **npm**
-installed.  You also need **git** installed on your machine.
 
 ```sh
 $ git clone --recursive git@github.com:joeblau/gitignore.io.git
 $ cd gitignore.io/
-$ npm install
-$ node server.js
+$ vapor build
+$ ./.build/debug/GitignoreIO
 ```
 
-
-# About
+<h2 align="center">About</h2>
 
 .gitignore.io is a web service designed to help you create .gitignore files for
 your Git repositories. The site has a graphical and command line method of

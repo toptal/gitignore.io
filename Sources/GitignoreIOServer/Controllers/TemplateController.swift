@@ -21,14 +21,15 @@ struct TemplateController: ReadOnlyTemplateManager {
 
     private let fileManager = FileManager()
     private let dataDirectory: String!
-
+    private let dataDirecotryName = "data"
+    
 
     /// Create Template Controller
     ///
     /// - returns: Template Controller
-    init(dataDirectory: String) {
+    init(dataDirectory: String, orderFile: String) {
         self.dataDirectory = dataDirectory
-        order = parseOrderFile()
+        order = parseFile(order: orderFile)
         templates = parseTemplateDirectory()
         count = templates.count
     }
@@ -38,11 +39,11 @@ struct TemplateController: ReadOnlyTemplateManager {
     /// Parse file which defines template order precedence
     ///
     /// - returns: List of templates in order precedence
-    private func parseOrderFile() -> [String: Int] {
+    private func parseFile(order: String) -> [String: Int] {
+        var orderFileContents = [String:Int]()
         do {
-            let orderFile = dataDirectory.appending("/").appending("order")
-            let fileContents = try String(contentsOfFile: orderFile, encoding: String.Encoding.utf8)
-            return fileContents
+            let fileContents = try String(contentsOfFile: order, encoding: String.Encoding.utf8)
+            orderFileContents = fileContents
                 .components(separatedBy: "\n")
                 .map({ (line) -> String in
                     line.trim().lowercased()
@@ -56,11 +57,8 @@ struct TemplateController: ReadOnlyTemplateManager {
                     mutableOrderedDict[line.text] = line.offset
                     return  mutableOrderedDict
                 })
-
-        } catch {
-            print(error)
-        }
-        return [:]
+        } catch {}
+        return orderFileContents
     }
 
 
@@ -69,7 +67,8 @@ struct TemplateController: ReadOnlyTemplateManager {
     /// - returns: Ignore template model dictionary
     private func parseTemplateDirectory() -> [String: IgnoreTemplateModel] {
         guard let enumerator = fileManager.enumerator(atPath: dataDirectory),
-            let relativePathsInDataDirectory = enumerator.allObjects as? [String] else {
+            let relativePathsInDataDirectory = enumerator.allObjects as? [String],
+            dataDirectory.name == dataDirecotryName else {
                 return [String: IgnoreTemplateModel]()
         }
         let parsedTemplates = parseTemplateFiles(relativePaths: relativePathsInDataDirectory)
@@ -116,22 +115,20 @@ struct TemplateController: ReadOnlyTemplateManager {
             }.map { (relativeTemplateFilePath) -> String in
                 dataDirectory.appending("/").appending(relativeTemplateFilePath)
             }.map { (absoluteTemplateFilePath) -> (key: String, model: IgnoreTemplateModel)? in
+                var templateData: (key: String, model: IgnoreTemplateModel)?
                 do {
                     let fileContents = try String(contentsOfFile: absoluteTemplateFilePath, encoding: String.Encoding.utf8)
                     let templateHeader = suffix.header(name: absoluteTemplateFilePath.name)
-                    return (key: absoluteTemplateFilePath.name.lowercased(),
-                            model: IgnoreTemplateModel(key: absoluteTemplateFilePath.name.lowercased(),
-                                                       name: absoluteTemplateFilePath.name,
-                                                       fileName: absoluteTemplateFilePath.fileName,
-                                                       contents: templateHeader.appending(fileContents)))
-                } catch {
-                    print(error)
-                }
-                return nil
+                    templateData = (key: absoluteTemplateFilePath.name.lowercased(),
+                                    model: IgnoreTemplateModel(key: absoluteTemplateFilePath.name.lowercased(),
+                                                               name: absoluteTemplateFilePath.name,
+                                                               fileName: absoluteTemplateFilePath.fileName,
+                                                               contents: templateHeader.appending(fileContents)))
+                } catch {}
+                return templateData
+            }.flatMap {
+                $0
             }.reduce([String: IgnoreTemplateModel]()) { (currentTemplateModels, templateData) in
-                guard let templateData = templateData else {
-                    return currentTemplateModels
-                }
                 var mutableCurrentTemplates = currentTemplateModels
                 mutableCurrentTemplates[templateData.key] = templateData.model
                 return mutableCurrentTemplates

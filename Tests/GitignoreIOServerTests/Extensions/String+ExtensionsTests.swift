@@ -7,24 +7,38 @@
 //
 
 import XCTest
+
 @testable import GitignoreIOServer
 
 class String_ExtensionsTests: XCTestCase {
     static let allTests = [
-        ("testStringName", testStringName),
-        ("testStringFileName", testStringFileName),
+        ("testStringName_valid", testStringName_valid),
+        ("testStringName_empty", testStringName_empty),
+        ("testStringFileName_valid", testStringFileName_valid),
+        ("testStringFileName_empty", testStringFileName_empty),
         ("testRemoveDuplicateLines", testRemoveDuplicateLines),
     ]
     
-    func testStringName() {
+    func testStringName_valid() {
         let path = "/User/ElonMusk/Developer/GitIgnoreIO/data/custom/tesla.gitignore"
         XCTAssertEqual(path.name, "tesla")
     }
     
-    func testStringFileName() {
+    func testStringName_empty() {
+        let path = ""
+        XCTAssertEqual(path.name, "")
+    }
+    
+    func testStringFileName_valid() {
         let path = "/User/ElonMusk/Developer/GitIgnoreIO/data/custom/tesla.gitignore"
         XCTAssertEqual(path.fileName, "tesla.gitignore")
     }
+    
+    func testStringFileName_empty() {
+        let path = ""
+        XCTAssertEqual(path.fileName, "")
+    }
+    
     
     func testRemoveDuplicateLines() {
         let string = "abc\n"
