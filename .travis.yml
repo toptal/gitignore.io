@@ -7,8 +7,5 @@ dist: trusty
 osx_image: xcode8
 script:
   - eval "$(curl -sL https://swift.vapor.sh/ci)"
-  - swift build
-  - swift build -c release
-  - swift test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
