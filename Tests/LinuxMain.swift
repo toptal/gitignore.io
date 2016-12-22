@@ -8,8 +8,8 @@ XCTMain([
     testCase(TemplateControllerTests.allTests),
     testCase(IgnoreTemplateModelTests.allTests),
     testCase(String+ExtensionsTests.allTests),
-    testCase(APIHandlers.allTests),
-    testCase(SiteHandlers.allTests),
+    testCase(APIHandlersTests.allTests),
+    testCase(SiteHandlersTests.allTests),
 ])
 
 #endif
