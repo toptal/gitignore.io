@@ -7,14 +7,19 @@
 //
 
 import XCTest
+@testable import GitignoreIO
 
 class IgnoreTemplateModelTests: XCTestCase {
-    
+    static let allTests = [
+        ("testDescription", testDescription),
+        ("testJSON", testJSON),
+    ]
+
     func testDescription() {
         let itm = IgnoreTemplateModel(key: "a", name: "b", fileName: "c", contents: "d")
         XCTAssertEqual("\(itm)", "KEY: a\nNAME: bFILE NAME: c\nCONTENTS: d\n")
     }
-    
+
     func testJSON() {
         let itm = IgnoreTemplateModel(key: "a", name: "b", fileName: "c", contents: "d")
         XCTAssertEqual(itm.JSON["name"], "b")

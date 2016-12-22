@@ -7,8 +7,14 @@
 //
 
 import XCTest
+@testable import GitignoreIO
 
 class String_ExtensionsTests: XCTestCase {
+    static let allTests = [
+        ("testStringName", testStringName),
+        ("testStringFileName", testStringFileName),
+        ("testRemoveDuplicateLines", testRemoveDuplicateLines),
+    ]
     
     func testStringName() {
         let path = "/User/ElonMusk/Developer/GitIgnoreIO/data/custom/tesla.gitignore"
@@ -35,7 +41,6 @@ class String_ExtensionsTests: XCTestCase {
             .appending("dup\n")
             .appending("\n")
             .appending("xyz\n")
-        
         XCTAssertEqual(string.removeDuplicateLines(), answer)
     }
 }
