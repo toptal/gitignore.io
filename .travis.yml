@@ -11,6 +11,7 @@ install:
   - eval "$(curl -sL https://swift.vapor.sh/ci)"
 script:
   - swiftlint
+  - swift package update
   - swift build
   - swift build -c release
 after_success:
