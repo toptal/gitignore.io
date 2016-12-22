@@ -1,10 +1,10 @@
 os:
   - linux
+  - osx
 language: generic
 sudo: required
 dist: trusty
-osx_image: xcode8.1
-install:
+osx_image: xcode8
+script:
   - eval "$(curl -sL https://swift.vapor.sh/ci)"
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - eval "$(curl -sL https://swift.vapor.sh/codecov)"
