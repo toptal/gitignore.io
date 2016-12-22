@@ -11,7 +11,6 @@ let package = Package(
         "Public",
         "Resources",
         "data",
-        "scripts",
         "wiki"
     ]
 )
