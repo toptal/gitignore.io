@@ -1,5 +1,5 @@
 import Vapor
-import GitignoreIO
+import GitignoreIOServer
 
-let drop = GitignoreIO.configureServer()
+let drop = GitignoreIOServer.configureServer()
 drop.run()

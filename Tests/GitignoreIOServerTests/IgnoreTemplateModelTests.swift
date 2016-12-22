@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import GitignoreIO
+@testable import GitignoreIOServer
 
 class IgnoreTemplateModelTests: XCTestCase {
     static let allTests = [

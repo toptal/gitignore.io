@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import GitignoreIO
+@testable import GitignoreIOServer
 
 class String_ExtensionsTests: XCTestCase {
     static let allTests = [
