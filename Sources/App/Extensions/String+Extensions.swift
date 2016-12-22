@@ -17,10 +17,6 @@ extension String {
         return NSURL(fileURLWithPath: self).lastPathComponent ?? ""
     }
 
-    var fileExtensions: String {
-        return NSURL(fileURLWithPath: self).pathExtension ?? ""
-    }
-
     /// Remove duplicate lines, except blank strings or comment strings
     ///
     /// - returns: String with duplicate lines removed
