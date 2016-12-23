@@ -16,7 +16,7 @@
     <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg" alt="license"></a>
 </p>
 
-<h2 align="center">Install Command Line</h2>
+## Install Command Line
 
 To run gitignore.io from your command line you need an active internet connection and environment function. Adding the function to your environment that lets you access the gitignore.io API.
 
@@ -107,7 +107,7 @@ Tools or extensions maintained by third-party developers on other platforms
 | [gi](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi) | Visual Studio Code | [Install](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi#install) | [Hasit Mistry](https://github.com/hasit/)
 
 
-<h2 align="center">Use Command Line</h2>
+## Use Command Line
 
 After the function is created, the `gi` command will give you command line access to the gitingore.io API. . **Note:** Use `gig` if you are on Windows
 
@@ -166,7 +166,7 @@ waf,wakanda,webmethods,webstorm,windows,wordpress,xamarinstudio,xcode,xilinxise,
 yeoman,yii,zendframework
 ```
 
-<h2 align="center">Advanced Command Line Improvements</h2>
+## Advanced Command Line Improvements
 
 Advanced command line suggestions are tracked on the [gitignore.io wiki](https://github.com/joeblau/gitignore.io/wiki/Advanced-Command-Line-Improvements).
 
@@ -185,7 +185,7 @@ $ vapor build
 $ ./.build/debug/GitignoreIO
 ```
 
-<h2 align="center">About</h2>
+## About
 
 .gitignore.io is a web service designed to help you create .gitignore files for
 your Git repositories. The site has a graphical and command line method of
