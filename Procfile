@@ -1,1 +1,1 @@
-web: ./.build/release/ --env=production
+web: ./.build/release/App --env=production
