@@ -1,0 +1,24 @@
+{
+  "name": "dustjs-linkedin",
+  "version": "2.3.6",
+  "main": "dist/dust-full.min.js",
+  "devDependencies": {
+    "pegjs": "0.8.0"
+  },
+  "ignore": [
+     "**/.*",
+    "tmp",
+    "docs",
+    "test",
+    "src",
+    "benchmark",
+    "archive",
+    "node_modules",
+    ".grunt",
+    "_SpecRunner.html",
+    ".travis.yml",
+    "Gruntfile.js",
+    "package.json",
+    "bower.json"
+  ]
+}

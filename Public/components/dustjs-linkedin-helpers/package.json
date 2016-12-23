@@ -1,0 +1,77 @@
+{
+  "name": "dustjs-helpers",
+  "version": "1.2.0",
+  "author": {
+    "name": "Aleksander Williams",
+    "url": "http://akdubya.github.com/dustjs"
+  },
+  "homepage": "https://github.com/linkedin/dustjs-helpers",
+  "description": "Helpers for dustjs-linkedin package",
+  "contributors": [
+    {
+      "name": "Jairo de Morais",
+      "email": "jdemorais@linkedin.com"
+    },
+    {
+      "name": "Yevgeniy Brikman",
+      "email": "jbrikman@linkedin.com"
+    },
+    {
+      "name": "Veena Basavaraj",
+      "email": "vbasavaraj@linkedin.com"
+    },
+    {
+      "name": "Johnathan Leppert",
+      "email": "jleppert@linkedin.com"
+    },
+    {
+      "name": "Jimmy Chan",
+      "email": "jchan@linkedin.com"
+    },
+    {
+      "name": "Richard Ragan",
+      "email": "rragan@ebay.com"
+    },
+    {
+      "name": "Sarah Clatterbuck",
+      "email": "sclatter@linkedin.com"
+    },
+    {
+      "name": "Kate Odnous",
+      "email": "kodnous@linkedin.com"
+    }
+  ],
+  "scripts": {
+    "test": "grunt test"
+  },
+  "main": "./lib/dust-helpers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linkedin/dustjs-helpers.git"
+  },
+  "keywords": [
+    "templates",
+    "views",
+    "helpers"
+  ],
+  "dependencies": {
+    "dustjs-linkedin": "~2.3.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "~1.13.0",
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-jasmine": "~0.5.2",
+    "grunt-template-jasmine-istanbul": "~0.2.5",
+    "grunt-contrib-uglify": "~0.3.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-compress": "~0.6.0",
+    "grunt-bump": "~0.0.13",
+    "grunt-shell": "~0.6.3"
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.8"
+  }
+}
