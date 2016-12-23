@@ -170,7 +170,7 @@ yeoman,yii,zendframework
 
 Advanced command line suggestions are tracked on the [gitignore.io wiki](https://github.com/joeblau/gitignore.io/wiki/Advanced-Command-Line-Improvements).
 
-<h2 align="center">Install Locally</h2>
+## Install Locally
 
 ### Requirements
 
