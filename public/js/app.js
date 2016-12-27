@@ -59,3 +59,17 @@ function generateGitIgnoreFile() {
         window.location = "/api/f/" + uriEncodedFiles;
     }
 }
+
+function generateGitIgnoreCommand() {
+    var searchString = $(".ignoreSearch").val();
+    var searchLength = searchString.length;
+    if (searchLength > 0) {
+        var files = searchString.replace(/^,/, '');
+        var uriEncodedFiles = encodeURIComponent(files);
+
+        var url = "https://www.gitignore.io/api/" + uriEncodedFiles;
+        var command = "curl -s  \"" + url + "\" >> .gitignore && echo \"===\nYour gitignore file is all set up!\n===\"";
+
+        window.prompt('Below command appends to the gitignore file in your current directory', command);
+    }
+}

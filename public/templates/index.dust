@@ -24,6 +24,7 @@
             <button type="button" data-toggle="dropdown" class="btn btn-gitignore dropdown-toggle"><span class="caret"></span></button>
             <ul role="menu" class="dropdown-menu pull-right">
               <li><a onClick="generateGitIgnoreFile()"><span class="icon-download"> Download File</span></a></li>
+              <li><a onClick="generateGitIgnoreCommand()"><span class="icon-download"> Save With cURL</span></a></li>
             </ul>
           </div>
         </div>
