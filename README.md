@@ -41,7 +41,7 @@
 
 # Install Command Line
 
-To run gitignore.io from your command line you need an active internet connection an environment function. You need to add a function to your environment that lets you access the gitignore.io API.
+To run gitignore.io from your command line you need an active internet connection and an environment function. You need to add a function to your environment that lets you access the gitignore.io API.
 
 ## Git
 `#!/bin/bash`
