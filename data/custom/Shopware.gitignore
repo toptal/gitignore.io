@@ -42,7 +42,3 @@ Thumbs.db
 
 # SASS/SCSS cache
 .sass-cache/
-
-# Internal Repositories
-/internal/
-/engine/Shopware/Plugins/Commercial/
