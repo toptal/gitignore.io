@@ -73,3 +73,9 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+Packages
+.build
+xcuserdata
+*.xcodeproj
+Config/secrets

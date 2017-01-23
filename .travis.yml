@@ -1,12 +1,17 @@
-language: node_js
-
-node_js:
-  - '5'
-
-before_script:
-  - npm install -g bower
-  - npm install -g grunt
-  - npm install -g grunt-cli
-
-env:
-  - CI=true
+os:
+  - osx
+language: objective-c
+sudo: required
+dist: trusty
+osx_image: xcode8.1
+before_install:
+ - chmod +x install_swiftlint.sh
+install:
+  - ./install_swiftlint.sh
+  - eval "$(curl -sL https://gist.githubusercontent.com/kylef/5c0475ff02b7c7671d2a/raw/9f442512a46d7a2af7b850d65a7e9bd31edfb09b/swiftenv-install.sh)"
+script:
+  - swiftlint
+  - swift build
+  - swift build -c release
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

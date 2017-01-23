@@ -1,1 +1,1 @@
-web: node server.js
+web: App --env=production --workdir="./"
