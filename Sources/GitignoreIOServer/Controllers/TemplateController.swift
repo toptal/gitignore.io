@@ -66,10 +66,19 @@ struct TemplateController: ReadOnlyTemplateManager {
     ///
     /// - returns: Ignore template model dictionary
     private func parseTemplateDirectory() -> [String: IgnoreTemplateModel] {
-        guard let relativePathsInDataDirectory = fileManager.subpaths(atPath: dataDirectory),
-            dataDirectory.name == dataDirecotryName else {
-            return [String: IgnoreTemplateModel]()
-        }
+        
+        do {
+            let relativePathsInDataDirectory = try fileManager.subpathsOfDirectory(atPath: dataDirectory)
+            
+            debugPrint("relativePathsInDataDirectory: \(relativePathsInDataDirectory.count)")
+            
+            let parsedTemplates = parseTemplateFiles(relativePaths: relativePathsInDataDirectory)
+            return patch(parsedTemplates: parsedTemplates, relativePaths: relativePathsInDataDirectory)
+        } catch {}
+//        guard let relativePathsInDataDirectory = fileManager.subpathsOfDirectory(atPath: dataDirectory),
+//            dataDirectory.name == dataDirecotryName else {
+//            return [String: IgnoreTemplateModel]()
+//        }
         
 //        debugPrint("S: \(subpaths)")
 //        guard let enumerator = fileManager.enumerator(atPath: dataDirectory),
@@ -77,11 +86,8 @@ struct TemplateController: ReadOnlyTemplateManager {
 //            dataDirectory.name == dataDirecotryName else {
 //                return [String: IgnoreTemplateModel]()
 //        }
-        debugPrint("relativePathsInDataDirectory: \(relativePathsInDataDirectory.count)")
-        
-        let parsedTemplates = parseTemplateFiles(relativePaths: relativePathsInDataDirectory)
-        return patch(parsedTemplates: parsedTemplates, relativePaths: relativePathsInDataDirectory)
-//        return [String: IgnoreTemplateModel]()
+
+        return [String: IgnoreTemplateModel]()
 
     }
 
