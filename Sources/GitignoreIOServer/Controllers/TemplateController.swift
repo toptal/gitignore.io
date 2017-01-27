@@ -66,13 +66,23 @@ struct TemplateController: ReadOnlyTemplateManager {
     ///
     /// - returns: Ignore template model dictionary
     private func parseTemplateDirectory() -> [String: IgnoreTemplateModel] {
-        guard let enumerator = fileManager.enumerator(atPath: dataDirectory),
-            let relativePathsInDataDirectory = enumerator.allObjects as? [String],
+        guard let relativePathsInDataDirectory = fileManager.subpaths(atPath: dataDirectory),
             dataDirectory.name == dataDirecotryName else {
-                return [String: IgnoreTemplateModel]()
+            return [String: IgnoreTemplateModel]()
         }
+        
+//        debugPrint("S: \(subpaths)")
+//        guard let enumerator = fileManager.enumerator(atPath: dataDirectory),
+//            let relativePathsInDataDirectory = enumerator.allObjects as? [String],
+//            dataDirectory.name == dataDirecotryName else {
+//                return [String: IgnoreTemplateModel]()
+//        }
+        debugPrint("relativePathsInDataDirectory: \(relativePathsInDataDirectory.count)")
+        
         let parsedTemplates = parseTemplateFiles(relativePaths: relativePathsInDataDirectory)
         return patch(parsedTemplates: parsedTemplates, relativePaths: relativePathsInDataDirectory)
+//        return [String: IgnoreTemplateModel]()
+
     }
 
     /// Parse .gitginore template files
