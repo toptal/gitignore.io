@@ -12,10 +12,3 @@ notifications:
   email:
     recipients:
       - josephblau@gmail.com
-deploy:
-  provider: heroku
-  app: thisisavaportest
-  on: vapor-swift-migration
-  skip_cleanup: true
-  api_key:
-    secure: In+pMxDoWCe5h2oCi20pCpLGLdiqvP1SuWqTkFm1G1LPtZ7LIcIbxlCgiWGlWqaPnwC5n0VkpOEkOSnFZz2E7ffKQuzonvEBUPl5EFLzfJxeHUDWaaMGWfadx2kR21cx/wTyEZseSqeBm77wbKJKU7D6RqRbCS+MxaavQhaJnKk=
