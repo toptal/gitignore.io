@@ -133,6 +133,9 @@ struct TemplateController: ReadOnlyTemplateManager {
             }.map { (absoluteTemplateFilePath) -> (key: String, model: IgnoreTemplateModel)? in
                 var templateData: (key: String, model: IgnoreTemplateModel)?
                 do {
+                    let attributes = try fileManager.attributesOfItem(atPath: absoluteTemplateFilePath)
+                    debugPrint(attributes)
+                    
                     let fileContents = try String(contentsOfFile: absoluteTemplateFilePath, encoding: String.Encoding.utf8)
                     let templateHeader = suffix.header(name: absoluteTemplateFilePath.name)
                     templateData = (key: absoluteTemplateFilePath.name.lowercased(),
