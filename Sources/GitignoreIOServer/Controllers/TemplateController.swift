@@ -69,7 +69,7 @@ struct TemplateController: ReadOnlyTemplateManager {
         
         do {
             let relativePathsInDataDirectory = try fileManager.subpathsOfDirectory(atPath: dataDirectory)
-            if dataDirectory.name == dataDirecotryName {
+            if dataDirectory.name != dataDirecotryName {
                 return [String: IgnoreTemplateModel]()
             }
             debugPrint("relativePathsInDataDirectory: \(relativePathsInDataDirectory.count)")
