@@ -182,7 +182,7 @@ Advanced command line suggestions are tracked on the [gitignore.io wiki](https:/
 $ git clone --recursive git@github.com:joeblau/gitignore.io.git
 $ cd gitignore.io/
 $ vapor build
-$ ./.build/debug/GitignoreIO
+$ vapor run
 ```
 
 ## About
