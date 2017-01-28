@@ -132,7 +132,7 @@ struct TemplateController: ReadOnlyTemplateManager {
         return relativePaths.filter { (relativeFilePath) -> Bool in
                 relativeFilePath.hasSuffix(suffix.extension)
             }.map { (relativeTemplateFilePath) -> String in
-                dataDirectory.appending("/").appending(relativeTemplateFilePath)
+                URL(fileURLWithPath: dataDirectory.appending("/").appending(relativeTemplateFilePath)).standardizedFileURL.path
             }.map { (absoluatePathWithSuffix) -> (absoluateFilePath: String, relativeFilePath: String) in
                 do {
                     let attributes = try fileManager.attributesOfItem(atPath: absoluatePathWithSuffix)
@@ -142,14 +142,14 @@ struct TemplateController: ReadOnlyTemplateManager {
                         let symlinkRelativePath = try fileManager.destinationOfSymbolicLink(atPath: absoluatePathWithSuffix)
                     
                         let relativeFilePathWithSuffix = url.deletingLastPathComponent().appendingPathComponent(symlinkRelativePath, isDirectory: false).standardizedFileURL.path
-//                        debugPrint(.appendingPathComponent( )
                         
-                        debugPrint(relativeFilePathWithSuffix)
                         return (absoluateFilePath: absoluatePathWithSuffix, relativeFilePath: relativeFilePathWithSuffix)
                     }
                 } catch {}
                 return (absoluateFilePath: absoluatePathWithSuffix, relativeFilePath: absoluatePathWithSuffix)
             }.map { (absoluteTemplateFilePath: String, relativeFilePath: String) -> (key: String, model: IgnoreTemplateModel)? in
+                debugPrint("A: \(absoluteTemplateFilePath)")
+                debugPrint("R: \(relativeFilePath)")
                 do {
                     let fileContents = try String(contentsOfFile: relativeFilePath, encoding: String.Encoding.utf8)
                     let templateHeader = suffix.header(name: absoluteTemplateFilePath.name)
