@@ -58,7 +58,6 @@
 
 #export("footerScripts") {
     <script src="/components/jquery/dist/jquery.min.js"></script>
-    <script src="/components/jquery-ui/jquery-ui.min.js"></script>
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/components/select2/dist/js/select2.full.min.js"></script>
     <script src="/components/retinajs/dist/retina.min.js"></script>

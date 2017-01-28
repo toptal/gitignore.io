@@ -15,8 +15,8 @@
 
     <!-- Header Scripts -->
     <script src="/components/jquery/dist/jquery.min.js"></script>
-    <script src="/components/flatdoc/legacy.js"></script>
-    <script src="/components/flatdoc/flatdoc.js"></script>
+    <script src="/components/flatdoc/v/0.9.0/legacy.js"></script>
+    <script src="/components/flatdoc/v/0.9.0/flatdoc.js"></script>
     <script src="/js/theme-gitignore-script.js"></script>
     <script>
         Flatdoc.run({fetcher: Flatdoc.file("/README.md") });
