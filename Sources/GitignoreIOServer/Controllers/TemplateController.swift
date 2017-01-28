@@ -67,30 +67,31 @@ struct TemplateController: ReadOnlyTemplateManager {
     /// - returns: Ignore template model dictionary
     private func parseTemplateDirectory() -> [String: IgnoreTemplateModel] {
         
-        do {
-            let relativePathsInDataDirectory = try fileManager.subpathsOfDirectory(atPath: dataDirectory)
-            if dataDirectory.name != dataDirecotryName {
-                return [String: IgnoreTemplateModel]()
-            }
-            debugPrint("relativePathsInDataDirectory: \(relativePathsInDataDirectory.count)")
-            
-            let parsedTemplates = parseTemplateFiles(relativePaths: relativePathsInDataDirectory)
-            return patch(parsedTemplates: parsedTemplates, relativePaths: relativePathsInDataDirectory)
-        } catch {}
+//        do {
+//            let relativePathsInDataDirectory = try fileManager.subpathsOfDirectory(atPath: dataDirectory)
+//            if dataDirectory.name != dataDirecotryName {
+//                return [String: IgnoreTemplateModel]()
+//            }
+//            debugPrint("relativePathsInDataDirectory: \(relativePathsInDataDirectory.count)")
+//            
+//            let parsedTemplates = parseTemplateFiles(relativePaths: relativePathsInDataDirectory)
+//            return patch(parsedTemplates: parsedTemplates, relativePaths: relativePathsInDataDirectory)
+//        } catch {}
 //        guard let relativePathsInDataDirectory = fileManager.subpathsOfDirectory(atPath: dataDirectory),
 //            dataDirectory.name == dataDirecotryName else {
 //            return [String: IgnoreTemplateModel]()
 //        }
-        
 //        debugPrint("S: \(subpaths)")
-//        guard let enumerator = fileManager.enumerator(atPath: dataDirectory),
-//            let relativePathsInDataDirectory = enumerator.allObjects as? [String],
-//            dataDirectory.name == dataDirecotryName else {
-//                return [String: IgnoreTemplateModel]()
-//        }
+        
+        
+        guard let enumerator = fileManager.enumerator(atPath: dataDirectory),
+            let relativePathsInDataDirectory = enumerator.allObjects as? [String],
+            dataDirectory.name == dataDirecotryName else {
+                return [String: IgnoreTemplateModel]()
+        }
 
-        return [String: IgnoreTemplateModel]()
-
+        let parsedTemplates = parseTemplateFiles(relativePaths: relativePathsInDataDirectory)
+        return patch(parsedTemplates: parsedTemplates, relativePaths: relativePathsInDataDirectory)
     }
 
     /// Parse .gitginore template files
@@ -129,24 +130,36 @@ struct TemplateController: ReadOnlyTemplateManager {
     /// - returns: Ignore template model dictionary based on suffix
     private func templateModels(suffix: TemplateSuffix, relativePaths: [String]) -> [String: IgnoreTemplateModel] {
         return relativePaths.filter { (relativeFilePath) -> Bool in
-            relativeFilePath.hasSuffix(suffix.extension)
+                relativeFilePath.hasSuffix(suffix.extension)
             }.map { (relativeTemplateFilePath) -> String in
                 dataDirectory.appending("/").appending(relativeTemplateFilePath)
-            }.map { (absoluteTemplateFilePath) -> (key: String, model: IgnoreTemplateModel)? in
-                var templateData: (key: String, model: IgnoreTemplateModel)?
+            }.map { (absoluatePathWithSuffix) -> (absoluateFilePath: String, relativeFilePath: String) in
                 do {
-                    let attributes = try fileManager.attributesOfItem(atPath: absoluteTemplateFilePath)
-                    debugPrint("\(attributes[FileAttributeKey.type])")
+                    let attributes = try fileManager.attributesOfItem(atPath: absoluatePathWithSuffix)
+                    if let fileType = attributes[FileAttributeKey.type] as? String,
+                        fileType == FileAttributeType.typeSymbolicLink.rawValue {
+                        let url = URL(fileURLWithPath: absoluatePathWithSuffix)
+                        let symlinkRelativePath = try fileManager.destinationOfSymbolicLink(atPath: absoluatePathWithSuffix)
                     
-                    let fileContents = try String(contentsOfFile: absoluteTemplateFilePath, encoding: String.Encoding.utf8)
+                        let relativeFilePathWithSuffix = url.deletingLastPathComponent().appendingPathComponent(symlinkRelativePath, isDirectory: false).standardizedFileURL.path
+//                        debugPrint(.appendingPathComponent( )
+                        
+                        debugPrint(relativeFilePathWithSuffix)
+                        return (absoluateFilePath: absoluatePathWithSuffix, relativeFilePath: relativeFilePathWithSuffix)
+                    }
+                } catch {}
+                return (absoluateFilePath: absoluatePathWithSuffix, relativeFilePath: absoluatePathWithSuffix)
+            }.map { (absoluteTemplateFilePath: String, relativeFilePath: String) -> (key: String, model: IgnoreTemplateModel)? in
+                do {
+                    let fileContents = try String(contentsOfFile: relativeFilePath, encoding: String.Encoding.utf8)
                     let templateHeader = suffix.header(name: absoluteTemplateFilePath.name)
-                    templateData = (key: absoluteTemplateFilePath.name.lowercased(),
+                    return (key: absoluteTemplateFilePath.name.lowercased(),
                                     model: IgnoreTemplateModel(key: absoluteTemplateFilePath.name.lowercased(),
                                                                name: absoluteTemplateFilePath.name,
                                                                fileName: absoluteTemplateFilePath.fileName,
                                                                contents: templateHeader.appending(fileContents)))
                 } catch {}
-                return templateData
+                return nil
             }.flatMap {
                 $0
             }.reduce([String: IgnoreTemplateModel]()) { (currentTemplateModels, templateData) in
