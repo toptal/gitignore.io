@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     var name: String {
-        return (self as NSString).lastPathComponent.components(separatedBy: ".").first ?? ""
+        return self.components(separatedBy: "/").last?.components(separatedBy: ".").first ?? ""
     }
 
     var fileName: String {
