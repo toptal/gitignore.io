@@ -130,34 +130,13 @@ struct TemplateController: ReadOnlyTemplateManager {
     /// - returns: Ignore template model dictionary based on suffix
     private func templateModels(suffix: TemplateSuffix, relativePaths: [String]) -> [String: IgnoreTemplateModel] {
         return relativePaths.filter { (relativeFilePath) -> Bool in
-                relativeFilePath.hasSuffix(suffix.extension)
+                debugPrint(relativeFilePath)
+                return relativeFilePath.hasSuffix(suffix.extension)
             }.map { (relativeTemplateFilePath) -> String in
-                URL(fileURLWithPath: dataDirectory.appending("/").appending(relativeTemplateFilePath)).standardizedFileURL.path
-            }.map { (absoluatePathWithSuffix) -> (absoluateFilePath: String, relativeFilePath: String) in
+                dataDirectory.appending("/").appending(relativeTemplateFilePath)
+            }.map { (absoluteTemplateFilePath) -> (key: String, model: IgnoreTemplateModel)? in
                 do {
-                    debugPrint("absoluatePathWithSuffix: \(absoluatePathWithSuffix)")
-                    let attributes = try fileManager.attributesOfItem(atPath: absoluatePathWithSuffix)
-                    debugPrint("TRY attributesOfItem SUCCESS \(attributes[FileAttributeKey.type])")
-                    if let fileType = attributes[FileAttributeKey.type] as? String,
-                        fileType != FileAttributeType.typeRegular.rawValue {
-                        let url = URL(fileURLWithPath: absoluatePathWithSuffix)
-                        debugPrint("before checking desttination:")
-                        let symlinkRelativePath = try fileManager.destinationOfSymbolicLink(atPath: absoluatePathWithSuffix)
-                        debugPrint("after checking desttination: \(symlinkRelativePath)")
-
-                        let relativeFilePathWithSuffix = url.deletingLastPathComponent().appendingPathComponent(symlinkRelativePath, isDirectory: false).standardizedFileURL.path
-                        debugPrint("relativeFilePathWithSuffix: \(relativeFilePathWithSuffix)")
-                        return (absoluateFilePath: absoluatePathWithSuffix, relativeFilePath: relativeFilePathWithSuffix)
-                    }
-                } catch {
-                    debugPrint("!!ERROR:: \(error)")
-                }
-                return (absoluateFilePath: absoluatePathWithSuffix, relativeFilePath: absoluatePathWithSuffix)
-            }.map { (absoluteTemplateFilePath: String, relativeFilePath: String) -> (key: String, model: IgnoreTemplateModel)? in
-//                debugPrint("A: \(absoluteTemplateFilePath)")
-//                debugPrint("R: \(relativeFilePath)")
-                do {
-                    let fileContents = try String(contentsOfFile: relativeFilePath, encoding: String.Encoding.utf8)
+                    let fileContents = try String(contentsOfFile: absoluteTemplateFilePath, encoding: String.Encoding.utf8)
                     let templateHeader = suffix.header(name: absoluteTemplateFilePath.name)
                     return (key: absoluteTemplateFilePath.name.lowercased(),
                                     model: IgnoreTemplateModel(key: absoluteTemplateFilePath.name.lowercased(),
