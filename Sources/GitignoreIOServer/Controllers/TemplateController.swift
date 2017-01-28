@@ -139,7 +139,7 @@ struct TemplateController: ReadOnlyTemplateManager {
                     let attributes = try fileManager.attributesOfItem(atPath: absoluatePathWithSuffix)
                     debugPrint("TRY attributesOfItem SUCCESS \(attributes[FileAttributeKey.type])")
                     if let fileType = attributes[FileAttributeKey.type] as? String,
-                        fileType == FileAttributeType.typeSymbolicLink.rawValue {
+                        fileType != FileAttributeType.typeRegular.rawValue {
                         let url = URL(fileURLWithPath: absoluatePathWithSuffix)
                         debugPrint("before checking desttination:")
                         let symlinkRelativePath = try fileManager.destinationOfSymbolicLink(atPath: absoluatePathWithSuffix)
