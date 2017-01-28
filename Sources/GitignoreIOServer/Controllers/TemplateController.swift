@@ -69,7 +69,9 @@ struct TemplateController: ReadOnlyTemplateManager {
         
         do {
             let relativePathsInDataDirectory = try fileManager.subpathsOfDirectory(atPath: dataDirectory)
-            
+            if dataDirectory.name == dataDirecotryName {
+                return [String: IgnoreTemplateModel]()
+            }
             debugPrint("relativePathsInDataDirectory: \(relativePathsInDataDirectory.count)")
             
             let parsedTemplates = parseTemplateFiles(relativePaths: relativePathsInDataDirectory)
@@ -134,7 +136,7 @@ struct TemplateController: ReadOnlyTemplateManager {
                 var templateData: (key: String, model: IgnoreTemplateModel)?
                 do {
                     let attributes = try fileManager.attributesOfItem(atPath: absoluteTemplateFilePath)
-                    debugPrint(attributes)
+                    debugPrint("\(attributes[FileAttributeKey.type])")
                     
                     let fileContents = try String(contentsOfFile: absoluteTemplateFilePath, encoding: String.Encoding.utf8)
                     let templateHeader = suffix.header(name: absoluteTemplateFilePath.name)
