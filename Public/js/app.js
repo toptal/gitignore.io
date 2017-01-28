@@ -28,7 +28,7 @@ $(document).ready(function() {
     setTimeout(function () {
         $(".select2-search__field").focus();
     }, 100);
-    $(".ignoreSearch").on("select2:selecting", function(e) { 
+    $(".ignoreSearch").on("select2:selecting", function(e) {
         setTimeout(function() {
             $(".select2-search__field").keydown(function(e) {
                 if (e.keyCode == 13 && (e.metaKey || e.ctrlKey)) {
