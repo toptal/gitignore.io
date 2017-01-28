@@ -14,7 +14,7 @@ extension String {
     }
 
     var fileName: String {
-        return URL(fileURLWithPath: self).lastPathComponent
+        return NSURL(fileURLWithPath: self).lastPathComponent ?? ""
     }
 
     /// Remove duplicate lines, except blank strings or comment strings
