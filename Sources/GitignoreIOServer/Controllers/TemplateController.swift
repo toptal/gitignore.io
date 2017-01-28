@@ -130,12 +130,13 @@ struct TemplateController: ReadOnlyTemplateManager {
     /// - returns: Ignore template model dictionary based on suffix
     private func templateModels(suffix: TemplateSuffix, relativePaths: [String]) -> [String: IgnoreTemplateModel] {
         return relativePaths.filter { (relativeFilePath) -> Bool in
-                debugPrint(relativeFilePath)
-                return relativeFilePath.hasSuffix(suffix.extension)
+                relativeFilePath.hasSuffix(suffix.extension)
             }.map { (relativeTemplateFilePath) -> String in
                 dataDirectory.appending("/").appending(relativeTemplateFilePath)
             }.map { (absoluteTemplateFilePath) -> (key: String, model: IgnoreTemplateModel)? in
                 do {
+                    debugPrint(absoluteTemplateFilePath)
+                    debugPrint(absoluteTemplateFilePath.name)
                     let fileContents = try String(contentsOfFile: absoluteTemplateFilePath, encoding: String.Encoding.utf8)
                     let templateHeader = suffix.header(name: absoluteTemplateFilePath.name)
                     return (key: absoluteTemplateFilePath.name.lowercased(),

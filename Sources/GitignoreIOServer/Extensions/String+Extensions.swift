@@ -10,11 +10,11 @@ import Foundation
 
 extension String {
     var name: String {
-        return NSURL(fileURLWithPath: self).deletingPathExtension?.lastPathComponent ?? ""
+        return URL(fileURLWithPath: self).deletingPathExtension().lastPathComponent
     }
 
     var fileName: String {
-        return NSURL(fileURLWithPath: self).lastPathComponent ?? ""
+        return URL(fileURLWithPath: self).lastPathComponent
     }
 
     /// Remove duplicate lines, except blank strings or comment strings
