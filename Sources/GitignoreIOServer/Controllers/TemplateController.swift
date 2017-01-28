@@ -139,17 +139,21 @@ struct TemplateController: ReadOnlyTemplateManager {
                     if let fileType = attributes[FileAttributeKey.type] as? String,
                         fileType == FileAttributeType.typeSymbolicLink.rawValue {
                         let url = URL(fileURLWithPath: absoluatePathWithSuffix)
+                        debugPrint("before checking desttination:")
                         let symlinkRelativePath = try fileManager.destinationOfSymbolicLink(atPath: absoluatePathWithSuffix)
-                    
+                        debugPrint("after checking desttination: \(symlinkRelativePath)")
+
                         let relativeFilePathWithSuffix = url.deletingLastPathComponent().appendingPathComponent(symlinkRelativePath, isDirectory: false).standardizedFileURL.path
-                        
+                        debugPrint("relativeFilePathWithSuffix: \(relativeFilePathWithSuffix)")
                         return (absoluateFilePath: absoluatePathWithSuffix, relativeFilePath: relativeFilePathWithSuffix)
                     }
-                } catch {}
+                } catch {
+                    debugPrint("!!ERROR:: \(error)")
+                }
                 return (absoluateFilePath: absoluatePathWithSuffix, relativeFilePath: absoluatePathWithSuffix)
             }.map { (absoluteTemplateFilePath: String, relativeFilePath: String) -> (key: String, model: IgnoreTemplateModel)? in
-                debugPrint("A: \(absoluteTemplateFilePath)")
-                debugPrint("R: \(relativeFilePath)")
+//                debugPrint("A: \(absoluteTemplateFilePath)")
+//                debugPrint("R: \(relativeFilePath)")
                 do {
                     let fileContents = try String(contentsOfFile: relativeFilePath, encoding: String.Encoding.utf8)
                     let templateHeader = suffix.header(name: absoluteTemplateFilePath.name)
