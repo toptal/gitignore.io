@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://www.gitignore.io">
-        <img src="https://raw.githubusercontent.com/joeblau/gitignore.io/master/public/img/logo%402x.png"
+        <img src="https://raw.githubusercontent.com/joeblau/gitignore.io/master/Public/img/logo%402x.png"
         height="100px">
     </a>
     <br>
