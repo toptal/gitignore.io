@@ -135,7 +135,9 @@ struct TemplateController: ReadOnlyTemplateManager {
                 URL(fileURLWithPath: dataDirectory.appending("/").appending(relativeTemplateFilePath)).standardizedFileURL.path
             }.map { (absoluatePathWithSuffix) -> (absoluateFilePath: String, relativeFilePath: String) in
                 do {
+                    debugPrint("absoluatePathWithSuffix: \(absoluatePathWithSuffix)")
                     let attributes = try fileManager.attributesOfItem(atPath: absoluatePathWithSuffix)
+                    debugPrint("TRY attributesOfItem SUCCESS")
                     if let fileType = attributes[FileAttributeKey.type] as? String,
                         fileType == FileAttributeType.typeSymbolicLink.rawValue {
                         let url = URL(fileURLWithPath: absoluatePathWithSuffix)
