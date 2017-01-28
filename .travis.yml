@@ -6,7 +6,7 @@ sudo: required
 dist: trusty
 osx_image: xcode8.2
 script:
-- eval "$(curl -sL https://raw.githubusercontent.com/edjiang/swift/ec0fd0aeae045f1b9262669908d9b676a6adde35/ci)"
+- eval "$(curl -sL https://swift.vapor.sh/ci)"
 - eval "$(curl -sL https://swift.vapor.sh/codecov)"
 notifications:
   email:
@@ -14,6 +14,7 @@ notifications:
       - josephblau@gmail.com
 deploy:
   provider: heroku
+  strategy: git
   app: thisisavaportest
   on: vapor-swift-migration
   api_key:
