@@ -137,7 +137,7 @@ struct TemplateController: ReadOnlyTemplateManager {
                 do {
                     debugPrint("absoluatePathWithSuffix: \(absoluatePathWithSuffix)")
                     let attributes = try fileManager.attributesOfItem(atPath: absoluatePathWithSuffix)
-                    debugPrint("TRY attributesOfItem SUCCESS")
+                    debugPrint("TRY attributesOfItem SUCCESS \(attributes[FileAttributeKey.type])")
                     if let fileType = attributes[FileAttributeKey.type] as? String,
                         fileType == FileAttributeType.typeSymbolicLink.rawValue {
                         let url = URL(fileURLWithPath: absoluatePathWithSuffix)
