@@ -3,8 +3,9 @@
  */
 .lead {
   color: #9090AA;
-  padding: 20px 0 0;
-  font-size: 16px;
+  padding: 0 0 20px;
+  font-weight: 300;
+  font-size: 18px;
 }
 /* Links */
 a,
@@ -61,6 +62,9 @@ body {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.masthead-nav {
+    padding: 40px 0 0 0;
+}
 .masthead-nav > li {
   display: inline-block;
 }
@@ -68,13 +72,12 @@ body {
   margin-left: 20px;
 }
 .masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
+  padding: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 300;
   color: #F44D27;
   /* IE8 proofing */
-  border-bottom: 2px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 .masthead-nav > li > a:focus,
 .masthead-nav > li > a:hover {
