@@ -10,7 +10,7 @@ import Foundation
 import Vapor
 import HTTP
 
-struct APIHandlers {
+internal class APIHandlers {
     private let splitSize = 5
     private var order: [String: Int]!
     private var templates: [String: IgnoreTemplateModel]!
@@ -18,25 +18,17 @@ struct APIHandlers {
 
     /// Initialze the API Handlers extension
     ///
-    /// - parameter drop:               Vapor server side Swift droplet
-    /// - parameter templateController: All of the gitignore template objects
-    ///
-    /// - returns: API Handlers struct
-    init(drop: Droplet, templateController: TemplateController) {
+    /// - Parameter templateController: All of the gitignore template objects
+    init(templateController: TemplateController) {
         templates = templateController.templates
         order = templateController.order
         templateListDict = createTemplateListDict()
-
-        createIgnoreEndpoint(drop: drop)
-        createTemplateDownloadEndpoint(drop: drop)
-        createListEndpoint(drop: drop)
-        createHelp(drop: drop)
     }
 
     /// Create the API endpoint for serving ignore templates
     ///
-    /// - parameter drop: Vapor server side Swift droplet
-    func createIgnoreEndpoint(drop: Droplet) {
+    /// - Parameter drop: Vapor server side Swift droplet
+    internal func createIgnoreEndpoint(drop: Droplet) {
         drop.get("/api", String.self) { request, ignoreString in
             self.createTemplate(ignoreString: ignoreString)
         }
@@ -44,8 +36,8 @@ struct APIHandlers {
 
     /// Create the API endpoint for downloading ignore templates
     ///
-    /// - parameter drop: Vapor server side Swift droplet
-    func createTemplateDownloadEndpoint(drop: Droplet) {
+    /// - Parameter drop: Vapor server side Swift droplet
+    internal func createTemplateDownloadEndpoint(drop: Droplet) {
         drop.get("/api/f", String.self) { request, ignoreString in
             Response(version: Version.init(major: 1, minor: 0, patch: 0),
                      status: .ok,
@@ -56,8 +48,8 @@ struct APIHandlers {
 
     /// Create the API endpoint for showing the list of templates
     ///
-    /// - parameter drop: Vapor server side Swift droplet
-    func createListEndpoint(drop: Droplet) {
+    /// - Parameter drop: Vapor server side Swift droplet
+    internal func createListEndpoint(drop: Droplet) {
         drop.get("/api/list") { request in
             let templateKeys =  [String](self.templates.keys).sorted()
             guard let format = request.query?["format"] else {
@@ -84,7 +76,7 @@ struct APIHandlers {
         }
     }
     
-    func createHelp(drop: Droplet) {
+    internal func createHelp(drop: Droplet) {
         drop.get("/api/") { request in
             "gitignore.io help:\n"
                 .appending("  list    - lists the operating systems, programming languages and IDE input types\n")
@@ -97,9 +89,9 @@ struct APIHandlers {
     /// Create final output template sorted based on `data/order` file with headers
     /// and footers applied to templates
     ///
-    /// - parameter ignoreString: Comma separated string of templates to generate
+    /// - Parameter ignoreString: Comma separated string of templates to generate
     ///
-    /// - returns: Final formatted template with headers and footers
+    /// - Peturns: Final formatted template with headers and footers
     private func createTemplate(ignoreString: String) -> String {
         return ignoreString
             .lowercased()
@@ -119,7 +111,7 @@ struct APIHandlers {
 
     /// Create JSON template list dictionary
     ///
-    /// - returns: JSON template list dictionary
+    /// - Returns: JSON template list dictionary
     private func createTemplateListDict() -> Node {
         return [String](self.templates.keys)
             .sorted()
