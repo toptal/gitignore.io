@@ -10,29 +10,22 @@ import Foundation
 import Vapor
 
 
-struct SiteHandlers {
+internal class SiteHandlers {
     private let count: String!
     private var templateDict: Node!
-
+    
     /// Initialze the Site Handlers extension
     ///
-    /// - parameter drop:               Vapor server side Swift droplet
-    /// - parameter templateController: All of the gitignore template objects
-    ///
-    /// - returns: Site Handlers struct
-    init(drop: Droplet, templateController: TemplateController) {
+    /// - Parameter templateController: All of the gitignore template objects
+    init(templateController: TemplateController) {
         count = String(templateController.count)
         templateDict = createSortedDropdownTemplates(templates: templateController.templates)
-
-        createIndexPage(drop: drop)
-        createDocumentsPage(drop: drop)
-        createDropdownTemplates(drop: drop)
     }
 
     /// Create Index Page
     ///
-    /// - parameter drop: Vapor server side Swift droplet
-    func createIndexPage(drop: Droplet) {
+    /// - Parameter drop: Vapor server side Swift droplet
+    internal func createIndexPage(drop: Droplet) {
         drop.get("/") { request in
             return try drop.view.make("index", [
                 "titleString": drop.localization[request.lang, "global", "title"],
@@ -56,8 +49,8 @@ struct SiteHandlers {
 
     /// Crate Documentation Page
     ///
-    /// - parameter drop: Vapor server side Swift droplet
-    func createDocumentsPage(drop: Droplet) {
+    /// - Parameter drop: Vapor server side Swift droplet
+    internal func createDocumentsPage(drop: Droplet) {
         drop.get("/docs") { request in
             return try drop.view.make("docs", [
                 "titleString": drop.localization[request.lang, "global", "title"],
@@ -69,8 +62,8 @@ struct SiteHandlers {
 
     /// Create dropdown template JSON list
     ///
-    /// - parameter drop: Vapor server side Swift droplet
-    func createDropdownTemplates(drop: Droplet) {
+    /// - Parameter drop: Vapor server side Swift droplet
+    internal func createDropdownTemplates(drop: Droplet) {
         drop.get("/dropdown/templates.json") { request in
             return try JSON(node: self.templateDict)
         }
@@ -80,9 +73,9 @@ struct SiteHandlers {
 
     /// Create dropdown list template
     ///
-    /// - parameter templates: Template controller template dictionary
+    /// - Parameter templates: Template controller template dictionary
     ///
-    /// - returns: JSON array containing all templates
+    /// - Returns: JSON array containing all templates
     private func createSortedDropdownTemplates(templates: [String: IgnoreTemplateModel]) -> Node {
         return Node.array(templates
             .values

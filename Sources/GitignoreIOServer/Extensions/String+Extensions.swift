@@ -8,19 +8,11 @@
 
 import Foundation
 
-extension String {
-    var name: String {
-        return self.components(separatedBy: "/").last?.components(separatedBy: ".").first ?? ""
-    }
-
-    var fileName: String {
-        return NSURL(fileURLWithPath: self).lastPathComponent ?? ""
-    }
-
+internal extension String {
     /// Remove duplicate lines, except blank strings or comment strings
     ///
     /// - returns: String with duplicate lines removed
-    func removeDuplicateLines() -> String {
+    internal func removeDuplicateLines() -> String {
         var seen = Set<String>()
         return self.components(separatedBy: "\n")
             .filter { (line) -> Bool in

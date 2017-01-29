@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Foundation
 
 @testable import GitignoreIOServer
 
@@ -17,8 +18,8 @@ class TemplateControllerTests: XCTestCase {
     ]
     
     func testIncorrectDataDirectory() {
-        let rootDirectory = ""
-        let noFile = ""
+        let rootDirectory = URL(fileURLWithPath: "")
+        let noFile = URL(fileURLWithPath: "")
         let templateController = TemplateController(dataDirectory: rootDirectory, orderFile: noFile)
         XCTAssertEqual(templateController.order.count , 0)
     }

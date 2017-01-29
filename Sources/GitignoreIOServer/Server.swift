@@ -7,15 +7,26 @@
 //
 
 import Vapor
+import Foundation
 
 public func configureServer() -> Droplet {
     let drop = Droplet()
-    let dataDirectory = drop.workDir.appending("/").appending("data")
-    let orderFile = dataDirectory.appending("/").appending("order")
+    
+    let dataDirectory = URL(fileURLWithPath: drop.workDir, isDirectory: true).absoluteURL.appendingPathComponent("data", isDirectory: true)
+    let orderFile = dataDirectory.absoluteURL.appendingPathComponent("order", isDirectory: false)    
     
     let templateController = TemplateController(dataDirectory: dataDirectory, orderFile: orderFile)
+
+    let siteHandlers = SiteHandlers(templateController: templateController)
+    siteHandlers.createIndexPage(drop: drop)
+    siteHandlers.createDocumentsPage(drop: drop)
+    siteHandlers.createDropdownTemplates(drop: drop)
     
-    _ = SiteHandlers(drop: drop, templateController: templateController)
-    _ = APIHandlers(drop: drop, templateController: templateController)
+    let apiHandlers = APIHandlers(templateController: templateController)
+    apiHandlers.createIgnoreEndpoint(drop: drop)
+    apiHandlers.createTemplateDownloadEndpoint(drop: drop)
+    apiHandlers.createListEndpoint(drop: drop)
+    apiHandlers.createHelp(drop: drop)
+    
     return drop
 }
