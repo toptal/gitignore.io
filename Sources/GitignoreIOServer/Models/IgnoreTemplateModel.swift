@@ -9,7 +9,7 @@
 import Foundation
 import JSON
 
-struct IgnoreTemplateModel: CustomStringConvertible {
+internal struct IgnoreTemplateModel: IgnoreTemplateModelProtocol, CustomStringConvertible {
     var key: String
     var name: String
     var fileName: String
