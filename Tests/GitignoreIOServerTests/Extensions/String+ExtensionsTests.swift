@@ -27,7 +27,7 @@ class String_ExtensionsTests: XCTestCase {
     
     func testStringName_empty() {
         let path = URL(fileURLWithPath: "")
-        XCTAssertEqual(path.name, "tmp")
+        XCTAssertFalse(path.name.isNull)
     }
     
     func testStringFileName_valid() {
@@ -37,7 +37,7 @@ class String_ExtensionsTests: XCTestCase {
     
     func testStringFileName_empty() {
         let path = URL(fileURLWithPath: "")
-        XCTAssertEqual(path.fileName, "tmp")
+        XCTAssertFalse(path.fileName.isEmpty)
     }
     
     
