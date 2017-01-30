@@ -12,14 +12,14 @@ import Vapor
 
 internal class SiteHandlers {
     private let count: String!
-    private var templateDict: Node!
+    private let templates: [String: IgnoreTemplateModel]!
     
     /// Initialze the Site Handlers extension
     ///
     /// - Parameter templateController: All of the gitignore template objects
     init(templateController: TemplateController) {
         count = String(templateController.count)
-        templateDict = createSortedDropdownTemplates(templates: templateController.templates)
+        templates = templateController.templates
     }
 
     /// Create Index Page
@@ -65,7 +65,10 @@ internal class SiteHandlers {
     /// - Parameter drop: Vapor server side Swift droplet
     internal func createDropdownTemplates(drop: Droplet) {
         drop.get("/dropdown/templates.json") { request in
-            return try JSON(node: self.templateDict)
+            guard let queryString = request.query?["term"]?.string else {
+                return try JSON(node: Node.null)
+            }
+            return try JSON(node: self.createSortedDropdownTemplates(query: queryString))
         }
     }
 
@@ -76,9 +79,12 @@ internal class SiteHandlers {
     /// - Parameter templates: Template controller template dictionary
     ///
     /// - Returns: JSON array containing all templates
-    private func createSortedDropdownTemplates(templates: [String: IgnoreTemplateModel]) -> Node {
+    private func createSortedDropdownTemplates(query: String) -> Node {
         return Node.array(templates
             .values
+            .filter({ (templateModel) -> Bool in
+                templateModel.key.contains(query)
+            })
             .sorted(by: { $0.key < $1.key })
             .map { (templateModel) -> Node in
                 Node.object(["id" : Node.string(templateModel.key),
