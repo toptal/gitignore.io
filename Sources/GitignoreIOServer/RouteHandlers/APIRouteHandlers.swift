@@ -96,6 +96,8 @@ internal class APIHandlers {
         return ignoreString
             .lowercased()
             .components(separatedBy: ",")
+            .uniqueElements
+            .sorted()
             .sorted(by: { (left: String, right: String) -> Bool in
                 (self.order[left] ?? 0) < (self.order[right] ?? 0)
             })
