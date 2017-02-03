@@ -11,16 +11,14 @@ import Foundation
 internal extension String {
     /// Remove duplicate lines, except blank strings or comment strings
     ///
-    /// - returns: String with duplicate lines removed
+    /// - Returns: String with duplicate lines removed
     internal func removeDuplicateLines() -> String {
-        var seen = Set<String>()
         return self.components(separatedBy: "\n")
-            .filter { (line) -> Bool in
-                if !line.isEmpty && !line.hasPrefix("#") && seen.contains(line) {
-                    return false
+            .reduce([String]()){
+                if !$1.isEmpty && !$1.hasPrefix("#") && $0.contains($1) {
+                    return $0
                 }
-                seen.insert(line)
-                return true
+                return $0 + [$1]
             }
             .joined(separator: "\n")
     }
