@@ -190,7 +190,7 @@ $ vapor run
 
 Here are a list of companies that use gitignore.io.
 
-<img src="https://raw.githubusercontent.com/joeblau/gitignore.io/master/Public/img/companies.svg" />
+<img src="https://cdn.rawgit.com/joeblau/gitignore.io/master/Public/img/companies.svg" />
 
 ## About
 
