@@ -15,7 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="gitignore.io">
     <meta property="og:description" content="Create useful .gitignore files for your project">
-    <meta property="og:image" content="https://www.gitignore.io/gitignore.png">
+    <meta property="og:image" content="https://www.gitignore.io/img/preview.png">
     <meta property="og:url" content="https://www.gitignore.io">
 
     <meta name="twitter:card" content="summary_large_image">
@@ -23,12 +23,12 @@
     <meta name="twitter:title" content="gitignore.io">
     <meta name="twitter:description" content="Create useful .gitignore files for your project">
     <meta name="twitter:creator" content="@joe_blau">
-    <meta name="twitter:image:src" content="https://www.gitignore.io/gitignore.png">
+    <meta name="twitter:image:src" content="https://www.gitignore.io/img/preview.png">
     <meta name="twitter:domain" content="https://www.gitignore.io">
 
     <meta itemprop="name" content="gitignore.io">
     <meta itemprop="description" content="Create useful .gitignore files for your project">
-    <meta itemprop="image" content="https://www.gitignore.io/gitignore.png">
+    <meta itemprop="image" content="https://www.gitignore.io/img/preview.png">
 
     #import("headerScripts")
 </head>
