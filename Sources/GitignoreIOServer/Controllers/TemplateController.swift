@@ -32,6 +32,7 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
     private func parseFile(orderFile: URL) -> [String: Int] {
         do {
             return try String(contentsOf: orderFile, encoding: String.Encoding.utf8)
+                .replacingOccurrences(of: "\r\n", with: "\n", options: .regularExpression)
                 .components(separatedBy: "\n")
                 .map({ (line) -> String in
                     line.trim().lowercased()
@@ -64,6 +65,7 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
             }).flatMap({ (templatePath: URL) -> (key: String, model: IgnoreTemplateModel)? in
                 do {
                     let fileContents = try String(contentsOf: templatePath, encoding: String.Encoding.utf8)
+                        .replacingOccurrences(of: "\r\n", with: "\n", options: .regularExpression)
                     return (key: templatePath.name.lowercased(),
                             model: IgnoreTemplateModel(key: templatePath.name.lowercased(),
                                                        name: templatePath.name,
