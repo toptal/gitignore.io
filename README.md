@@ -186,6 +186,12 @@ $ vapor build
 $ vapor run
 ```
 
+## Companies
+
+Here are a list of companies that use gitignore.io.
+
+<img src="https://raw.githubusercontent.com/joeblau/gitignore.io/master/Public/img/companies.svg" />
+
 ## About
 
 .gitignore.io is a web service designed to help you create .gitignore files for
