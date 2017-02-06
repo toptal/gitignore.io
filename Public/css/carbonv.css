@@ -1,0 +1,30 @@
+#carbonads {
+  display: block;
+  overflow: hidden;
+  padding: 1em;
+  font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+#carbonads span {
+  display: block;
+  overflow: hidden;
+}
+
+.carbon-img {
+  display: block;
+  margin: 0 auto 1em;
+  text-align: center;
+}
+
+.carbon-text {
+  display: block;
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.carbon-poweredby {
+  display: block;
+  text-align: right;
+  font-size: .8em;
+}

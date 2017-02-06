@@ -13,13 +13,15 @@ import Vapor
 internal class SiteHandlers {
     private let count: String!
     private let templates: [String: IgnoreTemplateModel]!
-    
+    private let carbon: CarbonAds!
+
     /// Initialze the Site Handlers extension
     ///
     /// - Parameter templateController: All of the gitignore template objects
-    init(templateController: TemplateController) {
-        count = String(templateController.count)
-        templates = templateController.templates
+    init(templateController: TemplateController, carbon: CarbonAds) {
+        self.count = String(templateController.count)
+        self.templates = templateController.templates
+        self.carbon = carbon
     }
 
     /// Create Index Page
@@ -28,6 +30,7 @@ internal class SiteHandlers {
     internal func createIndexPage(drop: Droplet) {
         drop.get("/") { request in
             return try drop.view.make("index", [
+                "enableCarbon": self.carbon.enabled,
                 "titleString": drop.localization[request.lang, "global", "title"],
                 "descriptionString": drop.localization[request.lang, "global", "description"]
                     .replacingOccurrences(of: "{templateCount}", with: self.count),
@@ -53,6 +56,7 @@ internal class SiteHandlers {
     internal func createDocumentsPage(drop: Droplet) {
         drop.get("/docs") { request in
             return try drop.view.make("docs", [
+                "enableCarbon": self.carbon.enabled,
                 "titleString": drop.localization[request.lang, "global", "title"],
                 "descriptionString": drop.localization[request.lang, "global", "description"]
                     .replacingOccurrences(of: "{templateCount}", with: self.count)

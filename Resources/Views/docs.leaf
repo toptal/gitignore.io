@@ -11,6 +11,7 @@
 #export("headerScripts") {
     <!-- Header CSS -->
     <link rel="stylesheet" type="text/css" href="/css/theme-gitignore-style.css">
+    <link rel="stylesheet" type="text/css" href="/css/carbonv.css">
 }
 
 #export("bodyType") {
@@ -35,10 +36,22 @@
     </div>
     <div class="content-root">
         <div class="menubar">
-            <div class="menu section" role="flatdoc-menu"></div>
-            <div class="bottom section">
-                <a href="https://github.com/joeblau/gitignore.io">View on GitHub</a><br>
+            <div class="top-section">
+              #if(enableCarbon) {
+                <div id="carbonads">
+                  <span>
+                    <span class="carbon-wrap">
+                      <a href="[link]" class="carbon-img" target="_blank">
+                        <img src="[image]" alt="" border="0" height="100" width="130" style="max-width:130px;">
+                      </a>
+                      <a href="[link]" class="carbon-text" target="_blank">[text]</a>
+                    </span>
+                    <a href="http://carbonads.net/" class="carbon-poweredby" target="_blank">ads via Carbon</a>
+                  </span>
+                </div>
+              }
             </div>
+            <div class="menu section" role="flatdoc-menu"></div>
         </div>
         <div role="flatdoc-content" class="content"></div>
     </div>
@@ -46,6 +59,7 @@
 
 #export("footerScripts") {
     <!-- Footer Scripts -->
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=gitignoreio" id="_carbonads_js"></script>
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="/components/retinajs/dist/retina.min.js"></script>
     <script src="/components/flatdoc/v/0.9.0/legacy.js"></script>

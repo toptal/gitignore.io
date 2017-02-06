@@ -12,12 +12,13 @@ import Foundation
 public func configureServer() -> Droplet {
     let drop = Droplet()
     
+    let carbon = CarbonAds(enabled: drop.config["app", "carbon"]?.bool ?? false)
     let dataDirectory = URL(fileURLWithPath: drop.workDir, isDirectory: true).absoluteURL.appendingPathComponent("data", isDirectory: true)
     let orderFile = dataDirectory.absoluteURL.appendingPathComponent("order", isDirectory: false)    
     
     let templateController = TemplateController(dataDirectory: dataDirectory, orderFile: orderFile)
 
-    let siteHandlers = SiteHandlers(templateController: templateController)
+    let siteHandlers = SiteHandlers(templateController: templateController, carbon: carbon)
     siteHandlers.createIndexPage(drop: drop)
     siteHandlers.createDocumentsPage(drop: drop)
     siteHandlers.createDropdownTemplates(drop: drop)
