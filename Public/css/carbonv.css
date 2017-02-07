@@ -2,8 +2,18 @@
   display: block;
   overflow: hidden;
   padding: 1em;
-  font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #ffffff;
+  border: solid 1px #cccccc;
+  border-radius: 3px;
+  font-size: 13px;
   line-height: 1.5;
+  max-width: 360px;
+}
+
+#carbonads a {}
+
+#carbonads a:hover {
+  color: inherit;
 }
 
 #carbonads span {
@@ -24,7 +34,9 @@
 }
 
 .carbon-poweredby {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   display: block;
-  text-align: right;
-  font-size: .8em;
+  font-size: 12px;
 }
