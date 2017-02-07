@@ -25,7 +25,7 @@ class SiteHandlersTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        drop = configureServer()
+        drop = configureServer(droplet: Droplet())
     }
     
     func testServer_index() throws {

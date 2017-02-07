@@ -21,10 +21,17 @@ class ServerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        drop = configureServer()
+
     }
     
     func testServer_configure() {
+        drop = configureServer(droplet: Droplet())
         XCTAssertNotNil(drop)
     }
+    
+//    func testServer_noCarbonConfig() {
+//        let droplet = Droplet(arguments: nil, workDir: nil, environment: nil, config: nil, localization: nil, log: nil)
+//        drop = configureServer(droplet: droplet)
+//        XCTAssertNotNil(drop)
+//    }
 }

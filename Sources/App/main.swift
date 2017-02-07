@@ -1,5 +1,6 @@
 import Vapor
 import GitignoreIOServer
 
-let drop = GitignoreIOServer.configureServer()
+
+let drop = GitignoreIOServer.configureServer(droplet: Droplet())
 drop.run()

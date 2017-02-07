@@ -24,7 +24,7 @@ class APIHandlersTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        drop = configureServer()
+        drop = configureServer(droplet: Droplet())
     }
     
     func testServer_api_template() throws {
