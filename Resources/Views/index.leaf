@@ -14,6 +14,9 @@
     <link rel="stylesheet" type="text/css" href="/components/select2/dist/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="/components/select2-bootstrap-theme/dist/select2-bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/app.css">
+    #if(enableCarbon) {
+    <link rel="stylesheet" type="text/css" href="/css/carbonh.css">
+    }
 }
 
 #export("bodyType") {
@@ -45,7 +48,21 @@
                 </div>
                 <div class="mastfoot">
                     <div class="inner">
-                        <p class="lead">#(footerString)</p>
+                      #if(enableCarbon) {
+                        <center>
+                          <div id="carbonads">
+                            <span>
+                              <span class="carbon-wrap">
+                                <a href="[link]" class="carbon-img" target="_blank">
+                                  <img src="[image]" alt="" border="0" height="100" width="130" style="max-width:130px;">
+                                </a>
+                                <a href="[link]" class="carbon-text" target="_blank">[text]</a>
+                              </span>
+                              <a href="http://carbonads.net/" class="carbon-poweredby" target="_blank">ads via Carbon</a>
+                            </span>
+                          </div>
+                        </center>
+                      }
                     </div>
                 </div>
             </div>
@@ -56,6 +73,10 @@
 }
 
 #export("footerScripts") {
+    <!-- Footer Scripts -->
+    #if(enableCarbon) {
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=gitignoreio" id="_carbonads_js"></script>
+    }
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/components/select2/dist/js/select2.full.min.js"></script>
