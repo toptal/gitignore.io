@@ -5,6 +5,9 @@ language: generic
 sudo: required
 dist: trusty
 osx_image: xcode8.2
+branches:
+  only:
+  - master
 script:
 - eval "$(curl -sL https://swift.vapor.sh/ci)"
 - eval "$(curl -sL https://swift.vapor.sh/codecov)"
