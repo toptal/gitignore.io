@@ -19,12 +19,12 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
     init(dataDirectory: URL, orderFile: URL) {
         do {
             order = try parseFile(orderFile: orderFile)
-            templates = try parseTemplateDirectory(dataDirectory: dataDirectory) ?? [String: IgnoreTemplateModel]()
+            templates = try parseTemplateDirectory(dataDirectory: dataDirectory)
             try templates.patchTemplates(dataDirectory: dataDirectory)
+            count = templates.count
         } catch {
             
         }
-        count = templates.count
     }
     
     // MARK: - Private
@@ -55,8 +55,8 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
     ///
     /// - Parameter dataDirectory: The path to the data directory
     /// - Returns: Ignore template model dictionary
-    private func parseTemplateDirectory(dataDirectory: URL) throws -> [String: IgnoreTemplateModel]? {
-        return try FileManager().enumerator(at: dataDirectory, includingPropertiesForKeys: nil)?
+    private func parseTemplateDirectory(dataDirectory: URL) throws -> [String: IgnoreTemplateModel] {
+        return try FileManager().enumerator(at: dataDirectory, includingPropertiesForKeys: nil)!
             .allObjects
             .flatMap({ (templatePath: Any) -> URL? in
                 templatePath as? URL
