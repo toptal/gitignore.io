@@ -9,7 +9,7 @@
 <p align="center">
     <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.0.2-orange.svg"/></a>
     <a href="https://travis-ci.org/joeblau/gitignore.io"><img src="https://img.shields.io/travis/joeblau/gitignore.io.svg" alt="Travis"></a>
-    <a href="https://codecov.io/gh/joeblau/gitignore.io"><img src="https://img.shields.io/codecov/c/github/joeblau/gitignore.io/vapor-swift-migration.svg" alt="Codecov"></a>
+    <a href="https://codecov.io/gh/joeblau/gitignore.io"><img src="https://img.shields.io/codecov/c/github/joeblau/gitignore.io.svg" alt="Codecov"></a>
     <a href="https://codebeat.co/projects/github-com-joeblau-gitignore-io"><img src="https://codebeat.co/badges/466223cd-3a95-40a9-80e4-09690915ae93" alt="codebeat badge"></a>
     <img src="https://img.shields.io/badge/Platforms-Linux%20%7C%20macOS%20%7C%20Windows-blue.svg"alt="Platforms">
     <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg" alt="license"></a>
@@ -168,7 +168,7 @@ yeoman,yii,zendframework
 
 ## Advanced Command Line Improvements
 
-Advanced command line suggestions are tracked on the [gitignore.io wiki](https://github.com/joeblau/gitignore.io/wiki/Advanced-Command-Line-Improvements).
+Advanced command line suggestions are tracked on the [gitignore.io wiki](https://github.com/joeblau/gitignore.io/wiki/Advanced-Command-Line).
 
 ## Install Locally
 
