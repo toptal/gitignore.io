@@ -17,8 +17,15 @@ class APIHandlersTests: XCTestCase {
     
     static let allTests = [
         ("testServer_api_template", testServer_api_template),
+        ("testServer_api_no_template", testServer_api_no_template),
         ("testServer_api_file_template", testServer_api_file_template),
         ("testServer_api_list", testServer_api_list),
+        ("testServer_api_list_lines", testServer_api_list_lines),
+        ("testServer_api_list_json", testServer_api_list_json),
+        ("testServer_api_list_xyz", testServer_api_list_xyz),
+        ("testServer_api_force_sort_sortable", testServer_api_force_sort_sortable),
+        ("testServer_api_no_sort_sortalbe", testServer_api_no_sort_sortalbe),
+        ("testServer_api_no_sort_not_sortable", testServer_api_no_sort_not_sortable),
         ("testServer_api", testServer_api),
     ]
     

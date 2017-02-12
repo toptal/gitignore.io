@@ -30,7 +30,7 @@ internal class SiteHandlers {
     internal func createIndexPage(drop: Droplet) {
         drop.get("/") { request in
             return try drop.view.make("index", [
-                "enableCarbon": self.carbon.enabled,
+                "enableCarbon": self.carbon.enabled && request.uri.servedOnGitignoreIO,
                 "titleString": drop.localization[request.lang, "global", "title"],
                 "descriptionString": drop.localization[request.lang, "global", "description"]
                     .replacingOccurrences(of: "{templateCount}", with: self.count),
@@ -56,7 +56,7 @@ internal class SiteHandlers {
     internal func createDocumentsPage(drop: Droplet) {
         drop.get("/docs") { request in
             return try drop.view.make("docs", [
-                "enableCarbon": self.carbon.enabled,
+                "enableCarbon": self.carbon.enabled && request.uri.servedOnGitignoreIO,
                 "titleString": drop.localization[request.lang, "global", "title"],
                 "descriptionString": drop.localization[request.lang, "global", "description"]
                     .replacingOccurrences(of: "{templateCount}", with: self.count)
