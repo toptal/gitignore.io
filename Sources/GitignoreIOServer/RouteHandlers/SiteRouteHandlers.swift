@@ -29,7 +29,7 @@ internal class SiteHandlers {
     /// - Parameter drop: Vapor server side Swift droplet
     internal func createIndexPage(drop: Droplet) {
         drop.get("/") { request in
-            print(request.uri.host)
+            debugPrint(request.uri.host)
             return try drop.view.make("index", [
                 "enableCarbon": self.carbon.enabled && request.uri.servedOnGitignoreIO,
                 "titleString": drop.localization[request.lang, "global", "title"],
@@ -56,7 +56,7 @@ internal class SiteHandlers {
     /// - Parameter drop: Vapor server side Swift droplet
     internal func createDocumentsPage(drop: Droplet) {
         drop.get("/docs") { request in
-            print(request.uri.host)
+            debugPrint(request.uri.host)
             return try drop.view.make("docs", [
                 "enableCarbon": self.carbon.enabled && request.uri.servedOnGitignoreIO,
                 "titleString": drop.localization[request.lang, "global", "title"],
