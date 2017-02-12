@@ -11,6 +11,6 @@ import URI
 
 extension URI {
     var servedOnGitignoreIO: Bool {
-        return self.host.string?.contains("gitignore.io") ?? false
+        return self.host.contains("gitignore.io")
     }
 }
