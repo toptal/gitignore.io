@@ -3,6 +3,9 @@
 $(".ignore-search").select2({
     ajax: {
         url: "/dropdown/templates.json",
+        data: function(params) {
+            return { term: params.term.toLowerCase() }
+        },
         processResults: function (data) {
             return { results: data }
         },

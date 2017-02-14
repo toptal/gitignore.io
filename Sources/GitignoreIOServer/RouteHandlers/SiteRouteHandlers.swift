@@ -69,7 +69,7 @@ internal class SiteHandlers {
     /// - Parameter drop: Vapor server side Swift droplet
     internal func createDropdownTemplates(drop: Droplet) {
         drop.get("/dropdown/templates.json") { request in
-            guard let queryString = request.query?["term"]?.string else {
+            guard let queryString = request.query?["term"]?.string?.lowercased() else {
                 return try JSON(node: Node.null)
             }
             return try JSON(node: self.createSortedDropdownTemplates(query: queryString))
