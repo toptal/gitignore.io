@@ -36,6 +36,11 @@ $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.ba
 $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zshrc && source ~/.zshrc
 ```
 
+`#!/bin/fish`
+```sh
+$ printf "function gi\n\tcurl -L -s https://www.gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish
+```
+
 ### macOS
 `#!/bin/bash`
 ```sh
@@ -44,6 +49,11 @@ $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.ba
 `#!/bin/zsh`
 ```sh
 $ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zshrc && source ~/.zshrc
+```
+
+`#!/bin/fish`
+```sh
+$ printf "function gi\n\tcurl -L -s https://www.gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish
 ```
 
 ### Windows
