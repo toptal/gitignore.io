@@ -1,6 +1,9 @@
 /bootstrap/compiled.php
 /vendor
 /node_modules
+/public/storage
+/public/hot
+/storage/*.key
 Homestead.yaml
 Homestead.json
 .env.local.php
