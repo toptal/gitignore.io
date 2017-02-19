@@ -107,7 +107,7 @@ internal class APIHandlers {
             .reduce("\n# Created by https://www.gitignore.io/api/\(ignoreString)\n") { (currentTemplate, contents) -> String in
                 return currentTemplate.appending(contents)
             }
-            .appending("\n# End of https://www.gitignore.io/api/\(ignoreString)")
+            .appending("\n# End of https://www.gitignore.io/api/\(ignoreString)\n")
             .removeDuplicateLines()
     }
 
