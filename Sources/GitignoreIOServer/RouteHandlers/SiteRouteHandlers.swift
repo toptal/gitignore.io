@@ -90,6 +90,7 @@ internal class SiteHandlers {
                 templateModel.key.contains(query)
             })
             .sorted(by: { $0.key < $1.key })
+            .sorted(by: { $0.key.characters.count < $1.key.characters.count })
             .map { (templateModel) -> Node in
                 Node.object(["id" : Node.string(templateModel.key),
                              "text": Node.string(templateModel.name)])
