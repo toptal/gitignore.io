@@ -30,6 +30,8 @@
     <meta itemprop="description" content="Create useful .gitignore files for your project">
     <meta itemprop="image" content="https://www.gitignore.io/img/preview.png">
 
+    <link rel="icon" href="http://www.gitignore.com/favicon.ico?v=2" />
+
     #import("headerScripts")
 </head>
 #import("bodyType")

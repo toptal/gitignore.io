@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="340px" height="75px" viewBox="0 0 340 75" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Gitignore" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <path d="M24.7071794,46.7070294 L28,49.99985 L20.00015,58 L18.0000375,55.9998875 L18.0000375,53.4141713 L24.7071794,46.7070294 Z M15.999925,45.999925 L15.999925,54.000075 L12,49.99985 L15.999925,45.999925 Z M23.2929706,45.2928206 L18.0000375,50.5857537 L18.0000375,43.9998125 L20.00015,42 L23.2929706,45.2928206 Z" id="Page-1" fill="#E15B39"></path>
+            <text id="gitignore.io" font-family="OperatorMono-Bold, Operator Mono" font-size="48" font-weight="bold" fill="#171219">
+                <tspan x="31" y="54">gitignor</tspan>
+                <tspan x="242.2" y="54" letter-spacing="-10">e</tspan>
+                <tspan x="258.6" y="54" font-family="OperatorMono-XLight, Operator Mono" font-weight="300" letter-spacing="-10">.</tspan>
+                <tspan x="275" y="54" font-family="OperatorMono-XLight, Operator Mono" font-weight="300">io</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
