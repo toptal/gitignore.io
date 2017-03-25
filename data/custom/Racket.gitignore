@@ -1,4 +1,8 @@
-*~
-*.bak
+*.rkt~
+*.rkt.bak
+\#*.rkt#
+\#*.rkt#*#
+*.dep
+*.zo
 
-compiled/
+compiled
