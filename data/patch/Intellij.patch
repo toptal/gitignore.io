@@ -4,3 +4,6 @@
 # modules.xml
 # .idea/misc.xml
 # *.ipr
+
+# Sonarlint plugin
+.idea/sonarlint
