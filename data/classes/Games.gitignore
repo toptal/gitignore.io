@@ -1,4 +1,4 @@
-.gam
-.nes
-.rom
-.sav
+*.gam
+*.nes
+*.rom
+*.sav
