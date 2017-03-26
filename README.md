@@ -179,6 +179,13 @@ yeoman,yii,zendframework
 
 Advanced command line suggestions are tracked on the [gitignore.io wiki](https://github.com/joeblau/gitignore.io/wiki/Advanced-Command-Line).
 
+## Design
+
+| Asset | Description |
+| --- | --- |
+| <img src="https://cdn.rawgit.com/joeblau/gitignore.io/master/Public/img/gitignoreio.svg" /> | gitignore.io horizontal logo |
+| <img src="https://cdn.rawgit.com/joeblau/gitignore.io/master/Public/img/gi.svg" /> | gitignore.io square logo |
+
 ## Install Locally
 
 ### Requirements
