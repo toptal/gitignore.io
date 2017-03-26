@@ -1,4 +1,4 @@
-.bak
-.gho
-.ori
-.tmp
+*.bak
+*.gho
+*.ori
+*.tmp

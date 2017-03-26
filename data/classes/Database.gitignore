@@ -1,6 +1,6 @@
-.accdb
-.db
-.dbf
-.mdb
-.pdb
-.sql
+*.accdb
+*.db
+*.dbf
+*.mdb
+*.pdb
+*.sql

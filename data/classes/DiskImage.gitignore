@@ -1,4 +1,4 @@
-.dmg
-.iso
-.toast
-.vcd
+*.dmg
+*.iso
+*.toast
+*.vcd
