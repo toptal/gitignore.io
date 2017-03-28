@@ -63,14 +63,14 @@ internal class SiteHandlers {
                 ])
         }
     }
-
+    
     /// Create dropdown template JSON list
     ///
     /// - Parameter drop: Vapor server side Swift droplet
     internal func createDropdownTemplates(drop: Droplet) {
         drop.get("/dropdown/templates.json") { request in
             guard let queryString = request.query?["term"]?.string?.lowercased() else {
-                return try JSON(node: Node.null)
+                return try JSON(node: self.createSortedDropdownTemplates())
             }
             return try JSON(node: self.createSortedDropdownTemplates(query: queryString))
         }
@@ -83,11 +83,14 @@ internal class SiteHandlers {
     /// - Parameter templates: Template controller template dictionary
     ///
     /// - Returns: JSON array containing all templates
-    private func createSortedDropdownTemplates(query: String) -> Node {
+    private func createSortedDropdownTemplates(query: String? = nil) -> Node {
         return Node.array(templates
             .values
             .filter({ (templateModel) -> Bool in
-                templateModel.key.contains(query)
+                guard let query = query else {
+                    return true
+                }
+                return templateModel.key.contains(query)
             })
             .sorted(by: { $0.key < $1.key })
             .sorted(by: { $0.key.characters.count < $1.key.characters.count })

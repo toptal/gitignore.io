@@ -1,21 +1,22 @@
 'use strict';
 
-$(".ignore-search").select2({
-    ajax: {
-        url: "/dropdown/templates.json",
-        data: function(params) {
-            return { term: params.term.toLowerCase() }
+$.ajax('/dropdown/templates.json').success(function(data) {
+    $(".ignore-search").select2({
+        sorter: function(results) {
+            var query = $('.select2-search__field').val().toLowerCase();
+            return results.sort(function(a, b) {
+                return a.text.toLowerCase().indexOf(query) -
+                    b.text.toLowerCase().indexOf(query);
+            });
         },
-        processResults: function (data) {
-            return { results: data }
-        },
-        cache: true
-    },
-    placeholder: "Search Operating Systems, IDEs, or Programming Languages",
-    minimumInputLength: 1,
-    theme: "bootstrap",
-    multiple: true
+        placeholder: "Search Operating Systems, IDEs, or Programming Languages",
+        minimumInputLength: 1,
+        theme: "bootstrap",
+        multiple: true,
+        data: data
+    });                                                                            
 });
+
 
 // Delete selecitons by tag instead of individual letter
 $(".ignore-search").on("select2:unselect", () => {
