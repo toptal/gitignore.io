@@ -9,7 +9,7 @@ branches:
   only:
   - master
 script:
-- eval "$(curl -sL https://swift.vapor.sh/ci)"
+- eval "$(curl -sL https://swift.vapor.sh/ci-3.1)"
 - eval "$(curl -sL https://swift.vapor.sh/codecov)"
 notifications:
   email:
