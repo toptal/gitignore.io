@@ -23,7 +23,7 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
             try templates.patchTemplates(dataDirectory: dataDirectory)
             count = templates.count
         } catch {
-            
+            print("‼️ You might not have done a recursive clone to update your submodules:\n‼️ `git submodule update --init --recursive`")
         }
     }
     
