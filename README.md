@@ -118,7 +118,7 @@ Tools or extensions maintained by third-party developers on other platforms
 
 ## Use Command Line
 
-After the function is created, the `gi` command will give you command line access to the gitingore.io API. . **Note:** Use `gig` if you are on Windows
+After the function is created, the `gi` command will give you command line access to the gitignore.io API. . **Note:** Use `gig` if you are on Windows
 
 ### Preview
 Show output on the command line. **Note:** Use `gig` if you are on Windows
