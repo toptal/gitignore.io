@@ -1,3 +1,6 @@
 [submodule "data/gitignore"]
 	path = data/gitignore
 	url = https://github.com/github/gitignore.git
+[submodule "gitignore"]
+	path = gitignore
+	url = https://github.com/dvcs/gitignore.git
