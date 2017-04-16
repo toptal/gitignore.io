@@ -1,5 +1,0 @@
-#Pinegrow backup files
-_pgbackup/*
-
-#Pinegrow setting file
-pinegrow.json
