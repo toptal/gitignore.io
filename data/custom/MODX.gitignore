@@ -1,8 +1,0 @@
-/core/cache/*
-!/core/cache/.gitkeep
-
-# Depends on how you version your MODX site
-/core/packages/*/*
-
-/core/import/*
-/core/export/*

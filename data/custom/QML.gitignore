@@ -1,4 +1,0 @@
-### QML ###
-# Cached binary representations of QML and JS files
-*.qmlc
-*.jsc

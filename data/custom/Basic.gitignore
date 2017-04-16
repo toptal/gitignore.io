@@ -1,8 +1,0 @@
-# Apples Build
-*.build
-*.apples
-
-# Initialized files
-*.exe
-*.ini
-*.basic

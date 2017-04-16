@@ -18,7 +18,9 @@ public class Ignore {
             carbon = CarbonAds(enabled: dropletCarbonEnabled)
         }
         
-        let dataDirectory = URL(fileURLWithPath: droplet.workDir, isDirectory: true).absoluteURL.appendingPathComponent("data", isDirectory: true)
+        let dataDirectory = URL(fileURLWithPath: droplet.workDir, isDirectory: true)
+            .absoluteURL.appendingPathComponent("gitignore", isDirectory: true)
+            .absoluteURL.appendingPathComponent("templates", isDirectory: true)
         let orderFile = dataDirectory.absoluteURL.appendingPathComponent("order", isDirectory: false)
         
         let templateController = TemplateController(dataDirectory: dataDirectory, orderFile: orderFile)

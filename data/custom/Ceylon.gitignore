@@ -1,9 +1,0 @@
-# build
-modules
-test-modules
-
-# fat-jar build
-*.jar
-
-# Auto backup setting file
-.ceylon/config.old
