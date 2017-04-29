@@ -1,19 +1,15 @@
-'use strict';
-
-$.ajax('/dropdown/templates.json').success(function(data) {
+$.ajax('/dropdown/templates.json').success(data => {
     $(".ignore-search").select2({
-        sorter: function(results) {
-            var query = $('.select2-search__field').val().toLowerCase();
-            return results.sort(function(a, b) {
-                return a.text.toLowerCase().indexOf(query) -
-                    b.text.toLowerCase().indexOf(query);
-            });
+        sorter(results) {
+            const query = $('.select2-search__field').val().toLowerCase();
+            return results.sort((a, b) => a.text.toLowerCase().indexOf(query) -
+                b.text.toLowerCase().indexOf(query));
         },
         placeholder: "Search Operating Systems, IDEs, or Programming Languages",
         minimumInputLength: 1,
         theme: "bootstrap",
         multiple: true,
-        data: data
+        data
     });                                                                            
 });
 
@@ -26,14 +22,14 @@ $(".ignore-search").on("select2:unselect", () => {
 });
 
 // Highlight input on site load
-setTimeout(function () {
+setTimeout(() => {
     $(".select2-search__field").focus();
 }, 100);
 
 // All users to press ctrl+enter to create template
-$(".ignore-search").on("select2:selecting", function(e) {
-    setTimeout(function() {
-        $(".select2-search__field").keydown(function(e) {
+$(".ignore-search").on("select2:selecting", e => {
+    setTimeout(() => {
+        $(".select2-search__field").keydown(e => {
             if (e.keyCode == 13 && (e.metaKey || e.ctrlKey)) {
                 generateGitIgnore();
             }
@@ -43,23 +39,23 @@ $(".ignore-search").on("select2:selecting", function(e) {
 
 // Generate gitignore template
 function generateGitIgnore() {
-    var searchString = $(".ignore-search").map(function() {return $(this).val();}).get().join(',');
-    var searchLength = searchString.length;
+    const searchString = $(".ignore-search").map(function() {return $(this).val();}).get().join(',');
+    const searchLength = searchString.length;
     if (searchLength > 0) {
-        var files = searchString.replace(/^,/, '');
-        var uriEncodedFiles = encodeURIComponent(files);
-        window.location = "/api/" + uriEncodedFiles;
+        const files = searchString.replace(/^,/, '');
+        const uriEncodedFiles = encodeURIComponent(files);
+        window.location = `/api/${uriEncodedFiles}`;
         $(".ignore-search").val("");
     }
 }
 
 // Generate gitignore file template
 function generateGitIgnoreFile() {
-    var searchString = $(".ignore-search").map(function() {return $(this).val();}).get().join(',');
-    var searchLength = searchString.length;
+    const searchString = $(".ignore-search").map(function() {return $(this).val();}).get().join(',');
+    const searchLength = searchString.length;
     if (searchLength > 0) {
-        var files = searchString.replace(/^,/, '');
-        var uriEncodedFiles = encodeURIComponent(files);
-        window.location = "/api/f/" + uriEncodedFiles;
+        const files = searchString.replace(/^,/, '');
+        const uriEncodedFiles = encodeURIComponent(files);
+        window.location = `/api/f/${uriEncodedFiles}`;
     }
 }
