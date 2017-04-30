@@ -12,7 +12,7 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
     internal var order = [String: Int]()
     internal var count = 0
     internal var templates = [String: IgnoreTemplateModel]()
-    
+
     /// Create Template Controller
     ///
     /// - Returns: Template Controller
@@ -27,9 +27,9 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
             print("‼️ You might not have done a recursive clone to update your submodules:\n‼️ `git submodule update --init --recursive`")
         }
     }
-    
+
     // MARK: - Private
-    
+
     /// Parse file which defines template order precedence
     ///
     /// - Parameter orderFile: The dependency order file
@@ -51,7 +51,7 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
                 return  mutableOrderedDict
             })
     }
-    
+
     /// Parse template directory
     ///
     /// - Parameter dataDirectory: The path to the data directory
