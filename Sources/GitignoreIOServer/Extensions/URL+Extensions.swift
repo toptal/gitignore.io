@@ -14,6 +14,11 @@ internal extension URL {
     internal var name: String {
         return self.deletingPathExtension().lastPathComponent
     }
+    
+    /// Name of file first component
+    internal var stackName: String? {
+        return self.deletingPathExtension().lastPathComponent.components(separatedBy: ".").first
+    }
 
     /// Name of file first component
     internal var stackName: String? {
