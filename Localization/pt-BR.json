@@ -1,19 +1,19 @@
 {
     "global": {
-        "title": "gitignore.io - Crie arquivos .gitignore úteis para seu projeto.",
-        "description": "Crie arquivos .gitignore úteis para o seu projeto selecionando em {templateCount} templates de Sistemas Operacionais, IDEs e linguagens de Programação."
+        "title": "gitignore.io - Crie Arquivos .gitignore Úteis Para Seu Projeto.",
+        "description": "Crie arquivos .gitignore úteis para o seu projeto selecionando os {templateCount} templates de Sistemas Operacionais, IDEs e linguagens de Programação."
     },
     "index": {
         "subtitle": "Crie arquivos .gitignore úteis para o seu projeto.",
-        "searchPlaceholder": "Pesquisar sistemas operacionais, IDEs ou Linguagens de Programação.",
+        "searchPlaceholder": "Pesquise Sistemas Operacionais, IDEs ou Linguagens de Programação.",
         "searchGo": "Criar",
-        "searchDownload": "Baixar arquivo",
+        "searchDownload": "Baixar Arquivo",
         "footer": "{TemplateCount} Templates de .gitignore de Sistemas Operacionais, IDEs e Linguagens de Programação.",
-        "commandLineTitle": "Documentos da Linhas de Comandos.",
-        "commandLineDescription": "Saiba como executar o .gitignore.io a partir da Linha de Comando",
+        "commandLineTitle": "Documentação das Linhas de Comandos.",
+        "commandLineDescription": "Aprenda como executar o .gitignore.io a partir da linha de comando",
         "videoTitle": "Assista ao Vídeo Tutorial",
-        "videoDescription": "Assista a um vídeo para saber como funciona o .gitignore.io",
-        "sourceCodeTitle": "Código Fonte",
-        "sourceCodeDescription": "Código Fonte hospedado no GitHub"
+        "videoDescription": "Assista a um vídeo para aprender como funciona o .gitignore.io",
+        "sourceCodeTitle": "Código-fonte",
+        "sourceCodeDescription": "Código-fonte hospedado no GitHub"
     }
 }
