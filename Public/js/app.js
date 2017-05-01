@@ -16,9 +16,8 @@ $.ajax('/dropdown/templates.json').success(data => {
 
 // Delete selecitons by tag instead of individual letter
 $(".ignore-search").on("select2:unselect", () => {
-    $(".ignore-search").on("select2:open", () => {
-        $(".select2-search__field").val("");
-    });
+    $(".select2-search__field").val("");
+    $(".select2-search__field").handleSearch();
 });
 
 // Highlight input on site load
