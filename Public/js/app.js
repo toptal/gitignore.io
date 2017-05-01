@@ -15,9 +15,15 @@ $.ajax('/dropdown/templates.json').success(data => {
 
 
 // Delete selecitons by tag instead of individual letter
-$(".ignore-search").on("select2:unselect", () => {
-    $(".select2-search__field").val("");
-    $(".select2-search__field").handleSearch();
+$.fn.select2.amd.require(['select2/selection/search'], function (Search) {
+    Search.prototype.searchRemoveChoice = function (decorated, item) {
+        this.trigger('unselect', {
+            data: item
+        });
+
+        this.$search.val('');
+        this.handleSearch();
+    };
 });
 
 // Highlight input on site load
