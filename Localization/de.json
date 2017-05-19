@@ -1,0 +1,19 @@
+{
+    "global": {
+        "title": "gitignore.io - Erstelle nützliche .gitignore Dateien Für Dein Projekt",
+        "description": "Erstelle nützliche .gitignore Dateien für dein Projekt in dem du eines von {templateCount} Betriebssystem, Entwicklungsumgebung und Programmiersprache .gitignore Templates wählst"
+    },
+    "index": {
+        "subtitle": "Erstelle nützliche .gitignore Dateien für dein Projekt",
+        "searchPlaceholder": "Suche nach Betriebssystemen, Entwicklungsumgebungen oder Programmiersprachen",
+        "searchGo": "Create",
+        "searchDownload": "Datei herunterladen",
+        "footer": "{templateCount} Betriebssystem, Entwicklungsumgebung und Programmiersprache .gitignore Templates",
+        "commandLineTitle": "Kommandozeilen Dokumentation",
+        "commandLineDescription": "Lerne wie man .gitignore.io von der Kommandozeile ausführt",
+        "videoTitle": "Schau das Video Tutorial",
+        "videoDescription": "Schau ein Video um zu lernen wie .gitignore.io funktioniert",
+        "sourceCodeTitle": "Quellcode",
+        "sourceCodeDescription": "Der Quellcode für .gitignore.io ist bei Github gehosted"
+    }
+}
