@@ -32,7 +32,7 @@
                     <p class="lead">#(subtitleString)</p>
 
                     <div class="input-group input-group-lg select2-bootstrap-append">
-                        <select class="form-control ignore-search input" type="text" tabindex="1"></select>
+                        <select class="form-control ignore-search input" type="text" tabindex="1" data-placeholder="#(searchPlaceholderString)"></select>
                         <div class="input-group-btn">
                             <button type="button" onClick="generateGitIgnore()" class="btn btn-gitignore">#(searchGoString)</button>
                         </div>

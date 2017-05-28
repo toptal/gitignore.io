@@ -5,7 +5,6 @@ $.ajax('/dropdown/templates.json').success(data => {
             return results.sort((a, b) => a.text.toLowerCase().indexOf(query) -
                 b.text.toLowerCase().indexOf(query));
         },
-        placeholder: "Search Operating Systems, IDEs, or Programming Languages",
         minimumInputLength: 1,
         theme: "bootstrap",
         multiple: true,
