@@ -9,7 +9,7 @@
 import Foundation
 
 internal extension Dictionary where Key: ExpressibleByStringLiteral, Value: IgnoreTemplateModelProtocol {
-    
+
     /// Append template patches to template contents
     ///
     /// - Parameter dataDirectory: The path to the data directory
@@ -31,7 +31,7 @@ internal extension Dictionary where Key: ExpressibleByStringLiteral, Value: Igno
                 }
             })
     }
-    
+
     /// Append stacks to template contents
     ///
     /// - Parameter dataDictionary: The path to the data dictionary

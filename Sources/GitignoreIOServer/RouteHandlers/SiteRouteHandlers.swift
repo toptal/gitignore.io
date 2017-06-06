@@ -9,7 +9,6 @@
 import Foundation
 import Vapor
 
-
 internal class SiteHandlers {
     private let count: String!
     private let templates: [String: IgnoreTemplateModel]!
@@ -63,7 +62,7 @@ internal class SiteHandlers {
                 ])
         }
     }
-    
+
     /// Create dropdown template JSON list
     ///
     /// - Parameter drop: Vapor server side Swift droplet

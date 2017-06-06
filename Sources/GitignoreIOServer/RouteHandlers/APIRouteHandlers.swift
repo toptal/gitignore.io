@@ -29,7 +29,7 @@ internal class APIHandlers {
     ///
     /// - Parameter drop: Vapor server side Swift droplet
     internal func createIgnoreEndpoint(drop: Droplet) {
-        drop.get("/api", String.self) { request, ignoreString in
+        drop.get("/api", String.self) { _, ignoreString in
             self.createTemplate(ignoreString: ignoreString)
         }
     }
@@ -38,7 +38,7 @@ internal class APIHandlers {
     ///
     /// - Parameter drop: Vapor server side Swift droplet
     internal func createTemplateDownloadEndpoint(drop: Droplet) {
-        drop.get("/api/f", String.self) { request, ignoreString in
+        drop.get("/api/f", String.self) { _, ignoreString in
             Response(version: Version.init(major: 1, minor: 0, patch: 0),
                      status: .ok,
                      headers: [.contentType : "application/octet-stream"],
@@ -75,9 +75,9 @@ internal class APIHandlers {
             }
         }
     }
-    
+
     internal func createHelp(drop: Droplet) {
-        drop.get("/api/") { request in
+        drop.get("/api/") { _ in
             "gitignore.io help:\n"
                 .appending("  list    - lists the operating systems, programming languages and IDE input types\n")
                 .appending("  :types: - creates .gitignore files for types of operating systems, programming languages or IDEs\n")
