@@ -112,7 +112,7 @@ Tools or extensions maintained by third-party developers on other platforms
 
 | Source Code | Platform | Instructions | Maintainer
 |---|---|---|---|
-| [fzf-gitignore](https://github.com/fszymanski/fzf-gitignore.nvim) | Neovim | [Install](https://github.com/fszymanski/fzf-gitignore.nvim#installation) | [Filip Szymański](https://github.com/fszymanski)
+| [fzf-gitignore](https://github.com/fszymanski/fzf-gitignore) | Neovim | [Install](https://github.com/fszymanski/fzf-gitignore#installation) | [Filip Szymański](https://github.com/fszymanski)
 | [gi](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi) | Visual Studio Code | [Install](https://marketplace.visualstudio.com/items?itemName=rubbersheep.gi#install) | [Hasit Mistry](https://github.com/hasit/)
 | [helm-gitignore](https://github.com/jupl/helm-gitignore) | GNU Emacs | [Install](https://github.com/jupl/helm-gitignore#installation) | [Juan Placencia](https://github.com/jupl)
 
