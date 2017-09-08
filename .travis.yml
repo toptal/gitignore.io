@@ -9,14 +9,16 @@ branches:
   only:
   - master
 before_install:
-  - .travis/update-submodule.sh 
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- ".travis/update-submodule.sh"
 script:
 - eval "$(curl -sL https://swift.vapor.sh/ci-3.1)"
 - eval "$(curl -sL https://swift.vapor.sh/codecov)"
 notifications:
   email:
     recipients:
-      - josephblau@gmail.com
+    - josephblau@gmail.com
 deploy:
   provider: heroku
   strategy: git
@@ -24,3 +26,6 @@ deploy:
   on: master
   api_key:
     secure: In+pMxDoWCe5h2oCi20pCpLGLdiqvP1SuWqTkFm1G1LPtZ7LIcIbxlCgiWGlWqaPnwC5n0VkpOEkOSnFZz2E7ffKQuzonvEBUPl5EFLzfJxeHUDWaaMGWfadx2kR21cx/wTyEZseSqeBm77wbKJKU7D6RqRbCS+MxaavQhaJnKk=
+env:
+  global:
+    secure: ZubW/TIAZCjYPJYI1mwUtWhY9iAabIQzyeexKGEbcbUuYhdCzZ2Dj7mIjPyOQ0KPwQm3nwWPRXq8V7YnGJMU3ytofu/PTb0gYDGPguVpLj0k7hN3xlxuODQeP2BtiS4uzuXspMfOb14kEkszFqU0qlF/eKnKBtqvva//Iwi2L3I=
