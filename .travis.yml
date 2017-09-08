@@ -8,6 +8,8 @@ osx_image: xcode8.2
 branches:
   only:
   - master
+before_install:
+- ./.travis/update-submodule.sh 
 script:
 - eval "$(curl -sL https://swift.vapor.sh/ci-3.1)"
 - eval "$(curl -sL https://swift.vapor.sh/codecov)"
