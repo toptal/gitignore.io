@@ -92,7 +92,9 @@ If you have installed [msysgit](http://msysgit.github.io)), create `gi.cmd` with
 @rem Get the abolute path to the parent directory, which is assumed to be the
 @rem Git installation root.
 @for /F "delims=" %%I in ("%~dp0..") do @set git_install_root=%%~fI
-@set PATH=%git_install_root%\bin;%git_install_root%\mingw\bin;%PATH%
+@for /F "delims=" %%I in ("%~dp0..") do @set git_mingw_root=%%~fI\mingw
+@if not exist "%git_mingw_root%" @set git_mingw_root=%git_install_root%\mingw64
+@set PATH=%git_install_root%\bin;%git_mingw_root%\bin;%PATH%
 
 @if not exist "%HOME%" @set HOME=%HOMEDRIVE%%HOMEPATH%
 @if not exist "%HOME%" @set HOME=%USERPROFILE%
