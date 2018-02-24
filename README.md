@@ -203,6 +203,16 @@ $ vapor build
 $ vapor run
 ```
 
+### Using Docker
+
+It's also possible to run the app using [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/). It can be done by running the commands below.
+
+```sh
+$ git clone --recursive git@github.com:joeblau/gitignore.io.git
+$ cd gitignore.io/
+$ docker-compose up -d
+```
+
 ## Companies
 
 Here are some companies that use gitignore.io:

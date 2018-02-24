@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  app:
+    image: gitignore-io:0.1.0
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    command: vapor run
