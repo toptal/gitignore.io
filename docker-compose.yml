@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   app:
-    image: gitignore-io:0.1.0
+    image: gitignore-io:latest
     build:
       context: ./
       dockerfile: Dockerfile
