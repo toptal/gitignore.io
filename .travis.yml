@@ -13,8 +13,7 @@ before_install:
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - .travis/update-submodule.sh
 script:
-- eval "$(curl -sL https://swift.vapor.sh/ci-3.1)"
-- eval "$(curl -sL https://swift.vapor.sh/codecov)"
+- eval "$(curl -sL https://apt.vapor.sh)"
 notifications:
   email:
     recipients:
