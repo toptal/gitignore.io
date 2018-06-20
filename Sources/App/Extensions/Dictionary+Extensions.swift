@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal extension Dictionary where Key: ExpressibleByStringLiteral, Value: IgnoreTemplateModelProtocol {
+internal extension Dictionary where Key: ExpressibleByStringLiteral, Value: IgnoreTemplateModeling {
     
     /// Append template patches to template contents
     ///
@@ -16,7 +16,7 @@ internal extension Dictionary where Key: ExpressibleByStringLiteral, Value: Igno
     internal mutating func patchTemplates(dataDirectory: URL) throws {
         try FileManager().enumerator(at: dataDirectory, includingPropertiesForKeys: nil)?
             .allObjects
-            .flatMap({ (templatePath: Any) -> URL? in
+            .compactMap({ (templatePath: Any) -> URL? in
                 templatePath as? URL
             })
             .filter({ (templatePath: URL) -> Bool in
@@ -38,7 +38,7 @@ internal extension Dictionary where Key: ExpressibleByStringLiteral, Value: Igno
     internal mutating func stackTempaltes(dataDictionary: URL) throws {
         try FileManager().enumerator(at: dataDictionary, includingPropertiesForKeys: nil)?
             .allObjects
-            .flatMap({ (templatePath: Any) -> URL? in
+            .compactMap({ (templatePath: Any) -> URL? in
                 templatePath as? URL
             })
             .filter({ (templatePath: URL) -> Bool in

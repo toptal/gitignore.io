@@ -6,8 +6,6 @@
 //
 //
 
-import Foundation
-
-struct CarbonAds {
+internal struct CarbonAds: Codable {
     var enabled: Bool
 }

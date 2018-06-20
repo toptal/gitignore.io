@@ -17,15 +17,15 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
     ///
     /// - Returns: Template Controller
     init(dataDirectory: URL, orderFile: URL) {
-        do {
-            order = try parseFile(orderFile: orderFile)
-            templates = try parseTemplateDirectory(dataDirectory: dataDirectory)
-            try templates.patchTemplates(dataDirectory: dataDirectory)
-            try templates.stackTempaltes(dataDictionary: dataDirectory)
-            count = templates.count
-        } catch {
-            print("‼️ You might not have done a recursive clone to update your submodules:\n‼️ `git submodule update --init --recursive`")
-        }
+//        do {
+//            order = try parseFile(orderFile: orderFile)
+//            templates = try parseTemplateDirectory(dataDirectory: dataDirectory)
+//            try templates.patchTemplates(dataDirectory: dataDirectory)
+//            try templates.stackTempaltes(dataDictionary: dataDirectory)
+//            count = templates.count
+//        } catch {
+//            print("‼️ You might not have done a recursive clone to update your submodules:\n‼️ `git submodule update --init --recursive`")
+//        }
     }
     
     // MARK: - Private
@@ -39,7 +39,7 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
             .replacingOccurrences(of: "\r\n", with: "\n", options: .regularExpression)
             .components(separatedBy: "\n")
             .map({ (line) -> String in
-                line.trim().lowercased()
+                line.trimmingCharacters(in: .whitespaces).lowercased()
             })
             .filter({ (line) -> Bool in
                 !line.hasPrefix("#") || !line.hasPrefix("")
@@ -59,13 +59,13 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
     private func parseTemplateDirectory(dataDirectory: URL) throws -> [String: IgnoreTemplateModel] {
         return try FileManager().enumerator(at: dataDirectory, includingPropertiesForKeys: nil)!
             .allObjects
-            .flatMap({ (templatePath: Any) -> URL? in
+            .compactMap({ (templatePath: Any) -> URL? in
                 templatePath as? URL
             })
             .filter({ (templatePath: URL) -> Bool in
                 templatePath.pathExtension == TemplateSuffix.template.extension
             })
-            .flatMap({ (templatePath: URL) -> (key: String, model: IgnoreTemplateModel) in
+            .compactMap({ (templatePath: URL) -> (key: String, model: IgnoreTemplateModel) in
                 let fileContents = try String(contentsOf: templatePath, encoding: String.Encoding.utf8)
                     .replacingOccurrences(of: "\r\n", with: "\n", options: .regularExpression)
                 return (key: templatePath.name.lowercased(),

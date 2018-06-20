@@ -1,14 +1,13 @@
 //
-//  IgnoreTemplateModelProtocol.swift
+//  IgnoreTemplateModeling.swift
 //  GitignoreIO
 //
 //  Created by Joseph Blau on 1/29/17.
 //
 //
 
-import Foundation
 
-internal protocol IgnoreTemplateModelProtocol {
+internal protocol IgnoreTemplateModeling {
     var key: String { get set }
     var name: String { get set }
     var fileName: String { get set }

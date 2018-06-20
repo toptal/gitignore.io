@@ -6,8 +6,6 @@
 //
 //
 
-import Foundation
-
 /// Template Suffix Enum
 internal enum TemplateSuffix {
     case template, patch, stack

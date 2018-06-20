@@ -6,8 +6,6 @@
 //
 //
 
-import Foundation
-
 internal protocol ReadOnlyTemplateManagerProtocol {
     var order: [String: Int] { get }
     var count: Int { get }

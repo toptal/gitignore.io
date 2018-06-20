@@ -24,4 +24,8 @@ internal extension URL {
     internal var fileName: String {
         return self.lastPathComponent
     }
+    
+    internal var isProduction: Bool {
+        return true
+    }
 }

@@ -47,6 +47,33 @@
         }
       },
       {
+        "package": "Leaf",
+        "repositoryURL": "https://github.com/vapor/leaf.git",
+        "state": {
+          "branch": null,
+          "revision": "a71cb0cd29ec88ee72baa00668c05e327114f27c",
+          "version": "3.0.0-rc.2.2"
+        }
+      },
+      {
+        "package": "Lingo",
+        "repositoryURL": "https://github.com/miroslavkovac/Lingo.git",
+        "state": {
+          "branch": null,
+          "revision": "f21f388b04239641b3e88d14f21762125faa9857",
+          "version": "3.0.5"
+        }
+      },
+      {
+        "package": "LingoVapor",
+        "repositoryURL": "https://github.com/vapor-community/lingo-vapor.git",
+        "state": {
+          "branch": null,
+          "revision": "56fdc7e7d531907ff97024a4aff8db90bcf0f965",
+          "version": "3.0.0"
+        }
+      },
+      {
         "package": "Multipart",
         "repositoryURL": "https://github.com/vapor/multipart.git",
         "state": {
