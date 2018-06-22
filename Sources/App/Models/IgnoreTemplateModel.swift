@@ -6,16 +6,17 @@
 //
 //
 
-//import JSON
+import Vapor
 
-internal struct IgnoreTemplateModel: IgnoreTemplateModeling, Codable, CustomStringConvertible {
+internal struct IgnoreTemplateModel: IgnoreTemplateModeling {
     var key: String
     var name: String
     var fileName: String
     var contents: String
+}
 
+extension IgnoreTemplateModel: CustomStringConvertible {
     var description: String {
         return "KEY: \(key)\nNAME: \(name)FILE NAME: \(fileName)\nCONTENTS: \(contents)\n"
     }
-
 }

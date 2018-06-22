@@ -17,15 +17,15 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
     ///
     /// - Returns: Template Controller
     init(dataDirectory: URL, orderFile: URL) {
-//        do {
-//            order = try parseFile(orderFile: orderFile)
-//            templates = try parseTemplateDirectory(dataDirectory: dataDirectory)
-//            try templates.patchTemplates(dataDirectory: dataDirectory)
-//            try templates.stackTempaltes(dataDictionary: dataDirectory)
-//            count = templates.count
-//        } catch {
-//            print("‼️ You might not have done a recursive clone to update your submodules:\n‼️ `git submodule update --init --recursive`")
-//        }
+        do {
+            order = try parseFile(orderFile: orderFile)
+            templates = try parseTemplateDirectory(dataDirectory: dataDirectory)
+            try templates.patchTemplates(dataDirectory: dataDirectory)
+            try templates.stackTempaltes(dataDictionary: dataDirectory)
+            count = templates.count
+        } catch {
+            print("‼️ You might not have done a recursive clone to update your submodules:\n‼️ `git submodule update --init --recursive`")
+        }
     }
     
     // MARK: - Private

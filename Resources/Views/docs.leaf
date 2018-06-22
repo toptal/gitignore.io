@@ -54,7 +54,7 @@
     <script src="/components/flatdoc/v/0.9.0/flatdoc.js"></script>
     <script src="/js/theme-gitignore-script.js"></script>
     <script>
-        Flatdoc.run({fetcher: Flatdoc.file("/README.md") });
+        Flatdoc.run({fetcher: Flatdoc.file("/README.md") \});
     </script>
 }
 

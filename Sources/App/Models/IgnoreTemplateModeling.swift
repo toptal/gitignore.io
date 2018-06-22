@@ -7,7 +7,7 @@
 //
 
 
-internal protocol IgnoreTemplateModeling {
+internal protocol IgnoreTemplateModeling: Codable {
     var key: String { get set }
     var name: String { get set }
     var fileName: String { get set }

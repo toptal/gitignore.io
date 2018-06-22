@@ -13,27 +13,27 @@ import Lingo
 internal class SiteHandlers {
     private let count: String
     private let templates: [String: IgnoreTemplateModel]
-    private let carbon: CarbonAds
-//
+    private let env: Environment!
+
     /// Initialze the Site Handlers extension
     ///
     /// - Parameter templateController: All of the gitignore template objects
-    init(templateController: TemplateController, carbon: CarbonAds) {
+    init(templateController: TemplateController, env: Environment) {
         self.count = String(templateController.count)
         self.templates = templateController.templates
-        self.carbon = carbon
+        self.env = env
     }
 
     /// Create Index Page
     ///
     /// - Parameter router: Vapor server side Swift Router
     internal func createIndexPage(router: Router) {
-        router.get("/") { req -> Future<View> in
-            let leaf = try req.make(LeafRenderer.self)
-            let lingo = try req.make(Lingo.self)
-            let locale = req.http.headers.firstValue(name: .acceptLanguage) ?? "en-us"
-            
-            let context = ["enableCarbon": "self.carbon.enabled && req.http.url.isProduction",
+        router.get("/") { request -> Future<View> in
+            let leaf = try request.make(LeafRenderer.self)
+            let lingo = try request.make(Lingo.self)
+            let locale = request.http.headers.firstValue(name: .acceptLanguage) ?? "en-us"
+
+            let context = ["enableCarbon": self.env.isRelease.description,
                            "titleString": lingo.localize("title", locale: locale),
                            "descriptionString": lingo.localize("description", locale: locale, interpolations: ["templateCount": self.count]),
                            "searchPlaceholderString": lingo.localize("searchPlaceholder", locale: locale),
@@ -56,12 +56,12 @@ internal class SiteHandlers {
     ///
     /// - Parameter router: Vapor server side Swift Router
     internal func createDocumentsPage(router: Router) {
-        router.get("/docs") { req -> Future<View> in
-            let leaf = try req.make(LeafRenderer.self)
-            let lingo = try req.make(Lingo.self)
-            let locale = req.http.headers.firstValue(name: .acceptLanguage) ?? "en-us"
+        router.get("/docs") { request -> Future<View> in
+            let leaf = try request.make(LeafRenderer.self)
+            let lingo = try request.make(Lingo.self)
+            let locale = request.http.headers.firstValue(name: .acceptLanguage) ?? "en-us"
             
-            let context = ["enableCarbon": "self.carbon.enabled && req.http.url.isProduction",
+            let context = ["enableCarbon": self.env.isRelease.description,
                            "titleString": lingo.localize("title", locale: locale),
                            "descriptionString": lingo.localize("description", locale: locale, interpolations: ["templateCount": self.count])]
             
@@ -73,11 +73,12 @@ internal class SiteHandlers {
     ///
     /// - Parameter router: Vapor server side Swift Router
     internal func createDropdownTemplates(router: Router) {
-        router.get("/dropdown/templates.json") { req -> [Dropdown] in
-            guard let queryParam = try? req.query.decode(Term.self) else {
+        router.get("/dropdown/templates.json") { request -> [Dropdown] in
+            guard let flags = try? request.query.decode(Flags.self),
+                let term = flags.term else {
                  return self.createSortedDropdownTemplates()
             }
-            return self.createSortedDropdownTemplates(query: queryParam.term)
+            return self.createSortedDropdownTemplates(query: term)
         }
     }
 
