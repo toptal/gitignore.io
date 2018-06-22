@@ -27,6 +27,10 @@ let package = Package(
             name: "Run",
             dependencies: ["App"],
             exclude: ["Config", "Localization", "Public", "Resources", "data", "wiki"]
+        ),
+        ks.testTarget(
+            name: "AppTests",
+            dependencies: ["App"]
         )
     ]
 )

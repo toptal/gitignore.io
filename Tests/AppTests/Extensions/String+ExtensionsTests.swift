@@ -9,7 +9,7 @@
 import XCTest
 import Foundation
 
-@testable import GitignoreIOServer
+@testable import App
 
 class String_ExtensionsTests: XCTestCase {
     static let allTests = [
@@ -27,7 +27,7 @@ class String_ExtensionsTests: XCTestCase {
     
     func testStringName_empty() {
         let path = URL(fileURLWithPath: "")
-        XCTAssertFalse(path.name.isNull)
+        XCTAssertFalse(path.name.isEmpty)
     }
     
     func testStringFileName_valid() {

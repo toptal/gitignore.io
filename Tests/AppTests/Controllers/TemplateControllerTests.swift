@@ -11,7 +11,7 @@ import Vapor
 
 import Foundation
 
-@testable import GitignoreIOServer
+@testable import App
 
 class TemplateControllerTests: XCTestCase {
     
