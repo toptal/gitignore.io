@@ -6,12 +6,12 @@
     <strong>Create useful .gitignore files for your project</strong>
 </p>
 <p align="center">
-    <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.1-orange.svg"/></a>
-    <a href="https://travis-ci.org/joeblau/gitignore.io"><img src="https://img.shields.io/travis/joeblau/gitignore.io.svg" alt="Travis"></a>
-    <a href="https://codecov.io/gh/joeblau/gitignore.io"><img src="https://img.shields.io/codecov/c/github/joeblau/gitignore.io.svg" alt="Codecov"></a>
-    <a href="https://codebeat.co/projects/github-com-joeblau-gitignore-io"><img src="https://codebeat.co/badges/466223cd-3a95-40a9-80e4-09690915ae93" alt="codebeat badge"></a>
-    <img src="https://img.shields.io/badge/Platforms-Linux%20%7C%20macOS%20%7C%20Windows-blue.svg"alt="Platforms">
-    <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg" alt="license"></a>
+    <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat-square"/></a>
+    <a href="https://travis-ci.org/joeblau/gitignore.io"><img src="https://img.shields.io/travis/joeblau/gitignore.io.svg?style=flat-square" alt="Travis"></a>
+    <a href="https://codeclimate.com/github/joeblau/gitignore.io/test_coverage"><img src="https://img.shields.io/codeclimate/coverage/joeblau/gitignore.io.svg?style=flat-square" alt="Code Climate Test Coverage"></a>
+    <a href="https://codeclimate.com/github/joeblau/gitignore.io/maintainability"><img src="https://img.shields.io/codeclimate/maintainability/joeblau/gitignore.io.svg?style=flat-square" alt="Code Climate Maintainability"></a>
+    <img src="https://img.shields.io/badge/Platforms-Linux%20%7C%20macOS%20%7C%20Windows-blue.svg?style=flat-square"alt="Platforms">
+    <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg?style=flat-square" alt="license"></a>
 </p>
 
 ## Install Command Line
