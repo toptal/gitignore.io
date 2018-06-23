@@ -12,9 +12,15 @@ before_install:
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - .travis/update-submodule.sh
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
-- eval "$(curl -sL https://swift.vapor.sh/ci-3.1)"
-- eval "$(curl -sL https://swift.vapor.sh/codecov)"
+  - sudo gem install slather
+  - eval "$(curl -sL https://swift.vapor.sh/ci-3.1)"
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
   email:
     recipients:
@@ -28,4 +34,5 @@ deploy:
     secure: In+pMxDoWCe5h2oCi20pCpLGLdiqvP1SuWqTkFm1G1LPtZ7LIcIbxlCgiWGlWqaPnwC5n0VkpOEkOSnFZz2E7ffKQuzonvEBUPl5EFLzfJxeHUDWaaMGWfadx2kR21cx/wTyEZseSqeBm77wbKJKU7D6RqRbCS+MxaavQhaJnKk=
 env:
   global:
+    - CC_TEST_REPORTER_ID=6133dfb857104f811740c22973bcb412866eba231509f7f8f60a8ad95005ee2b
     secure: ZubW/TIAZCjYPJYI1mwUtWhY9iAabIQzyeexKGEbcbUuYhdCzZ2Dj7mIjPyOQ0KPwQm3nwWPRXq8V7YnGJMU3ytofu/PTb0gYDGPguVpLj0k7hN3xlxuODQeP2BtiS4uzuXspMfOb14kEkszFqU0qlF/eKnKBtqvva//Iwi2L3I=

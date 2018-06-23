@@ -28,7 +28,7 @@ let package = Package(
             dependencies: ["App"],
             exclude: ["Config", "Localization", "Public", "Resources", "data", "wiki"]
         ),
-        ks.testTarget(
+        .testTarget(
             name: "AppTests",
             dependencies: ["App"]
         )
