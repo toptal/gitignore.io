@@ -13,85 +13,73 @@ import HTTP
 @testable import App
 
 class SiteHandlersTests: XCTestCase {
-    var gitignore = Gitignore()
     
-//    static let allTests = [
-//        ("testServer_index", testServer_index),
-//        ("testServer_docs", testServer_docs),
-//        ("testServer_templatesJSON_noTerm", testServer_templatesJSON_noTerm),
-//        ("testServer_templatesJSON_term", testServer_templatesJSON_term),
-//        ("testServer_templatesJSON_term_capitalLetter", testServer_templatesJSON_term_capitalLetter),
-//        ("testServer_templatesJSON_multipleTerms", testServer_templatesJSON_multipleTerms),
-//        ("testSserver_requestCarbonEnabled_root", testSserver_requestCarbonEnabled_root),
-//        ("testSserver_requestCarbonEnabled_docs", testSserver_requestCarbonEnabled_docs),
-//    ]
-//    
-//    func testServer_index() throws {
-//        let request = try Request(method: .get, uri: "/")
-//
-//        let response = try self.ignore.drop?.respond(to: request)
-//        if let byteCount = response?.body.bytes?.count {
-//            XCTAssertGreaterThan(byteCount, 0)
-//        }
-//    }
-//
-//    func testServer_docs() throws {
-//        let request = try Request(method: .get, uri: "/docs")
-//        let response = try self.ignore.drop?.respond(to: request)
-//        if let byteCount = response?.body.bytes?.count {
-//            XCTAssertGreaterThan(byteCount, 0)
-//        }
-//    }
-//
-//    func testServer_templatesJSON_noTerm() throws {
-//        let request = try Request(method: .get, uri: "/dropdown/templates.json")
-//        let response = try self.ignore.drop?.respond(to: request)
-//        if let byteCount = response?.body.bytes?.count {
-//            XCTAssertGreaterThan(byteCount, 0)
-//        }
-//    }
-//
-//    func testServer_templatesJSON_term() throws {
-//        let request = try Request(method: .get, uri: "/dropdown/templates.json?term=java")
-//        let response = try self.ignore.drop?.respond(to: request)
-//        if let byteCount = response?.body.bytes?.count {
-//            XCTAssertGreaterThan(byteCount, 0)
-//        }
-//    }
-//
-//    func testServer_templatesJSON_term_capitalLetter() throws {
-//        let request = try Request(method: .get, uri: "/dropdown/templates.json?term=Java")
-//        let response = try self.ignore.drop?.respond(to: request)
-//        if let byteCount = response?.body.bytes?.count {
-//            XCTAssertGreaterThan(byteCount, 0)
-//        }
-//    }
-//
-//    func testServer_templatesJSON_multipleTerms() throws {
-//        let request = try Request(method: .get, uri: "/dropdown/templates.json?term=java,ada")
-//        let response = try self.ignore.drop?.respond(to: request)
-//        if let byteCount = response?.body.bytes?.count {
-//            XCTAssertGreaterThan(byteCount, 0)
-//        }
-//    }
-//
-//    func testSserver_requestCarbonEnabled_root() throws {
-//        let request = try Request(method: .get, uri: "/")
-//
-//        let ignoreMock = Ignore(droplet: Droplet(arguments: nil, workDir: nil, environment: .production, config: nil, localization: nil, log: nil))
-//        let response = try ignoreMock.drop?.respond(to: request)
-//        if let byteCount = response?.body.bytes?.count {
-//            XCTAssertGreaterThan(byteCount, 0)
-//        }
-//    }
-//
-//    func testSserver_requestCarbonEnabled_docs() throws {
-//        let request = try Request(method: .get, uri: "/docs")
-//
-//        let ignoreMock = Ignore(droplet: Droplet(arguments: nil, workDir: nil, environment: .production, config: nil, localization: nil, log: nil))
-//        let response = try ignoreMock.drop?.respond(to: request)
-//        if let byteCount = response?.body.bytes?.count {
-//            XCTAssertGreaterThan(byteCount, 0)
-//        }
-//    }
+    static let allTests = [
+        ("testServer_index", testServer_index),
+        ("testServer_docs", testServer_docs),
+        ("testServer_templatesJSON_noTerm", testServer_templatesJSON_noTerm),
+        ("testServer_templatesJSON_term", testServer_templatesJSON_term),
+        ("testServer_templatesJSON_term_capitalLetter", testServer_templatesJSON_term_capitalLetter),
+        ("testServer_templatesJSON_multipleTerms", testServer_templatesJSON_multipleTerms)
+    ]
+
+    func testServer_index() throws {
+        if let byteCount = try responseForRequest("/").http.body.count {
+            XCTAssertGreaterThan(byteCount, 0)
+        } else {
+            XCTFail()
+        }
+    }
+
+    func testServer_docs() throws {
+        if let byteCount = try responseForRequest("/docs").http.body.count {
+            XCTAssertGreaterThan(byteCount, 0)
+        } else {
+            XCTFail()
+        }
+    }
+
+    func testServer_templatesJSON_noTerm() throws {
+        if let byteCount = try responseForRequest("/dropdown/templates.json").http.body.count {
+            XCTAssertGreaterThan(byteCount, 0)
+        } else {
+            XCTFail()
+        }
+    }
+
+    func testServer_templatesJSON_term() throws {
+        if let byteCount = try responseForRequest("/dropdown/templates.json?term=java").http.body.count {
+            XCTAssertGreaterThan(byteCount, 0)
+        } else {
+            XCTFail()
+        }
+    }
+
+    func testServer_templatesJSON_term_capitalLetter() throws {
+        if let byteCount = try responseForRequest("/dropdown/templates.json?term=Java").http.body.count {
+            XCTAssertGreaterThan(byteCount, 0)
+        } else {
+            XCTFail()
+        }
+    }
+
+    func testServer_templatesJSON_multipleTerms() throws {
+        if let byteCount = try responseForRequest("/dropdown/templates.json?term=java,ada").http.body.count {
+            XCTAssertGreaterThan(byteCount, 0)
+        } else {
+            XCTFail()
+        }
+    }
+
+
+    // MARK: - Private
+
+    private func responseForRequest(_ url: String) throws -> Response {
+        let application = try Gitignore().app(.detect())
+        let request = HTTPRequest(method: .GET, url: URL(string: url)!)
+        let wrappedRequest = Request(http: request, using: application)
+
+        let responder = try application.make(Responder.self)
+        return try responder.respond(to: wrappedRequest).wait()
+    }
 }

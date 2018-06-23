@@ -19,7 +19,6 @@ class TemplateControllerTests: XCTestCase {
         ("testIncorrectDataDirectory", testIncorrectDataDirectory),
     ]
     
-    
     func testIncorrectDataDirectory() {
         let rootDirectory = URL(fileURLWithPath: "")
         let noFile = URL(fileURLWithPath: "")

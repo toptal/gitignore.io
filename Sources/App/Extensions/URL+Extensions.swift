@@ -25,7 +25,4 @@ internal extension URL {
         return self.lastPathComponent
     }
     
-    internal var isProduction: Bool {
-        return true
-    }
 }
