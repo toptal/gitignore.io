@@ -6,7 +6,7 @@
     <strong>Create useful .gitignore files for your project</strong>
 </p>
 <p align="center">
-    <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.1-orange.svg?style=flat-square"/></a>
+    <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat-square"/></a>
     <a href="https://travis-ci.org/joeblau/gitignore.io"><img src="https://img.shields.io/travis/joeblau/gitignore.io.svg?style=flat-square" alt="Travis"></a>
     <a href="https://codeclimate.com/github/joeblau/gitignore.io/test_coverage"><img src="https://img.shields.io/codeclimate/coverage/joeblau/gitignore.io.svg?style=flat-square" alt="Code Climate Test Coverage"></a>
     <a href="https://codeclimate.com/github/joeblau/gitignore.io/maintainability"><img src="https://img.shields.io/codeclimate/maintainability/joeblau/gitignore.io.svg?style=flat-square" alt="Code Climate Maintainability"></a>
