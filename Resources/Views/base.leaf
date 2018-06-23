@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" itemscope="itemscope" itemtype="https://schema.org/WebApplication" prefix="og: https://ogp.me/ns">
 <head>
-    #import("title")
+    #get(title)
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width">
 
     <meta name="author" content="Joe Blau">
-    #import("description")
+    #get(description)
     <meta name="keywords" content="gitignore,.gitignore,git,ignore,file,create,make,generate,build,automatic,programmatic,command line,cli">
 
     <meta property="og:type" content="website">
@@ -30,11 +30,11 @@
     <meta itemprop="description" content="Create useful .gitignore files for your project">
     <meta itemprop="image" content="https://www.gitignore.io/img/preview.png">
 
-    #import("headerScripts")
+    #get(headerScripts)
 </head>
-#import("bodyType")
-    #import("body")
+#get(bodyType)
+    #get(body)
 
-    #import("footerScripts")
+    #get(footerScripts)
 </body>
 </html>

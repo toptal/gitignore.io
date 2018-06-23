@@ -1,14 +1,12 @@
-#extend("base")
-
-#export("title") {
+#set("title") {
     <title>#(titleString)</title>
 }
 
-#export("description") {
+#set("description") {
     <meta name="description" content="#(descriptionString)">
 }
 
-#export("headerScripts") {
+#set("headerScripts") {
     <!-- Header CSS -->
     <link rel="stylesheet" type="text/css" href="/css/theme-gitignore-style.css">
     #if(enableCarbon) {
@@ -16,11 +14,11 @@
     }
 }
 
-#export("bodyType") {
+#set("bodyType") {
 <body role="flatdoc">
 }
 
-#export("body") {
+#set("body") {
     <div class="header">
         <div class="left">
             <h1><a href="/"><img src="/img/gitignoreio.svg" height="20"></a></h1>
@@ -49,13 +47,15 @@
     </div>
 }
 
-#export("footerScripts") {
+#set("footerScripts") {
     <!-- Footer Scripts -->
     <script src="/components/jquery/dist/jquery.min.js"></script>
     <script src="/components/flatdoc/v/0.9.0/legacy.js"></script>
     <script src="/components/flatdoc/v/0.9.0/flatdoc.js"></script>
     <script src="/js/theme-gitignore-script.js"></script>
     <script>
-        Flatdoc.run({fetcher: Flatdoc.file("/README.md") });
+        Flatdoc.run({fetcher: Flatdoc.file("/README.md") \});
     </script>
 }
+
+#embed("base")
