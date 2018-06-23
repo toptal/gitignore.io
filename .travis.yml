@@ -1,15 +1,16 @@
 os:
   - linux
   - osx
-language: generic
+language: ruby
 sudo: required
 dist: trusty
 osx_image: xcode9.4
+rvm:
+  - 2.2.0
 branches:
   only:
   - master
 before_install:
-  - rvm install 2.2.2
   - git config credential.helper "store --file=.git/credentials"
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - .travis/update-submodule.sh
@@ -37,4 +38,5 @@ deploy:
 env:
   global:
     - secure: ZubW/TIAZCjYPJYI1mwUtWhY9iAabIQzyeexKGEbcbUuYhdCzZ2Dj7mIjPyOQ0KPwQm3nwWPRXq8V7YnGJMU3ytofu/PTb0gYDGPguVpLj0k7hN3xlxuODQeP2BtiS4uzuXspMfOb14kEkszFqU0qlF/eKnKBtqvva//Iwi2L3I=
+    - CC_TEST_REPORTER_ID=6133dfb857104f811740c22973bcb412866eba231509f7f8f60a8ad95005ee2b
     
