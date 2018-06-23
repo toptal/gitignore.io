@@ -20,6 +20,7 @@ script:
   - sudo gem install slather
   - eval "$(curl -sL https://swift.vapor.sh/ci-3.1)"
 after_script:
+  - slather coverage --cobertura-xml --source-directory ./Sources/ --output-directory ./ --scheme AppTests ./GitignoreIO.xcodeproj                                                                ✓  10657
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
   email:
