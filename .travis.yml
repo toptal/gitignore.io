@@ -9,6 +9,7 @@ branches:
   only:
   - master
 before_install:
+  - rvm install 2.2.2
   - git config credential.helper "store --file=.git/credentials"
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - .travis/update-submodule.sh
