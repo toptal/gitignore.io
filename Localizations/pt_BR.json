@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - Crie Arquivos .gitignore Úteis Para Seu Projeto.",
+    "description": "Crie arquivos .gitignore úteis para o seu projeto selecionando os %{templateCount} templates de Sistemas Operacionais, IDEs e linguagens de Programação.",
+    "subtitle": "Crie arquivos .gitignore úteis para o seu projeto.",
+    "searchPlaceholder": "Pesquise Sistemas Operacionais, IDEs ou Linguagens de Programação.",
+    "searchGo": "Criar",
+    "searchDownload": "Baixar Arquivo",
+    "footer": "%{templateCount} Templates de .gitignore de Sistemas Operacionais, IDEs e Linguagens de Programação.",
+    "commandLineTitle": "Documentação",
+    "commandLineDescription": "Saiba como executar o .gitignore.io a partir da Linha de Comando",
+    "videoTitle": "Assista ao Vídeo Tutorial",
+    "videoDescription": "Assista a um vídeo para aprender como funciona o .gitignore.io",
+    "sourceCodeTitle": "Código-fonte",
+    "sourceCodeDescription": "Código-fonte hospedado no GitHub"
+}
