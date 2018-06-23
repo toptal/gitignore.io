@@ -28,4 +28,3 @@ deploy:
 env:
   global:
     - secure: ZubW/TIAZCjYPJYI1mwUtWhY9iAabIQzyeexKGEbcbUuYhdCzZ2Dj7mIjPyOQ0KPwQm3nwWPRXq8V7YnGJMU3ytofu/PTb0gYDGPguVpLj0k7hN3xlxuODQeP2BtiS4uzuXspMfOb14kEkszFqU0qlF/eKnKBtqvva//Iwi2L3I=
-    
