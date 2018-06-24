@@ -47,7 +47,7 @@ internal class SiteHandlers {
                            "videoDescriptionString": lingo.localize("videoDescription", locale: locale),
                            "videoTitleString": lingo.localize("videoTitle", locale: locale),
                            "footerString": lingo.localize("footer", locale: locale, interpolations: ["templateCount": self.count])]
-            
+
             return leaf.render("index", context)
         }
     }
@@ -60,11 +60,11 @@ internal class SiteHandlers {
             let leaf = try request.make(LeafRenderer.self)
             let lingo = try request.make(Lingo.self)
             let locale = request.http.headers.firstValue(name: .acceptLanguage) ?? "en-us"
-            
+
             let context = ["enableCarbon": self.env.isRelease.description,
                            "titleString": lingo.localize("title", locale: locale),
                            "descriptionString": lingo.localize("description", locale: locale, interpolations: ["templateCount": self.count])]
-            
+
             return leaf.render("docs", context)
         }
     }

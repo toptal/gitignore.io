@@ -20,7 +20,6 @@ import Lingo
 //    var hello = Encaps()
 //}
 
-
 internal class APIHandlers {
     private let splitSize = 5
     private var order: [String: Int]!
@@ -78,7 +77,6 @@ internal class APIHandlers {
                 try response.content.encode(groupedLines)
                 return response
             }
-
 
             switch format {
             case "lines": try response.content.encode(templateKeys.joined(separator: "\n"))

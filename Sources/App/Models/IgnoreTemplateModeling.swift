@@ -6,7 +6,6 @@
 //
 //
 
-
 internal protocol IgnoreTemplateModeling: Codable {
     var key: String { get set }
     var name: String { get set }

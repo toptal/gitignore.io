@@ -15,35 +15,35 @@ public class Gitignore {
     fileprivate var services: Services
     fileprivate let lingoProvider: LingoProvider
     fileprivate var middlewares: MiddlewareConfig
-    
+
     public init() {
         config = Config.default()
         services = Services.default()
         middlewares = MiddlewareConfig()
         lingoProvider = LingoProvider(defaultLocale: "en", localizationsDir: "Localizations")
     }
-    
+
     public func app(_ env: Environment) throws -> Application {
         try configure(env: env)
         let app = try Application(config: config, environment: env, services: services)
 
         return app
     }
-    
+
     private func configure(env: Environment) throws {
         let router = EngineRouter.default()
         try routes(router, env: env)
 
         services.register(router, as: Router.self)
-        
+
         try services.register(LeafProvider())
         try services.register(lingoProvider)
-        
+
         middlewares.use(FileMiddleware.self)
         middlewares.use(ErrorMiddleware.self)
         services.register(middlewares)
     }
-    
+
     /// Register your application's routes here.
     private func routes(_ router: Router, env: Environment) throws {
         let dataDirectory = URL(fileURLWithPath: DirectoryConfig.detect().workDir, isDirectory: true)
@@ -53,7 +53,6 @@ public class Gitignore {
 
         let templateController = TemplateController(dataDirectory: dataDirectory, orderFile: orderFile)
 
-        
         let siteHandlers = SiteHandlers(templateController: templateController, env: env)
         siteHandlers.createIndexPage(router: router)
         siteHandlers.createDocumentsPage(router: router)
@@ -67,7 +66,3 @@ public class Gitignore {
     }
 
 }
-
-
-
-
