@@ -18,6 +18,7 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
+  - brew install vapor/tap/vapor
   - swift build
   - swift test
   - vapor xcode -n
