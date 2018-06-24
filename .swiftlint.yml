@@ -5,7 +5,6 @@ disabled_rules: # rule identifiers to exclude from running
   - line_length
 opt_in_rules: # some rules are only opt-in
   - empty_count
-  - missing_docs
   # Find all the available rules by running:
   # swiftlint rules
 included: # paths to include during linting. `--path` is ignored if present.
@@ -37,7 +36,7 @@ type_name:
     warning: 40
     error: 50
   excluded: iPhone # excluded via string
-variable_name:
+identifier_name:
   min_length: # only min_length
     error: 3 # only error
   excluded: # excluded via string array
