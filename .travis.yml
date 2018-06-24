@@ -10,6 +10,7 @@ before_install:
   - git config credential.helper "store --file=.git/credentials"
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - .travis/update-submodule.sh
+  - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 install:
   - gem install slather
   - eval "$(curl -sL https://apt.vapor.sh)"
