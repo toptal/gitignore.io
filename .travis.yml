@@ -13,7 +13,10 @@ before_install:
   - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 install:
   - gem install slather
-  - eval "$(curl -sL https://apt.vapor.sh)"
+  - wget -q https://repo.vapor.codes/apt/keyring.gpg -O- | sudo apt-key add -
+  - echo "deb https://repo.vapor.codes/apt $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vapor.list
+  - sudo apt-get update
+  - sudo apt-get install swift vapor
   - eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
