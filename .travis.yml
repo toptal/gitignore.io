@@ -1,5 +1,5 @@
 os:
-  - linux
+  - osx
 language: generic
 sudo: required
 dist: trusty
@@ -10,16 +10,11 @@ before_install:
   - git config credential.helper "store --file=.git/credentials"
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - .travis/update-submodule.sh
-  - sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6
 install:
   - gem install slather
-  - wget -q https://repo.vapor.codes/apt/keyring.gpg -O- | sudo apt-key add -
-  - echo "deb https://repo.vapor.codes/apt $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vapor.list
-  - sudo apt-get update
-  - sudo apt-get install swift vapor
   - eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-darwin-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
