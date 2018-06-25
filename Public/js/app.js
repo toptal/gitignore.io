@@ -47,8 +47,7 @@ function generateGitIgnore() {
     const searchLength = searchString.length;
     if (searchLength > 0) {
         const files = searchString.replace(/^,/, '');
-        const uriEncodedFiles = encodeURIComponent(files);
-        window.location = `/api/${uriEncodedFiles}`;
+        window.location = `/api/${files}`;
         $(".ignore-search").val("");
     }
 }
@@ -59,7 +58,6 @@ function generateGitIgnoreFile() {
     const searchLength = searchString.length;
     if (searchLength > 0) {
         const files = searchString.replace(/^,/, '');
-        const uriEncodedFiles = encodeURIComponent(files);
-        window.location = `/api/f/${uriEncodedFiles}`;
+        window.location = `/api/f/${files}`;
     }
 }
