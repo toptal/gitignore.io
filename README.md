@@ -6,12 +6,12 @@
     <strong>Create useful .gitignore files for your project</strong>
 </p>
 <p align="center">
-    <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-3.1-orange.svg"/></a>
-    <a href="https://travis-ci.org/joeblau/gitignore.io"><img src="https://img.shields.io/travis/joeblau/gitignore.io.svg" alt="Travis"></a>
-    <a href="https://codecov.io/gh/joeblau/gitignore.io"><img src="https://img.shields.io/codecov/c/github/joeblau/gitignore.io.svg" alt="Codecov"></a>
-    <a href="https://codebeat.co/projects/github-com-joeblau-gitignore-io"><img src="https://codebeat.co/badges/466223cd-3a95-40a9-80e4-09690915ae93" alt="codebeat badge"></a>
-    <img src="https://img.shields.io/badge/Platforms-Linux%20%7C%20macOS%20%7C%20Windows-blue.svg"alt="Platforms">
-    <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg" alt="license"></a>
+    <a href="https://swift.org"><img src="https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat-square"/></a>
+    <a href="https://travis-ci.org/joeblau/gitignore.io"><img src="https://img.shields.io/travis/joeblau/gitignore.io.svg?style=flat-square" alt="Travis"></a>
+    <a href="https://codeclimate.com/github/joeblau/gitignore.io/test_coverage"><img src="https://img.shields.io/codeclimate/coverage/joeblau/gitignore.io.svg?style=flat-square" alt="Code Climate Test Coverage"></a>
+    <a href="https://codeclimate.com/github/joeblau/gitignore.io/maintainability"><img src="https://img.shields.io/codeclimate/maintainability/joeblau/gitignore.io.svg?style=flat-square" alt="Code Climate Maintainability"></a>
+    <img src="https://img.shields.io/badge/Platforms-Linux%20%7C%20macOS%20%7C%20Windows-blue.svg?style=flat-square"alt="Platforms">
+    <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg?style=flat-square" alt="license"></a>
 </p>
 
 ## Install Command Line
@@ -92,7 +92,9 @@ If you have installed [msysgit](http://msysgit.github.io)), create `gi.cmd` with
 @rem Get the abolute path to the parent directory, which is assumed to be the
 @rem Git installation root.
 @for /F "delims=" %%I in ("%~dp0..") do @set git_install_root=%%~fI
-@set PATH=%git_install_root%\bin;%git_install_root%\mingw\bin;%PATH%
+@for /F "delims=" %%I in ("%~dp0..") do @set git_mingw_root=%%~fI\mingw
+@if not exist "%git_mingw_root%" @set git_mingw_root=%git_install_root%\mingw64
+@set PATH=%git_install_root%\bin;%git_mingw_root%\bin;%PATH%
 
 @if not exist "%HOME%" @set HOME=%HOMEDRIVE%%HOMEPATH%
 @if not exist "%HOME%" @set HOME=%USERPROFILE%
@@ -107,6 +109,7 @@ Clients maintained by third-party developers
 |---|---|---|---|
 | [gogi](https://github.com/Gnouc/gogi) | Go | [Install](https://github.com/Gnouc/gogi#installation) | [Cuong Manh Le](https://github.com/Gnouc) |
 | [ignr](https://github.com/Antrikshy/ignr.py) | Python | [Usage](https://github.com/Antrikshy/ignr.py#usage) | [Antriksh Yadav](https://github.com/Antrikshy) |
+| [add-gitignore](https://github.com/TejasQ/add-gitignore) | Node | [Usage](https://github.com/TejasQ/add-gitignore#usage) | [Tejas Kumar](https://github.com/TejasQ) |
 
 Tools or extensions maintained by third-party developers on other platforms
 
@@ -199,6 +202,16 @@ $ git clone --recursive git@github.com:joeblau/gitignore.io.git
 $ cd gitignore.io/
 $ vapor build
 $ vapor run
+```
+
+### Using Docker
+
+It's also possible to run the app using [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/). It can be done by running the commands below.
+
+```sh
+$ git clone --recursive git@github.com:joeblau/gitignore.io.git
+$ cd gitignore.io/
+$ docker-compose up -d
 ```
 
 ## Companies

@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - Create Useful .gitignore Files For Your Project",
+    "description": "Create useful .gitignore files for your project by selecting from %{templateCount} Operating System, IDE, and Programming Language .gitignore templates",
+    "subtitle": "Create useful .gitignore files for your project",
+    "searchPlaceholder": "Search Operating Systems, IDEs, or Programming Languages",
+    "searchGo": "Create",
+    "searchDownload": "Download File",
+    "footer": "%{templateCount} Operating System, IDE, and Programming Language .gitignore templates",
+    "commandLineTitle": "Command Line Docs",
+    "commandLineDescription": "Learn how to run .gitignore.io from the command line",
+    "videoTitle": "Watch Video Tutorial",
+    "videoDescription": "Watch a video to learn how .gitignore.io works",
+    "sourceCodeTitle": "Source Code",
+    "sourceCodeDescription": "GitHub hosted source code for .gitignore.io"
+}
