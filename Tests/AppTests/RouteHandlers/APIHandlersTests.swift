@@ -100,7 +100,24 @@ class APIHandlersTests: XCTestCase {
     }
 
     func testServer_api_no_sort_not_sortable() throws {
-        if let byteCount = try responseForRequest("/api/macos,swift").http.body.count {
+        let body = try responseForRequest("/api/macos,swift").http.body
+        XCTAssertFalse(body.description.contains("!! ERROR:"))
+        XCTAssertTrue(body.description.contains("### macOS ###"))
+        XCTAssertTrue(body.description.contains("### Swift ###"))
+        if let byteCount = body.count {
+            XCTAssertGreaterThan(byteCount, 0)
+        } else {
+            XCTFail()
+        }
+    }
+
+    func testSErver_api_url_multiple_url_encoded() throws {
+        let body = try responseForRequest("/api/sbt%2Cscala%2Cintellij").http.body
+        XCTAssertFalse(body.description.contains("!! ERROR:"))
+        XCTAssertTrue(body.description.contains("### SBT ###"))
+        XCTAssertTrue(body.description.contains("### Scala ###"))
+        XCTAssertTrue(body.description.contains("### Intellij ###"))
+        if let byteCount = body.count {
             XCTAssertGreaterThan(byteCount, 0)
         } else {
             XCTFail()

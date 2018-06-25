@@ -109,7 +109,10 @@ internal class APIHandlers {
     ///
     /// - Peturns: Final formatted template with headers and footers
     private func createTemplate(ignoreString: String) -> String {
-        return ignoreString
+        guard let urlDecoded = ignoreString.removingPercentEncoding else {
+            return "\n#!! ERROR: url decoding \(ignoreString) !#\n"
+        }
+        return urlDecoded
             .lowercased()
             .components(separatedBy: ",")
             .uniqueElements
@@ -120,10 +123,10 @@ internal class APIHandlers {
             .map { (templateKey) -> String in
                 self.templates[templateKey]?.contents ?? "\n#!! ERROR: \(templateKey) is undefined. Use list command to see defined gitignore types !!#\n"
             }
-            .reduce("\n# Created by https://www.gitignore.io/api/\(ignoreString)\n") { (currentTemplate, contents) -> String in
+            .reduce("\n# Created by https://www.gitignore.io/api/\(urlDecoded)\n") { (currentTemplate, contents) -> String in
                 return currentTemplate.appending(contents)
             }
-            .appending("\n\n# End of https://www.gitignore.io/api/\(ignoreString)\n")
+            .appending("\n\n# End of https://www.gitignore.io/api/\(urlDecoded)\n")
             .removeDuplicateLines()
     }
 }
