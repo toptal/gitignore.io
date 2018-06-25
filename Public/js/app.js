@@ -5,11 +5,17 @@ $.ajax('/dropdown/templates.json').success(data => {
             return results.sort((a, b) => a.text.toLowerCase().indexOf(query) -
                 b.text.toLowerCase().indexOf(query));
         },
+        processResults: function (data) {
+            return {
+                results: [].concat.apply([],
+                    data.map(x => !x.contains(',') ? x : x.split(',')))
+            };
+        },
         minimumInputLength: 1,
         theme: "bootstrap",
         multiple: true,
         data
-    });                                                                            
+    });
 });
 
 
@@ -43,7 +49,7 @@ $(".ignore-search").on("select2:selecting", e => {
 
 // Generate gitignore template
 function generateGitIgnore() {
-    const searchString = $(".ignore-search").map(function() {return $(this).val();}).get().join(',');
+    const searchString = $(".ignore-search").map(function () { return $(this).val(); }).get().join(',');
     const searchLength = searchString.length;
     if (searchLength > 0) {
         const files = searchString.replace(/^,/, '');
@@ -54,7 +60,7 @@ function generateGitIgnore() {
 
 // Generate gitignore file template
 function generateGitIgnoreFile() {
-    const searchString = $(".ignore-search").map(function() {return $(this).val();}).get().join(',');
+    const searchString = $(".ignore-search").map(function () { return $(this).val(); }).get().join(',');
     const searchLength = searchString.length;
     if (searchLength > 0) {
         const files = searchString.replace(/^,/, '');
