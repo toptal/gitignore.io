@@ -11,6 +11,7 @@ before_install:
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - .travis/update-submodule.sh
 install:
+  - rvm use ruby-2.2.4
   - gem install slather
   - eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
 before_script:
@@ -18,10 +19,10 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
+  - brew install vapor/tap/vapor
   - swift build
   - swift test
-  - slather coverage --cobertura-xml --source-directory ./Sources/ --output-directory ./ --scheme AppTests ./GitignoreIO.xcodeproj &
-  - sleep 7
+  - slather coverage --cobertura-xml --source-directory ./Sources/ --output-directory ./ --scheme AppTests ./GitignoreIO.xcodeproj
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
