@@ -1,4 +1,0 @@
-module CNIOSHA1 {
-    umbrella "/Users/josephblau/Developer/dvcs/src/gitignore.io/.build/checkouts/swift-nio.git-72516667977159970/Sources/CNIOSHA1/include"
-    export *
-}

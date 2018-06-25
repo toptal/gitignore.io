@@ -51,6 +51,7 @@ Config/secrets
 Packages
 .build
 xcuserdata
+*.xcodeproj
 
 ### Windows ###
 # Windows thumbnail cache files
