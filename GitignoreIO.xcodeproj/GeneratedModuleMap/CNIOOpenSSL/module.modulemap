@@ -1,0 +1,4 @@
+module CNIOOpenSSL {
+    umbrella "/Users/josephblau/Developer/dvcs/src/gitignore.io/.build/checkouts/swift-nio-ssl.git-8426994597636768100/Sources/CNIOOpenSSL/include"
+    export *
+}

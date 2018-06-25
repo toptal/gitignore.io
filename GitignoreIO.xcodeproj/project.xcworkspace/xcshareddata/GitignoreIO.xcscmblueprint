@@ -1,0 +1,184 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C4C80941402ACFB8F8DAFC16E089CD6387D9552D+++352BF3D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6400345F86F53D4096DD633F09AAE772FA6A202B+++AA0C341" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++FBA93D2" : 9223372036854775807,
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++6862461" : 9223372036854775807,
+    "9C479842BAB37E5A02B52F0D8BB690041F1A927F+++01DC25D" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++D8D082D" : 9223372036854775807,
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++A7AB799" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++62E5204" : 9223372036854775807,
+    "9948E95A70F754B78E92114BF205DC946294AF5D+++4318511" : 9223372036854775807,
+    "CADB2473D823C4B67E031AA19BD5C58C5C0C5C2C+++B8C4EE4" : 9223372036854775807,
+    "7E7C1062562B886ABFA1C65C1E929E1339657116+++5F38928" : 9223372036854775807,
+    "6D09577DC770D433CEBE622BD4B45C8CF6CB8CCC+++D243F24" : 9223372036854775807,
+    "07D38DC615E8ADA07E68B7DA8DD8A2654638A334+++E75313B" : 9223372036854775807,
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++E17A80F" : 9223372036854775807,
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++9832D93" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++6F5CD54" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++F419131" : 9223372036854775807,
+    "013355313FF9FF2B55EA1241A5D12353638D9AC3+++1ABD66F" : 9223372036854775807,
+    "789252EF81C502A43EF1153AAFB885D64C59FEBD+++5008669" : 9223372036854775807,
+    "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC+++246941E" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++EADDFD3" : 9223372036854775807,
+    "9E2AD4866FC4217E1DE6146C426C9F7150973871+++FD9E67A" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++B548E1F" : 9223372036854775807,
+    "C4C80941402ACFB8F8DAFC16E089CD6387D9552D+++352BF3D" : 9223372036854775807,
+    "65880DAFEE5F57D1D1C181560E763EECFD96B06D+++47871C2" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D044FE9B-9762-455D-AEC7-DAE21F41F329",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6400345F86F53D4096DD633F09AAE772FA6A202B+++AA0C341" : "gitignore.io\/.build\/checkouts\/leaf.git-9164445114487378533\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++FBA93D2" : "gitignore.io\/.build\/checkouts\/engine.git-3311994267206676365\/",
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++6862461" : "gitignore.io\/.build\/checkouts\/console.git--2431895819212044213\/",
+    "9C479842BAB37E5A02B52F0D8BB690041F1A927F+++01DC25D" : "gitignore.io\/.build\/checkouts\/socks.git--8001262774462276871\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++D8D082D" : "gitignore.io\/.build\/checkouts\/vapor.git-5492988889259800272\/",
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++A7AB799" : "gitignore.io\/.build\/checkouts\/path-indexable.git-6101080875983074629\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++62E5204" : "gitignore.io\/.build\/checkouts\/vapor.git-5492988889259800272\/",
+    "9948E95A70F754B78E92114BF205DC946294AF5D+++4318511" : "gitignore.io\/.build\/checkouts\/json.git-9153249592855998091\/",
+    "CADB2473D823C4B67E031AA19BD5C58C5C0C5C2C+++B8C4EE4" : "gitignore.io\/.build\/checkouts\/multipart.git-4210556629793786970\/",
+    "7E7C1062562B886ABFA1C65C1E929E1339657116+++5F38928" : "gitignore.io\/.build\/checkouts\/Turnstile.git-2443676010155639616\/",
+    "6D09577DC770D433CEBE622BD4B45C8CF6CB8CCC+++D243F24" : "gitignore.io\/.build\/checkouts\/polymorphic.git--4354167031091999056\/",
+    "07D38DC615E8ADA07E68B7DA8DD8A2654638A334+++E75313B" : "gitignore.io\/.build\/checkouts\/crypto.git-7980259129511365902\/",
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++E17A80F" : "gitignore.io\/.build\/checkouts\/node.git-9175390252000121167\/",
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++9832D93" : "gitignore.io\/.build\/checkouts\/path-indexable.git-6101080875983074629\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++6F5CD54" : "gitignore.io\/.build\/checkouts\/routing.git-5366657101075133678\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++F419131" : "gitignore.io\/.build\/checkouts\/core.git-9210800844849382486\/",
+    "013355313FF9FF2B55EA1241A5D12353638D9AC3+++1ABD66F" : "gitignore.io\/.build\/checkouts\/tls.git-2678149690400510061\/",
+    "789252EF81C502A43EF1153AAFB885D64C59FEBD+++5008669" : "gitignore.io\/.build\/checkouts\/clibressl.git-4924093653370840509\/",
+    "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC+++246941E" : "gitignore.io\/.build\/checkouts\/Jay.git--595626396716718175\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++EADDFD3" : "gitignore.io\/.build\/checkouts\/vapor.git-5492988889259800272\/",
+    "9E2AD4866FC4217E1DE6146C426C9F7150973871+++FD9E67A" : "gitignore.io\/gitignore\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++B548E1F" : "gitignore.io\/.build\/checkouts\/vapor.git-5492988889259800272\/",
+    "C4C80941402ACFB8F8DAFC16E089CD6387D9552D+++352BF3D" : "gitignore.io\/",
+    "65880DAFEE5F57D1D1C181560E763EECFD96B06D+++47871C2" : "gitignore.io\/.build\/checkouts\/fluent.git-6251908308727715749\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "GitignoreIO",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "GitignoreIO.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/tls.git-2678149690400510061",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "013355313FF9FF2B55EA1241A5D12353638D9AC3+++1ABD66F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/crypto.git-7980259129511365902",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "07D38DC615E8ADA07E68B7DA8DD8A2654638A334+++E75313B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/engine.git-3311994267206676365",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++62E5204"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/routing.git-5366657101075133678",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++6F5CD54"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/core.git-9210800844849382486",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++B548E1F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/vapor.git-5492988889259800272",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++D8D082D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/routing.git-5366657101075133678",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++EADDFD3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/core.git-9210800844849382486",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++F419131"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/engine.git-3311994267206676365",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++FBA93D2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/leaf.git-9164445114487378533",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6400345F86F53D4096DD633F09AAE772FA6A202B+++AA0C341"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/fluent.git-6251908308727715749",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "65880DAFEE5F57D1D1C181560E763EECFD96B06D+++47871C2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/polymorphic.git--4354167031091999056",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6D09577DC770D433CEBE622BD4B45C8CF6CB8CCC+++D243F24"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/console.git--2431895819212044213",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++6862461"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/clibressl.git-4924093653370840509",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "789252EF81C502A43EF1153AAFB885D64C59FEBD+++5008669"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/Turnstile.git-2443676010155639616",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E7C1062562B886ABFA1C65C1E929E1339657116+++5F38928"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/Jay.git--595626396716718175",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC+++246941E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/json.git-9153249592855998091",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9948E95A70F754B78E92114BF205DC946294AF5D+++4318511"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/socks.git--8001262774462276871",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9C479842BAB37E5A02B52F0D8BB690041F1A927F+++01DC25D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dvcs\/gitignore.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9E2AD4866FC4217E1DE6146C426C9F7150973871+++FD9E67A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:joeblau\/gitignore.io.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C4C80941402ACFB8F8DAFC16E089CD6387D9552D+++352BF3D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/multipart.git-4210556629793786970",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CADB2473D823C4B67E031AA19BD5C58C5C0C5C2C+++B8C4EE4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/node.git-9175390252000121167",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++9832D93"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/path-indexable.git-6101080875983074629",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++A7AB799"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/josephblau\/Documents\/dvcs\/src\/gitignore.io\/.build\/repositories\/node.git-9175390252000121167",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++E17A80F"
+    }
+  ]
+}

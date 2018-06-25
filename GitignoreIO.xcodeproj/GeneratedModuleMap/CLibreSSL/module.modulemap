@@ -1,0 +1,4 @@
+module CLibreSSL {
+    umbrella header "/Users/josephblau/Developer/dvcs/src/gitignore.io/.build/checkouts/clibressl.git-4924093653370840509/Sources/CLibreSSL/include/CLibreSSL.h"
+    export *
+}

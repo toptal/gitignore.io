@@ -1,0 +1,4 @@
+module CNIOZlib {
+    umbrella "/Users/josephblau/Developer/dvcs/src/gitignore.io/.build/checkouts/swift-nio.git-72516667977159970/Sources/CNIOZlib/include"
+    export *
+}
