@@ -1,0 +1,15 @@
+{
+    "title": "إنشاء ملفات .gitignore مفيدة لمشروعك - gitignore.io",
+    "description": "Create useful .gitignore files for your project by selecting from %{templateCount} Operating System, IDE, and Programming Language .gitignore templates",
+    "subtitle": "إنشاء ملفات .gitignore مفيدة لمشروعك",
+    "searchPlaceholder": "ابحث عن أنظمة تشغيل، IDEs، أو لغات برمجة",
+    "searchGo": "إنشاء",
+    "searchDownload": "تحميل ملف",
+    "footer": "قوالب نظام تشغيل، IDE، ولغة برمجة لملف .gitignore %{templateCount}",
+    "commandLineTitle": "توثيق سطر اﻷوامر",
+    "commandLineDescription": "تعلم كيفية تشغيل .gitignore.io من سطر اﻷوامر",
+    "videoTitle": "مشاهدة مقطع فيديو تعليمي",
+    "videoDescription": "مشاهدة فيديو تعليمي حول كيفية عمل .gitignore.io",
+    "sourceCodeTitle": "شفرة مصدرية",
+    "sourceCodeDescription": "الشفرة المصدرية لـ.gitignore.io مستضافة على GitHub"
+}
