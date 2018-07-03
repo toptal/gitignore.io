@@ -37,9 +37,7 @@
     <div class="content-root">
         <div class="menubar">
             <div class="top-section">
-              #if(enableCarbon) {
               <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=gitignoreio" id="_carbonads_js"></script>
-              }
             </div>
             <div class="menu section" role="flatdoc-menu"></div>
         </div>

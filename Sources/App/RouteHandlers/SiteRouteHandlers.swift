@@ -33,8 +33,7 @@ internal class SiteHandlers {
             let lingo = try request.make(Lingo.self)
             let locale = request.acceptLanguage
 
-            let context = ["enableCarbon": self.env.isRelease.description,
-                           "titleString": lingo.localize("title", locale: locale),
+            let context = ["titleString": lingo.localize("title", locale: locale),
                            "descriptionString": lingo.localize("description", locale: locale, interpolations: ["templateCount": self.count]),
                            "searchPlaceholderString": lingo.localize("searchPlaceholder", locale: locale),
                            "searchGoString": lingo.localize("searchGo", locale: locale),
@@ -61,8 +60,7 @@ internal class SiteHandlers {
             let lingo = try request.make(Lingo.self)
             let locale = request.acceptLanguage
 
-            let context = ["enableCarbon": self.env.isRelease.description,
-                           "titleString": lingo.localize("title", locale: locale),
+            let context = ["titleString": lingo.localize("title", locale: locale),
                            "descriptionString": lingo.localize("description", locale: locale, interpolations: ["templateCount": self.count])]
 
             return leaf.render("docs", context)
