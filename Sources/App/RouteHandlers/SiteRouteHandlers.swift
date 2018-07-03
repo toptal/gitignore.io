@@ -31,7 +31,7 @@ internal class SiteHandlers {
         router.get("/") { request -> Future<View> in
             let leaf = try request.make(LeafRenderer.self)
             let lingo = try request.make(Lingo.self)
-            let locale = request.http.headers.firstValue(name: .acceptLanguage) ?? "en-us"
+            let locale = request.acceptLanguage
 
             let context = ["enableCarbon": self.env.isRelease.description,
                            "titleString": lingo.localize("title", locale: locale),
@@ -59,7 +59,7 @@ internal class SiteHandlers {
         router.get("/docs") { request -> Future<View> in
             let leaf = try request.make(LeafRenderer.self)
             let lingo = try request.make(Lingo.self)
-            let locale = request.http.headers.firstValue(name: .acceptLanguage) ?? "en-us"
+            let locale = request.acceptLanguage
 
             let context = ["enableCarbon": self.env.isRelease.description,
                            "titleString": lingo.localize("title", locale: locale),
