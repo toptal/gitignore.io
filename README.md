@@ -14,6 +14,10 @@
     <a href="https://github.com/joeblau/gitignore.io/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/joeblau/gitignore.io.svg?style=flat-square" alt="license"></a>
 </p>
 
+## `.gitignore` Template Source
+
+Source templates for gitignore.io can be found at https://github.com/dvcs/gitignore
+
 ## Install Command Line
 
 To run gitignore.io from your command line you need an active internet connection and an environment function. You need to add a function to your environment that lets you access the gitignore.io API.
