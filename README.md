@@ -153,7 +153,7 @@ $ gi linux,eclipse >> ~/.gitignore_global
 ```
 
 ### Project
-Appending Programming Langauge settings to your projects .gitignore. **Note:** Use `gig` if you are on Windows
+Appending Programming Language settings to your projects .gitignore. **Note:** Use `gig` if you are on Windows
 ```sh
 $ gi java,python >> .gitignore
 ```
