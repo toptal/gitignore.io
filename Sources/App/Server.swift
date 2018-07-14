@@ -62,6 +62,7 @@ public class Gitignore {
         apiHandlers.createIgnoreEndpoint(router: router)
         apiHandlers.createTemplateDownloadEndpoint(router: router)
         apiHandlers.createListEndpoint(router: router)
+        apiHandlers.createOrderEndpoint(router: router)
         apiHandlers.createHelp(router: router)
     }
 
