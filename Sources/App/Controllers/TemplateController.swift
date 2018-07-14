@@ -42,7 +42,7 @@ internal struct TemplateController: ReadOnlyTemplateManagerProtocol {
                 line.trimmingCharacters(in: .whitespaces).lowercased()
             })
             .filter({ (line) -> Bool in
-                !line.hasPrefix("#") || !line.hasPrefix("")
+                !line.hasPrefix("#") && !line.isEmpty
             })
             .enumerated()
             .reduce([String: Int](), { (orderedDict, line : (offset: Int, text: String)) -> [String: Int] in

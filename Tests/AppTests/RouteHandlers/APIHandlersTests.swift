@@ -24,6 +24,7 @@ class APIHandlersTests: XCTestCase {
         ("testServer_api_force_sort_sortable", testServer_api_force_sort_sortable),
         ("testServer_api_no_sort_sortalbe", testServer_api_no_sort_sortalbe),
         ("testServer_api_no_sort_not_sortable", testServer_api_no_sort_not_sortable),
+        ("testServer_api_order", testServer_api_order),
         ("testServer_api", testServer_api),
     ]
 
@@ -111,13 +112,21 @@ class APIHandlersTests: XCTestCase {
         }
     }
 
-    func testSErver_api_url_multiple_url_encoded() throws {
+    func testServer_api_url_multiple_url_encoded() throws {
         let body = try responseForRequest("/api/sbt%2Cscala%2Cintellij").http.body
         XCTAssertFalse(body.description.contains("!! ERROR:"))
         XCTAssertTrue(body.description.contains("### SBT ###"))
         XCTAssertTrue(body.description.contains("### Scala ###"))
         XCTAssertTrue(body.description.contains("### Intellij ###"))
         if let byteCount = body.count {
+            XCTAssertGreaterThan(byteCount, 0)
+        } else {
+            XCTFail()
+        }
+    }
+
+    func testServer_api_order() throws {
+        if let byteCount = try responseForRequest("/api/order").http.body.count {
             XCTAssertGreaterThan(byteCount, 0)
         } else {
             XCTFail()

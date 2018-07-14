@@ -62,7 +62,6 @@ internal class APIHandlers {
     ///
     /// - Parameter router: Vapor server side Swift router
     internal func createListEndpoint(router: Router) {
-
         router.get("/api/list") { request -> Response in
             let response = request.makeResponse()
 
@@ -83,6 +82,17 @@ internal class APIHandlers {
             case "json": try response.content.encode(json: self.templates)
             default: try response.content.encode("Unknown Format: `lines` or `json` are acceptable formats")
             }
+            return response
+        }
+    }
+
+    /// Create the API endpoint for showing th eorder of templates
+    ///
+    /// - Parameter router: Vapor server side Swift router
+    internal func createOrderEndpoint(router: Router) {
+        router.get("/api/order") { request -> Response in
+            let response = request.makeResponse()
+            try response.content.encode(json: self.order)
             return response
         }
     }
