@@ -137,8 +137,11 @@ internal class APIHandlers {
                 (self.order[left] ?? 0) < (self.order[right] ?? 0)
             })
             .map { (templateKey) -> String in
-                createStatus = .notFound
-                return self.templates[templateKey]?.contents ?? "\n#!! ERROR: \(templateKey) is undefined. Use list command to see defined gitignore types !!#\n"
+                guard let contents = self.templates[templateKey]?.contents else {
+                    createStatus = .notFound
+                    return "\n#!! ERROR: \(templateKey) is undefined. Use list command to see defined gitignore types !!#\n"
+                }
+                return contents
             }
             .reduce("\n# Created by https://www.gitignore.io/api/\(urlDecoded)\n") { (currentTemplate, contents) -> String in
                 return currentTemplate.appending(contents)
