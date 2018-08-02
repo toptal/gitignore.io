@@ -40,7 +40,9 @@ internal class APIHandlers {
         router.get("/api", String.parameter) { request -> Response in
             let response = request.makeResponse()
             let ignoreString = try request.parameters.next(String.self)
-            try response.content.encode(self.createTemplate(ignoreString: ignoreString))
+            let (template, status) = self.createTemplate(ignoreString: ignoreString)
+            try response.content.encode(template)
+            response.http.status = status
             return response
         }
     }
@@ -51,10 +53,11 @@ internal class APIHandlers {
     internal func createTemplateDownloadEndpoint(router: Router) {
         router.get("/api/f", String.parameter) { request -> HTTPResponse in
             let ignoreString = try request.parameters.next(String.self)
-            return HTTPResponse(status: .ok,
+            let (template, status) = self.createTemplate(ignoreString: ignoreString)
+            return HTTPResponse(status: status,
                          version: HTTPVersion(major: 1, minor: 0),
                          headers: HTTPHeaders([(HTTPHeaderName.contentDisposition.description, "attachment; filename=\"gitignore\"")]),
-                         body: self.createTemplate(ignoreString: ignoreString))
+                         body: template)
         }
     }
 
@@ -80,7 +83,9 @@ internal class APIHandlers {
             switch format {
             case "lines": try response.content.encode(templateKeys.joined(separator: "\n"))
             case "json": try response.content.encode(json: self.templates)
-            default: try response.content.encode("Unknown Format: `lines` or `json` are acceptable formats")
+            default:
+                try response.content.encode("Unknown Format: `lines` or `json` are acceptable formats")
+                response.http.status = .internalServerError
             }
             return response
         }
@@ -118,11 +123,12 @@ internal class APIHandlers {
     /// - Parameter ignoreString: Comma separated string of templates to generate
     ///
     /// - Peturns: Final formatted template with headers and footers
-    private func createTemplate(ignoreString: String) -> String {
+    private func createTemplate(ignoreString: String) -> (template: String, status: HTTPResponseStatus) {
         guard let urlDecoded = ignoreString.removingPercentEncoding else {
-            return "\n#!! ERROR: url decoding \(ignoreString) !#\n"
+            return ("\n#!! ERROR: url decoding \(ignoreString) !#\n", .internalServerError)
         }
-        return urlDecoded
+        var createStatus: HTTPResponseStatus = .ok
+        let template = urlDecoded
             .lowercased()
             .components(separatedBy: ",")
             .uniqueElements
@@ -131,12 +137,15 @@ internal class APIHandlers {
                 (self.order[left] ?? 0) < (self.order[right] ?? 0)
             })
             .map { (templateKey) -> String in
-                self.templates[templateKey]?.contents ?? "\n#!! ERROR: \(templateKey) is undefined. Use list command to see defined gitignore types !!#\n"
+                createStatus = .notFound
+                return self.templates[templateKey]?.contents ?? "\n#!! ERROR: \(templateKey) is undefined. Use list command to see defined gitignore types !!#\n"
             }
             .reduce("\n# Created by https://www.gitignore.io/api/\(urlDecoded)\n") { (currentTemplate, contents) -> String in
                 return currentTemplate.appending(contents)
             }
             .appending("\n\n# End of https://www.gitignore.io/api/\(urlDecoded)\n")
             .removeDuplicateLines()
+
+        return (template: template, status: createStatus)
     }
 }
