@@ -1,4 +1,4 @@
-# Vision<
+# Vision
 
 Gitignore.io's vision is to become the authoritative source for `.gitignore` templates.  Gitignore provides templates for Operating Systems, IDEs and Programming Languages, but can eventually grow to encompass other creative spaces as well.
 
