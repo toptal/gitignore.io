@@ -38,7 +38,7 @@ internal class APIHandlers {
     /// - Parameter router: Vapor server side Swift router
     internal func createIgnoreEndpoint(router: Router) {
         router.get("/api", String.parameter) { request -> Response in
-            let response = request.makeResponse()
+            let response = request.response()
             let ignoreString = try request.parameters.next(String.self)
             let (template, status) = self.createTemplate(ignoreString: ignoreString)
             try response.content.encode(template)
@@ -66,7 +66,7 @@ internal class APIHandlers {
     /// - Parameter router: Vapor server side Swift router
     internal func createListEndpoint(router: Router) {
         router.get("/api/list") { request -> Response in
-            let response = request.makeResponse()
+            let response = request.response()
 
             let templateKeys =  self.templates.keys.sorted()
             guard let flags = try? request.query.decode(Flags.self),
@@ -96,7 +96,7 @@ internal class APIHandlers {
     /// - Parameter router: Vapor server side Swift router
     internal func createOrderEndpoint(router: Router) {
         router.get("/api/order") { request -> Response in
-            let response = request.makeResponse()
+            let response = request.response()
             try response.content.encode(json: self.order)
             return response
         }
