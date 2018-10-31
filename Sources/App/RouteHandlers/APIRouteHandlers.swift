@@ -106,7 +106,7 @@ internal class APIHandlers {
     ///
     /// - Parameter router: Vapor server side Swift router
     internal func createHelp(router: Router) {
-        router.get("/api/") { request in
+        router.get("/api/") { _ in
             """
             gitignore.io help:
               list    - lists the operating systems, programming languages and IDE input types
@@ -125,7 +125,11 @@ internal class APIHandlers {
     /// - Peturns: Final formatted template with headers and footers
     private func createTemplate(ignoreString: String) -> (template: String, status: HTTPResponseStatus) {
         guard let urlDecoded = ignoreString.removingPercentEncoding else {
-            return ("\n#!! ERROR: url decoding \(ignoreString) !#\n", .internalServerError)
+            return ("""
+
+                #!! ERROR: url decoding \(ignoreString) !#
+
+                """, .internalServerError)
         }
         var createStatus: HTTPResponseStatus = .ok
         let template = urlDecoded
@@ -139,14 +143,27 @@ internal class APIHandlers {
             .map { (templateKey) -> String in
                 guard let contents = self.templates[templateKey]?.contents else {
                     createStatus = .notFound
-                    return "\n#!! ERROR: \(templateKey) is undefined. Use list command to see defined gitignore types !!#\n"
+                    return """
+
+                    #!! ERROR: \(templateKey) is undefined. Use list command to see defined gitignore types !!#
+
+                    """
                 }
                 return contents
             }
-            .reduce("\n# Created by https://www.gitignore.io/api/\(urlDecoded)\n") { (currentTemplate, contents) -> String in
+            .reduce("""
+
+                # Created by https://www.gitignore.io/api/\(urlDecoded)
+                # Edit at https://www.gitignore.io/?templates=\(urlDecoded)
+
+                """) { (currentTemplate, contents) -> String in
                 return currentTemplate.appending(contents)
             }
-            .appending("\n\n# End of https://www.gitignore.io/api/\(urlDecoded)\n")
+            .appending("""
+
+            # End of https://www.gitignore.io/api/\(urlDecoded)
+
+            """)
             .removeDuplicateLines()
 
         return (template: template, status: createStatus)
