@@ -2,6 +2,10 @@ os: osx
 language: generic
 sudo: required
 osx_image: xcode9.4
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 before_install:
   - git config credential.helper "store --file=.git/credentials"
   - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
@@ -12,6 +16,8 @@ script:
   - brew install vapor/tap/vapor
   - swift build
   - swift test
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 notifications:
   email:
     recipients:
