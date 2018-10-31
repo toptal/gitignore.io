@@ -6,11 +6,11 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/vapor/vapor.git",
-            from: "3.0.0"
+            from: "3.1.0"
         ),
         .package(
             url: "https://github.com/vapor/leaf.git",
-            from: "3.0.0-rc.2"
+            from: "3.0.0"
         ),
         .package(
             url: "https://github.com/vapor-community/lingo-vapor.git",
