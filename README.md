@@ -114,6 +114,7 @@ Clients maintained by third-party developers
 | [gogi](https://github.com/Gnouc/gogi) | Go | [Install](https://github.com/Gnouc/gogi#installation) | [Cuong Manh Le](https://github.com/Gnouc) |
 | [ignr](https://github.com/Antrikshy/ignr.py) | Python | [Usage](https://github.com/Antrikshy/ignr.py#usage) | [Antriksh Yadav](https://github.com/Antrikshy) |
 | [add-gitignore](https://github.com/TejasQ/add-gitignore) | Node | [Usage](https://github.com/TejasQ/add-gitignore#usage) | [Tejas Kumar](https://github.com/TejasQ) |
+| [git-ignore](https://github.com/sondr3/git-ignore) | Rust | [Usage](https://github.com/sondr3/git-ignore#installation) | [Sondre Nilsen](https://github.com/sondr3) |
 
 Tools or extensions maintained by third-party developers on other platforms
 
