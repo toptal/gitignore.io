@@ -12,7 +12,7 @@ $.ajax('/dropdown/templates.json').success(data => {
     });
 
     const urlParams = new URLSearchParams(window.location.search);
-    const preFilledSearchTerms = urlParams.get("templates").split(",").map(val => val.toLowerCase())
+    const preFilledSearchTerms = urlParams.get("templates").split(",").map(val => encodeURIComponent(val).toLowerCase())
     const validIDs = new Set(data.map(datum => datum.id))
     const validPreFilledSearchTerms = preFilledSearchTerms.filter(term => validIDs.has(term))
     $(".ignore-search").val(validPreFilledSearchTerms).trigger('change.select2');
