@@ -12,9 +12,9 @@ $.ajax('/dropdown/templates.json').success(data => {
     });
 
     const urlParams = new URLSearchParams(window.location.search);
-    const preFilledSearchTerms = urlParams.get("templates").split(",").map(val => val.replace(/\s/g, "+").toLowerCase())
-    const validIDs = new Set(data.map(datum => datum.id))
-    const validPreFilledSearchTerms = preFilledSearchTerms.filter(term => validIDs.has(term))
+    const preFilledSearchTerms = urlParams.get("templates").replace(/\s/g, "+").toLowerCase().split(",");
+    const validIDs = new Set(data.map(datum => datum.id));
+    const validPreFilledSearchTerms = preFilledSearchTerms.filter(term => validIDs.has(term));
     $(".ignore-search").val(validPreFilledSearchTerms).trigger('change.select2');
 });
 
