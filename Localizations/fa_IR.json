@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - فایل های .gitignore پروژه تان را بسازید",
+    "description": "فایل های .gitignore پروژه تان را با استفاده از %{templateCount} قالب بنا به سیستم عامل، IDE و زیان برنامه نویسی بسازید.",
+    "subtitle": "فایل های .gitignore پروژه تان را بسازید",
+    "searchPlaceholder": "سیستم عامل، IDE و یا زبان برنامه نویسی تان را جستجو کنید.",
+    "searchGo": "ایجاد",
+    "searchDownload": "دانلود فایل",
+    "footer": "%{templateCount} قالب سیستم عامل، IDE و زبان برنامه نویسی",
+    "commandLineTitle": "مستندات خط فرمان",
+    "commandLineDescription": "آموزش چگونگی استفاده از .gitignore.io در خط فرمان",
+    "videoTitle": "تماشای ویدئو آموزشی",
+    "videoDescription": "تماشای ویدئو آموزشی برای اینکه بدانیم .gitignore.io چگونه کار می کند.",
+    "sourceCodeTitle": "منبع کد",
+    "sourceCodeDescription": "میزبانی شده توسط Github"
+}
