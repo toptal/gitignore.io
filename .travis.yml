@@ -13,6 +13,7 @@ before_install:
 install:
   - eval "$(curl -sL https://swiftenv.fuller.li/install.sh)"
 script:
+  - brew tap vapor/tap
   - brew install vapor/tap/vapor
   - swift build
   - swift test
