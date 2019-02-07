@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://www.gitignore.io">
+    <a href="https://gitignore.io">
         <img src="https://cdn.rawgit.com/joeblau/gitignore.io/master/Public/img/gitignoreio.svg" />
     </a>
     <br>
@@ -25,38 +25,38 @@ To run gitignore.io from your command line you need an active internet connectio
 ### Git
 `#!/bin/bash`
 ```sh
-$ git config --global alias.ignore '!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi'
+$ git config --global alias.ignore '!gi() { curl -sL https://gitignore.io/api/$@ ;}; gi'
 ```
 
 ### Linux
 `#!/bin/bash`
 ```sh
-$ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.bashrc && source ~/.bashrc
+$ echo "function gi() { curl -sL https://gitignore.io/api/\$@ ;}" >> ~/.bashrc && . ~/.bashrc
 ```
 
 `#!/bin/zsh`
 ```sh
-$ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zshrc && source ~/.zshrc
+$ echo "function gi() { curl -sL https://gitignore.io/api/\$@ ;}" >> ~/.zshrc && . ~/.zshrc
 ```
 
 `#!/bin/fish`
 ```sh
-$ printf "function gi\n\tcurl -L -s https://www.gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish
+$ printf "function gi\n\tcurl -sL https://gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish
 ```
 
 ### macOS
 `#!/bin/bash`
 ```sh
-$ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.bash_profile && source ~/.bash_profile
+$ echo "function gi() { curl -sL https://gitignore.io/api/\$@ ;}" >> ~/.bash_profile && . ~/.bash_profile
 ```
 `#!/bin/zsh`
 ```sh
-$ echo "function gi() { curl -L -s https://www.gitignore.io/api/\$@ ;}" >> ~/.zshrc && source ~/.zshrc
+$ echo "function gi() { curl -sL https://gitignore.io/api/\$@ ;}" >> ~/.zshrc && . ~/.zshrc
 ```
 
 `#!/bin/fish`
 ```sh
-$ printf "function gi\n\tcurl -L -s https://www.gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish
+$ printf "function gi\n\tcurl -sL https://gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish
 ```
 
 ### Windows
@@ -69,7 +69,7 @@ Function gig {
     [string[]]$list
   )
   $params = ($list | ForEach-Object { [uri]::EscapeDataString($_) }) -join ","
-  Invoke-WebRequest -Uri "https://www.gitignore.io/api/$params" | select -ExpandProperty content | Out-File -FilePath $(Join-Path -path $pwd -ChildPath ".gitignore") -Encoding ascii
+  Invoke-WebRequest -Uri "https://gitignore.io/api/$params" | select -ExpandProperty content | Out-File -FilePath $(Join-Path -path $pwd -ChildPath ".gitignore") -Encoding ascii
 }
 ```
 Create a PowerShell v2 Script
@@ -83,7 +83,7 @@ Function gig {
   $params = ($list | ForEach-Object { [uri]::EscapeDataString($_) }) -join ","
   $wc = New-Object System.Net.WebClient
   $wc.Headers["User-Agent"] = "PowerShell/" + $PSVersionTable["PSVersion"].ToString()
-  $wc.DownloadFile("https://www.gitignore.io/api/$params", "$PWD\.gitignore")
+  $wc.DownloadFile("https://gitignore.io/api/$params", "$PWD\.gitignore")
 }
 ```
 
@@ -103,7 +103,7 @@ If you have installed [msysgit](http://msysgit.github.io)), create `gi.cmd` with
 @if not exist "%HOME%" @set HOME=%HOMEDRIVE%%HOMEPATH%
 @if not exist "%HOME%" @set HOME=%USERPROFILE%
 
-@curl.exe -L -s https://www.gitignore.io/api/%*
+@curl.exe -sL https://gitignore.io/api/%*
 ```
 ### Other Clients
 
@@ -132,7 +132,7 @@ After the function is created, the `gi` command will give you command line acces
 Show output on the command line. **Note:** Use `gig` if you are on Windows
 ```sh
 $ gi linux,java
-# Created by https://www.gitignore.io
+# Created by https://gitignore.io
 
 ### Linux ###
 .*
