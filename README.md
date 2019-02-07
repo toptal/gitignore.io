@@ -25,38 +25,38 @@ To run gitignore.io from your command line you need an active internet connectio
 ### Git
 `#!/bin/bash`
 ```sh
-$ git config --global alias.ignore '!gi() { curl -sL https://gitignore.io/api/$@ ;}; gi'
+$ git config --global alias.ignore '!gi() { curl -sL gitignore.io/api/$@ ;}; gi'
 ```
 
 ### Linux
 `#!/bin/bash`
 ```sh
-$ echo "function gi() { curl -sL https://gitignore.io/api/\$@ ;}" >> ~/.bashrc && . ~/.bashrc
+$ echo "function gi() { curl -sL gitignore.io/api/\$@ ;}" >> ~/.bashrc && . ~/.bashrc
 ```
 
 `#!/bin/zsh`
 ```sh
-$ echo "function gi() { curl -sL https://gitignore.io/api/\$@ ;}" >> ~/.zshrc && . ~/.zshrc
+$ echo "function gi() { curl -sL gitignore.io/api/\$@ ;}" >> ~/.zshrc && . ~/.zshrc
 ```
 
 `#!/bin/fish`
 ```sh
-$ printf "function gi\n\tcurl -sL https://gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish
+$ printf "function gi\n\tcurl -sL gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish
 ```
 
 ### macOS
 `#!/bin/bash`
 ```sh
-$ echo "function gi() { curl -sL https://gitignore.io/api/\$@ ;}" >> ~/.bash_profile && . ~/.bash_profile
+$ echo "function gi() { curl -sL gitignore.io/api/\$@ ;}" >> ~/.bash_profile && . ~/.bash_profile
 ```
 `#!/bin/zsh`
 ```sh
-$ echo "function gi() { curl -sL https://gitignore.io/api/\$@ ;}" >> ~/.zshrc && . ~/.zshrc
+$ echo "function gi() { curl -sL gitignore.io/api/\$@ ;}" >> ~/.zshrc && . ~/.zshrc
 ```
 
 `#!/bin/fish`
 ```sh
-$ printf "function gi\n\tcurl -sL https://gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish
+$ printf "function gi\n\tcurl -sL gitignore.io/api/\$argv\nend\n" > ~/.config/fish/functions/gi.fish
 ```
 
 ### Windows
