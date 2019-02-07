@@ -15,7 +15,7 @@ internal extension String {
     internal func removeDuplicateLines() -> String {
         return self.components(separatedBy: "\n")
             .reduce([String]()) {
-                if !$1.isEmpty && !$1.hasPrefix("#") && $0.contains($1) {
+                if !$1.isEmpty && !$1.hasPrefix("# ") && $0.contains($1) {
                     return $0
                 }
                 return $0 + [$1]
