@@ -51,22 +51,6 @@ internal class SiteHandlers {
         }
     }
 
-    /// Crate Documentation Page
-    ///
-    /// - Parameter router: Vapor server side Swift Router
-    internal func createDocumentsPage(router: Router) {
-        router.get("/docs") { request -> Future<View> in
-            let leaf = try request.make(LeafRenderer.self)
-            let lingo = try request.make(Lingo.self)
-            let locale = request.acceptLanguage
-
-            let context = ["titleString": lingo.localize("title", locale: locale),
-                           "descriptionString": lingo.localize("description", locale: locale, interpolations: ["templateCount": self.count])]
-
-            return leaf.render("docs", context)
-        }
-    }
-
     /// Create dropdown template JSON list
     ///
     /// - Parameter router: Vapor server side Swift Router

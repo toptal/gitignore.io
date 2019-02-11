@@ -21,6 +21,7 @@ let package = Package(
         .target(
             name: "App",
             dependencies: ["Vapor", "Leaf", "LingoVapor"],
+            path: 
             exclude: ["Config", "Localization", "Public", "Resources", "data", "wiki"]
         ),
         .target(

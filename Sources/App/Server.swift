@@ -55,7 +55,6 @@ public class Gitignore {
 
         let siteHandlers = SiteHandlers(templateController: templateController, env: env)
         siteHandlers.createIndexPage(router: router)
-        siteHandlers.createDocumentsPage(router: router)
         siteHandlers.createDropdownTemplates(router: router)
 
         let apiHandlers = APIHandlers(templateController: templateController)

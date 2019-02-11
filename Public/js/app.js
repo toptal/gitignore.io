@@ -12,10 +12,13 @@ $.ajax('/dropdown/templates.json').success(data => {
     });
 
     const urlParams = new URLSearchParams(window.location.search);
-    const preFilledSearchTerms = urlParams.get("templates").replace(/\s/g, "+").toLowerCase().split(",");
-    const validIDs = new Set(data.map(datum => datum.id));
-    const validPreFilledSearchTerms = preFilledSearchTerms.filter(term => validIDs.has(term));
-    $(".ignore-search").val(validPreFilledSearchTerms).trigger('change.select2');
+
+    if (urlParams.get("templates") != null) {
+         const preFilledSearchTerms = urlParams.get("templates").replace(/\s/g, "+").toLowerCase().split(",");
+        const validIDs = new Set(data.map(datum => datum.id));
+        const validPreFilledSearchTerms = preFilledSearchTerms.filter(term => validIDs.has(term));
+        $(".ignore-search").val(validPreFilledSearchTerms).trigger('change.select2');   
+    }
 });
 
 
