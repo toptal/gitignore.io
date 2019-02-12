@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - 자신의 프로젝트에 꼭 맞는 .gitignore 파일을 만드세요",
+    "description": "자신의 프로젝트에 꼭 맞는 .gitignore 파일을 만드세요. %{templateCount} 개의 운영체제, 개발 환경(IDE), 프로그래밍 언어 .gitignore 템플릿이 준비되어 있습니다",
+    "subtitle": "자신의 프로젝트에 꼭 맞는 .gitignore 파일을 만드세요",
+    "searchPlaceholder": "운영체제, 개발 환경(IDE), 프로그래밍 언어 검색",
+    "searchGo": "생성",
+    "searchDownload": "파일 다운로드",
+    "footer": "%{templateCount} 개의 운영체제, 개발 환경(IDE), 프로그래밍 언어 .gitignore 템플릿",
+    "commandLineTitle": "커맨드라인 문서",
+    "commandLineDescription": ".gitignore.io 를 커맨드 라인에서 실행하는 법 배우기",
+    "videoTitle": "동영상 튜토리얼 보기",
+    "videoDescription": ".gitignore.io 가 어떻게 동작하는지 동영상으로 배우기",
+    "sourceCodeTitle": "소스 코드",
+    "sourceCodeDescription": "깃헙(GitHub)에서 호스팅하는 .gitignore.io 소스 코드"
+}
