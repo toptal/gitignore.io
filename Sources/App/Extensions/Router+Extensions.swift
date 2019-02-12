@@ -21,6 +21,7 @@ extension Request {
             case "en-US", "en-us": return "en"
             case "de-DE", "de-de": return "de_DE"
             case "pt-BR", "pt-br": return "pt_BR"
+            case "ko-KR", "ko-kr": return "ko_KR"
             case "ar": return "ar"
             default: return "en"
             }
