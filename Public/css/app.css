@@ -157,6 +157,9 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 .select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
-background-color: #06F !important;
-color: #fff;
+  background-color: #06F !important;
+  color: #fff;
+}
+.select2-container--bootstrap {
+  width: 100% !important;
 }
