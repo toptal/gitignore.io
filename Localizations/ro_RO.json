@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - Creează fișiere .gitignore utile pentru proiectul tău",
+    "description": "Creează fișiere .gitignore utile pentru proiectul tău selectând dintre %{templateCount} de șabloane .gitignore pentru sisteme de operare, IDE-uri și limbaje de programare.",
+    "subtitle": "Creează fișiere .gitignore utile pentru proiectul tău",
+    "searchPlaceholder": "Caută sisteme de operare, IDE-uri sau limbaje de programare",
+    "searchGo": "Creează",
+    "searchDownload": "Descarcă fișier",
+    "footer": "%{templateCount} de șabloane .gitignore pentru sisteme de operare, IDE-uri și limbaje de programare",
+    "commandLineTitle": "Documentație linie de comandă",
+    "commandLineDescription": "Află cum să rulezi .gitignore.io din linie de comandă",
+    "videoTitle": "Vizionează tutorialul video",
+    "videoDescription": "Vizionează videoul să vezi cum funcționează .gitignore.io",
+    "sourceCodeTitle": "Cod sursă",
+    "sourceCodeDescription": "GitHub a găzduit codul sursă pentru .gitignore.io"
+}
