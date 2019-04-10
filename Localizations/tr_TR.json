@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - Projen İçin İşe Yarar .gitignore Dosyaları Yarat",
+    "description": "%{templateCount} İşletim Sistemi, IDE, ve Programlama Dili için .gitignore şablonlarından seçerek projen için işe yarar .gitignore dosyaları yarat",
+    "subtitle": "Projen için işe yarar .gitignore dosyaları yarat",
+    "searchPlaceholder": "İşletim Sistemleri, IDE'ler, ya da Programlama Dilleri ara",
+    "searchGo": "Yarat",
+    "searchDownload": "Dosyayı İndir",
+    "footer": "%{templateCount} İşletim Sistemi, IDE, ve Programlama Dili için .gitignore şablonları",
+    "commandLineTitle": "Komut Satırı Kılavuzu",
+    "commandLineDescription": ".gitignore.io'u komut satırından çalıştırmayı öğren",
+    "videoTitle": "Öğretici Videoyu İzle",
+    "videoDescription": ".gitignore.io'nun nasıl çalıştığını öğrenmek için bir video izle",
+    "sourceCodeTitle": "Kaynak Kod",
+    "sourceCodeDescription": "GitHub'da tutulan .gitignore.io'un kaynak kodu"
+}
