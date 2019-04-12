@@ -13,7 +13,7 @@ internal extension Dictionary where Key: ExpressibleByStringLiteral, Value: Igno
     /// Append template patches to template contents
     ///
     /// - Parameter dataDirectory: The path to the data directory
-    internal mutating func patchTemplates(dataDirectory: URL) throws {
+    mutating func patchTemplates(dataDirectory: URL) throws {
         try FileManager().templatePathsFor(dataDirectory)?
             .filter({ (templatePath: URL) -> Bool in
                 templatePath.pathExtension == TemplateSuffix.patch.extension
@@ -31,7 +31,7 @@ internal extension Dictionary where Key: ExpressibleByStringLiteral, Value: Igno
     /// Append stacks to template contents
     ///
     /// - Parameter dataDictionary: The path to the data dictionary
-    internal mutating func stackTempaltes(dataDirectory: URL) throws {
+    mutating func stackTempaltes(dataDirectory: URL) throws {
         try FileManager().templatePathsFor(dataDirectory)?
             .filter({ (templatePath: URL) -> Bool in
                 templatePath.pathExtension == TemplateSuffix.stack.extension

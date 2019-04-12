@@ -12,7 +12,7 @@ internal extension String {
     /// Remove duplicate lines, except blank strings or comment strings
     ///
     /// - Returns: String with duplicate lines removed
-    internal func removeDuplicateLines() -> String {
+    func removeDuplicateLines() -> String {
         return self.components(separatedBy: "\n")
             .reduce([String]()) {
                 if !$1.isEmpty && !$1.hasPrefix("# ") && $0.contains($1) {

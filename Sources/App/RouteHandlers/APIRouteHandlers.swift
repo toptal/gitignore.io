@@ -11,14 +11,6 @@ import Vapor
 import HTTP
 import Lingo
 
-//struct Encaps: Content {
-//    var encapse = "encapse"
-//    var sulation = "sulation"
-//}
-//
-//struct Test: Content {
-//    var hello = Encaps()
-//}
 
 internal class APIHandlers {
     private let splitSize = 5
