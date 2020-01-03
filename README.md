@@ -22,7 +22,7 @@ creating a .gitignore for your operating system, programming language, or IDE.
 
 ## `.gitignore` Template Source
 
-Source templates for gitignore.io: https://github.com/dvcs/gitignore
+Source templates for gitignore.io: https://github.com/toptal/gitignore
 
 ## Documentation
 
