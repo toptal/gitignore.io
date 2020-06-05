@@ -38,8 +38,9 @@ public class Gitignore {
 
         try services.register(LeafProvider())
         try services.register(lingoProvider)
+        services.register(FileMiddlewareWithBasePrefix.self)
 
-        middlewares.use(FileMiddleware.self)
+        middlewares.use(FileMiddlewareWithBasePrefix.self)
         middlewares.use(ErrorMiddleware.self)
         services.register(middlewares)
     }
@@ -56,6 +57,7 @@ public class Gitignore {
         let siteHandlers = SiteHandlers(templateController: templateController, env: env)
         siteHandlers.createIndexPage(router: router)
         siteHandlers.createDropdownTemplates(router: router)
+        siteHandlers.addHealthEndpoint(router: router)
 
         let apiHandlers = APIHandlers(templateController: templateController)
         apiHandlers.createIgnoreEndpoint(router: router)

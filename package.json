@@ -1,0 +1,18 @@
+{
+  "name": "gitignore.io",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "jest": "^25.1.0",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^2.1.1"
+  },
+  "scripts": {
+    "build": "git submodule update --init --recursive",
+    "test": "jest e2e-tests"
+  },
+  "dependencies": {
+    "superagent": "^5.2.2"
+  }
+}

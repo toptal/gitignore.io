@@ -3,82 +3,87 @@
 <head>
     <title>#(titleString)</title>
 
+    <base href="#(basePrefixString)">
+    <script>
+      window.BASE_PREFIX = "#(basePrefixString)".replace(/\/+$/, '');
+      window.GOOGLE_ANALYTICS_UID = "#(googleAnalyticsUIDString)";
+    </script>
+
     <!-- Meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="author" content="Joe Blau">
     <meta name="description" content="#(descriptionString)">
     <meta name="keywords" content="gitignore,.gitignore,git,ignore,file,create,make,generate,build,automatic,programmatic,command line,cli">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="gitignore.io">
     <meta property="og:description" content="Create useful .gitignore files for your project">
-    <meta property="og:image" content="https://www.gitignore.io/img/preview.png">
-    <meta property="og:url" content="https://www.gitignore.io">
+    <meta property="og:image" content="#(canonicalUrlString)/img/preview@2x.png">
+    <meta property="og:url" content="#(canonicalUrlString)">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@joe_blau">
-    <meta name="twitter:title" content="gitignore.io">
-    <meta name="twitter:description" content="Create useful .gitignore files for your project">
-    <meta name="twitter:creator" content="@joe_blau">
-    <meta name="twitter:image:src" content="https://www.gitignore.io/img/preview.png">
-    <meta name="twitter:domain" content="https://www.gitignore.io">
+    <meta name="twitter:site" content="@toptal">
 
-    <meta itemprop="name" content="gitignore.io">
-    <meta itemprop="description" content="Create useful .gitignore files for your project">
-    <meta itemprop="image" content="https://www.gitignore.io/img/preview.png">
+    <link rel="canonical" href="#(canonicalUrlString)" />
 
-    <link rel="stylesheet" type="text/css" href="/components/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/components/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="/components/select2-bootstrap-theme/dist/select2-bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/app.css">
-    #if(enableCarbon) {
-    <link rel="stylesheet" type="text/css" href="/css/carbonh.css">
-    }
+    <link rel="stylesheet" type="text/css" href="external/select2-4.0.13/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-extract.css">
+    <link rel="stylesheet" type="text/css" href="css/select2-toptal-theme.css">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="site-wrapper">
-        <div class="site-wrapper-inner">
-            <div class="cover-container">
-                <div class="inner cover">
-                    <img src="/img/gitignoreio.svg">
-                    <p class="lead">#(subtitleString)</p>
+    <header>
+        <div class="container">
+            <div class="header-left-column">
+                <a href="https://www.toptal.com/developers" aria-label="Toptal" title="Toptal">
+                    <img src="img/toptal-logo-wordmark.svg" alt="Toptal" />
+                </a>
+                <h1>gitignore.io</h1>
+            </div>
+            <div class="header-right-column">
+                <a href="https://github.com/toptal/gitignore.io" aria-label="#(sourceCodeDescriptionString)" title="#(sourceCodeDescriptionString)">
+                    <img src="img/github-logo.svg" alt="GitHub" />
+                </a>
+            </div>
+        </div>
+    </header>
 
-                    <div class="input-group input-group-lg select2-bootstrap-append">
-                        <select class="form-control ignore-search input" type="text" tabindex="1" data-placeholder="#(searchPlaceholderString)"></select>
-                        <div class="input-group-btn">
-                            <button type="button" onClick="generateGitIgnore()" class="btn btn-gitignore">#(searchGoString)</button>
+    <div class="content-wrapper">
+        <main>
+            <div class="container">
+                <div class="masthead">
+                    <div class="masthead-top">
+                        <img srcset="img/gitignore-logo-horizontal.png 1x, img/gitignore-logo-horizontal@2x.png 2x" src="img/gitignore-logo-horizontal.png" alt="gitignore.io" />
+                        <h2>#(subtitleString)</h2>
+                    </div>
+
+                    <div class="input-group">
+                        <p style="display:none" id="input-gitignore-placeholder">#(searchPlaceholderString)</p>
+                        <select id="input-gitignore" class="form-control input"></select>
+                        <div class="input-group-append">
+                            <button type="button" id="btn-gitignore" class="btn btn-gitignore">#(searchGoString)</button>
                         </div>
                     </div>
 
-                    <ul class="nav masthead-nav">
-                        <li><a href="https://github.com/joeblau/gitignore.io" alt="#(sourceCodeDescriptionString)">#(sourceCodeTitleString)</a></li>
-                        <li><p class="lead">|</p></li>
-                        <li><a href="https://docs.gitignore.io/install/command-line" alt="#(commandLineDescriptionString)">#(commandLineTitleString)</a></li>
-                        <li><p class="lead">|</p></li>
-                        <li><a href="https://docs.gitignore.io/#video-tutorial" alt="#(videoDescriptionString)">#(videoTitleString)</a></li>
-                    </ul>
-                </div>
-                <div class="mastfoot">
-                    <div class="inner">
-                      <center>
-                          <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=gitignoreio" id="_carbonads_js"></script>
-                      </center>
+                    <div class="masthead-bottom">
+                        <ul class="masthead-nav">
+                            <li><a href="https://github.com/toptal/gitignore.io" aria-label="#(sourceCodeDescriptionString)" title="#(sourceCodeDescriptionString)">#(sourceCodeTitleString)</a></li>
+                            <li><a href="https://docs.gitignore.io/install/command-line" aria-label="#(commandLineDescriptionString)" title="#(commandLineDescriptionString)">#(commandLineTitleString)</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-        <a href="https://github.com/joeblau/gitignore.io" class="github-corner"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#F60; color:#FFF; position: absolute; top: 0; border: 0; right: 0;"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+        </main>
     </div>
-    
-    <a href="https://www.sideprojectors.com/project/project/10081/gitignoreio" alt="Gitignore.io for sale at SideProjectors"><img style="position:fixed;z-index:1000;top:-5px; left: 20px; border: 0;" src="img/badge_2_red.png" alt="This project Gitignore.io is sale at SideProjectors"></a>
 
     <!-- Footer Scripts -->
-    <script src="/components/jquery/dist/jquery.min.js"></script>
-    <script src="/components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/components/select2/dist/js/select2.full.min.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="external/url-search-params-1.1.0/url-search-params.min.js"></script>
+    <script src="external/jquery-3.4.1/jquery.min.js"></script>
+    <script src="external/select2-4.0.13/select2.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

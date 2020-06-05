@@ -1,0 +1,58 @@
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+input,
+button,
+select {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.input-group > .form-control {
+  -ms-flex: 1 1 0%;
+  flex: 1 1 0%;
+  min-width: 0;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+
+.input-group {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-group-append {
+  margin-left: -1px;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.input-group-append .btn {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.btn {
+  border: 1px solid transparent;
+}
+
+.btn:focus {
+  outline: 0;
+}
