@@ -29,7 +29,7 @@ internal class APIHandlers {
     ///
     /// - Parameter router: Vapor server side Swift router
     internal func createIgnoreEndpoint(router: Router) {
-        router.get("/api", String.parameter) { request -> Response in
+        router.get(UrlResolver.withBasePrefix("/api"), String.parameter) { request -> Response in
             let response = request.response()
             let ignoreString = try request.parameters.next(String.self)
             let (template, status) = self.createTemplate(ignoreString: ignoreString)
@@ -43,7 +43,7 @@ internal class APIHandlers {
     ///
     /// - Parameter router: Vapor server side Swift router
     internal func createTemplateDownloadEndpoint(router: Router) {
-        router.get("/api/f", String.parameter) { request -> HTTPResponse in
+        router.get(UrlResolver.withBasePrefix("/api/f"), String.parameter) { request -> HTTPResponse in
             let ignoreString = try request.parameters.next(String.self)
             let (template, status) = self.createTemplate(ignoreString: ignoreString)
             return HTTPResponse(status: status,
@@ -57,7 +57,7 @@ internal class APIHandlers {
     ///
     /// - Parameter router: Vapor server side Swift router
     internal func createListEndpoint(router: Router) {
-        router.get("/api/list") { request -> Response in
+        router.get(UrlResolver.withBasePrefix("/api/list")) { request -> Response in
             let response = request.response()
 
             let templateKeys =  self.templates.keys.sorted()
@@ -87,7 +87,7 @@ internal class APIHandlers {
     ///
     /// - Parameter router: Vapor server side Swift router
     internal func createOrderEndpoint(router: Router) {
-        router.get("/api/order") { request -> Response in
+        router.get(UrlResolver.withBasePrefix("/api/order")) { request -> Response in
             let response = request.response()
             try response.content.encode(json: self.order)
             return response
@@ -98,7 +98,7 @@ internal class APIHandlers {
     ///
     /// - Parameter router: Vapor server side Swift router
     internal func createHelp(router: Router) {
-        router.get("/api/") { _ in
+        router.get(UrlResolver.withBasePrefix("/api/")) { _ in
             """
             gitignore.io help:
               list    - lists the operating systems, programming languages and IDE input types
@@ -124,6 +124,7 @@ internal class APIHandlers {
                 """, .internalServerError)
         }
         var createStatus: HTTPResponseStatus = .ok
+        let canonicalUrl = UrlResolver.getCanonicalUrl()
         let template = urlDecoded
             .lowercased()
             .components(separatedBy: ",")
@@ -145,15 +146,15 @@ internal class APIHandlers {
             }
             .reduce("""
 
-                # Created by https://www.gitignore.io/api/\(urlDecoded)
-                # Edit at https://www.gitignore.io/?templates=\(urlDecoded)
+                # Created by \(canonicalUrl)/api/\(urlDecoded)
+                # Edit at \(canonicalUrl)?templates=\(urlDecoded)
 
                 """) { (currentTemplate, contents) -> String in
                 return currentTemplate.appending(contents)
             }
             .appending("""
 
-            # End of https://www.gitignore.io/api/\(urlDecoded)
+            # End of \(canonicalUrl)/api/\(urlDecoded)
 
             """)
             .removeDuplicateLines()

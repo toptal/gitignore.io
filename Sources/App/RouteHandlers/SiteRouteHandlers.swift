@@ -28,12 +28,15 @@ internal class SiteHandlers {
     ///
     /// - Parameter router: Vapor server side Swift Router
     internal func createIndexPage(router: Router) {
-        router.get("/") { request -> Future<View> in
+        router.get(UrlResolver.withBasePrefix("/")) { request -> Future<View> in
             let leaf = try request.make(LeafRenderer.self)
             let lingo = try request.make(Lingo.self)
             let locale = request.acceptLanguage
 
             let context = ["titleString": lingo.localize("title", locale: locale),
+                           "basePrefixString": UrlResolver.withBasePrefix("/"),
+                           "canonicalUrlString": UrlResolver.getCanonicalUrl(),
+                           "googleAnalyticsUIDString": Environment.get("GOOGLE_ANALYTICS_UID"),
                            "descriptionString": lingo.localize("description", locale: locale, interpolations: ["templateCount": self.count]),
                            "searchPlaceholderString": lingo.localize("searchPlaceholder", locale: locale),
                            "searchGoString": lingo.localize("searchGo", locale: locale),
@@ -51,11 +54,20 @@ internal class SiteHandlers {
         }
     }
 
+    /// Create health check endpoint
+    ///
+    /// - Parameter router: Vapor server side Swift Router
+    internal func addHealthEndpoint(router: Router) {
+        router.get(UrlResolver.withBasePrefix("/health")) { request -> HTTPResponse in
+            return HTTPResponse(status: .ok, body: "ok")
+        }
+    }
+
     /// Create dropdown template JSON list
     ///
     /// - Parameter router: Vapor server side Swift Router
     internal func createDropdownTemplates(router: Router) {
-        router.get("/dropdown/templates.json") { request -> [Dropdown] in
+        router.get(UrlResolver.withBasePrefix("/dropdown/templates.json")) { request -> [Dropdown] in
             guard let flags = try? request.query.decode(Flags.self),
                 let term = flags.term else {
                  return self.createSortedDropdownTemplates()
@@ -63,8 +75,6 @@ internal class SiteHandlers {
             return self.createSortedDropdownTemplates(query: term)
         }
     }
-
-    // MARK: - Private
 
     /// Create dropdown list template
     ///
