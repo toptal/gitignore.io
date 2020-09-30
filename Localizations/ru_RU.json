@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - Генерируйте удобные .gitignore файлы для вашего проекта",
+    "description": "Генерируйте удобные .gitignore файлы для вашего проекта при помощи выбора из %{templateCount} шаблонов файла .gitignore для различных операционных систем, IDE и языков программирования",
+    "subtitle": "Генерируйте удобные .gitignore файлы для вашего проекта",
+    "searchPlaceholder": "Искать по операционным системам, IDE или языкам программирования",
+    "searchGo": "Сгенерировать",
+    "searchDownload": "Скачать файл",
+    "footer": "%{templateCount} шаблонов файла .gitignore для различных операционных систем, IDE и языков программирования",
+    "commandLineTitle": "Документация по работе из командной строки",
+    "commandLineDescription": "Изучите, как запускать .gitignore.io из командной строки",
+    "videoTitle": "Смотреть видео-туториал",
+    "videoDescription": "Смотреть видео, рассказывающее, как работает .gitignore.io",
+    "sourceCodeTitle": "Исходный код",
+    "sourceCodeDescription": "Исходный код .gitignore.io на GitHub"
+}
