@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - 为你的项目创建必要的 .gitignore 文件",
+    "description": "从 %{templateCount} 操作系统, IDE, 和编程语言的 .gitignore 模板中为你的项目创建必要的 .gitignore 文件",
+    "subtitle": "为你的项目创建必要的 .gitignore 文件",
+    "searchPlaceholder": "搜索操作系统, IDEs, 或编程语言",
+    "searchGo": "创建",
+    "searchDownload": "文件下载",
+    "footer": "%{templateCount} 操作系统, IDE, 和编程语言的 .gitignore 模板",
+    "commandLineTitle": "命令行使用文档",
+    "commandLineDescription": "学习如何从命令行运行 .gitignore.io",
+    "videoTitle": "观看视频教程",
+    "videoDescription": "通过视频学习 .gitignore.io 是如何工作的",
+    "sourceCodeTitle": "源码",
+    "sourceCodeDescription": ".gitignore.io 的源码托管在 github 上"
+}
