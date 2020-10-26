@@ -142,7 +142,7 @@ internal class APIHandlers {
 
                     """
                 }
-                return contents
+                return contents.replacingOccurrences(of: "Icon\r\n", with: "Icon\r\r\n", options: .regularExpression)
             }
             .reduce("""
 
