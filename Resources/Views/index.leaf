@@ -34,6 +34,25 @@
     <link rel="stylesheet" type="text/css" href="css/select2-toptal-theme.css">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-21104039-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        gtag('js', new Date());
+
+        gtag('config', 'UA-21104039-1', {
+            'content_group1': 'Git Ignore',
+            'custom_map': { 'dimension10': 'client_id' }
+        });
+
+        setTimeout(function() {
+            gtag('event', 'read', { 'event_category': '15_seconds' });
+        }, 15000);
+    </script>
+    
 </head>
 <body>
     <header>
