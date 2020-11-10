@@ -110,30 +110,3 @@ $(function () {
     }
 });
 
-(function setupAnalytics() {
-    if (!window.GOOGLE_ANALYTICS_UID) {
-        console.error('Google Analytics UID is not set, skipping...');
-        return;
-    }
-
-    var script = document.createElement('script');
-    script.onload = loadAnalytics;
-    script.type = 'text/javascript';
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.GOOGLE_ANALYTICS_UID;
-    document.getElementsByTagName('head')[0].appendChild(script);
-
-    function loadAnalytics() {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        };
-        gtag('js', new Date());
-        gtag('config', window.GOOGLE_ANALYTICS_UID, {
-            'content_group1': 'Git Ignore',
-            'custom_map': { 'dimension10': 'client_id' }
-        });
-        setTimeout(function() {
-          gtag('event', 'read', { 'event_category': '15_seconds' });
-        }, 15000);
-    }
-})();
