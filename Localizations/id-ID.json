@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - Buat File .gitignore yang Berguna untuk Proyek Anda",
+    "description": "Buat file .gitignore yang berguna untuk proyek anda dengan memilih template .gitginore dari %{templateCount} Sistem Operasi, IDE, dan Bahasa Pemrograman",
+    "subtitle": "Buat file .gitignore yang berguna untuk proyek anda",
+    "searchPlaceholder": "Cari Sistem Operasi, IDE, atau Bahasa Pemrograman",
+    "searchGo": "Buat",
+    "searchDownload": "Mengunduh File",
+    "footer": "template .gitignore %{templateCount} Sistem Operasi, IDE, dan Bahasa Pemrograman",
+    "commandLineTitle": "Dokumentasi Command Line",
+    "commandLineDescription": "Pelajari cara menjalankan .gitignore.io dari Command Line",
+    "videoTitle": "Menonton Video Tutorial",
+    "videoDescription": "Menonton video untuk mempelajari bagaimana .gitignore.io bekerja",
+    "sourceCodeTitle": "Kode Sumber",
+    "sourceCodeDescription": "GitHub menghosting kode sumber untuk .gitignore.io"
+}
