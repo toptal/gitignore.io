@@ -10,22 +10,18 @@ import Vapor
 extension Request {
     var acceptLanguage: String {
         get {
-            guard let accpetLanguage = self.http
+            let acceptLanguage = String(self.http
                 .headers
                 .firstValue(name: .acceptLanguage)?
                 .split(separator: ",")
-                .first else {
+                .first?
+                .split(separator: "-")
+                .first ?? "en")
+            let supportedLanguages = ["ar", "de", "en", "fa", "fr", "id", "ja", "ko", "pt", "ro", "ru", "tr", "zh"]
+            if supportedLanguages.contains(acceptLanguage) {
+                return acceptLanguage
+            } else {
                 return "en"
-            }
-            switch accpetLanguage {
-            case "en-US", "en-us": return "en"
-            case "de-DE", "de-de": return "de_DE"
-            case "pt-BR", "pt-br": return "pt_BR"
-            case "ko-KR", "ko-kr": return "ko_KR"
-            case "ro-RO", "ro-ro": return "ro_RO"
-            case "tr-TR", "tr-tr": return "tr_TR"
-            case "ar": return "ar"
-            default: return "en"
             }
         }
     }
