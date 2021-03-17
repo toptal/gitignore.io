@@ -3,128 +3,120 @@
   font-weight: 100;
   font-family: "Proxima Nova";
   font-style: normal;
-  src: url("./fonts/ProximaNova-Thin.woff2") format("woff2"),
-    url("./fonts/ProximaNova-Thin.woff") format("woff"),
-    url("./fonts/ProximaNova-Thin.otf") format("opentype");
+  src: url("./fonts/ProximaNova-Thin.woff2") format("woff2"), url("./fonts/ProximaNova-Thin.woff") format("woff"), url("./fonts/ProximaNova-Thin.otf") format("opentype");
 }
 @font-face {
   font-display: swap;
   font-weight: 300;
   font-family: "Proxima Nova";
   font-style: normal;
-  src: url("./fonts/ProximaNova-Light.woff2") format("woff2"),
-    url("./fonts/ProximaNova-Light.woff") format("woff"),
-    url("./fonts/ProximaNova-Light.otf") format("opentype");
+  src: url("./fonts/ProximaNova-Light.woff2") format("woff2"), url("./fonts/ProximaNova-Light.woff") format("woff"), url("./fonts/ProximaNova-Light.otf") format("opentype");
 }
 @font-face {
   font-display: swap;
   font-weight: 400;
   font-family: "Proxima Nova";
   font-style: normal;
-  src: url("./fonts/ProximaNova-Regular.woff2") format("woff2"),
-    url("./fonts/ProximaNova-Regular.woff") format("woff"),
-    url("./fonts/ProximaNova-Regular.otf") format("opentype");
+  src: url("./fonts/ProximaNova-Regular.woff2") format("woff2"), url("./fonts/ProximaNova-Regular.woff") format("woff"), url("./fonts/ProximaNova-Regular.otf") format("opentype");
 }
 @font-face {
   font-display: swap;
   font-weight: 600;
   font-family: "Proxima Nova";
   font-style: normal;
-  src: url("./fonts/ProximaNova-Semibold.woff2") format("woff2"),
-    url("./fonts/ProximaNova-Semibold.woff") format("woff"),
-    url("./fonts/ProximaNova-Semibold.otf") format("opentype");
+  src: url("./fonts/ProximaNova-Semibold.woff2") format("woff2"), url("./fonts/ProximaNova-Semibold.woff") format("woff"), url("./fonts/ProximaNova-Semibold.otf") format("opentype");
 }
 @font-face {
   font-display: swap;
   font-weight: 700;
   font-family: "Proxima Nova";
   font-style: normal;
-  src: url("./fonts/ProximaNova-Bold.woff2") format("woff2"),
-    url("./fonts/ProximaNova-Bold.woff") format("woff"),
-    url("./fonts/ProximaNova-Bold.otf") format("opentype");
+  src: url("./fonts/ProximaNova-Bold.woff2") format("woff2"), url("./fonts/ProximaNova-Bold.woff") format("woff"), url("./fonts/ProximaNova-Bold.otf") format("opentype");
 }
-
-body, html {
-	height: 100%;
-	background-color: transparent;
+body,
+html {
+  height: 100%;
+  background-color: transparent;
 }
 body {
-	min-width: 320px;
-	color: #000000;
-	margin: 0;
-	font-family: "Proxima Nova", Arial, sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 1.5;
-	display: flex;
-	flex-direction: column;
+  min-width: 320px;
+  color: #000000;
+  margin: 0;
+  font-family: "Proxima Nova", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
 }
 a {
-	color: #204ecf;
-	text-decoration: none;
+  color: #204ecf;
+  text-decoration: none;
 }
-a:hover, a:focus {
-	text-decoration: underline;
+a:hover,
+a:focus {
+  text-decoration: underline;
 }
-
 .content-wrapper {
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	position: relative;
-	padding-top: 72px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 72px;
 }
-
+/* --------- header --------- */
 header {
-	background: #204ecf;
-	color: #ffffff;
-	height: 72px;
-	position: fixed;
-	top: 0;
-	width: 100%;
-	overflow-x: hidden;
-	z-index: 1100;
+  background: #204ecf;
+  color: #ffffff;
+  height: 72px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow-x: hidden;
+  z-index: 1100;
 }
 header .container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 header a {
-	display: block;
-	line-height: 0;
+  display: block;
+  line-height: 0;
 }
 header .header-left-column {
-	display: flex;
-	align-items: center;
-	padding: 0 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
 }
 header .header-left-column a {
-	padding-right: 16px;
+  padding-right: 16px;
 }
 header .header-left-column a img {
-	min-width: 100px;
-	height: 30px;
+  min-width: 100px;
+  height: 30px;
 }
 header .header-left-column h1 {
-	font-size: 17px;
-	line-height: 28px;
-	border-left: 1px solid #ebeced;
-	padding-left: 16px;
-	margin: 0;
+  font-size: 17px;
+  line-height: 28px;
+  border-left: 1px solid #ebeced;
+  padding-left: 16px;
+  margin: 0;
 }
 header .header-right-column img {
-	height: 24px;
+  height: 24px;
 }
+/* --------- END of header --------- */
+/* --------- main --------- */
 main {
-	width: 100%;
-	flex: 1 0 400px;
+  width: 100%;
+  flex: 1 0 400px;
 }
 @media (min-width: 768px) {
-	main {
-		display: flex;
-	}
+  main {
+    display: flex;
+  }
 }
 main .masthead {
   margin: 0 auto;
@@ -133,101 +125,109 @@ main .masthead {
   text-align: center;
 }
 main .masthead-top {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-bottom: 25px;
-	margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+  margin-top: 120px;
 }
 @media (min-width: 768px) {
-	main .masthead-top {
-		margin-top: 180px;
-	}
+  main .masthead-top {
+    margin-top: 180px;
+  }
 }
 main .masthead-top img {
-	width: 100%;
-	max-width: 370px;
+  width: 100%;
+  max-width: 370px;
 }
 main .masthead-top h2 {
-	color: #455065;
-	margin: 20px 0;
-	font-size: 16px;
-	line-height: 16px;
+  color: #455065;
+  margin: 20px 0;
+  font-size: 16px;
+  line-height: 16px;
 }
 main .input-group {
-	overflow: auto;
+  overflow: auto;
 }
 main .masthead-bottom {
-	margin-top: 40px;
-	margin-bottom: 60px;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
 main .masthead-bottom ul {
   display: flex;
   flex-direction: column;
-	justify-content: center;
-	list-style: none;
-	margin: 0;
-	padding: 0;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 main .masthead-bottom ul li {
-	margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 main .masthead-bottom ul li a {
-	font-size: 16px;
-	line-height: 16px;
-	padding-bottom: 8px;
+  font-size: 16px;
+  line-height: 16px;
+  padding-bottom: 8px;
 }
-main .masthead-bottom ul li a:hover, main .masthead-bottom ul li a:focus {
-	text-decoration: none;
-	border-bottom: 1px solid #204ecf;
+main .masthead-bottom ul li a:hover,
+main .masthead-bottom ul li a:focus {
+  text-decoration: none;
+  border-bottom: 1px solid #204ecf;
 }
+/* --------- END of main --------- */
+/* --------- footer --------- */
 footer {
-	height: 142px;
-	color: #000000;
-	padding-bottom: 64px;
+  height: 142px;
+  color: #000000;
+  padding-bottom: 64px;
 }
 footer > div {
-	width: 100%;
-	max-width: 624px;
+  width: 100%;
+  max-width: 624px;
   margin: 0 auto;
   padding: 0 16px;
 }
 footer .carbon-wrap {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 footer a.carbon-img {
-	height: 78px;
+  height: 78px;
 }
 footer a.carbon-img img {
-	height: 100%;
+  height: 100%;
 }
 footer a.carbon-text {
-	font-size: 12px;
-	line-height: 20px;
-	padding-left: 8px;
+  font-size: 12px;
+  line-height: 20px;
+  padding-left: 8px;
 }
 footer .carbon-poweredby {
-	display: none;
+  display: none;
 }
+/* --------- END of footer --------- */
+/* --------- responsiveness --------- */
 .container {
   position: relative;
-	max-width: 100%;
-	padding-right: 16px;
-	padding-left: 16px;
-	margin-right: auto;
-	margin-left: auto;
+  max-width: 100%;
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1344px;
+  }
 }
 @media (min-width: 576px) {
-	.container {
+  .container {
     width: 540px;
   }
-
   main .masthead-bottom ul {
     flex-direction: row;
   }
-
   main .masthead-bottom ul li:not(:first-child)::before {
     display: inline-block;
     content: "";
@@ -238,31 +238,39 @@ footer .carbon-poweredby {
   }
 }
 @media (min-width: 768px) {
-	.container {
-		width: 720px;
+  .container {
+    width: 720px;
   }
 }
 @media (min-width: 992px) {
-	.container {
-		width: 960px;
+  .container {
+    width: 960px;
   }
 }
 @media (min-width: 1200px) {
-	.container {
-		width: 1376px;
+  .container {
+    width: 1376px;
   }
-
   header .header-right-column {
     padding-right: 98px;
   }
 }
-
+/* --------- END of responsiveness --------- */
 #input-gitignore {
   -webkit-appearance: none;
+  border: 1px solid #d8d9dc;
   border-radius: 0;
   height: 46px;
-  border: 1px solid #d8d9dc;
 }
 #input-gitignore::-ms-expand {
-	display: none;
+  display: none;
+}
+#internal-linking {
+  border: 0;
+  height: 56px;
+}
+@media (max-width: 768px) {
+  #internal-linking {
+    height: 32px;
+  }
 }
