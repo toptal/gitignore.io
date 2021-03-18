@@ -97,7 +97,7 @@
                 </div>
             </div>
         </main>
-        <iframe id="internal-linking" src="/internal-linking?site=GitIgnore">
+        <iframe id="internal-linking" src="http://localhost:3004/dev/page/internal-linking?site=GitIgnore">
     </div>
 
     <!-- Footer Scripts -->
