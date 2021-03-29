@@ -28,7 +28,6 @@ Source templates for gitignore.io: https://github.com/toptal/gitignore
 
 Complete gitignore.io documentation: https://docs.gitignore.io/
 
-
 ## Docker Container
 
 ### Prerequisites
@@ -38,6 +37,7 @@ Complete gitignore.io documentation: https://docs.gitignore.io/
 ### Build
 
 #### Production
+
 ```
 $ docker-compose up --build
 ```
@@ -48,14 +48,27 @@ $ docker-compose up --build
 $ docker-compose -f ./docker-compose-dev.yml build
 $ docker-compose -f ./docker-compose-dev.yml up
 ```
+
 It will start the web server running on [http://localhost:8080](http://localhost:8080)
 
 Development mode mounts the following directories to docker volumes:
+
 - `/Public`
 - `/Resources `
 
+## LESS and CSS
+
+The app uses [LESS](http://lesscss.org/) as his CSS preprocessor for the files in `Public/css`.
+
+To process the less file you need to:
+
+- Install less compiler `yarn global add less`
+- Process the less file with `lessc app.less app.css`
+
 ## Environment Variables
+
 Please set your environment variables to docker configurations. All are optional.
+
 ```
 ...
 services:
@@ -68,23 +81,31 @@ services:
     ...
 ...
 ```
+
 ### HOST_ORIGIN
+
 Origin of your web server, falls back to https://www.toptal.com
+
 ```
 HOST_ORIGIN: http://www.example.com
 ```
 
 ### BASE_PREFIX
+
 If you want to host this web server under a subdirectory (http://www.example.com/foo/bar for example), please set this variable.
+
 ```
 BASE_PREFIX: /foo/bar
 ```
 
 ### GOOGLE_ANALYTICS_UID
+
 User ID for Google Tag Manager snippet
+
 ```
 GOOGLE_ANALYTICS_UID: UA-XXXXXXXX-X
 ```
+
 ## E2E Tests
 
 Tests are located in `e2e-tests` folder with:
