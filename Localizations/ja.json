@@ -6,10 +6,10 @@
     "searchGo": "作成する",
     "searchDownload": "ファイルをダウンロードする",
     "footer": "%{templateCount} オペレーティングシステム、IDE、プログラミング言語の.gitignoreテンプレート",
-    "commandLineTitle": "コマンドラインド ドキュメンテーション",
+    "commandLineTitle": "コマンドライン ドキュメンテーション",
     "commandLineDescription": "コマンドラインから.gitignore.ioを実行する方法を学ぶ",
     "videoTitle": "チュートリアルビデオを見る",
-    "videoDescription": ".gitignore.ioがどのように機能するかを学ぶためにビデオを見る",
+    "videoDescription": ".gitignore.ioの使い方を学ぶためにビデオを見る",
     "sourceCodeTitle": "ソースコード",
-    "sourceCodeDescription": ".gitignore.ioのGitHubホストソースコード"
+    "sourceCodeDescription": "GitHubでホスティングされた.gitignore.ioのソースコード"
 }
