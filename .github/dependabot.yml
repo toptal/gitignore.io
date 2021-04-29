@@ -1,0 +1,23 @@
+version: 2
+registries:
+  docker-registry-gcr-io:
+    type: docker-registry
+    url: https://gcr.io
+    username: _json_key
+    password: "${{secrets.DOCKER_REGISTRY_GCR_IO_PASSWORD}}"
+
+updates:
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "07:00"
+  pull-request-branch-name:
+    separator: "-"
+  open-pull-requests-limit: 3
+  ignore:
+  - dependency-name: swift
+    versions:
+    - ">= 5.a, < 6"
+  registries:
+  - docker-registry-gcr-io
