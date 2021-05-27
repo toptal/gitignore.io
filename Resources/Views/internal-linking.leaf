@@ -1,0 +1,45 @@
+<div class="internal-linking">
+    <div class="internal-linking__container">
+        <div class="internal-linking__title">
+          <img src="https://frontier-assets.toptal.com/ec99a6ba6efa2bbb78f99a929026b33d.svg" />
+          <span>
+            Skills in High Demand
+            <br />
+            by Toptal Clients
+          </span>
+        </div>
+        <div class="internal-linking__ticker-list">
+          
+            #for(link in links.links) { 
+                <a
+                    href="#(link.url)"
+                    data-ga-category="inbound-link"
+                    data-ga-event="#(link.title)"
+                    data-ga-label="GitIgnore"
+                    target="_blank"
+                    rel="noopener"
+                    class="internal-linking__link"
+                >
+                    #(link.title)
+                </a>
+
+            }
+        </div>
+</div>
+<script>
+
+var handleOnClick = function handleOnClick(e) {
+  if (!('gtag' in window)) return;
+  window.gtag('event', e.target.dataset.gaEvent, {
+    event_category: e.target.dataset.gaCategory,
+    event_label: e.target.dataset.gaLabel,
+    non_interaction: true
+  });
+};
+
+document.querySelectorAll('.internal-linking__link').forEach(function (item) {
+  item.addEventListener('click', handleOnClick);
+  item.addEventListener('auxclick', handleOnClick);
+});
+
+</script>

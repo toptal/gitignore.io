@@ -1,0 +1,115 @@
+.internal-linking {
+    border: 0;
+    width: 100vw;
+    height: @internalLinkingHeightDesktop;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-basis: @internalLinkingHeightDesktop;
+    @media (max-width: 768px) {
+      height: @internalLinkingHeightMobile;
+      flex-basis: @internalLinkingHeightMobile;
+    }
+  }
+  
+  @keyframes ticker {
+    0% {
+      transform: translateX(0%);
+    }
+  
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .internal-linking__container {
+    font-weight: 400;
+    font-family: Proxima Nova, Arial, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    overflow: hidden;
+    color: @white;
+    background-color: @darkBlue;
+  
+    .internal-linking__title {
+      z-index: 1;
+      display: flex;
+      flex-direction: row;
+      flex-shrink: 0;
+      align-items: center;
+      height: 100%;
+      color: @blue;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 12px;
+      text-transform: uppercase;
+      background-color: @white;
+  
+      img {
+        margin: 22px 8px 18px 24px;
+      }
+  
+      span {
+        margin: 16px 24px 16px 0;
+        white-space: nowrap;
+      }
+    }
+  
+    .internal-linking__ticker-list {
+      display: flex;
+      flex-direction: row;
+      font-size: 12px;
+      line-height: 16px;
+      animation-name: ticker;
+      animation-duration: 180s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+  
+      &:hover {
+        animation-play-state: paused;
+      }
+  
+      .internal-linking__link {
+        margin: 20px 28px;
+        padding: 5px 12px 3px 12px;
+        color: @white;
+        white-space: nowrap;
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .internal-linking__container {
+      height: 32px;
+      border: none;
+      box-shadow: none;
+  
+      .internal-linking__title {
+        img {
+          margin: 8px;
+        }
+  
+        span {
+          margin: 6px 16px 6px 0;
+          font-size: 8px;
+          line-height: 10px;
+        }
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .internal-linking__container {
+      .internal-linking__ticker-list {
+        .internal-linking__link {
+          margin: 4px 16px;
+          text-decoration: none;
+          border: 1px solid @white;
+          border-radius: 16px;
+        }
+      }
+    }
+  }

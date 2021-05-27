@@ -1,3 +1,101 @@
+.internal-linking {
+  border: 0;
+  width: 100vw;
+  height: 56px;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-basis: 56px;
+}
+@media (max-width: 768px) {
+  .internal-linking {
+    height: 32px;
+    flex-basis: 32px;
+  }
+}
+@keyframes ticker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.internal-linking__container {
+  font-weight: 400;
+  font-family: Proxima Nova, Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  overflow: hidden;
+  color: #ffffff;
+  background-color: #0f256e;
+}
+.internal-linking__container .internal-linking__title {
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  align-items: center;
+  height: 100%;
+  color: #204ecf;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  background-color: #ffffff;
+}
+.internal-linking__container .internal-linking__title img {
+  margin: 22px 8px 18px 24px;
+}
+.internal-linking__container .internal-linking__title span {
+  margin: 16px 24px 16px 0;
+  white-space: nowrap;
+}
+.internal-linking__container .internal-linking__ticker-list {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  line-height: 16px;
+  animation-name: ticker;
+  animation-duration: 180s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.internal-linking__container .internal-linking__ticker-list:hover {
+  animation-play-state: paused;
+}
+.internal-linking__container .internal-linking__ticker-list .internal-linking__link {
+  margin: 20px 28px;
+  padding: 5px 12px 3px 12px;
+  color: #ffffff;
+  white-space: nowrap;
+  text-decoration: underline;
+}
+@media screen and (max-width: 768px) {
+  .internal-linking__container {
+    height: 32px;
+    border: none;
+    box-shadow: none;
+  }
+  .internal-linking__container .internal-linking__title img {
+    margin: 8px;
+  }
+  .internal-linking__container .internal-linking__title span {
+    margin: 6px 16px 6px 0;
+    font-size: 8px;
+    line-height: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .internal-linking__container .internal-linking__ticker-list .internal-linking__link {
+    margin: 4px 16px;
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    border-radius: 16px;
+  }
+}
 @font-face {
   font-display: swap;
   font-weight: 100;
@@ -134,6 +232,11 @@ main .masthead-top {
 @media (min-width: 768px) {
   main .masthead-top {
     margin-top: 180px;
+  }
+}
+@media (max-width: 320px) {
+  main .masthead-top {
+    margin-top: 42px;
   }
 }
 main .masthead-top img {

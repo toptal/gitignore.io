@@ -53,8 +53,9 @@ public class Gitignore {
         let orderFile = dataDirectory.absoluteURL.appendingPathComponent("order", isDirectory: false)
 
         let templateController = TemplateController(dataDirectory: dataDirectory, orderFile: orderFile)
+        let internalLinkingController = InternalLinkingController()
 
-        let siteHandlers = SiteHandlers(templateController: templateController, env: env)
+        let siteHandlers = SiteHandlers(templateController: templateController, env: env, internalLinkingController: internalLinkingController)
         siteHandlers.createIndexPage(router: router)
         siteHandlers.createDropdownTemplates(router: router)
         siteHandlers.addHealthEndpoint(router: router)
