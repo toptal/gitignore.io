@@ -10,18 +10,40 @@ import Vapor
 import Leaf
 import Lingo
 
+struct IndexPageContext: Encodable {
+    var titleString: String?
+    var basePrefixString: String?
+    var canonicalUrlString: String?
+    var googleAnalyticsUIDString: String?
+    var descriptionString: String?
+    var searchPlaceholderString: String?
+    var searchGoString: String?
+    var searchDownloadString: String?
+    var subtitleString: String?
+    var sourceCodeDescriptionString: String?
+    var sourceCodeTitleString: String?
+    var commandLineDescriptionString: String?
+    var commandLineTitleString: String?
+    var videoDescriptionString: String?
+    var videoTitleString: String?
+    var footerString: String?
+    var links: InternalLinks?
+}
+
 internal class SiteHandlers {
     private let count: String
     private let templates: [String: IgnoreTemplateModel]
     private let env: Environment!
+    private var links: InternalLinks
 
     /// Initialze the Site Handlers extension
     ///
     /// - Parameter templateController: All of the gitignore template objects
-    init(templateController: TemplateController, env: Environment) {
+    init(templateController: TemplateController, env: Environment, internalLinkingController: InternalLinkingController) {
         self.count = String(templateController.count)
         self.templates = templateController.templates
         self.env = env
+        self.links = internalLinkingController.links
     }
 
     /// Create Index Page
@@ -33,22 +55,25 @@ internal class SiteHandlers {
             let lingo = try request.make(Lingo.self)
             let locale = request.acceptLanguage
 
-            let context = ["titleString": lingo.localize("title", locale: locale),
-                           "basePrefixString": UrlResolver.withBasePrefix("/"),
-                           "canonicalUrlString": UrlResolver.getCanonicalUrl(),
-                           "googleAnalyticsUIDString": Environment.get("GOOGLE_ANALYTICS_UID"),
-                           "descriptionString": lingo.localize("description", locale: locale, interpolations: ["templateCount": self.count]),
-                           "searchPlaceholderString": lingo.localize("searchPlaceholder", locale: locale),
-                           "searchGoString": lingo.localize("searchGo", locale: locale),
-                           "searchDownloadString": lingo.localize("searchDownload", locale: locale),
-                           "subtitleString": lingo.localize("subtitle", locale: locale),
-                           "sourceCodeDescriptionString": lingo.localize("sourceCodeDescription", locale: locale),
-                           "sourceCodeTitleString": lingo.localize("sourceCodeTitle", locale: locale),
-                           "commandLineDescriptionString": lingo.localize("commandLineDescription", locale: locale),
-                           "commandLineTitleString": lingo.localize("commandLineTitle", locale: locale),
-                           "videoDescriptionString": lingo.localize("videoDescription", locale: locale),
-                           "videoTitleString": lingo.localize("videoTitle", locale: locale),
-                           "footerString": lingo.localize("footer", locale: locale, interpolations: ["templateCount": self.count])]
+            let context = IndexPageContext(
+                titleString: lingo.localize("title", locale: locale),
+                basePrefixString: UrlResolver.withBasePrefix("/"),
+                canonicalUrlString: UrlResolver.getCanonicalUrl(),
+                googleAnalyticsUIDString: Environment.get("GOOGLE_ANALYTICS_UID"),
+                descriptionString: lingo.localize("description", locale: locale, interpolations: ["templateCount": self.count]),
+                searchPlaceholderString: lingo.localize("searchPlaceholder", locale: locale),
+                searchGoString: lingo.localize("searchGo", locale: locale),
+                searchDownloadString: lingo.localize("searchDownload", locale: locale),
+                subtitleString: lingo.localize("subtitle", locale: locale),
+                sourceCodeDescriptionString: lingo.localize("sourceCodeDescription", locale: locale),
+                sourceCodeTitleString: lingo.localize("sourceCodeTitle", locale: locale),
+                commandLineDescriptionString: lingo.localize("commandLineDescription", locale: locale),
+                commandLineTitleString: lingo.localize("commandLineTitle", locale: locale),
+                videoDescriptionString: lingo.localize("videoDescription", locale: locale),
+                videoTitleString: lingo.localize("videoTitle", locale: locale),
+                footerString: lingo.localize("footer", locale: locale, interpolations: ["templateCount": self.count]),
+                links: self.links
+            )
 
             return leaf.render("index", context)
         }
