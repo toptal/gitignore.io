@@ -10,8 +10,6 @@ import Vapor
 import Leaf
 import Lingo
 
-
-
 struct IndexPageContext: Encodable {
     var titleString: String?
     var basePrefixString: String?
@@ -32,7 +30,6 @@ struct IndexPageContext: Encodable {
     var links: InternalLinks?
 }
 
-
 internal class SiteHandlers {
     private let count: String
     private let templates: [String: IgnoreTemplateModel]
@@ -47,7 +44,6 @@ internal class SiteHandlers {
         self.templates = templateController.templates
         self.env = env
         self.links = internalLinkingController.links
-        
     }
 
     /// Create Index Page
@@ -60,23 +56,23 @@ internal class SiteHandlers {
             let locale = request.acceptLanguage
 
             let context = IndexPageContext(
-                            titleString: lingo.localize("title", locale: locale),
-                           basePrefixString: UrlResolver.withBasePrefix("/"),
-                           canonicalUrlString: UrlResolver.getCanonicalUrl(),
-                           googleAnalyticsUIDString: Environment.get("GOOGLE_ANALYTICS_UID"),
-                           descriptionString: lingo.localize("description", locale: locale, interpolations: ["templateCount": self.count]),
-                           searchPlaceholderString: lingo.localize("searchPlaceholder", locale: locale),
-                           searchGoString: lingo.localize("searchGo", locale: locale),
-                           searchDownloadString: lingo.localize("searchDownload", locale: locale),
-                           subtitleString: lingo.localize("subtitle", locale: locale),
-                           sourceCodeDescriptionString: lingo.localize("sourceCodeDescription", locale: locale),
-                           sourceCodeTitleString: lingo.localize("sourceCodeTitle", locale: locale),
-                           commandLineDescriptionString: lingo.localize("commandLineDescription", locale: locale),
-                           commandLineTitleString: lingo.localize("commandLineTitle", locale: locale),
-                           videoDescriptionString: lingo.localize("videoDescription", locale: locale),
-                           videoTitleString: lingo.localize("videoTitle", locale: locale),
-                           footerString: lingo.localize("footer", locale: locale, interpolations: ["templateCount": self.count]),
-                           links: self.links
+                titleString: lingo.localize("title", locale: locale),
+                basePrefixString: UrlResolver.withBasePrefix("/"),
+                canonicalUrlString: UrlResolver.getCanonicalUrl(),
+                googleAnalyticsUIDString: Environment.get("GOOGLE_ANALYTICS_UID"),
+                descriptionString: lingo.localize("description", locale: locale, interpolations: ["templateCount": self.count]),
+                searchPlaceholderString: lingo.localize("searchPlaceholder", locale: locale),
+                searchGoString: lingo.localize("searchGo", locale: locale),
+                searchDownloadString: lingo.localize("searchDownload", locale: locale),
+                subtitleString: lingo.localize("subtitle", locale: locale),
+                sourceCodeDescriptionString: lingo.localize("sourceCodeDescription", locale: locale),
+                sourceCodeTitleString: lingo.localize("sourceCodeTitle", locale: locale),
+                commandLineDescriptionString: lingo.localize("commandLineDescription", locale: locale),
+                commandLineTitleString: lingo.localize("commandLineTitle", locale: locale),
+                videoDescriptionString: lingo.localize("videoDescription", locale: locale),
+                videoTitleString: lingo.localize("videoTitle", locale: locale),
+                footerString: lingo.localize("footer", locale: locale, interpolations: ["templateCount": self.count]),
+                links: self.links
             )
 
             return leaf.render("index", context)
