@@ -17,6 +17,11 @@
     <meta name="description" content="#(descriptionString)">
     <meta name="keywords" content="gitignore,.gitignore,git,ignore,file,create,make,generate,build,automatic,programmatic,command line,cli">
 
+    <link rel="preload" as="image" href="img/gitignore-logo-horizontal.png">
+    <link rel="preload" as="image" href="img/gitignore-logo-horizontal@2x.png">
+    <link rel="preload" as="woff2" href="css/fonts/ProximaNova-Regular.woff2">
+    <link rel="preload" as="woff2" href="css/fonts/ProximaNova-Semibold.woff2">
+
     <meta property="og:type" content="website">
     <meta property="og:title" content="gitignore.io">
     <meta property="og:description" content="Create useful .gitignore files for your project">
@@ -37,22 +42,6 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=#(googleAnalyticsUIDString)"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        
-        gtag('js', new Date());
-
-        gtag('config', "#(googleAnalyticsUIDString)", {
-            'content_group1': 'Git Ignore',
-            'custom_map': { 'dimension10': 'client_id' }
-        });
-
-        setTimeout(function() {
-            gtag('event', 'read', { 'event_category': '15_seconds' });
-        }, 15000);
-    </script>
-    
 </head>
 <body>
     <header>
@@ -101,9 +90,24 @@
     </div>
 
     <!-- Footer Scripts -->
-    <script src="external/url-search-params-1.1.0/url-search-params.min.js"></script>
-    <script src="external/jquery-3.4.1/jquery.min.js"></script>
-    <script src="external/select2-4.0.13/select2.min.js"></script>
-    <script src="js/app.js"></script>
+    <script async src="external/url-search-params-1.1.0/url-search-params.min.js"></script>
+    <script async src="external/jquery-3.4.1/jquery.min.js"></script>
+    <script async src="external/select2-4.0.13/select2.min.js"></script>
+    <script async src="js/app.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        gtag('js', new Date());
+
+        gtag('config', "#(googleAnalyticsUIDString)", {
+            'content_group1': 'Git Ignore',
+            'custom_map': { 'dimension10': 'client_id' }
+        });
+
+        setTimeout(function() {
+            gtag('event', 'read', { 'event_category': '15_seconds' });
+        }, 15000);
+    </script>
 </body>
 </html>
