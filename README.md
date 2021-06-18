@@ -39,14 +39,16 @@ Complete gitignore.io documentation: https://docs.gitignore.io/
 #### Production
 
 ```
-$ docker-compose up --build
+docker-compose up --build
 ```
 
 #### Development
 
 ```
-$ docker-compose -f ./docker-compose-dev.yml build
-$ docker-compose -f ./docker-compose-dev.yml up
+docker-compose -f ./docker-compose-dev.yml build
+```
+```
+docker-compose -f ./docker-compose-dev.yml up
 ```
 
 It will start the web server running on [http://localhost:8080](http://localhost:8080)
