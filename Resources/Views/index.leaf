@@ -20,8 +20,6 @@
     <link rel="preload" as="image" href="img/gitignore-logo-horizontal.png">
     <link rel="preload" as="image" href="img/gitignore-logo-horizontal@2x.png">
     <link rel="preload" as="image" href="img/ligthning.svg">
-    <link rel="preload" as="woff2" href="css/fonts/ProximaNova-Regular.woff2">
-    <link rel="preload" as="woff2" href="css/fonts/ProximaNova-Semibold.woff2">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="gitignore.io">
@@ -36,6 +34,13 @@
 
     <link href='css/fonts/ProximaNova-Regular.woff2' rel='stylesheet' type='text/css'>
     <link href='css/fonts/ProximaNova-Semibold.woff2' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type='text/css' href="css/fonts/ProximaNova-Regular.woff">
+    <link rel="stylesheet" type='text/css' href="css/fonts/ProximaNova-Regular.woff2">
+    <link rel="stylesheet" type='text/css' href="css/fonts/ProximaNova-Regular.otf">
+    <link rel="stylesheet" type='text/css' href="css/fonts/ProximaNova-Semibold.woff">
+    <link rel="stylesheet" type='text/css' href="css/fonts/ProximaNova-Semibold.woff2">
+    <link rel="stylesheet" type='text/css' href="css/fonts/ProximaNova-Semibold.otf">
 
     <link rel="stylesheet" type="text/css" href="css/app.css">
 
@@ -55,7 +60,7 @@
             </div>
             <div class="header-right-column">
                 <a href="https://github.com/toptal/gitignore.io" aria-label="#(sourceCodeDescriptionString)" title="#(sourceCodeDescriptionString)">
-                    <img src="img/github-logo.svg" alt="GitHub" />
+                    <img src="img/github-logo.svg" alt="GitHub" width="24" height="24" />
                 </a>
             </div>
         </div>
