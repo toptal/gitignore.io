@@ -71,7 +71,12 @@
             <div class="container">
                 <div class="masthead">
                     <div class="masthead-top">
-                        <img srcset="img/gitignore-logo-horizontal.png 1x, img/gitignore-logo-horizontal@2x.png 2x" src="img/gitignore-logo-horizontal.png" alt="gitignore.io" />
+                        <img srcset="img/gitignore-logo-horizontal.png 1x,
+                                     img/gitignore-logo-horizontal@2x.png 2x"
+                                width="370"
+                                height="50"
+                                src="img/gitignore-logo-horizontal.png"
+                                alt="gitignore.io" />
                         <h2>#(subtitleString)</h2>
                     </div>
 
