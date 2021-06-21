@@ -42,6 +42,9 @@
 
     <link rel="canonical" href="#(canonicalUrlString)" />
 
+    <link rel="stylesheet" type="text/css" href="external/select2-4.0.13/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-extract.css">
+    <link rel="stylesheet" type="text/css" href="css/select2-toptal-theme.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -101,9 +104,6 @@
     </div>
 
     <!-- Footer Scripts -->
-    <link rel="stylesheet" type="text/css" href="external/select2-4.0.13/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-extract.css">
-    <link rel="stylesheet" type="text/css" href="css/select2-toptal-theme.css">
     <script async src="external/url-search-params-1.1.0/url-search-params.min.js"></script>
     <script src="external/jquery-3.6.0/jquery.min.js"></script>
     <script async src="external/select2-4.0.13/select2.min.js"></script>
