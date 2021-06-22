@@ -23,13 +23,13 @@
     >
     <link rel="preload" as="image" href="img/lightning.svg">
 
-    <link rel="preload" as="font" type="font/woff"     crossorigin="anonymous" href="css/fonts/ProximaNova-Regular.woff">
-    <link rel="preload" as="font" type="font/woff2"    crossorigin="anonymous" href="css/fonts/ProximaNova-Regular.woff2">
-    <link rel="preload" as="font" type="font/otf" crossorigin="anonymous" href="css/fonts/ProximaNova-Regular.otf">
+    <link rel="preload" as="font" type="font/woff"  crossorigin="anonymous" href="fonts/ProximaNova-Regular.woff">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="fonts/ProximaNova-Regular.woff2">
+    <link rel="preload" as="font" type="font/otf"   crossorigin="anonymous" href="fonts/ProximaNova-Regular.otf">
 
-    <link rel="preload" as="font" type="font/woff"     crossorigin="anonymous" href="css/fonts/ProximaNova-Semibold.woff">
-    <link rel="preload" as="font" type="font/woff2"    crossorigin="anonymous" href="css/fonts/ProximaNova-Semibold.woff2">
-    <link rel="preload" as="font" type="font/otf" crossorigin="anonymous" href="css/fonts/ProximaNova-Semibold.otf">
+    <link rel="preload" as="font" type="font/woff"  crossorigin="anonymous" href="fonts/ProximaNova-Semibold.woff">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="fonts/ProximaNova-Semibold.woff2">
+    <link rel="preload" as="font" type="font/otf"   crossorigin="anonymous" href="fonts/ProximaNova-Semibold.otf">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="gitignore.io">
@@ -43,9 +43,6 @@
     <link rel="canonical" href="#(canonicalUrlString)" />
 
     <link rel="stylesheet" type="text/css" href="assets/main.css">
-
-    <link rel="stylesheet" type="text/css" href="css/select2-toptal-theme.css">
-    <link rel="stylesheet" type="text/css" href="css/app.css">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
