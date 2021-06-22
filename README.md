@@ -124,7 +124,8 @@ Running:
 
 - Set the BASE_URL env variable (only if you have changed the default URL or port)
 - docker-compose up --build --detach
-- yarn build
+- yarn gitupdate
 - yarn install
+- yarn build
 - yarn test
 - docker-compose stop
