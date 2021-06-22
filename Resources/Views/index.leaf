@@ -42,8 +42,8 @@
 
     <link rel="canonical" href="#(canonicalUrlString)" />
 
-    <link rel="stylesheet" type="text/css" href="external/select2-4.0.13/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-extract.css">
+    <link rel="stylesheet" type="text/css" href="assets/main.css">
+
     <link rel="stylesheet" type="text/css" href="css/select2-toptal-theme.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
 
