@@ -17,17 +17,19 @@
     <meta name="description" content="#(descriptionString)">
     <meta name="keywords" content="gitignore,.gitignore,git,ignore,file,create,make,generate,build,automatic,programmatic,command line,cli">
 
-    <link rel="preload" as="image" href="img/gitignore-logo-horizontal.png">
-    <link rel="preload" as="image" href="img/gitignore-logo-horizontal@2x.png">
-    <link rel="preload" as="image" href="img/ligthning.svg">
+    <link rel="preload" as="image"
+      href="img/gitignore-logo-horizontal@2x.png"
+      imagesrcset="img/gitignore-logo-horizontal.png 1x, img/gitignore-logo-horizontal@2x.png 2x"
+    >
+    <link rel="preload" as="image" href="img/lightning.svg">
 
-    <link rel="preload" href="css/fonts/ProximaNova-Regular.woff" as="font" >
-    <link rel="preload" href="css/fonts/ProximaNova-Regular.woff2" as="font" >
-    <link rel="preload" href="css/fonts/ProximaNova-Regular.otf" as="font" >
+    <link rel="preload" as="font" type="font/woff"     crossorigin="anonymous" href="css/fonts/ProximaNova-Regular.woff">
+    <link rel="preload" as="font" type="font/woff2"    crossorigin="anonymous" href="css/fonts/ProximaNova-Regular.woff2">
+    <link rel="preload" as="font" type="font/otf" crossorigin="anonymous" href="css/fonts/ProximaNova-Regular.otf">
 
-    <link rel="preload" href="css/fonts/ProximaNova-Semibold.woff" as="font" >
-    <link rel="preload" href="css/fonts/ProximaNova-Semibold.woff2" as="font" >
-    <link rel="preload" href="css/fonts/ProximaNova-Semibold.otf" as="font" >
+    <link rel="preload" as="font" type="font/woff"     crossorigin="anonymous" href="css/fonts/ProximaNova-Semibold.woff">
+    <link rel="preload" as="font" type="font/woff2"    crossorigin="anonymous" href="css/fonts/ProximaNova-Semibold.woff2">
+    <link rel="preload" as="font" type="font/otf" crossorigin="anonymous" href="css/fonts/ProximaNova-Semibold.otf">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="gitignore.io">
@@ -40,6 +42,9 @@
 
     <link rel="canonical" href="#(canonicalUrlString)" />
 
+    <link rel="stylesheet" type="text/css" href="assets/main.css">
+
+    <link rel="stylesheet" type="text/css" href="css/select2-toptal-theme.css">
     <link rel="stylesheet" type="text/css" href="css/app.css">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -69,7 +74,12 @@
             <div class="container">
                 <div class="masthead">
                     <div class="masthead-top">
-                        <img width="370" height="50" srcset="img/gitignore-logo-horizontal.png 1x, img/gitignore-logo-horizontal@2x.png 2x" src="img/gitignore-logo-horizontal.png" alt="gitignore.io" />
+                        <img srcset="img/gitignore-logo-horizontal.png 1x,
+                                     img/gitignore-logo-horizontal@2x.png 2x"
+                                width="370"
+                                height="50"
+                                src="img/gitignore-logo-horizontal.png"
+                                alt="gitignore.io" />
                         <h2>#(subtitleString)</h2>
                     </div>
 
@@ -94,14 +104,11 @@
     </div>
 
     <!-- Footer Scripts -->
-    <link rel="stylesheet" type="text/css" href="external/select2-4.0.13/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-extract.css">
-    <link rel="stylesheet" type="text/css" href="css/select2-toptal-theme.css">
     <script async src="external/url-search-params-1.1.0/url-search-params.min.js"></script>
-    <script src="external/jquery-3.4.1/jquery.min.js"></script>
+    <script src="external/jquery-3.6.0/jquery.min.js"></script>
     <script async src="external/select2-4.0.13/select2.min.js"></script>
     <script async src="js/app.js"></script>
-    <script>
+    <script async>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
 
