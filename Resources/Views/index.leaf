@@ -19,7 +19,8 @@
 
     <link rel="preload" as="image"
       href="img/gitignore-logo-horizontal@2x.png"
-      imagesrcset="img/gitignore-logo-horizontal.png 1x, img/gitignore-logo-horizontal@2x.png 2x"
+      imagesrcset="img/gitignore-logo-horizontal.png 370w, img/gitignore-logo-horizontal@2x.png 740w"
+      imagesizes="(min-width: 960px) 740px, 100vw"
     >
     <link rel="preload" as="image" href="img/lightning.svg">
 
@@ -71,10 +72,11 @@
             <div class="container">
                 <div class="masthead">
                     <div class="masthead-top">
-                        <img srcset="img/gitignore-logo-horizontal.png 1x,
-                                     img/gitignore-logo-horizontal@2x.png 2x"
+                        <img srcset="img/gitignore-logo-horizontal.png 370w,
+                                     img/gitignore-logo-horizontal@2x.png 740w"
                                 width="370"
                                 height="50"
+                                sizes="(min-width: 960px) 740px, 100vw"
                                 src="img/gitignore-logo-horizontal.png"
                                 alt="gitignore.io" />
                         <h2>#(subtitleString)</h2>
