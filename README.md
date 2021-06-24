@@ -64,8 +64,8 @@ The app uses [LESS](http://lesscss.org/) as his CSS preprocessor for the files i
 
 To process the less file you need to:
 
-- Install less compiler `yarn global add less`
-- Process the less file with `lessc app.less app.css`
+- Install all dependencies with `yarn install`
+- Process the assets with `yarn build`
 
 ## Environment Variables
 

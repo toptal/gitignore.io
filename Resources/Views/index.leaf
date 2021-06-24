@@ -19,17 +19,18 @@
 
     <link rel="preload" as="image"
       href="img/gitignore-logo-horizontal@2x.png"
-      imagesrcset="img/gitignore-logo-horizontal.png 1x, img/gitignore-logo-horizontal@2x.png 2x"
+      imagesrcset="img/gitignore-logo-horizontal.png 370w, img/gitignore-logo-horizontal@2x.png 740w"
+      imagesizes="(min-width: 960px) 740px, 100vw"
     >
     <link rel="preload" as="image" href="img/lightning.svg">
 
-    <link rel="preload" as="font" type="font/woff"     crossorigin="anonymous" href="css/fonts/ProximaNova-Regular.woff">
-    <link rel="preload" as="font" type="font/woff2"    crossorigin="anonymous" href="css/fonts/ProximaNova-Regular.woff2">
-    <link rel="preload" as="font" type="font/otf" crossorigin="anonymous" href="css/fonts/ProximaNova-Regular.otf">
+    <link rel="preload" as="font" type="font/woff"  crossorigin="anonymous" href="fonts/ProximaNova-Regular.woff">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="fonts/ProximaNova-Regular.woff2">
+    <link rel="preload" as="font" type="font/otf"   crossorigin="anonymous" href="fonts/ProximaNova-Regular.otf">
 
-    <link rel="preload" as="font" type="font/woff"     crossorigin="anonymous" href="css/fonts/ProximaNova-Semibold.woff">
-    <link rel="preload" as="font" type="font/woff2"    crossorigin="anonymous" href="css/fonts/ProximaNova-Semibold.woff2">
-    <link rel="preload" as="font" type="font/otf" crossorigin="anonymous" href="css/fonts/ProximaNova-Semibold.otf">
+    <link rel="preload" as="font" type="font/woff"  crossorigin="anonymous" href="fonts/ProximaNova-Semibold.woff">
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="fonts/ProximaNova-Semibold.woff2">
+    <link rel="preload" as="font" type="font/otf"   crossorigin="anonymous" href="fonts/ProximaNova-Semibold.otf">
 
     <meta property="og:type" content="website">
     <meta property="og:title" content="gitignore.io">
@@ -43,9 +44,6 @@
     <link rel="canonical" href="#(canonicalUrlString)" />
 
     <link rel="stylesheet" type="text/css" href="assets/main.css">
-
-    <link rel="stylesheet" type="text/css" href="css/select2-toptal-theme.css">
-    <link rel="stylesheet" type="text/css" href="css/app.css">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -74,10 +72,11 @@
             <div class="container">
                 <div class="masthead">
                     <div class="masthead-top">
-                        <img srcset="img/gitignore-logo-horizontal.png 1x,
-                                     img/gitignore-logo-horizontal@2x.png 2x"
+                        <img srcset="img/gitignore-logo-horizontal.png 370w,
+                                     img/gitignore-logo-horizontal@2x.png 740w"
                                 width="370"
                                 height="50"
+                                sizes="(min-width: 960px) 740px, 100vw"
                                 src="img/gitignore-logo-horizontal.png"
                                 alt="gitignore.io" />
                         <h2>#(subtitleString)</h2>
