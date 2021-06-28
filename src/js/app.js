@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 $(function () {
 
     $.ajax(window.BASE_PREFIX + '/dropdown/templates.json').done(function(data) {
