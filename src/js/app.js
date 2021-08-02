@@ -10,6 +10,7 @@ $(function () {
             multiple: true,
             allowClear: false,
             minimumInputLength: 1,
+            selectOnClose: true,
             placeholder: $("#input-gitignore-placeholder").text(),
             sorter: function(results) {
                 const query = $('.select2-search__field').val().toLowerCase();
