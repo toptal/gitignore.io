@@ -2,6 +2,7 @@
 version: "3.5"
 services:
   app:
+    platform: linux/x86_64
     image: gitignore-io:latest
     build:
       context: ./
