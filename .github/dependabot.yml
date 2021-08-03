@@ -14,10 +14,6 @@ updates:
     time: "07:00"
   pull-request-branch-name:
     separator: "-"
-  open-pull-requests-limit: 3
-  ignore:
-  - dependency-name: swift
-    versions:
-    - ">= 5.a, < 6"
+  open-pull-requests-limit: 10
   registries:
   - docker-registry-gcr-io
