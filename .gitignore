@@ -87,3 +87,4 @@ yarn-error.log
 .yarn/unplugged
 .yarn/build-state.yml
 .pnp.*
+.idea
