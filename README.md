@@ -1,4 +1,3 @@
-
 <p align="center">
     <a href="https://www.toptal.com/developers/gitignore">
         <img src="Public/img/gitignoreio.svg"/>
