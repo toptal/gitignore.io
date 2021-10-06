@@ -1,3 +1,4 @@
+
 <p align="center">
     <a href="https://www.toptal.com/developers/gitignore">
         <img src="Public/img/gitignoreio.svg"/>
@@ -60,7 +61,7 @@ Development mode mounts the following directories to docker volumes:
 
 ## LESS and CSS
 
-The app uses [LESS](http://lesscss.org/) as his CSS preprocessor for the files in `Public/css`.
+The app uses [LESS](http://lesscss.org/) as its CSS preprocessor for the files in `Public/css`.
 
 To process the less file you need to:
 
@@ -71,7 +72,7 @@ To process the less file you need to:
 
 Please set your environment variables to docker configurations. All are optional.
 
-```
+```yml
 ...
 services:
   app:
@@ -129,3 +130,4 @@ Running:
 - yarn build
 - yarn test
 - docker-compose stop
+
