@@ -147,6 +147,7 @@ internal class APIHandlers {
             .reduce("""
 
                 # Created by \(canonicalUrl)/api/\(urlDecoded)
+                # Download with wget -O .gitignore \(canonicalUrl)/api/\(urlDecoded)
                 # Edit at \(canonicalUrl)?templates=\(urlDecoded)
 
                 """) { (currentTemplate, contents) -> String in
