@@ -18,6 +18,9 @@ jobs:
           stale-issue-label: "stale"
           stale-pr-label: "stale"
 
+          exempt-issue-labels: backlog, triage, nostale
+          exempt-pr-labels: backlog, triage, nostale
+
           stale-pr-message: "This PR is stale because it has been open for 30 days with no activity."
           close-pr-message: "This PR was closed because it has been inactive for 14 days since being marked as stale."
 
