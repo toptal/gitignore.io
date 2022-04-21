@@ -17,7 +17,11 @@ const randomTemplate = () => randomTemplates(1)[0];
 const randomTemplates = (n) => {
   testTemplates = [];
   for (let index = 0; index < n; index++) {
-    testTemplates.push(templates[Math.floor(Math.random() * templates.length)]);
+    const myNumArr = new Uint32Array(1);
+    crypto.getRandomValues(myNumArr);
+    const randomNumber = Number(`0.${myNumArr[0]}`);
+
+    testTemplates.push(templates[Math.floor(randomNumber * templates.length)])
   }
   return testTemplates;
 }
