@@ -50,8 +50,6 @@ COPY --from=node-builder /gitignore.io/Resources /app/Resources
 
 SHELL ["/bin/bash", "-c"]
 
-STOPSIGNAL signal
-
 EXPOSE 8080/tcp
 
 CMD /app/Run serve -e prod -b 0.0.0.0
