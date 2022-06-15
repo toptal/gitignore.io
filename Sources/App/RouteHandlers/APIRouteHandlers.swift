@@ -145,7 +145,6 @@ internal class APIHandlers {
                 return contents.replacingOccurrences(of: "Icon\r\n", with: "Icon\r\r\n", options: .regularExpression)
             }
             .reduce("""
-
                 # Created by \(canonicalUrl)/api/\(urlDecoded)
                 # Edit at \(canonicalUrl)?templates=\(urlDecoded)
 
