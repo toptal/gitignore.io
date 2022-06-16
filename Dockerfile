@@ -28,21 +28,16 @@ RUN set -ex \
 # Build final image
 FROM debian:stable-slim
 
-# Install some necessary dependencies
-RUN set -ex \
-    && apt update \
-    && apt install git ca-certificates libcurl4 --no-install-recommends -y \
-    && apt autoremove -y \
-    && apt autoclean -y
-
 WORKDIR /app
 
 # Copy the project and remove the node frontend
 COPY . ./
 COPY .git ./
 
+# Install some necessary dependencies
 RUN set -ex \
-    && apt install dumb-init -y \
+    && apt update \
+    && apt install git ca-certificates libcurl4 dumb-init --no-install-recommends -y \
     && git submodule update --init --recursive \
     && rm -rf /app/Public /app/Resources \
     && apt autoremove -y \
@@ -57,6 +52,7 @@ SHELL ["/bin/bash", "-c"]
 
 EXPOSE 8080/tcp
 
+# Add dump-init to ensure container can respond to exit signals
 ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
 CMD /app/Run serve -e prod -b 0.0.0.0
