@@ -1,5 +1,5 @@
 # Build swift backend
-FROM swift:5.6 AS swift-builder
+FROM swift:5.6-focal AS swift-builder
 
 COPY . /gitignore.io
 
@@ -23,7 +23,7 @@ WORKDIR /gitignore.io
 RUN set -ex \
     && yarn install \
     && yarn build \
-    && rm -rf node_models
+    && rm -rf node_modules
 
 # Build final image
 FROM debian:stable-slim
@@ -41,7 +41,12 @@ WORKDIR /app
 COPY . ./
 COPY .git ./
 
-RUN rm -rf /app/Public /app/Resources
+RUN set -ex \
+    && apt install dumb-init -y \
+    && git submodule update --init --recursive \
+    && rm -rf /app/Public /app/Resources \
+    && apt autoremove -y \
+    && apt autoclean -y
 
 # Copy all newly compiled files to the final image
 COPY --from=swift-builder /tmp/Run /app/Run
@@ -51,5 +56,7 @@ COPY --from=node-builder /gitignore.io/Resources /app/Resources
 SHELL ["/bin/bash", "-c"]
 
 EXPOSE 8080/tcp
+
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
 CMD /app/Run serve -e prod -b 0.0.0.0
