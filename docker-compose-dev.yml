@@ -1,19 +1,16 @@
 # This serves ONLY local testing purposes!
-version: "3.5"
+version: "3.9"
 services:
   app:
-    platform: linux/x86_64
-    image: gitignore-io:latest
+    image: gitignore-io:dev
     build:
       context: ./
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     environment:
       HOST_ORIGIN:
       BASE_PREFIX:
       GOOGLE_ANALYTICS_UID:
     volumes:
-      - ./Public:/app/Public
-      - ./Resources:/app/Resources
+      - ./:/app
     ports:
       - 8080:8080
-    command: vapor run

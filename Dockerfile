@@ -47,6 +47,11 @@ FROM debian:stable-slim AS dest
 
 WORKDIR /app
 
+# The environment variable is set to empty(use the default value)
+ARG HOST_ORIGIN
+ARG BASE_PREFIX
+ARG GOOGLE_ANALYTICS_UID
+
 # Copy the project and remove the node frontend
 COPY . ./
 COPY .git ./
