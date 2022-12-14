@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - Creëer nuttige .gitignore bestanden voor je project",
+    "description": "Creëer nuttige .gitignore bestanden voor je project door te kiezen uit %{templateCount} besturingssysteem, IDE en programmeertaal .gitignore sjablonen",
+    "subtitle": "Creëer nuttige .gitignore-bestanden voor je project",
+    "searchPlaceholder": "Zoek besturingssystemen, IDEs of programmeertalen",
+    "searchGo": "Creëer",
+    "searchDownload": "Download bestand",
+    "footer": "%{templateCount} besturingssysteem, IDE en programmeertaal .gitignore-sjablonen",
+    "commandLineTitle": "Command Line documentatie",
+    "commandLineDescription": "Leer hoe je .gitignore.io uitvoert vanaf de command line",
+    "videoTitle": "Video handleiding bekijken",
+    "videoDescription": "Bekijk een video om te leren hoe .gitignore.io werkt",
+    "sourceCodeTitle": "Broncode",
+    "sourceCodeDescription": "GitHub gehoste broncode voor .gitignore.io"
+}
