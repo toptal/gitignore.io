@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - Δημιουργήστε χρήσιμα αρχεία .gitignore για το έργο σας",
+    "description": "Δημιουργήστε χρήσιμα αρχεία .gitignore για το έργο σας επιλέγοντας από το %{templateCount} πρότυπα .gitignore για λειτουργικό σύστημα, IDE και γλώσσα προγραμματισμού",
+    "subtitle": "Δημιουργήστε χρήσιμα αρχεία .gitignore για το έργο σας",
+    "searchPlaceholder": "Αναζήτηση λειτουργικών συστημάτων, IDEs ή γλωσσών προγραμματισμού",
+    "searchGo": "Δημιουργήστε",
+    "searchDownload": "Κατεβάστε το αρχείο",
+    "footer": "%{templateCount} λειτουργικό σύστημα, IDE και γλώσσα προγραμματισμού .gitignore templates",
+    "commandLineTitle": "Command line τεκμηρίωση",
+    "commandLineDescription": "Μάθετε πώς να εκτελείτε το .gitignore.io από τη command line",
+    "videoTitle": "Παρακολουθήστε εκπαιδευτικό βίντεο",
+    "videoDescription": "Παρακολουθήστε ένα βίντεο για να μάθετε πώς λειτουργεί το .gitignore.io",
+    "sourceCodeTitle": "Πηγαίος κώδικας",
+    "sourceCodeDescription": "Πηγαίος κώδικας στο GitHub για το .gitignore.io"
+}
