@@ -17,7 +17,7 @@ extension Request {
                 .first?
                 .split(separator: "-")
                 .first ?? "en")
-            let supportedLanguages = ["ar", "de", "en", "fa", "fr", "id", "ja", "ko", "pt", "ro", "ru", "tr", "zh"]
+            let supportedLanguages = ["ar", "de", "en", "fa", "fr", "id", "ja", "ko", "pt", "ro", "ru", "tr", "zh", "nl", "el"]
             if supportedLanguages.contains(acceptLanguage) {
                 return acceptLanguage
             } else {
