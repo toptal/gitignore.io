@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - สร้างไฟล์ .gitignore ที่เป็นประโยชน์สำหรับโปรเจ็คต์ของคุณ",
+    "description": "สร้างไฟล์ .gitignore ที่มีประโยชน์สำหรับโปรเจ็คต์ของคุณโดยเลือกจาก %{templateCount} เทมเพลตระบบปฏิบัติการ, IDE และภาษาการเขียนโปรแกรม .gitignore",
+    "subtitle": "สร้างไฟล์ .gitignore ที่มีประโยชน์สำหรับโปรเจ็คต์ของคุณ",
+    "searchPlaceholder": "ค้นหาระบบปฏิบัติการ IDE หรือภาษาการเขียนโปรแกรม",
+    "searchGo": "สร้าง",
+    "searchDownload": "ดาวน์โหลดไฟล์",
+    "footer": "%{templateCount} เทมเพลตระบบปฏิบัติการ, IDE และภาษาการเขียนโปรแกรม .gitignore",
+    "commandLineTitle": "ลองอ่านเอกสาร คำสั่งของ คอมมานด์ไลน์ ดูสิ!",
+    "commandLineDescription": "เรียนรู้วิธีเรียกใช้ .gitignore.io จากคำสั่ง คอมมานด์ไลน์ ดูสิ!",
+    "videoTitle": "ชมวิดีโอการสอนการใช้งาน",
+    "videoDescription": "ดูวิดีโอเพื่อเรียนรู้วิธีการทำงานของ .gitignore.io",
+    "sourceCodeTitle": "ซอร์สโค้ด",
+    "sourceCodeDescription": "ไปที่ กิทฮับ ที่เก็บซอร์สโค้ด ของ .gitignore.io"
+}
