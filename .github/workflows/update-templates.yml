@@ -2,9 +2,6 @@ name: Update Templates
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - update-templates-workflow
 
 
 jobs:
