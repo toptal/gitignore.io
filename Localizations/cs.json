@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - Vytvořte užitečný soubory .gitignore pro váš projekt",
+    "description": "Vytvořte užitečné soubory .gitignore pro svůj projekt výběrem z %{templateCount}. Šablony .gitignore pro operační systém, IDE a programovací jazyk.",
+    "subtitle": "Vytvořte užitečné soubory .gitignore pro svůj projekt",
+    "searchPlaceholder": "Hledání operačních systémů, IDE nebo programovacích jazyků",
+    "searchGo": "Vytvořit",
+    "searchDownload": "Soubor ke stažení",
+    "footer": "%{templateCount} šablon .gitignore pro operační systémy, IDE a programovací jazyky",
+    "commandLineTitle": "Dokumentace příkazového řádku",
+    "commandLineDescription": "Naučte se spouštět soubor .gitignore.io z příkazového řádku",
+    "videoTitle": "Podívejte se na video tutoriál",
+    "videoDescription": "Podívejte se na video, ve kterém se dozvíte, jak .gitignore.io funguje.",
+    "sourceCodeTitle": "Zdrojový kód",
+    "sourceCodeDescription": "Zdrojový kód pro .gitignore.io hostovaný na GitHub"
+}
