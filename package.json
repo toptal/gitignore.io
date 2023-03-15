@@ -24,7 +24,7 @@
     "style-loader": "^2.0.0",
     "superagent": "^5.2.2",
     "web-vitals": "^2.1.0",
-    "webpack": "^5.40.0",
+    "webpack": "^5.76.0",
     "webpack-cli": "^4.7.2"
   }
 }
