@@ -1,0 +1,15 @@
+{
+    "title": "gitignore.io - 為您的專案建立實用的 .gitignore 檔案",
+    "description": "從 %{templateCount} 種作業系統、IDE 與程式語言的 .gitignore 範本中，為您的專案建立實用的 .gitignore 檔案",
+    "subtitle": "為您的專案建立實用的 .gitignore 檔案",
+    "searchPlaceholder": "搜尋作業系統、IDE 或程式語言",
+    "searchGo": "建立",
+    "searchDownload": "下載檔案",
+    "footer": "%{templateCount} 種作業系統、IDE 與程式語言的 .gitignore 範本",
+    "commandLineTitle": "命令列說明文件",
+    "commandLineDescription": "瞭解如何從命令列使用 .gitignore.io",
+    "videoTitle": "觀看教學影片",
+    "videoDescription": "透過觀看影片瞭解 .gitignore.io 的運作方式",
+    "sourceCodeTitle": "原始碼",
+    "sourceCodeDescription": ".gitignore.io 的原始程式碼託管於 GitHub"
+}
